@@ -1,0 +1,23 @@
+{
+  "timestamp_utc": "2026-11-18T06:58:39.187718+00:00",
+  "region": "us-west-2",
+  "provider": "sagemaker-serverless",
+  "model": "BAAI/bge-small-en-v1.5",
+  "model_revision": "5c38ec7c405ec4b44b94cc5a9bb96e735b38267a",
+  "serving_image_digest": "sha256:603042f9c6d319824500988b0d7309cc094b75201da96911df7c3ddccd444ec5",
+  "observations": [
+    {
+      "input_type": "document",
+      "dimensions": 384,
+      "l2_norm": 1.0,
+      "elapsed_ms": 6763.9
+    },
+    {
+      "input_type": "query",
+      "dimensions": 384,
+      "l2_norm": 1.0,
+      "elapsed_ms": 291.9
+    }
+  ],
+  "timing_scope": "Sequential SDK calls from one client; includes network and any endpoint startup, not API Gateway."
+}

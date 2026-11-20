@@ -1,0 +1,21 @@
+{
+  "timestamp_utc": "2026-11-18T20:41:21.509787+00:00",
+  "region": "us-west-2",
+  "stack_status": "CREATE_COMPLETE",
+  "endpoint_status": "InService",
+  "serverless_configuration": {
+    "MemorySizeInMB": 3072,
+    "MaxConcurrency": 1
+  },
+  "index_mode": "ENHANCED",
+  "dimensions": 384,
+  "text_search": [
+    {
+      "metadataKey": "text",
+      "status": "ACTIVE"
+    }
+  ],
+  "indexed_vectors": 16,
+  "visible_failed_ingest_messages_approx": 0,
+  "note": "Live AWS control-plane and vector-index observation; resource identifiers are omitted."
+}

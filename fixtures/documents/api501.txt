@@ -1,0 +1,1 @@
+API501: API requests are limited to one hundred per minute per account. A 429 response means the client should wait and retry with backoff.

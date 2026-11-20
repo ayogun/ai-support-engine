@@ -1,0 +1,19 @@
+{
+  "timestamp_utc": "2026-11-18T07:01:41.515649+00:00",
+  "region": "us-west-2",
+  "stack_status": "CREATE_COMPLETE",
+  "endpoint_status": "InService",
+  "serverless_config": {
+    "MemorySizeInMB": 3072,
+    "MaxConcurrency": 1
+  },
+  "dimension": 384,
+  "index_mode": "ENHANCED",
+  "text_search_configurations": [
+    {
+      "metadataKey": "text",
+      "status": "ACTIVE"
+    }
+  ],
+  "indexed_documents": 16
+}

@@ -1,0 +1,12 @@
+{
+  "timestamp_utc": "2026-11-17T21:48:09.640177+00:00",
+  "region": "us-west-2",
+  "ingest_throttle_log_events": 0,
+  "ingest_access_denied_log_events": 3,
+  "ingest_oversized_document_log_events": 0,
+  "approximate_visible_dlq_messages": 1,
+  "sample_event_keys": [
+    "documents/access401.txt"
+  ],
+  "note": "The queue sample used zero-second visibility and did not delete the message."
+}

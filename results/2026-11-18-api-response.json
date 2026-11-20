@@ -1,0 +1,21 @@
+{
+  "http_status": 200,
+  "mode": "hybrid",
+  "results": [
+    {
+      "document_id": "return301",
+      "source_key": "documents/return301.txt",
+      "text": "RETURN301: Most unused purchases can be returned within thirty days of delivery. Final-sale products are excluded from this return window.\n",
+      "distance": null,
+      "scores": {
+        "fused": 0.01666666753590107,
+        "bm25Scores": [
+          {
+            "metadataKey": "text",
+            "score": 2.4098238945007324
+          }
+        ]
+      }
+    }
+  ]
+}

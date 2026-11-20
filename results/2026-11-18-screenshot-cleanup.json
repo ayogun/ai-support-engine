@@ -1,0 +1,16 @@
+{
+  "timestamp_utc": "2026-11-18T18:12:05.739690+00:00",
+  "region": "us-west-2",
+  "checks": {
+    "cloudformation_stack_absent": true,
+    "sagemaker_endpoint_absent": true,
+    "document_bucket_absent": true,
+    "code_bucket_absent": true,
+    "vector_bucket_absent": true,
+    "ingest_function_absent": true,
+    "search_function_absent": true,
+    "search_api_absent": true,
+    "failed_ingest_queue_absent": true
+  },
+  "note": "Resource-specific post-cleanup API checks; this is not a billing statement."
+}

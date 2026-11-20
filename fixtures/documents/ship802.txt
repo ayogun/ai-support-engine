@@ -1,0 +1,1 @@
+SHIP802: A dispatch delay before a parcel has shipped is shown as awaiting fulfillment. The delivery estimate updates when the carrier collects it.

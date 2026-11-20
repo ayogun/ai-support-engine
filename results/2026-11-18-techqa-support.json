@@ -1,0 +1,4263 @@
+{
+  "timestamp_utc": "2026-11-18T22:22:18.766035+00:00",
+  "region": "us-west-2",
+  "dataset": "nvidia/TechQA-RAG-Eval",
+  "dataset_revision": "0b5bbc84b7f07d6d09d063130e90b716d8d4a32a",
+  "dataset_url": "https://huggingface.co/datasets/nvidia/TechQA-RAG-Eval",
+  "dataset_license_as_labeled_by_publisher": "Apache-2.0",
+  "source_sha256": {
+    "train.json": "69d97231509482ed6bd5ec1c4bc0607acb82a88d11169eb8383592d0ca8b93c7",
+    "corpus.zip": "c06aa287dcc1abf8db6b49b8495df095db73342d729f6451ac330785245d10be"
+  },
+  "selected_data_sha256": "33bedb1f21fd3e3b37e582de6c71e19f2359682d488c885b770a20ec1ee63a69",
+  "selection": "Fixed SHA-256 order of eligible answerable DEV questions; one question per linked document. Include every linked document, then fixed-hash-sample background documents. Append one unique text-search readiness marker per document.",
+  "seed": "20261118",
+  "counts": {
+    "source_documents": 28481,
+    "eligible_documents": 27071,
+    "development_answerable": 160,
+    "development_unanswerable_excluded": 150,
+    "eligible_answerable_questions": 139,
+    "selected_linked_documents": 100
+  },
+  "document_count": 600,
+  "query_count": 100,
+  "top_k": 3,
+  "model": "BAAI/bge-small-en-v1.5",
+  "model_revision": "5c38ec7c405ec4b44b94cc5a9bb96e735b38267a",
+  "model_fingerprint": "d87ec16a17b312babef5966bf482e1979906a141ddefac6215ea84cfdd62b2b0",
+  "label_definition": "Hit means retrieval of the technical document linked by the original accepted forum answer. Other returned documents have not been adjudicated as irrelevant.",
+  "limitations": "Historical IBM forum questions and technical documentation, not the user's support corpus. Answerable questions only; distinct-positive selection, forced inclusion of linked documents, and hash-sampled background make this a constructed pool. Text and query size filtering can bias the sample. Linked-answer labels are not new independent relevance judgments; other documents may be relevant. No test of abstention, answer generation, or production performance.",
+  "timing_scope": "Sequential direct S3 Vectors calls; excludes embedding, API Gateway, ingestion, and readiness checks.",
+  "summary": {
+    "keyword": {
+      "queries": 100,
+      "hit_at_1": 85,
+      "hit_at_3": 91,
+      "mrr_at_3": 0.8783,
+      "macro_recall_at_3": 0.91,
+      "query_ms_median": 278.2,
+      "query_ms_p95": 496.9
+    },
+    "vector": {
+      "queries": 100,
+      "hit_at_1": 84,
+      "hit_at_3": 94,
+      "mrr_at_3": 0.8833,
+      "macro_recall_at_3": 0.94,
+      "query_ms_median": 279.4,
+      "query_ms_p95": 494.9
+    },
+    "hybrid": {
+      "queries": 100,
+      "hit_at_1": 85,
+      "hit_at_3": 92,
+      "mrr_at_3": 0.8833,
+      "macro_recall_at_3": 0.92,
+      "query_ms_median": 278.7,
+      "query_ms_p95": 499.9
+    }
+  },
+  "observations": [
+    {
+      "query_id": "DEV_Q224",
+      "mode": "keyword",
+      "relevant": [
+        "swg21696267"
+      ],
+      "returned_ids": [
+        "swg21696267",
+        "swg21580830",
+        "swg21995290"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 410.89
+    },
+    {
+      "query_id": "DEV_Q224",
+      "mode": "vector",
+      "relevant": [
+        "swg21696267"
+      ],
+      "returned_ids": [
+        "swg21696267",
+        "swg21995290",
+        "swg1PK94083"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 303.22
+    },
+    {
+      "query_id": "DEV_Q224",
+      "mode": "hybrid",
+      "relevant": [
+        "swg21696267"
+      ],
+      "returned_ids": [
+        "swg21696267",
+        "swg21995290",
+        "swg21580830"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 292.45
+    },
+    {
+      "query_id": "DEV_Q160",
+      "mode": "keyword",
+      "relevant": [
+        "swg21163875"
+      ],
+      "returned_ids": [
+        "swg21163875",
+        "swg27023814",
+        "swg22010584"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 495.35
+    },
+    {
+      "query_id": "DEV_Q160",
+      "mode": "vector",
+      "relevant": [
+        "swg21163875"
+      ],
+      "returned_ids": [
+        "swg21163875",
+        "swg22010584",
+        "swg21322947"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 284.04
+    },
+    {
+      "query_id": "DEV_Q160",
+      "mode": "hybrid",
+      "relevant": [
+        "swg21163875"
+      ],
+      "returned_ids": [
+        "swg21163875",
+        "swg22010584",
+        "swg27023814"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 494.14
+    },
+    {
+      "query_id": "DEV_Q204",
+      "mode": "keyword",
+      "relevant": [
+        "swg21903101"
+      ],
+      "returned_ids": [
+        "swg21999305",
+        "swg21379454",
+        "swg21684407"
+      ],
+      "first_relevant_rank": null,
+      "query_ms": 521.67
+    },
+    {
+      "query_id": "DEV_Q204",
+      "mode": "vector",
+      "relevant": [
+        "swg21903101"
+      ],
+      "returned_ids": [
+        "swg21903101",
+        "swg21962862",
+        "swg21595829"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 276.49
+    },
+    {
+      "query_id": "DEV_Q204",
+      "mode": "hybrid",
+      "relevant": [
+        "swg21903101"
+      ],
+      "returned_ids": [
+        "swg21999305",
+        "swg21903101",
+        "swg21962862"
+      ],
+      "first_relevant_rank": 2,
+      "query_ms": 277.53
+    },
+    {
+      "query_id": "DEV_Q154",
+      "mode": "keyword",
+      "relevant": [
+        "swg21598417"
+      ],
+      "returned_ids": [
+        "swg21598417",
+        "swg21610844",
+        "swg21508727"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 548.23
+    },
+    {
+      "query_id": "DEV_Q154",
+      "mode": "vector",
+      "relevant": [
+        "swg21598417"
+      ],
+      "returned_ids": [
+        "swg21598417",
+        "swg1IT00392",
+        "swg21974106"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 283.63
+    },
+    {
+      "query_id": "DEV_Q154",
+      "mode": "hybrid",
+      "relevant": [
+        "swg21598417"
+      ],
+      "returned_ids": [
+        "swg21598417",
+        "swg1IT00392",
+        "swg21610844"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 494.93
+    },
+    {
+      "query_id": "DEV_Q307",
+      "mode": "keyword",
+      "relevant": [
+        "swg22014367"
+      ],
+      "returned_ids": [
+        "swg22014367",
+        "swg21984446",
+        "swg21995099"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 490.91
+    },
+    {
+      "query_id": "DEV_Q307",
+      "mode": "vector",
+      "relevant": [
+        "swg22014367"
+      ],
+      "returned_ids": [
+        "swg22014367",
+        "swg22005755",
+        "swg21984446"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 493.55
+    },
+    {
+      "query_id": "DEV_Q307",
+      "mode": "hybrid",
+      "relevant": [
+        "swg22014367"
+      ],
+      "returned_ids": [
+        "swg22014367",
+        "swg21984446",
+        "swg22005755"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 525.18
+    },
+    {
+      "query_id": "DEV_Q181",
+      "mode": "keyword",
+      "relevant": [
+        "swg21569933"
+      ],
+      "returned_ids": [
+        "swg1LO42018",
+        "swg1IC87708",
+        "swg1IZ54252"
+      ],
+      "first_relevant_rank": null,
+      "query_ms": 278.28
+    },
+    {
+      "query_id": "DEV_Q181",
+      "mode": "vector",
+      "relevant": [
+        "swg21569933"
+      ],
+      "returned_ids": [
+        "swg21503786",
+        "swg21569933",
+        "swg1IC63514"
+      ],
+      "first_relevant_rank": 2,
+      "query_ms": 273.46
+    },
+    {
+      "query_id": "DEV_Q181",
+      "mode": "hybrid",
+      "relevant": [
+        "swg21569933"
+      ],
+      "returned_ids": [
+        "swg1LO42018",
+        "swg21503786",
+        "swg1IC87708"
+      ],
+      "first_relevant_rank": null,
+      "query_ms": 271.96
+    },
+    {
+      "query_id": "DEV_Q071",
+      "mode": "keyword",
+      "relevant": [
+        "swg21260969"
+      ],
+      "returned_ids": [
+        "swg21260969",
+        "swg1PM69606",
+        "swg21439051"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 279.62
+    },
+    {
+      "query_id": "DEV_Q071",
+      "mode": "vector",
+      "relevant": [
+        "swg21260969"
+      ],
+      "returned_ids": [
+        "swg21260969",
+        "swg21685441",
+        "swg21439051"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 276.07
+    },
+    {
+      "query_id": "DEV_Q071",
+      "mode": "hybrid",
+      "relevant": [
+        "swg21260969"
+      ],
+      "returned_ids": [
+        "swg21260969",
+        "swg21439051",
+        "swg21685441"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 271.77
+    },
+    {
+      "query_id": "DEV_Q032",
+      "mode": "keyword",
+      "relevant": [
+        "swg21994175"
+      ],
+      "returned_ids": [
+        "swg21994175",
+        "swg1IO21729",
+        "swg21663719"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 277.83
+    },
+    {
+      "query_id": "DEV_Q032",
+      "mode": "vector",
+      "relevant": [
+        "swg21994175"
+      ],
+      "returned_ids": [
+        "swg21994175",
+        "swg22002356",
+        "swg21688504"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 274.02
+    },
+    {
+      "query_id": "DEV_Q032",
+      "mode": "hybrid",
+      "relevant": [
+        "swg21994175"
+      ],
+      "returned_ids": [
+        "swg21994175",
+        "swg22002356",
+        "swg1IO21729"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 276.31
+    },
+    {
+      "query_id": "DEV_Q275",
+      "mode": "keyword",
+      "relevant": [
+        "swg21417266"
+      ],
+      "returned_ids": [
+        "swg21417266",
+        "swg21240542",
+        "swg21540748"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 277.58
+    },
+    {
+      "query_id": "DEV_Q275",
+      "mode": "vector",
+      "relevant": [
+        "swg21417266"
+      ],
+      "returned_ids": [
+        "swg21417266",
+        "swg21697663",
+        "swg21590861"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 276.0
+    },
+    {
+      "query_id": "DEV_Q275",
+      "mode": "hybrid",
+      "relevant": [
+        "swg21417266"
+      ],
+      "returned_ids": [
+        "swg21417266",
+        "swg21697663",
+        "swg21240542"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 273.92
+    },
+    {
+      "query_id": "DEV_Q145",
+      "mode": "keyword",
+      "relevant": [
+        "swg1PI47826"
+      ],
+      "returned_ids": [
+        "swg1PI36761",
+        "swg1PK79478",
+        "swg21631672"
+      ],
+      "first_relevant_rank": null,
+      "query_ms": 490.67
+    },
+    {
+      "query_id": "DEV_Q145",
+      "mode": "vector",
+      "relevant": [
+        "swg1PI47826"
+      ],
+      "returned_ids": [
+        "swg1PK11702",
+        "swg21298897",
+        "swg1PI47826"
+      ],
+      "first_relevant_rank": 3,
+      "query_ms": 277.85
+    },
+    {
+      "query_id": "DEV_Q145",
+      "mode": "hybrid",
+      "relevant": [
+        "swg1PI47826"
+      ],
+      "returned_ids": [
+        "swg1PI36761",
+        "swg1PK11702",
+        "swg21298897"
+      ],
+      "first_relevant_rank": null,
+      "query_ms": 278.13
+    },
+    {
+      "query_id": "DEV_Q089",
+      "mode": "keyword",
+      "relevant": [
+        "swg22002063"
+      ],
+      "returned_ids": [
+        "swg22002063",
+        "swg22000609",
+        "swg2C1000201"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 279.1
+    },
+    {
+      "query_id": "DEV_Q089",
+      "mode": "vector",
+      "relevant": [
+        "swg22002063"
+      ],
+      "returned_ids": [
+        "swg22002063",
+        "swg22000609",
+        "swg21984446"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 282.79
+    },
+    {
+      "query_id": "DEV_Q089",
+      "mode": "hybrid",
+      "relevant": [
+        "swg22002063"
+      ],
+      "returned_ids": [
+        "swg22002063",
+        "swg22000609",
+        "swg21984446"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 280.95
+    },
+    {
+      "query_id": "DEV_Q094",
+      "mode": "keyword",
+      "relevant": [
+        "swg21638268"
+      ],
+      "returned_ids": [
+        "swg21638268",
+        "swg21598888",
+        "swg21431301"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 275.95
+    },
+    {
+      "query_id": "DEV_Q094",
+      "mode": "vector",
+      "relevant": [
+        "swg21638268"
+      ],
+      "returned_ids": [
+        "swg21638268",
+        "swg1IT19986",
+        "swg21974106"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 280.62
+    },
+    {
+      "query_id": "DEV_Q094",
+      "mode": "hybrid",
+      "relevant": [
+        "swg21638268"
+      ],
+      "returned_ids": [
+        "swg21638268",
+        "swg1IT19986",
+        "swg21598888"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 273.65
+    },
+    {
+      "query_id": "DEV_Q209",
+      "mode": "keyword",
+      "relevant": [
+        "swg21696083"
+      ],
+      "returned_ids": [
+        "swg21696083",
+        "swg21697663",
+        "swg21663719"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 270.24
+    },
+    {
+      "query_id": "DEV_Q209",
+      "mode": "vector",
+      "relevant": [
+        "swg21696083"
+      ],
+      "returned_ids": [
+        "swg21696083",
+        "swg21639566",
+        "swg21697663"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 281.54
+    },
+    {
+      "query_id": "DEV_Q209",
+      "mode": "hybrid",
+      "relevant": [
+        "swg21696083"
+      ],
+      "returned_ids": [
+        "swg21696083",
+        "swg21697663",
+        "swg21639566"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 277.96
+    },
+    {
+      "query_id": "DEV_Q093",
+      "mode": "keyword",
+      "relevant": [
+        "swg21696179"
+      ],
+      "returned_ids": [
+        "swg21696179",
+        "nas8N1020547",
+        "swg21240542"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 272.08
+    },
+    {
+      "query_id": "DEV_Q093",
+      "mode": "vector",
+      "relevant": [
+        "swg21696179"
+      ],
+      "returned_ids": [
+        "swg21696179",
+        "swg21217255",
+        "swg1IV00723"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 280.15
+    },
+    {
+      "query_id": "DEV_Q093",
+      "mode": "hybrid",
+      "relevant": [
+        "swg21696179"
+      ],
+      "returned_ids": [
+        "swg21696179",
+        "nas8N1020547",
+        "swg21217255"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 276.68
+    },
+    {
+      "query_id": "DEV_Q257",
+      "mode": "keyword",
+      "relevant": [
+        "swg21959281"
+      ],
+      "returned_ids": [
+        "swg21959281",
+        "swg21681048",
+        "swg21981743"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 278.0
+    },
+    {
+      "query_id": "DEV_Q257",
+      "mode": "vector",
+      "relevant": [
+        "swg21959281"
+      ],
+      "returned_ids": [
+        "swg21959281",
+        "swg21681048",
+        "swg21439051"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 277.16
+    },
+    {
+      "query_id": "DEV_Q257",
+      "mode": "hybrid",
+      "relevant": [
+        "swg21959281"
+      ],
+      "returned_ids": [
+        "swg21959281",
+        "swg21681048",
+        "swg21981743"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 278.22
+    },
+    {
+      "query_id": "DEV_Q291",
+      "mode": "keyword",
+      "relevant": [
+        "swg21639640"
+      ],
+      "returned_ids": [
+        "swg21639640",
+        "swg21693210",
+        "swg27048595"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 493.44
+    },
+    {
+      "query_id": "DEV_Q291",
+      "mode": "vector",
+      "relevant": [
+        "swg21639640"
+      ],
+      "returned_ids": [
+        "swg21639640",
+        "swg21320503",
+        "swg21138332"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 272.08
+    },
+    {
+      "query_id": "DEV_Q291",
+      "mode": "hybrid",
+      "relevant": [
+        "swg21639640"
+      ],
+      "returned_ids": [
+        "swg21639640",
+        "swg21320503",
+        "swg21693210"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 272.06
+    },
+    {
+      "query_id": "DEV_Q074",
+      "mode": "keyword",
+      "relevant": [
+        "swg21959169"
+      ],
+      "returned_ids": [
+        "swg21959169",
+        "swg21964873",
+        "swg21960375"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 279.79
+    },
+    {
+      "query_id": "DEV_Q074",
+      "mode": "vector",
+      "relevant": [
+        "swg21959169"
+      ],
+      "returned_ids": [
+        "swg21959169",
+        "swg21964873",
+        "swg22007372"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 277.73
+    },
+    {
+      "query_id": "DEV_Q074",
+      "mode": "hybrid",
+      "relevant": [
+        "swg21959169"
+      ],
+      "returned_ids": [
+        "swg21959169",
+        "swg21964873",
+        "swg21960375"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 275.33
+    },
+    {
+      "query_id": "DEV_Q043",
+      "mode": "keyword",
+      "relevant": [
+        "swg24042656"
+      ],
+      "returned_ids": [
+        "swg24042656",
+        "swg1IV00723",
+        "swg22005197"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 280.07
+    },
+    {
+      "query_id": "DEV_Q043",
+      "mode": "vector",
+      "relevant": [
+        "swg24042656"
+      ],
+      "returned_ids": [
+        "swg24042656",
+        "swg22005197",
+        "swg21978428"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 278.99
+    },
+    {
+      "query_id": "DEV_Q043",
+      "mode": "hybrid",
+      "relevant": [
+        "swg24042656"
+      ],
+      "returned_ids": [
+        "swg24042656",
+        "swg22005197",
+        "swg1IV00723"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 274.49
+    },
+    {
+      "query_id": "DEV_Q192",
+      "mode": "keyword",
+      "relevant": [
+        "swg21511831"
+      ],
+      "returned_ids": [
+        "swg21511831",
+        "swg21324425",
+        "swg21645484"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 274.71
+    },
+    {
+      "query_id": "DEV_Q192",
+      "mode": "vector",
+      "relevant": [
+        "swg21511831"
+      ],
+      "returned_ids": [
+        "swg21511831",
+        "swg21223989",
+        "swg21261280"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 274.35
+    },
+    {
+      "query_id": "DEV_Q192",
+      "mode": "hybrid",
+      "relevant": [
+        "swg21511831"
+      ],
+      "returned_ids": [
+        "swg21511831",
+        "swg21324425",
+        "swg21223989"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 273.38
+    },
+    {
+      "query_id": "DEV_Q171",
+      "mode": "keyword",
+      "relevant": [
+        "swg1PI34677"
+      ],
+      "returned_ids": [
+        "swg1PI34677",
+        "swg21691034",
+        "swg21678763"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 276.41
+    },
+    {
+      "query_id": "DEV_Q171",
+      "mode": "vector",
+      "relevant": [
+        "swg1PI34677"
+      ],
+      "returned_ids": [
+        "swg1PI34677",
+        "swg21170401",
+        "swg21635341"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 276.35
+    },
+    {
+      "query_id": "DEV_Q171",
+      "mode": "hybrid",
+      "relevant": [
+        "swg1PI34677"
+      ],
+      "returned_ids": [
+        "swg1PI34677",
+        "swg21170401",
+        "swg21691034"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 281.91
+    },
+    {
+      "query_id": "DEV_Q141",
+      "mode": "keyword",
+      "relevant": [
+        "swg21701910"
+      ],
+      "returned_ids": [
+        "swg21217255",
+        "swg21701910",
+        "nas8N1013082"
+      ],
+      "first_relevant_rank": 2,
+      "query_ms": 275.49
+    },
+    {
+      "query_id": "DEV_Q141",
+      "mode": "vector",
+      "relevant": [
+        "swg21701910"
+      ],
+      "returned_ids": [
+        "swg21701910",
+        "swg1IV46175",
+        "swg1PJ43655"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 272.54
+    },
+    {
+      "query_id": "DEV_Q141",
+      "mode": "hybrid",
+      "relevant": [
+        "swg21701910"
+      ],
+      "returned_ids": [
+        "swg21701910",
+        "swg21217255",
+        "swg1IV46175"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 281.5
+    },
+    {
+      "query_id": "DEV_Q164",
+      "mode": "keyword",
+      "relevant": [
+        "swg21647231"
+      ],
+      "returned_ids": [
+        "swg21647231",
+        "swg1IT16873",
+        "swg1IC69197"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 278.05
+    },
+    {
+      "query_id": "DEV_Q164",
+      "mode": "vector",
+      "relevant": [
+        "swg21647231"
+      ],
+      "returned_ids": [
+        "swg21647231",
+        "swg1IT16873",
+        "swg1IC69197"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 277.23
+    },
+    {
+      "query_id": "DEV_Q164",
+      "mode": "hybrid",
+      "relevant": [
+        "swg21647231"
+      ],
+      "returned_ids": [
+        "swg21647231",
+        "swg1IT16873",
+        "swg1IC69197"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 295.2
+    },
+    {
+      "query_id": "DEV_Q267",
+      "mode": "keyword",
+      "relevant": [
+        "swg21606028"
+      ],
+      "returned_ids": [
+        "swg21606028",
+        "swg21608473",
+        "swg1PI14128"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 272.71
+    },
+    {
+      "query_id": "DEV_Q267",
+      "mode": "vector",
+      "relevant": [
+        "swg21606028"
+      ],
+      "returned_ids": [
+        "swg21606028",
+        "swg21608473",
+        "swg1PM65082"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 272.79
+    },
+    {
+      "query_id": "DEV_Q267",
+      "mode": "hybrid",
+      "relevant": [
+        "swg21606028"
+      ],
+      "returned_ids": [
+        "swg21606028",
+        "swg21608473",
+        "swg1PI14128"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 279.53
+    },
+    {
+      "query_id": "DEV_Q121",
+      "mode": "keyword",
+      "relevant": [
+        "swg24017225"
+      ],
+      "returned_ids": [
+        "swg24017225",
+        "swg21999305",
+        "swg21995079"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 272.23
+    },
+    {
+      "query_id": "DEV_Q121",
+      "mode": "vector",
+      "relevant": [
+        "swg24017225"
+      ],
+      "returned_ids": [
+        "swg24017225",
+        "swg21680221",
+        "swg21413544"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 276.38
+    },
+    {
+      "query_id": "DEV_Q121",
+      "mode": "hybrid",
+      "relevant": [
+        "swg24017225"
+      ],
+      "returned_ids": [
+        "swg24017225",
+        "swg21680221",
+        "swg21999305"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 492.52
+    },
+    {
+      "query_id": "DEV_Q066",
+      "mode": "keyword",
+      "relevant": [
+        "swg22000947"
+      ],
+      "returned_ids": [
+        "swg22000947",
+        "swg22007869",
+        "swg21983647"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 278.73
+    },
+    {
+      "query_id": "DEV_Q066",
+      "mode": "vector",
+      "relevant": [
+        "swg22000947"
+      ],
+      "returned_ids": [
+        "swg22000947",
+        "swg22007869",
+        "swg21685604"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 279.77
+    },
+    {
+      "query_id": "DEV_Q066",
+      "mode": "hybrid",
+      "relevant": [
+        "swg22000947"
+      ],
+      "returned_ids": [
+        "swg22000947",
+        "swg22007869",
+        "swg21983647"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 270.6
+    },
+    {
+      "query_id": "DEV_Q109",
+      "mode": "keyword",
+      "relevant": [
+        "swg21995079"
+      ],
+      "returned_ids": [
+        "swg21995079",
+        "ssg1S1005816",
+        "swg21990834"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 275.28
+    },
+    {
+      "query_id": "DEV_Q109",
+      "mode": "vector",
+      "relevant": [
+        "swg21995079"
+      ],
+      "returned_ids": [
+        "swg21995079",
+        "swg22011695",
+        "swg22010090"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 1561.97
+    },
+    {
+      "query_id": "DEV_Q109",
+      "mode": "hybrid",
+      "relevant": [
+        "swg21995079"
+      ],
+      "returned_ids": [
+        "swg21995079",
+        "ssg1S1005816",
+        "swg22011695"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 499.87
+    },
+    {
+      "query_id": "DEV_Q122",
+      "mode": "keyword",
+      "relevant": [
+        "swg21969653"
+      ],
+      "returned_ids": [
+        "swg21969653",
+        "swg1IZ76010",
+        "swg1IY83616"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 270.38
+    },
+    {
+      "query_id": "DEV_Q122",
+      "mode": "vector",
+      "relevant": [
+        "swg21969653"
+      ],
+      "returned_ids": [
+        "swg21969653",
+        "swg1IZ76010",
+        "swg1PI53592"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 285.18
+    },
+    {
+      "query_id": "DEV_Q122",
+      "mode": "hybrid",
+      "relevant": [
+        "swg21969653"
+      ],
+      "returned_ids": [
+        "swg21969653",
+        "swg1IZ76010",
+        "swg1IY83616"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 280.47
+    },
+    {
+      "query_id": "DEV_Q012",
+      "mode": "keyword",
+      "relevant": [
+        "swg21959723"
+      ],
+      "returned_ids": [
+        "swg21959723",
+        "swg21675248",
+        "swg21988310"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 283.33
+    },
+    {
+      "query_id": "DEV_Q012",
+      "mode": "vector",
+      "relevant": [
+        "swg21959723"
+      ],
+      "returned_ids": [
+        "swg21959723",
+        "swg1PI12367",
+        "swg1IZ15734"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 282.82
+    },
+    {
+      "query_id": "DEV_Q012",
+      "mode": "hybrid",
+      "relevant": [
+        "swg21959723"
+      ],
+      "returned_ids": [
+        "swg21959723",
+        "swg21675248",
+        "swg1PI12367"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 282.84
+    },
+    {
+      "query_id": "DEV_Q208",
+      "mode": "keyword",
+      "relevant": [
+        "swg21691034"
+      ],
+      "returned_ids": [
+        "swg21691034",
+        "swg21678763",
+        "swg1PI41356"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 280.61
+    },
+    {
+      "query_id": "DEV_Q208",
+      "mode": "vector",
+      "relevant": [
+        "swg21691034"
+      ],
+      "returned_ids": [
+        "swg21691034",
+        "swg21678763",
+        "swg1PM71404"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 278.0
+    },
+    {
+      "query_id": "DEV_Q208",
+      "mode": "hybrid",
+      "relevant": [
+        "swg21691034"
+      ],
+      "returned_ids": [
+        "swg21691034",
+        "swg21678763",
+        "swg1PI41356"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 285.09
+    },
+    {
+      "query_id": "DEV_Q035",
+      "mode": "keyword",
+      "relevant": [
+        "swg22013168"
+      ],
+      "returned_ids": [
+        "swg22013168",
+        "swg22002063",
+        "swg22014176"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 275.92
+    },
+    {
+      "query_id": "DEV_Q035",
+      "mode": "vector",
+      "relevant": [
+        "swg22013168"
+      ],
+      "returned_ids": [
+        "swg22013168",
+        "swg22002063",
+        "swg21989829"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 277.37
+    },
+    {
+      "query_id": "DEV_Q035",
+      "mode": "hybrid",
+      "relevant": [
+        "swg22013168"
+      ],
+      "returned_ids": [
+        "swg22013168",
+        "swg22002063",
+        "swg22014176"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 305.28
+    },
+    {
+      "query_id": "DEV_Q007",
+      "mode": "keyword",
+      "relevant": [
+        "swg21625776"
+      ],
+      "returned_ids": [
+        "swg21625776",
+        "swg1IY87455",
+        "swg21978428"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 280.85
+    },
+    {
+      "query_id": "DEV_Q007",
+      "mode": "vector",
+      "relevant": [
+        "swg21625776"
+      ],
+      "returned_ids": [
+        "swg21625776",
+        "swg21978428",
+        "swg21617297"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 514.87
+    },
+    {
+      "query_id": "DEV_Q007",
+      "mode": "hybrid",
+      "relevant": [
+        "swg21625776"
+      ],
+      "returned_ids": [
+        "swg21625776",
+        "swg21978428",
+        "swg1IY87455"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 683.86
+    },
+    {
+      "query_id": "DEV_Q182",
+      "mode": "keyword",
+      "relevant": [
+        "swg22010090"
+      ],
+      "returned_ids": [
+        "swg22010090",
+        "swg22008208",
+        "swg22007869"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 292.48
+    },
+    {
+      "query_id": "DEV_Q182",
+      "mode": "vector",
+      "relevant": [
+        "swg22010090"
+      ],
+      "returned_ids": [
+        "swg22010090",
+        "swg21993946",
+        "swg22001630"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 289.21
+    },
+    {
+      "query_id": "DEV_Q182",
+      "mode": "hybrid",
+      "relevant": [
+        "swg22010090"
+      ],
+      "returned_ids": [
+        "swg22010090",
+        "swg22008208",
+        "swg21993946"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 273.38
+    },
+    {
+      "query_id": "DEV_Q040",
+      "mode": "keyword",
+      "relevant": [
+        "swg21600618"
+      ],
+      "returned_ids": [
+        "swg21600618",
+        "swg21190754",
+        "swg21261119"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 280.44
+    },
+    {
+      "query_id": "DEV_Q040",
+      "mode": "vector",
+      "relevant": [
+        "swg21600618"
+      ],
+      "returned_ids": [
+        "swg21600618",
+        "swg21190754",
+        "swg21414638"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 280.08
+    },
+    {
+      "query_id": "DEV_Q040",
+      "mode": "hybrid",
+      "relevant": [
+        "swg21600618"
+      ],
+      "returned_ids": [
+        "swg21600618",
+        "swg21190754",
+        "swg21414638"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 292.28
+    },
+    {
+      "query_id": "DEV_Q048",
+      "mode": "keyword",
+      "relevant": [
+        "swg21685441"
+      ],
+      "returned_ids": [
+        "swg21685441",
+        "swg21655543",
+        "swg1IV70848"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 270.69
+    },
+    {
+      "query_id": "DEV_Q048",
+      "mode": "vector",
+      "relevant": [
+        "swg21685441"
+      ],
+      "returned_ids": [
+        "swg21685441",
+        "swg21655543",
+        "swg21268903"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 277.45
+    },
+    {
+      "query_id": "DEV_Q048",
+      "mode": "hybrid",
+      "relevant": [
+        "swg21685441"
+      ],
+      "returned_ids": [
+        "swg21685441",
+        "swg21655543",
+        "swg1IV70848"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 283.92
+    },
+    {
+      "query_id": "DEV_Q245",
+      "mode": "keyword",
+      "relevant": [
+        "swg21988389"
+      ],
+      "returned_ids": [
+        "swg21988389",
+        "swg21999305",
+        "swg21379454"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 272.02
+    },
+    {
+      "query_id": "DEV_Q245",
+      "mode": "vector",
+      "relevant": [
+        "swg21988389"
+      ],
+      "returned_ids": [
+        "swg21988389",
+        "swg1PI94985",
+        "swg21999305"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 273.99
+    },
+    {
+      "query_id": "DEV_Q245",
+      "mode": "hybrid",
+      "relevant": [
+        "swg21988389"
+      ],
+      "returned_ids": [
+        "swg21988389",
+        "swg21999305",
+        "swg1PI94985"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 278.85
+    },
+    {
+      "query_id": "DEV_Q022",
+      "mode": "keyword",
+      "relevant": [
+        "swg22005352"
+      ],
+      "returned_ids": [
+        "swg22005352",
+        "swg1PK43586",
+        "nas8N1015480"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 281.14
+    },
+    {
+      "query_id": "DEV_Q022",
+      "mode": "vector",
+      "relevant": [
+        "swg22005352"
+      ],
+      "returned_ids": [
+        "swg21320503",
+        "swg21598209",
+        "swg21138332"
+      ],
+      "first_relevant_rank": null,
+      "query_ms": 275.12
+    },
+    {
+      "query_id": "DEV_Q022",
+      "mode": "hybrid",
+      "relevant": [
+        "swg22005352"
+      ],
+      "returned_ids": [
+        "swg21320503",
+        "swg22005352",
+        "swg21598209"
+      ],
+      "first_relevant_rank": 2,
+      "query_ms": 277.0
+    },
+    {
+      "query_id": "DEV_Q129",
+      "mode": "keyword",
+      "relevant": [
+        "swg21962588"
+      ],
+      "returned_ids": [
+        "swg21962588",
+        "swg21983647",
+        "swg21978808"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 276.42
+    },
+    {
+      "query_id": "DEV_Q129",
+      "mode": "vector",
+      "relevant": [
+        "swg21962588"
+      ],
+      "returned_ids": [
+        "swg21962588",
+        "swg21983647",
+        "swg22010090"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 488.21
+    },
+    {
+      "query_id": "DEV_Q129",
+      "mode": "hybrid",
+      "relevant": [
+        "swg21962588"
+      ],
+      "returned_ids": [
+        "swg21962588",
+        "swg21983647",
+        "swg21978808"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 278.5
+    },
+    {
+      "query_id": "DEV_Q149",
+      "mode": "keyword",
+      "relevant": [
+        "swg21974106"
+      ],
+      "returned_ids": [
+        "swg1IC99903",
+        "swg21988310",
+        "ssg1S1009686"
+      ],
+      "first_relevant_rank": null,
+      "query_ms": 276.08
+    },
+    {
+      "query_id": "DEV_Q149",
+      "mode": "vector",
+      "relevant": [
+        "swg21974106"
+      ],
+      "returned_ids": [
+        "swg21988310",
+        "swg21974106",
+        "swg21265626"
+      ],
+      "first_relevant_rank": 2,
+      "query_ms": 279.1
+    },
+    {
+      "query_id": "DEV_Q149",
+      "mode": "hybrid",
+      "relevant": [
+        "swg21974106"
+      ],
+      "returned_ids": [
+        "swg21988310",
+        "swg1IC99903",
+        "swg21974106"
+      ],
+      "first_relevant_rank": 3,
+      "query_ms": 278.18
+    },
+    {
+      "query_id": "DEV_Q106",
+      "mode": "keyword",
+      "relevant": [
+        "swg21431301"
+      ],
+      "returned_ids": [
+        "swg21431301",
+        "swg21540748",
+        "swg1IC69197"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 272.47
+    },
+    {
+      "query_id": "DEV_Q106",
+      "mode": "vector",
+      "relevant": [
+        "swg21431301"
+      ],
+      "returned_ids": [
+        "swg21431301",
+        "swg1IZ85904",
+        "swg21414638"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 273.56
+    },
+    {
+      "query_id": "DEV_Q106",
+      "mode": "hybrid",
+      "relevant": [
+        "swg21431301"
+      ],
+      "returned_ids": [
+        "swg21431301",
+        "swg1IZ85904",
+        "swg21540748"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 1586.47
+    },
+    {
+      "query_id": "DEV_Q213",
+      "mode": "keyword",
+      "relevant": [
+        "swg21648471"
+      ],
+      "returned_ids": [
+        "swg21648471",
+        "swg21695284",
+        "swg27023814"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 282.13
+    },
+    {
+      "query_id": "DEV_Q213",
+      "mode": "vector",
+      "relevant": [
+        "swg21648471"
+      ],
+      "returned_ids": [
+        "swg21648471",
+        "swg21697663",
+        "swg21994175"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 290.03
+    },
+    {
+      "query_id": "DEV_Q213",
+      "mode": "hybrid",
+      "relevant": [
+        "swg21648471"
+      ],
+      "returned_ids": [
+        "swg21648471",
+        "swg21695284",
+        "swg21697663"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 278.47
+    },
+    {
+      "query_id": "DEV_Q277",
+      "mode": "keyword",
+      "relevant": [
+        "swg21665086"
+      ],
+      "returned_ids": [
+        "swg21665086",
+        "swg24039823",
+        "swg22007372"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 279.05
+    },
+    {
+      "query_id": "DEV_Q277",
+      "mode": "vector",
+      "relevant": [
+        "swg21665086"
+      ],
+      "returned_ids": [
+        "swg21665086",
+        "swg24039823",
+        "swg21392824"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 273.64
+    },
+    {
+      "query_id": "DEV_Q277",
+      "mode": "hybrid",
+      "relevant": [
+        "swg21665086"
+      ],
+      "returned_ids": [
+        "swg21665086",
+        "swg24039823",
+        "swg21392824"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 323.56
+    },
+    {
+      "query_id": "DEV_Q155",
+      "mode": "keyword",
+      "relevant": [
+        "swg21445430"
+      ],
+      "returned_ids": [
+        "swg21445430",
+        "swg21631672",
+        "swg1PI89537"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 496.87
+    },
+    {
+      "query_id": "DEV_Q155",
+      "mode": "vector",
+      "relevant": [
+        "swg21445430"
+      ],
+      "returned_ids": [
+        "swg21445430",
+        "swg21313784",
+        "swg21268903"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 487.41
+    },
+    {
+      "query_id": "DEV_Q155",
+      "mode": "hybrid",
+      "relevant": [
+        "swg21445430"
+      ],
+      "returned_ids": [
+        "swg21445430",
+        "swg21313784",
+        "swg21631672"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 297.88
+    },
+    {
+      "query_id": "DEV_Q038",
+      "mode": "keyword",
+      "relevant": [
+        "swg21451229"
+      ],
+      "returned_ids": [
+        "swg21451229",
+        "swg21994238",
+        "swg21508727"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 275.58
+    },
+    {
+      "query_id": "DEV_Q038",
+      "mode": "vector",
+      "relevant": [
+        "swg21451229"
+      ],
+      "returned_ids": [
+        "swg21451229",
+        "swg22010584",
+        "swg21994238"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 275.8
+    },
+    {
+      "query_id": "DEV_Q038",
+      "mode": "hybrid",
+      "relevant": [
+        "swg21451229"
+      ],
+      "returned_ids": [
+        "swg21451229",
+        "swg21994238",
+        "swg22010584"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 291.6
+    },
+    {
+      "query_id": "DEV_Q243",
+      "mode": "keyword",
+      "relevant": [
+        "swg21684407"
+      ],
+      "returned_ids": [
+        "swg1PI36761",
+        "swg21684407",
+        "swg21633581"
+      ],
+      "first_relevant_rank": 2,
+      "query_ms": 294.94
+    },
+    {
+      "query_id": "DEV_Q243",
+      "mode": "vector",
+      "relevant": [
+        "swg21684407"
+      ],
+      "returned_ids": [
+        "swg21684407",
+        "swg21999305",
+        "swg21633581"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 283.53
+    },
+    {
+      "query_id": "DEV_Q243",
+      "mode": "hybrid",
+      "relevant": [
+        "swg21684407"
+      ],
+      "returned_ids": [
+        "swg21684407",
+        "swg21633581",
+        "swg1PI36761"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 285.14
+    },
+    {
+      "query_id": "DEV_Q053",
+      "mode": "keyword",
+      "relevant": [
+        "swg21635341"
+      ],
+      "returned_ids": [
+        "swg21635341",
+        "swg21691034",
+        "swg21595829"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 496.18
+    },
+    {
+      "query_id": "DEV_Q053",
+      "mode": "vector",
+      "relevant": [
+        "swg21635341"
+      ],
+      "returned_ids": [
+        "swg21635341",
+        "swg21320503",
+        "swg21691034"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 286.88
+    },
+    {
+      "query_id": "DEV_Q053",
+      "mode": "hybrid",
+      "relevant": [
+        "swg21635341"
+      ],
+      "returned_ids": [
+        "swg21635341",
+        "swg21691034",
+        "swg21320503"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 282.25
+    },
+    {
+      "query_id": "DEV_Q063",
+      "mode": "keyword",
+      "relevant": [
+        "swg21509510"
+      ],
+      "returned_ids": [
+        "swg21509510",
+        "swg21682041",
+        "swg21642839"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 283.62
+    },
+    {
+      "query_id": "DEV_Q063",
+      "mode": "vector",
+      "relevant": [
+        "swg21509510"
+      ],
+      "returned_ids": [
+        "swg21509510",
+        "swg21682041",
+        "swg21642839"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 282.72
+    },
+    {
+      "query_id": "DEV_Q063",
+      "mode": "hybrid",
+      "relevant": [
+        "swg21509510"
+      ],
+      "returned_ids": [
+        "swg21509510",
+        "swg21682041",
+        "swg21642839"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 285.05
+    },
+    {
+      "query_id": "DEV_Q244",
+      "mode": "keyword",
+      "relevant": [
+        "swg21694876"
+      ],
+      "returned_ids": [
+        "swg21694876",
+        "swg21177381",
+        "swg21447584"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 278.58
+    },
+    {
+      "query_id": "DEV_Q244",
+      "mode": "vector",
+      "relevant": [
+        "swg21694876"
+      ],
+      "returned_ids": [
+        "swg21694876",
+        "swg1IT00392",
+        "swg27036803"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 1790.96
+    },
+    {
+      "query_id": "DEV_Q244",
+      "mode": "hybrid",
+      "relevant": [
+        "swg21694876"
+      ],
+      "returned_ids": [
+        "swg21694876",
+        "swg1IT00392",
+        "swg21177381"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 496.78
+    },
+    {
+      "query_id": "DEV_Q225",
+      "mode": "keyword",
+      "relevant": [
+        "swg21664629"
+      ],
+      "returned_ids": [
+        "swg21664629",
+        "swg21590077",
+        "swg1PM09199"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 279.18
+    },
+    {
+      "query_id": "DEV_Q225",
+      "mode": "vector",
+      "relevant": [
+        "swg21664629"
+      ],
+      "returned_ids": [
+        "swg1PM09199",
+        "swg21664629",
+        "swg21495799"
+      ],
+      "first_relevant_rank": 2,
+      "query_ms": 281.21
+    },
+    {
+      "query_id": "DEV_Q225",
+      "mode": "hybrid",
+      "relevant": [
+        "swg21664629"
+      ],
+      "returned_ids": [
+        "swg21664629",
+        "swg1PM09199",
+        "swg21590077"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 279.96
+    },
+    {
+      "query_id": "DEV_Q234",
+      "mode": "keyword",
+      "relevant": [
+        "swg21666489"
+      ],
+      "returned_ids": [
+        "swg21666489",
+        "swg21399531",
+        "swg21612694"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 274.35
+    },
+    {
+      "query_id": "DEV_Q234",
+      "mode": "vector",
+      "relevant": [
+        "swg21666489"
+      ],
+      "returned_ids": [
+        "swg21666489",
+        "swg21595829",
+        "swg21399531"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 275.9
+    },
+    {
+      "query_id": "DEV_Q234",
+      "mode": "hybrid",
+      "relevant": [
+        "swg21666489"
+      ],
+      "returned_ids": [
+        "swg21666489",
+        "swg21399531",
+        "swg21595829"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 278.52
+    },
+    {
+      "query_id": "DEV_Q221",
+      "mode": "keyword",
+      "relevant": [
+        "swg21452870"
+      ],
+      "returned_ids": [
+        "swg21452870",
+        "swg27036928",
+        "swg27045651"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 272.92
+    },
+    {
+      "query_id": "DEV_Q221",
+      "mode": "vector",
+      "relevant": [
+        "swg21452870"
+      ],
+      "returned_ids": [
+        "swg27036928",
+        "swg21989238",
+        "swg21686944"
+      ],
+      "first_relevant_rank": null,
+      "query_ms": 278.16
+    },
+    {
+      "query_id": "DEV_Q221",
+      "mode": "hybrid",
+      "relevant": [
+        "swg21452870"
+      ],
+      "returned_ids": [
+        "swg27036928",
+        "swg21452870",
+        "swg21989238"
+      ],
+      "first_relevant_rank": 2,
+      "query_ms": 273.51
+    },
+    {
+      "query_id": "DEV_Q305",
+      "mode": "keyword",
+      "relevant": [
+        "swg21656263"
+      ],
+      "returned_ids": [
+        "swg21656263",
+        "swg21588281",
+        "swg21336526"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 278.64
+    },
+    {
+      "query_id": "DEV_Q305",
+      "mode": "vector",
+      "relevant": [
+        "swg21656263"
+      ],
+      "returned_ids": [
+        "swg21656263",
+        "swg21645484",
+        "swg1PI70854"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 494.95
+    },
+    {
+      "query_id": "DEV_Q305",
+      "mode": "hybrid",
+      "relevant": [
+        "swg21656263"
+      ],
+      "returned_ids": [
+        "swg21656263",
+        "swg21645484",
+        "swg21588281"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 488.52
+    },
+    {
+      "query_id": "DEV_Q174",
+      "mode": "keyword",
+      "relevant": [
+        "swg21658019"
+      ],
+      "returned_ids": [
+        "swg21658019",
+        "swg21965109",
+        "swg21976161"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 281.85
+    },
+    {
+      "query_id": "DEV_Q174",
+      "mode": "vector",
+      "relevant": [
+        "swg21658019"
+      ],
+      "returned_ids": [
+        "swg21658019",
+        "swg21965109",
+        "swg27048247"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 273.76
+    },
+    {
+      "query_id": "DEV_Q174",
+      "mode": "hybrid",
+      "relevant": [
+        "swg21658019"
+      ],
+      "returned_ids": [
+        "swg21658019",
+        "swg21965109",
+        "swg27048247"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 273.71
+    },
+    {
+      "query_id": "DEV_Q300",
+      "mode": "keyword",
+      "relevant": [
+        "swg21438047"
+      ],
+      "returned_ids": [
+        "swg21438047",
+        "swg21685554",
+        "swg21529563"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 274.67
+    },
+    {
+      "query_id": "DEV_Q300",
+      "mode": "vector",
+      "relevant": [
+        "swg21438047"
+      ],
+      "returned_ids": [
+        "swg21438047",
+        "swg1JR54670",
+        "swg1IT00392"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 274.23
+    },
+    {
+      "query_id": "DEV_Q300",
+      "mode": "hybrid",
+      "relevant": [
+        "swg21438047"
+      ],
+      "returned_ids": [
+        "swg21438047",
+        "swg1JR54670",
+        "swg21685554"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 276.48
+    },
+    {
+      "query_id": "DEV_Q303",
+      "mode": "keyword",
+      "relevant": [
+        "swg21690658"
+      ],
+      "returned_ids": [
+        "swg21690658",
+        "swg21986920",
+        "swg21170401"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 271.7
+    },
+    {
+      "query_id": "DEV_Q303",
+      "mode": "vector",
+      "relevant": [
+        "swg21690658"
+      ],
+      "returned_ids": [
+        "swg22010584",
+        "swg21994238",
+        "swg21690658"
+      ],
+      "first_relevant_rank": 3,
+      "query_ms": 280.11
+    },
+    {
+      "query_id": "DEV_Q303",
+      "mode": "hybrid",
+      "relevant": [
+        "swg21690658"
+      ],
+      "returned_ids": [
+        "swg21690658",
+        "swg22010584",
+        "swg21986920"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 278.9
+    },
+    {
+      "query_id": "DEV_Q110",
+      "mode": "keyword",
+      "relevant": [
+        "swg21220832"
+      ],
+      "returned_ids": [
+        "swg21540748",
+        "swg21633581",
+        "swg1LO54798"
+      ],
+      "first_relevant_rank": null,
+      "query_ms": 279.83
+    },
+    {
+      "query_id": "DEV_Q110",
+      "mode": "vector",
+      "relevant": [
+        "swg21220832"
+      ],
+      "returned_ids": [
+        "swg21414638",
+        "swg21595829",
+        "swg21598209"
+      ],
+      "first_relevant_rank": null,
+      "query_ms": 492.64
+    },
+    {
+      "query_id": "DEV_Q110",
+      "mode": "hybrid",
+      "relevant": [
+        "swg21220832"
+      ],
+      "returned_ids": [
+        "swg21414638",
+        "swg21540748",
+        "swg21595829"
+      ],
+      "first_relevant_rank": null,
+      "query_ms": 281.08
+    },
+    {
+      "query_id": "DEV_Q184",
+      "mode": "keyword",
+      "relevant": [
+        "swg21584783"
+      ],
+      "returned_ids": [
+        "swg21584783",
+        "swg21645627",
+        "swg1PI61666"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 272.07
+    },
+    {
+      "query_id": "DEV_Q184",
+      "mode": "vector",
+      "relevant": [
+        "swg21584783"
+      ],
+      "returned_ids": [
+        "swg21584783",
+        "swg21617873",
+        "swg21698762"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 277.31
+    },
+    {
+      "query_id": "DEV_Q184",
+      "mode": "hybrid",
+      "relevant": [
+        "swg21584783"
+      ],
+      "returned_ids": [
+        "swg21584783",
+        "swg21617873",
+        "swg21645627"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 280.65
+    },
+    {
+      "query_id": "DEV_Q033",
+      "mode": "keyword",
+      "relevant": [
+        "swg21269136"
+      ],
+      "returned_ids": [
+        "swg21269136",
+        "nas8N1013082",
+        "swg21681624"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 272.42
+    },
+    {
+      "query_id": "DEV_Q033",
+      "mode": "vector",
+      "relevant": [
+        "swg21269136"
+      ],
+      "returned_ids": [
+        "swg21269136",
+        "swg21681624",
+        "nas8N1013082"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 281.15
+    },
+    {
+      "query_id": "DEV_Q033",
+      "mode": "hybrid",
+      "relevant": [
+        "swg21269136"
+      ],
+      "returned_ids": [
+        "swg21269136",
+        "nas8N1013082",
+        "swg21681624"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 278.5
+    },
+    {
+      "query_id": "DEV_Q249",
+      "mode": "keyword",
+      "relevant": [
+        "swg21998663"
+      ],
+      "returned_ids": [
+        "swg21998663",
+        "swg21989829",
+        "swg22007265"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 274.48
+    },
+    {
+      "query_id": "DEV_Q249",
+      "mode": "vector",
+      "relevant": [
+        "swg21998663"
+      ],
+      "returned_ids": [
+        "swg21998663",
+        "swg21989829",
+        "swg21673233"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 271.79
+    },
+    {
+      "query_id": "DEV_Q249",
+      "mode": "hybrid",
+      "relevant": [
+        "swg21998663"
+      ],
+      "returned_ids": [
+        "swg21998663",
+        "swg21989829",
+        "swg21673233"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 280.18
+    },
+    {
+      "query_id": "DEV_Q235",
+      "mode": "keyword",
+      "relevant": [
+        "swg22001630"
+      ],
+      "returned_ids": [
+        "swg22001630",
+        "swg21993946",
+        "swg21976896"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 488.64
+    },
+    {
+      "query_id": "DEV_Q235",
+      "mode": "vector",
+      "relevant": [
+        "swg22001630"
+      ],
+      "returned_ids": [
+        "swg22001630",
+        "swg21673233",
+        "swg21993946"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 273.16
+    },
+    {
+      "query_id": "DEV_Q235",
+      "mode": "hybrid",
+      "relevant": [
+        "swg22001630"
+      ],
+      "returned_ids": [
+        "swg22001630",
+        "swg21993946",
+        "swg21673233"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 277.66
+    },
+    {
+      "query_id": "DEV_Q064",
+      "mode": "keyword",
+      "relevant": [
+        "swg21995099"
+      ],
+      "returned_ids": [
+        "swg21995099",
+        "swg22000162",
+        "swg22000609"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 490.39
+    },
+    {
+      "query_id": "DEV_Q064",
+      "mode": "vector",
+      "relevant": [
+        "swg21995099"
+      ],
+      "returned_ids": [
+        "swg21995099",
+        "swg22000609",
+        "swg21998663"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 275.31
+    },
+    {
+      "query_id": "DEV_Q064",
+      "mode": "hybrid",
+      "relevant": [
+        "swg21995099"
+      ],
+      "returned_ids": [
+        "swg21995099",
+        "swg22000609",
+        "swg22000162"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 1972.37
+    },
+    {
+      "query_id": "DEV_Q216",
+      "mode": "keyword",
+      "relevant": [
+        "swg21480262"
+      ],
+      "returned_ids": [
+        "swg21480262",
+        "swg21481141",
+        "swg21601209"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 273.72
+    },
+    {
+      "query_id": "DEV_Q216",
+      "mode": "vector",
+      "relevant": [
+        "swg21480262"
+      ],
+      "returned_ids": [
+        "swg21480262",
+        "swg21601209",
+        "swg21592093"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 280.32
+    },
+    {
+      "query_id": "DEV_Q216",
+      "mode": "hybrid",
+      "relevant": [
+        "swg21480262"
+      ],
+      "returned_ids": [
+        "swg21480262",
+        "swg21601209",
+        "swg21481141"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 281.94
+    },
+    {
+      "query_id": "DEV_Q014",
+      "mode": "keyword",
+      "relevant": [
+        "swg21138332"
+      ],
+      "returned_ids": [
+        "swg21646644",
+        "swg21138332",
+        "swg21595829"
+      ],
+      "first_relevant_rank": 2,
+      "query_ms": 504.72
+    },
+    {
+      "query_id": "DEV_Q014",
+      "mode": "vector",
+      "relevant": [
+        "swg21138332"
+      ],
+      "returned_ids": [
+        "swg21595829",
+        "swg21138332",
+        "swg21598209"
+      ],
+      "first_relevant_rank": 2,
+      "query_ms": 495.01
+    },
+    {
+      "query_id": "DEV_Q014",
+      "mode": "hybrid",
+      "relevant": [
+        "swg21138332"
+      ],
+      "returned_ids": [
+        "swg21595829",
+        "swg21138332",
+        "swg21646644"
+      ],
+      "first_relevant_rank": 2,
+      "query_ms": 300.5
+    },
+    {
+      "query_id": "DEV_Q034",
+      "mode": "keyword",
+      "relevant": [
+        "swg21413628"
+      ],
+      "returned_ids": [
+        "swg21261119",
+        "swg21578744",
+        "swg21458372"
+      ],
+      "first_relevant_rank": null,
+      "query_ms": 276.75
+    },
+    {
+      "query_id": "DEV_Q034",
+      "mode": "vector",
+      "relevant": [
+        "swg21413628"
+      ],
+      "returned_ids": [
+        "nas8N1015480",
+        "swg21413628",
+        "swg21458372"
+      ],
+      "first_relevant_rank": 2,
+      "query_ms": 285.5
+    },
+    {
+      "query_id": "DEV_Q034",
+      "mode": "hybrid",
+      "relevant": [
+        "swg21413628"
+      ],
+      "returned_ids": [
+        "swg21458372",
+        "nas8N1015480",
+        "swg21261119"
+      ],
+      "first_relevant_rank": null,
+      "query_ms": 288.19
+    },
+    {
+      "query_id": "DEV_Q027",
+      "mode": "keyword",
+      "relevant": [
+        "swg21618564"
+      ],
+      "returned_ids": [
+        "swg21642839",
+        "swg21274860",
+        "swg21656263"
+      ],
+      "first_relevant_rank": null,
+      "query_ms": 282.71
+    },
+    {
+      "query_id": "DEV_Q027",
+      "mode": "vector",
+      "relevant": [
+        "swg21618564"
+      ],
+      "returned_ids": [
+        "swg21642839",
+        "swg21682041",
+        "swg21658019"
+      ],
+      "first_relevant_rank": null,
+      "query_ms": 276.67
+    },
+    {
+      "query_id": "DEV_Q027",
+      "mode": "hybrid",
+      "relevant": [
+        "swg21618564"
+      ],
+      "returned_ids": [
+        "swg21642839",
+        "swg21682041",
+        "swg21274860"
+      ],
+      "first_relevant_rank": null,
+      "query_ms": 286.91
+    },
+    {
+      "query_id": "DEV_Q156",
+      "mode": "keyword",
+      "relevant": [
+        "swg21998655"
+      ],
+      "returned_ids": [
+        "swg21998655",
+        "swg1JR55110",
+        "swg21990834"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 505.36
+    },
+    {
+      "query_id": "DEV_Q156",
+      "mode": "vector",
+      "relevant": [
+        "swg21998655"
+      ],
+      "returned_ids": [
+        "swg21998655",
+        "swg21693270",
+        "swg21991307"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 535.6
+    },
+    {
+      "query_id": "DEV_Q156",
+      "mode": "hybrid",
+      "relevant": [
+        "swg21998655"
+      ],
+      "returned_ids": [
+        "swg21998655",
+        "swg1JR55110",
+        "swg21693270"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 277.49
+    },
+    {
+      "query_id": "DEV_Q167",
+      "mode": "keyword",
+      "relevant": [
+        "swg21580830"
+      ],
+      "returned_ids": [
+        "swg21580830",
+        "swg21152288",
+        "swg22001776"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 324.39
+    },
+    {
+      "query_id": "DEV_Q167",
+      "mode": "vector",
+      "relevant": [
+        "swg21580830"
+      ],
+      "returned_ids": [
+        "swg21580830",
+        "swg1IT00392",
+        "swg21152288"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 298.3
+    },
+    {
+      "query_id": "DEV_Q167",
+      "mode": "hybrid",
+      "relevant": [
+        "swg21580830"
+      ],
+      "returned_ids": [
+        "swg21580830",
+        "swg21152288",
+        "swg1IT00392"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 347.83
+    },
+    {
+      "query_id": "DEV_Q082",
+      "mode": "keyword",
+      "relevant": [
+        "swg22011695"
+      ],
+      "returned_ids": [
+        "swg22011695",
+        "swg22014325",
+        "swg22002356"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 351.85
+    },
+    {
+      "query_id": "DEV_Q082",
+      "mode": "vector",
+      "relevant": [
+        "swg22011695"
+      ],
+      "returned_ids": [
+        "swg22011695",
+        "swg21964869",
+        "swg22010090"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 421.86
+    },
+    {
+      "query_id": "DEV_Q082",
+      "mode": "hybrid",
+      "relevant": [
+        "swg22011695"
+      ],
+      "returned_ids": [
+        "swg22011695",
+        "swg21964869",
+        "swg22014325"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 280.55
+    },
+    {
+      "query_id": "DEV_Q030",
+      "mode": "keyword",
+      "relevant": [
+        "swg21636533"
+      ],
+      "returned_ids": [
+        "swg21636533",
+        "swg22010123",
+        "swg21680221"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 505.42
+    },
+    {
+      "query_id": "DEV_Q030",
+      "mode": "vector",
+      "relevant": [
+        "swg21636533"
+      ],
+      "returned_ids": [
+        "swg21636533",
+        "swg21446599",
+        "swg21637609"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 278.86
+    },
+    {
+      "query_id": "DEV_Q030",
+      "mode": "hybrid",
+      "relevant": [
+        "swg21636533"
+      ],
+      "returned_ids": [
+        "swg21636533",
+        "swg22010123",
+        "swg21446599"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 282.63
+    },
+    {
+      "query_id": "DEV_Q114",
+      "mode": "keyword",
+      "relevant": [
+        "swg21989702"
+      ],
+      "returned_ids": [
+        "swg21989702",
+        "swg1IV19472",
+        "swg22006678"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 282.13
+    },
+    {
+      "query_id": "DEV_Q114",
+      "mode": "vector",
+      "relevant": [
+        "swg21989702"
+      ],
+      "returned_ids": [
+        "swg21989702",
+        "swg27048273",
+        "swg1IC85794"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 283.57
+    },
+    {
+      "query_id": "DEV_Q114",
+      "mode": "hybrid",
+      "relevant": [
+        "swg21989702"
+      ],
+      "returned_ids": [
+        "swg21989702",
+        "swg27048273",
+        "swg1IV19472"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 278.58
+    },
+    {
+      "query_id": "DEV_Q302",
+      "mode": "keyword",
+      "relevant": [
+        "swg21412061"
+      ],
+      "returned_ids": [
+        "swg21412061",
+        "swg1IT04947",
+        "swg1IT16873"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 273.13
+    },
+    {
+      "query_id": "DEV_Q302",
+      "mode": "vector",
+      "relevant": [
+        "swg21412061"
+      ],
+      "returned_ids": [
+        "swg21412061",
+        "swg1IC88020",
+        "swg21982765"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 282.15
+    },
+    {
+      "query_id": "DEV_Q302",
+      "mode": "hybrid",
+      "relevant": [
+        "swg21412061"
+      ],
+      "returned_ids": [
+        "swg21412061",
+        "swg1IT04947",
+        "swg1IC88020"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 277.59
+    },
+    {
+      "query_id": "DEV_Q306",
+      "mode": "keyword",
+      "relevant": [
+        "swg21642839"
+      ],
+      "returned_ids": [
+        "swg21642839",
+        "swg21618564",
+        "swg21274860"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 274.0
+    },
+    {
+      "query_id": "DEV_Q306",
+      "mode": "vector",
+      "relevant": [
+        "swg21642839"
+      ],
+      "returned_ids": [
+        "swg21642839",
+        "swg21682041",
+        "swg1IV81778"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 276.41
+    },
+    {
+      "query_id": "DEV_Q306",
+      "mode": "hybrid",
+      "relevant": [
+        "swg21642839"
+      ],
+      "returned_ids": [
+        "swg21642839",
+        "swg21618564",
+        "swg21682041"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 273.23
+    },
+    {
+      "query_id": "DEV_Q046",
+      "mode": "keyword",
+      "relevant": [
+        "swg22002589"
+      ],
+      "returned_ids": [
+        "swg22002589",
+        "swg21223989",
+        "swg21177381"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 272.46
+    },
+    {
+      "query_id": "DEV_Q046",
+      "mode": "vector",
+      "relevant": [
+        "swg22002589"
+      ],
+      "returned_ids": [
+        "swg22002589",
+        "swg21223989",
+        "swg21511831"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 278.52
+    },
+    {
+      "query_id": "DEV_Q046",
+      "mode": "hybrid",
+      "relevant": [
+        "swg22002589"
+      ],
+      "returned_ids": [
+        "swg22002589",
+        "swg21223989",
+        "swg21511831"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 287.12
+    },
+    {
+      "query_id": "DEV_Q282",
+      "mode": "keyword",
+      "relevant": [
+        "swg21978428"
+      ],
+      "returned_ids": [
+        "swg21978428",
+        "swg21625776",
+        "swg21617297"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 281.7
+    },
+    {
+      "query_id": "DEV_Q282",
+      "mode": "vector",
+      "relevant": [
+        "swg21978428"
+      ],
+      "returned_ids": [
+        "swg21978428",
+        "swg21617297",
+        "swg21625776"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 276.56
+    },
+    {
+      "query_id": "DEV_Q282",
+      "mode": "hybrid",
+      "relevant": [
+        "swg21978428"
+      ],
+      "returned_ids": [
+        "swg21978428",
+        "swg21625776",
+        "swg21617297"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 276.41
+    },
+    {
+      "query_id": "DEV_Q283",
+      "mode": "keyword",
+      "relevant": [
+        "swg21592093"
+      ],
+      "returned_ids": [
+        "swg21481141",
+        "swg21476917",
+        "swg21648430"
+      ],
+      "first_relevant_rank": null,
+      "query_ms": 273.66
+    },
+    {
+      "query_id": "DEV_Q283",
+      "mode": "vector",
+      "relevant": [
+        "swg21592093"
+      ],
+      "returned_ids": [
+        "swg21481141",
+        "swg21648430",
+        "swg21598888"
+      ],
+      "first_relevant_rank": null,
+      "query_ms": 291.78
+    },
+    {
+      "query_id": "DEV_Q283",
+      "mode": "hybrid",
+      "relevant": [
+        "swg21592093"
+      ],
+      "returned_ids": [
+        "swg21481141",
+        "swg21648430",
+        "swg21476917"
+      ],
+      "first_relevant_rank": null,
+      "query_ms": 281.97
+    },
+    {
+      "query_id": "DEV_Q304",
+      "mode": "keyword",
+      "relevant": [
+        "swg21612222"
+      ],
+      "returned_ids": [
+        "swg21612222",
+        "swg1IC88020",
+        "swg1IT04947"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 278.57
+    },
+    {
+      "query_id": "DEV_Q304",
+      "mode": "vector",
+      "relevant": [
+        "swg21612222"
+      ],
+      "returned_ids": [
+        "swg21612222",
+        "swg1IC88020",
+        "swg21681624"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 287.95
+    },
+    {
+      "query_id": "DEV_Q304",
+      "mode": "hybrid",
+      "relevant": [
+        "swg21612222"
+      ],
+      "returned_ids": [
+        "swg21612222",
+        "swg1IC88020",
+        "swg1IT04947"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 282.34
+    },
+    {
+      "query_id": "DEV_Q055",
+      "mode": "keyword",
+      "relevant": [
+        "swg21412846"
+      ],
+      "returned_ids": [
+        "swg1PK54046",
+        "swg21412846",
+        "swg1JR46358"
+      ],
+      "first_relevant_rank": 2,
+      "query_ms": 279.96
+    },
+    {
+      "query_id": "DEV_Q055",
+      "mode": "vector",
+      "relevant": [
+        "swg21412846"
+      ],
+      "returned_ids": [
+        "swg21964406",
+        "swg1JR47705",
+        "swg21529563"
+      ],
+      "first_relevant_rank": null,
+      "query_ms": 285.94
+    },
+    {
+      "query_id": "DEV_Q055",
+      "mode": "hybrid",
+      "relevant": [
+        "swg21412846"
+      ],
+      "returned_ids": [
+        "swg21964406",
+        "swg1PK54046",
+        "swg1JR47705"
+      ],
+      "first_relevant_rank": null,
+      "query_ms": 271.79
+    },
+    {
+      "query_id": "DEV_Q140",
+      "mode": "keyword",
+      "relevant": [
+        "swg21979066"
+      ],
+      "returned_ids": [
+        "swg21979066",
+        "swg1JR46358",
+        "swg1JR47705"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 275.23
+    },
+    {
+      "query_id": "DEV_Q140",
+      "mode": "vector",
+      "relevant": [
+        "swg21979066"
+      ],
+      "returned_ids": [
+        "swg21979066",
+        "swg1JR46358",
+        "swg1JR47705"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 283.23
+    },
+    {
+      "query_id": "DEV_Q140",
+      "mode": "hybrid",
+      "relevant": [
+        "swg21979066"
+      ],
+      "returned_ids": [
+        "swg21979066",
+        "swg1JR46358",
+        "swg1JR47705"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 273.62
+    },
+    {
+      "query_id": "DEV_Q090",
+      "mode": "keyword",
+      "relevant": [
+        "swg21608473"
+      ],
+      "returned_ids": [
+        "swg21608473",
+        "swg21662823",
+        "swg21531975"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 279.07
+    },
+    {
+      "query_id": "DEV_Q090",
+      "mode": "vector",
+      "relevant": [
+        "swg21608473"
+      ],
+      "returned_ids": [
+        "swg21608473",
+        "swg21903136",
+        "swg21662823"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 282.65
+    },
+    {
+      "query_id": "DEV_Q090",
+      "mode": "hybrid",
+      "relevant": [
+        "swg21608473"
+      ],
+      "returned_ids": [
+        "swg21608473",
+        "swg21662823",
+        "swg21903136"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 295.95
+    },
+    {
+      "query_id": "DEV_Q098",
+      "mode": "keyword",
+      "relevant": [
+        "swg22013955"
+      ],
+      "returned_ids": [
+        "swg22013955",
+        "swg22004956",
+        "swg21693210"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 283.38
+    },
+    {
+      "query_id": "DEV_Q098",
+      "mode": "vector",
+      "relevant": [
+        "swg22013955"
+      ],
+      "returned_ids": [
+        "swg22013955",
+        "swg22004956",
+        "swg22000162"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 311.44
+    },
+    {
+      "query_id": "DEV_Q098",
+      "mode": "hybrid",
+      "relevant": [
+        "swg22013955"
+      ],
+      "returned_ids": [
+        "swg22013955",
+        "swg22004956",
+        "swg22000162"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 508.0
+    },
+    {
+      "query_id": "DEV_Q051",
+      "mode": "keyword",
+      "relevant": [
+        "swg21495799"
+      ],
+      "returned_ids": [
+        "swg21495799",
+        "swg21697663",
+        "swg21695284"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 278.99
+    },
+    {
+      "query_id": "DEV_Q051",
+      "mode": "vector",
+      "relevant": [
+        "swg21495799"
+      ],
+      "returned_ids": [
+        "swg21495799",
+        "swg21664629",
+        "swg21600501"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 274.67
+    },
+    {
+      "query_id": "DEV_Q051",
+      "mode": "hybrid",
+      "relevant": [
+        "swg21495799"
+      ],
+      "returned_ids": [
+        "swg21495799",
+        "swg21697663",
+        "swg21664629"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 275.5
+    },
+    {
+      "query_id": "DEV_Q220",
+      "mode": "keyword",
+      "relevant": [
+        "swg21960375"
+      ],
+      "returned_ids": [
+        "swg21960375",
+        "swg21693285",
+        "swg21688504"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 278.45
+    },
+    {
+      "query_id": "DEV_Q220",
+      "mode": "vector",
+      "relevant": [
+        "swg21960375"
+      ],
+      "returned_ids": [
+        "swg21960375",
+        "swg21693285",
+        "swg21883880"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 280.87
+    },
+    {
+      "query_id": "DEV_Q220",
+      "mode": "hybrid",
+      "relevant": [
+        "swg21960375"
+      ],
+      "returned_ids": [
+        "swg21960375",
+        "swg21693285",
+        "swg21883880"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 281.73
+    },
+    {
+      "query_id": "DEV_Q050",
+      "mode": "keyword",
+      "relevant": [
+        "swg21991890"
+      ],
+      "returned_ids": [
+        "swg21991890",
+        "swg21431301",
+        "swg21438047"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 276.45
+    },
+    {
+      "query_id": "DEV_Q050",
+      "mode": "vector",
+      "relevant": [
+        "swg21991890"
+      ],
+      "returned_ids": [
+        "swg21991890",
+        "swg1IV78315",
+        "swg1PM89257"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 280.14
+    },
+    {
+      "query_id": "DEV_Q050",
+      "mode": "hybrid",
+      "relevant": [
+        "swg21991890"
+      ],
+      "returned_ids": [
+        "swg21991890",
+        "swg21431301",
+        "swg1IV78315"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 280.23
+    },
+    {
+      "query_id": "DEV_Q132",
+      "mode": "keyword",
+      "relevant": [
+        "swg21653905"
+      ],
+      "returned_ids": [
+        "swg1IV68708",
+        "swg21386716",
+        "swg1LO54798"
+      ],
+      "first_relevant_rank": null,
+      "query_ms": 271.88
+    },
+    {
+      "query_id": "DEV_Q132",
+      "mode": "vector",
+      "relevant": [
+        "swg21653905"
+      ],
+      "returned_ids": [
+        "swg21607474",
+        "swg1PM80532",
+        "swg21653905"
+      ],
+      "first_relevant_rank": 3,
+      "query_ms": 274.16
+    },
+    {
+      "query_id": "DEV_Q132",
+      "mode": "hybrid",
+      "relevant": [
+        "swg21653905"
+      ],
+      "returned_ids": [
+        "swg21607474",
+        "swg1IV68708",
+        "swg21386716"
+      ],
+      "first_relevant_rank": null,
+      "query_ms": 281.49
+    },
+    {
+      "query_id": "DEV_Q180",
+      "mode": "keyword",
+      "relevant": [
+        "swg21964873"
+      ],
+      "returned_ids": [
+        "swg21964873",
+        "swg21959169",
+        "swg21883880"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 271.92
+    },
+    {
+      "query_id": "DEV_Q180",
+      "mode": "vector",
+      "relevant": [
+        "swg21964873"
+      ],
+      "returned_ids": [
+        "swg21964873",
+        "swg21972272",
+        "swg22001630"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 274.0
+    },
+    {
+      "query_id": "DEV_Q180",
+      "mode": "hybrid",
+      "relevant": [
+        "swg21964873"
+      ],
+      "returned_ids": [
+        "swg21964873",
+        "swg21959169",
+        "swg21972272"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 272.18
+    },
+    {
+      "query_id": "DEV_Q193",
+      "mode": "keyword",
+      "relevant": [
+        "swg22005197"
+      ],
+      "returned_ids": [
+        "swg22005197",
+        "swg21386716",
+        "swg21680221"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 277.95
+    },
+    {
+      "query_id": "DEV_Q193",
+      "mode": "vector",
+      "relevant": [
+        "swg22005197"
+      ],
+      "returned_ids": [
+        "swg22005197",
+        "swg21607690",
+        "swg21978428"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 280.11
+    },
+    {
+      "query_id": "DEV_Q193",
+      "mode": "hybrid",
+      "relevant": [
+        "swg22005197"
+      ],
+      "returned_ids": [
+        "swg22005197",
+        "swg21386716",
+        "swg21607690"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 276.07
+    },
+    {
+      "query_id": "DEV_Q183",
+      "mode": "keyword",
+      "relevant": [
+        "swg21607690"
+      ],
+      "returned_ids": [
+        "swg21607690",
+        "swg1IZ15734",
+        "swg22005197"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 276.44
+    },
+    {
+      "query_id": "DEV_Q183",
+      "mode": "vector",
+      "relevant": [
+        "swg21607690"
+      ],
+      "returned_ids": [
+        "swg21607690",
+        "swg21655543",
+        "swg1IZ15734"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 279.7
+    },
+    {
+      "query_id": "DEV_Q183",
+      "mode": "hybrid",
+      "relevant": [
+        "swg21607690"
+      ],
+      "returned_ids": [
+        "swg21607690",
+        "swg1IZ15734",
+        "swg21655543"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 278.4
+    },
+    {
+      "query_id": "DEV_Q186",
+      "mode": "keyword",
+      "relevant": [
+        "swg21608744"
+      ],
+      "returned_ids": [
+        "swg21608744",
+        "swg21607474",
+        "swg27050337"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 273.16
+    },
+    {
+      "query_id": "DEV_Q186",
+      "mode": "vector",
+      "relevant": [
+        "swg21608744"
+      ],
+      "returned_ids": [
+        "swg21607474",
+        "swg27050337",
+        "swg21608744"
+      ],
+      "first_relevant_rank": 3,
+      "query_ms": 270.85
+    },
+    {
+      "query_id": "DEV_Q186",
+      "mode": "hybrid",
+      "relevant": [
+        "swg21608744"
+      ],
+      "returned_ids": [
+        "swg21607474",
+        "swg21608744",
+        "swg27050337"
+      ],
+      "first_relevant_rank": 2,
+      "query_ms": 279.26
+    },
+    {
+      "query_id": "DEV_Q230",
+      "mode": "keyword",
+      "relevant": [
+        "swg21066791"
+      ],
+      "returned_ids": [
+        "swg21066791",
+        "swg21406264",
+        "swg21540748"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 273.52
+    },
+    {
+      "query_id": "DEV_Q230",
+      "mode": "vector",
+      "relevant": [
+        "swg21066791"
+      ],
+      "returned_ids": [
+        "swg21066791",
+        "swg1JR45173",
+        "swg1PK74804"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 274.1
+    },
+    {
+      "query_id": "DEV_Q230",
+      "mode": "hybrid",
+      "relevant": [
+        "swg21066791"
+      ],
+      "returned_ids": [
+        "swg21066791",
+        "swg21406264",
+        "swg1JR45173"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 276.7
+    },
+    {
+      "query_id": "DEV_Q029",
+      "mode": "keyword",
+      "relevant": [
+        "swg21496354"
+      ],
+      "returned_ids": [
+        "swg21496354",
+        "swg21614572",
+        "swg21502095"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 272.33
+    },
+    {
+      "query_id": "DEV_Q029",
+      "mode": "vector",
+      "relevant": [
+        "swg21496354"
+      ],
+      "returned_ids": [
+        "swg21496354",
+        "swg21220832",
+        "swg21653857"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 275.24
+    },
+    {
+      "query_id": "DEV_Q029",
+      "mode": "hybrid",
+      "relevant": [
+        "swg21496354"
+      ],
+      "returned_ids": [
+        "swg21496354",
+        "swg21614572",
+        "swg21220832"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 278.4
+    },
+    {
+      "query_id": "DEV_Q176",
+      "mode": "keyword",
+      "relevant": [
+        "swg21578744"
+      ],
+      "returned_ids": [
+        "swg21578744",
+        "swg21993946",
+        "swg21903756"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 275.72
+    },
+    {
+      "query_id": "DEV_Q176",
+      "mode": "vector",
+      "relevant": [
+        "swg21578744"
+      ],
+      "returned_ids": [
+        "swg21578744",
+        "swg1PI70189",
+        "swg21903756"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 273.38
+    },
+    {
+      "query_id": "DEV_Q176",
+      "mode": "hybrid",
+      "relevant": [
+        "swg21578744"
+      ],
+      "returned_ids": [
+        "swg21578744",
+        "swg21903756",
+        "swg21993946"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 276.35
+    },
+    {
+      "query_id": "DEV_Q153",
+      "mode": "keyword",
+      "relevant": [
+        "swg21409481"
+      ],
+      "returned_ids": [
+        "swg21409481",
+        "swg21979066",
+        "swg21580830"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 276.06
+    },
+    {
+      "query_id": "DEV_Q153",
+      "mode": "vector",
+      "relevant": [
+        "swg21409481"
+      ],
+      "returned_ids": [
+        "swg21409481",
+        "swg21963011",
+        "swg21516951"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 280.3
+    },
+    {
+      "query_id": "DEV_Q153",
+      "mode": "hybrid",
+      "relevant": [
+        "swg21409481"
+      ],
+      "returned_ids": [
+        "swg21409481",
+        "swg21963011",
+        "swg21979066"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 277.25
+    },
+    {
+      "query_id": "DEV_Q210",
+      "mode": "keyword",
+      "relevant": [
+        "swg21067352"
+      ],
+      "returned_ids": [
+        "swg21980823",
+        "swg21391221",
+        "swg21067352"
+      ],
+      "first_relevant_rank": 3,
+      "query_ms": 275.71
+    },
+    {
+      "query_id": "DEV_Q210",
+      "mode": "vector",
+      "relevant": [
+        "swg21067352"
+      ],
+      "returned_ids": [
+        "swg21980823",
+        "swg21067352",
+        "swg21261280"
+      ],
+      "first_relevant_rank": 2,
+      "query_ms": 274.73
+    },
+    {
+      "query_id": "DEV_Q210",
+      "mode": "hybrid",
+      "relevant": [
+        "swg21067352"
+      ],
+      "returned_ids": [
+        "swg21980823",
+        "swg21067352",
+        "swg21391221"
+      ],
+      "first_relevant_rank": 2,
+      "query_ms": 276.59
+    },
+    {
+      "query_id": "DEV_Q254",
+      "mode": "keyword",
+      "relevant": [
+        "swg21980860"
+      ],
+      "returned_ids": [
+        "swg21980860",
+        "swg1PQ62210",
+        "swg21144408"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 275.55
+    },
+    {
+      "query_id": "DEV_Q254",
+      "mode": "vector",
+      "relevant": [
+        "swg21980860"
+      ],
+      "returned_ids": [
+        "swg21980860",
+        "swg1PQ62210",
+        "swg24017225"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 276.3
+    },
+    {
+      "query_id": "DEV_Q254",
+      "mode": "hybrid",
+      "relevant": [
+        "swg21980860"
+      ],
+      "returned_ids": [
+        "swg21980860",
+        "swg1PQ62210",
+        "swg21144408"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 278.11
+    },
+    {
+      "query_id": "DEV_Q016",
+      "mode": "keyword",
+      "relevant": [
+        "swg21502095"
+      ],
+      "returned_ids": [
+        "swg21502095",
+        "swg21400815",
+        "swg21496354"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 278.66
+    },
+    {
+      "query_id": "DEV_Q016",
+      "mode": "vector",
+      "relevant": [
+        "swg21502095"
+      ],
+      "returned_ids": [
+        "swg21502095",
+        "swg21659594",
+        "swg21614572"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 275.16
+    },
+    {
+      "query_id": "DEV_Q016",
+      "mode": "hybrid",
+      "relevant": [
+        "swg21502095"
+      ],
+      "returned_ids": [
+        "swg21502095",
+        "swg21400815",
+        "swg21659594"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 270.3
+    },
+    {
+      "query_id": "DEV_Q021",
+      "mode": "keyword",
+      "relevant": [
+        "swg21298897"
+      ],
+      "returned_ids": [
+        "swg21298897",
+        "swg21406264",
+        "swg1IC88020"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 277.67
+    },
+    {
+      "query_id": "DEV_Q021",
+      "mode": "vector",
+      "relevant": [
+        "swg21298897"
+      ],
+      "returned_ids": [
+        "swg21298897",
+        "swg1IC88020",
+        "swg1IT05881"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 285.53
+    },
+    {
+      "query_id": "DEV_Q021",
+      "mode": "hybrid",
+      "relevant": [
+        "swg21298897"
+      ],
+      "returned_ids": [
+        "swg21298897",
+        "swg1IC88020",
+        "swg21406264"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 277.76
+    },
+    {
+      "query_id": "DEV_Q299",
+      "mode": "keyword",
+      "relevant": [
+        "swg21500040"
+      ],
+      "returned_ids": [
+        "swg21500040",
+        "swg21610844",
+        "swg1IZ66288"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 279.88
+    },
+    {
+      "query_id": "DEV_Q299",
+      "mode": "vector",
+      "relevant": [
+        "swg21500040"
+      ],
+      "returned_ids": [
+        "swg21500040",
+        "swg21610844",
+        "swg1JR32181"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 280.39
+    },
+    {
+      "query_id": "DEV_Q299",
+      "mode": "hybrid",
+      "relevant": [
+        "swg21500040"
+      ],
+      "returned_ids": [
+        "swg21500040",
+        "swg21610844",
+        "swg1JR32181"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 277.67
+    },
+    {
+      "query_id": "DEV_Q120",
+      "mode": "keyword",
+      "relevant": [
+        "swg21982354"
+      ],
+      "returned_ids": [
+        "swg21982354",
+        "swg21995290",
+        "swg21485479"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 282.88
+    },
+    {
+      "query_id": "DEV_Q120",
+      "mode": "vector",
+      "relevant": [
+        "swg21982354"
+      ],
+      "returned_ids": [
+        "swg21982354",
+        "swg21485479",
+        "swg21995290"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 276.7
+    },
+    {
+      "query_id": "DEV_Q120",
+      "mode": "hybrid",
+      "relevant": [
+        "swg21982354"
+      ],
+      "returned_ids": [
+        "swg21982354",
+        "swg21995290",
+        "swg21485479"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 277.08
+    },
+    {
+      "query_id": "DEV_Q119",
+      "mode": "keyword",
+      "relevant": [
+        "swg21997033"
+      ],
+      "returned_ids": [
+        "swg21997033",
+        "swg21495799",
+        "swg21988939"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 280.19
+    },
+    {
+      "query_id": "DEV_Q119",
+      "mode": "vector",
+      "relevant": [
+        "swg21997033"
+      ],
+      "returned_ids": [
+        "swg21997033",
+        "swg21673233",
+        "swg21959169"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 281.95
+    },
+    {
+      "query_id": "DEV_Q119",
+      "mode": "hybrid",
+      "relevant": [
+        "swg21997033"
+      ],
+      "returned_ids": [
+        "swg21997033",
+        "swg21673233",
+        "swg21495799"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 272.19
+    },
+    {
+      "query_id": "DEV_Q296",
+      "mode": "keyword",
+      "relevant": [
+        "swg21663414"
+      ],
+      "returned_ids": [
+        "swg21698762",
+        "swg21663414",
+        "swg21957740"
+      ],
+      "first_relevant_rank": 2,
+      "query_ms": 272.95
+    },
+    {
+      "query_id": "DEV_Q296",
+      "mode": "vector",
+      "relevant": [
+        "swg21663414"
+      ],
+      "returned_ids": [
+        "swg21663414",
+        "swg21957740",
+        "swg21698762"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 276.07
+    },
+    {
+      "query_id": "DEV_Q296",
+      "mode": "hybrid",
+      "relevant": [
+        "swg21663414"
+      ],
+      "returned_ids": [
+        "swg21663414",
+        "swg21698762",
+        "swg21957740"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 278.29
+    },
+    {
+      "query_id": "DEV_Q279",
+      "mode": "keyword",
+      "relevant": [
+        "swg21988939"
+      ],
+      "returned_ids": [
+        "swg21988939",
+        "swg21990647",
+        "swg21633581"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 278.08
+    },
+    {
+      "query_id": "DEV_Q279",
+      "mode": "vector",
+      "relevant": [
+        "swg21988939"
+      ],
+      "returned_ids": [
+        "swg21988939",
+        "swg1PK54046",
+        "swg21671740"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 280.51
+    },
+    {
+      "query_id": "DEV_Q279",
+      "mode": "hybrid",
+      "relevant": [
+        "swg21988939"
+      ],
+      "returned_ids": [
+        "swg21988939",
+        "swg1PK54046",
+        "swg21990647"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 278.56
+    }
+  ]
+}

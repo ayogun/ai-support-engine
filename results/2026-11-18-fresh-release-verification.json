@@ -1,0 +1,111 @@
+{
+  "timestamp_utc": "2026-11-18T22:37:04.972102+00:00",
+  "region": "us-west-2",
+  "release": "v1.2.0",
+  "public_archive_url": "https://github.com/ayogun/serverless-hybrid-search-lab/releases/download/v1.2.0/serverless-hybrid-search-v1.2.0.zip",
+  "archive_sha256": "fe37b995744eca6168d369a8489c4362d2487cde255d8dfd5ba7968dd8a90913",
+  "download": "Unauthenticated HTTPS download of the published release archive and checksum; both matched the local candidate.",
+  "fresh_environment": "New extraction and new virtual environment; installed only requirements.txt.",
+  "manifest_initial_inspection": {
+    "version": "1.2.0",
+    "files": 123,
+    "relative_links_checked": 113,
+    "clean_extraction_tests": "not run"
+  },
+  "subsequent_clean_extraction_tests": {
+    "command": "python scripts/verify_release.py <downloaded-archive> --run-tests",
+    "result": "passed",
+    "unit_tests_passed": 70
+  },
+  "unit_tests_passed": 70,
+  "deployment_observation": {
+    "stack_status": "CREATE_COMPLETE",
+    "endpoint_status": "InService",
+    "index_mode": "ENHANCED",
+    "dimensions": 384,
+    "indexed_vectors": 16
+  },
+  "model_observations": [
+    {
+      "input_type": "document",
+      "dimensions": 384,
+      "l2_norm": 1.0,
+      "elapsed_ms": 6467.0
+    },
+    {
+      "input_type": "query",
+      "dimensions": 384,
+      "l2_norm": 1.0,
+      "elapsed_ms": 322.6
+    }
+  ],
+  "smoke_checks": {
+    "anonymous_request": {
+      "http_status": 403,
+      "passed": true
+    },
+    "invalid_request": {
+      "http_status": 400,
+      "passed": true
+    },
+    "signed_keyword": {
+      "http_status": 200,
+      "passed": true
+    },
+    "signed_exact": {
+      "http_status": 200,
+      "passed": true
+    },
+    "signed_exact_case_sensitive": {
+      "http_status": 200,
+      "passed": true
+    },
+    "signed_exact_missing": {
+      "http_status": 200,
+      "passed": true
+    },
+    "signed_exact_invalid": {
+      "http_status": 400,
+      "passed": true
+    },
+    "sagemaker_vector": {
+      "http_status": 200,
+      "passed": true
+    },
+    "sagemaker_hybrid": {
+      "http_status": 200,
+      "passed": true
+    }
+  },
+  "standalone_article_signed_request": {
+    "http_status": 200,
+    "mode": "hybrid",
+    "expected_document_id": "return301",
+    "expected_document_returned": true,
+    "result_count": 3
+  },
+  "cleanup_checks": {
+    "cloudformation_stack_absent": true,
+    "sagemaker_endpoint_absent": true,
+    "document_bucket_absent": true,
+    "code_bucket_absent": true,
+    "vector_bucket_absent": true,
+    "ingest_function_absent": true,
+    "search_function_absent": true,
+    "search_api_absent": true,
+    "failed_ingest_queue_absent": true
+  },
+  "step_elapsed_seconds": {
+    "create fresh virtual environment": 4.06,
+    "install release dependencies": 5.72,
+    "verify manifest, links, and tests": 1.83,
+    "deploy downloaded release": 409.03,
+    "check deployed model": 8.33,
+    "ingest fixture documents": 54.44,
+    "test signed API routes": 11.91,
+    "clean up downloaded-release deployment": 98.3,
+    "verify deleted lab resources": 8.43
+  },
+  "independent_human_verification": false,
+  "limitations": "The same agent and AWS account performed this test; it is not an independent human review. The live smoke checks are not a full relevance or load evaluation. Durations are not billed usage or a full walkthrough estimate."
+}

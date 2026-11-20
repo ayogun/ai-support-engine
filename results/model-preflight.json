@@ -1,0 +1,358 @@
+{
+  "audit_time_utc": "2026-11-17T21:11:29.025275+00:00",
+  "bedrock": {
+    "quota_scope": "Applied Bedrock quotas whose names contain embed and per minute or per day; model lists are discovery only.",
+    "regions_checked": 17,
+    "regions_with_positive_matching_quotas": 0,
+    "invocation_summary": {
+      "ThrottlingException": 20,
+      "AccessDeniedException": 2
+    },
+    "regions": [
+      {
+        "region": "ap-northeast-1",
+        "models": [
+          "cohere.embed-v4:0",
+          "amazon.titan-embed-text-v1",
+          "amazon.titan-embed-text-v2:0",
+          "cohere.embed-english-v3",
+          "cohere.embed-multilingual-v3"
+        ],
+        "positive_inference_quotas": [],
+        "zero_inference_quotas": 16
+      },
+      {
+        "region": "ap-northeast-2",
+        "models": [
+          "twelvelabs.marengo-embed-3-0-v1:0",
+          "amazon.titan-embed-text-v2:0"
+        ],
+        "positive_inference_quotas": [],
+        "zero_inference_quotas": 12
+      },
+      {
+        "region": "ap-northeast-3",
+        "models": [
+          "amazon.titan-embed-text-v2:0"
+        ],
+        "positive_inference_quotas": [],
+        "zero_inference_quotas": 3
+      },
+      {
+        "region": "ap-south-1",
+        "models": [
+          "amazon.titan-embed-image-v1",
+          "amazon.titan-embed-text-v2:0",
+          "cohere.embed-english-v3",
+          "cohere.embed-multilingual-v3"
+        ],
+        "positive_inference_quotas": [],
+        "zero_inference_quotas": 11
+      },
+      {
+        "region": "ap-southeast-1",
+        "models": [
+          "cohere.embed-english-v3",
+          "cohere.embed-multilingual-v3"
+        ],
+        "positive_inference_quotas": [],
+        "zero_inference_quotas": 13
+      },
+      {
+        "region": "ap-southeast-2",
+        "models": [
+          "amazon.titan-embed-image-v1",
+          "amazon.titan-embed-text-v2:0",
+          "cohere.embed-english-v3",
+          "cohere.embed-multilingual-v3"
+        ],
+        "positive_inference_quotas": [],
+        "zero_inference_quotas": 11
+      },
+      {
+        "region": "ca-central-1",
+        "models": [
+          "amazon.titan-embed-image-v1",
+          "amazon.titan-embed-text-v2:0",
+          "cohere.embed-english-v3",
+          "cohere.embed-multilingual-v3"
+        ],
+        "positive_inference_quotas": [],
+        "zero_inference_quotas": 13
+      },
+      {
+        "region": "eu-central-1",
+        "models": [
+          "amazon.titan-embed-text-v1",
+          "amazon.titan-embed-image-v1",
+          "amazon.titan-embed-text-v2:0",
+          "cohere.embed-english-v3",
+          "cohere.embed-multilingual-v3"
+        ],
+        "positive_inference_quotas": [],
+        "zero_inference_quotas": 16
+      },
+      {
+        "region": "eu-north-1",
+        "models": [
+          "amazon.titan-embed-text-v2:0"
+        ],
+        "positive_inference_quotas": [],
+        "zero_inference_quotas": 6
+      },
+      {
+        "region": "eu-west-1",
+        "models": [
+          "cohere.embed-v4:0",
+          "amazon.titan-embed-image-v1",
+          "amazon.titan-embed-text-v2:0",
+          "cohere.embed-english-v3",
+          "cohere.embed-multilingual-v3"
+        ],
+        "positive_inference_quotas": [],
+        "zero_inference_quotas": 17
+      },
+      {
+        "region": "eu-west-2",
+        "models": [
+          "amazon.titan-embed-image-v1",
+          "amazon.titan-embed-text-v2:0",
+          "cohere.embed-english-v3",
+          "cohere.embed-multilingual-v3"
+        ],
+        "positive_inference_quotas": [],
+        "zero_inference_quotas": 13
+      },
+      {
+        "region": "eu-west-3",
+        "models": [
+          "amazon.titan-embed-image-v1",
+          "amazon.titan-embed-text-v2:0",
+          "cohere.embed-english-v3",
+          "cohere.embed-multilingual-v3"
+        ],
+        "positive_inference_quotas": [],
+        "zero_inference_quotas": 14
+      },
+      {
+        "region": "sa-east-1",
+        "models": [
+          "amazon.titan-embed-image-v1",
+          "amazon.titan-embed-text-v2:0",
+          "cohere.embed-english-v3",
+          "cohere.embed-multilingual-v3"
+        ],
+        "positive_inference_quotas": [],
+        "zero_inference_quotas": 13
+      },
+      {
+        "region": "us-east-1",
+        "models": [
+          "amazon.nova-2-multimodal-embeddings-v1:0",
+          "twelvelabs.marengo-embed-3-0-v1:0",
+          "cohere.embed-v4:0",
+          "amazon.titan-embed-g1-text-02",
+          "amazon.titan-embed-text-v1",
+          "amazon.titan-embed-text-v2:0",
+          "amazon.titan-embed-image-v1",
+          "cohere.embed-english-v3",
+          "cohere.embed-multilingual-v3"
+        ],
+        "positive_inference_quotas": [],
+        "zero_inference_quotas": 21
+      },
+      {
+        "region": "us-east-2",
+        "models": [
+          "amazon.titan-embed-text-v2:0"
+        ],
+        "positive_inference_quotas": [],
+        "zero_inference_quotas": 8
+      },
+      {
+        "region": "us-west-1",
+        "models": [],
+        "positive_inference_quotas": [],
+        "zero_inference_quotas": 8
+      },
+      {
+        "region": "us-west-2",
+        "models": [
+          "amazon.titan-embed-g1-text-02",
+          "amazon.titan-embed-text-v1",
+          "amazon.titan-embed-text-v2:0",
+          "amazon.titan-embed-image-v1",
+          "cohere.embed-english-v3",
+          "cohere.embed-multilingual-v3"
+        ],
+        "positive_inference_quotas": [],
+        "zero_inference_quotas": 16
+      }
+    ],
+    "invocation_probes": [
+      {
+        "region": "us-east-1",
+        "model": "amazon.titan-embed-text-v2:0",
+        "status": "error",
+        "code": "ThrottlingException",
+        "message": "Too many requests, please wait before trying again."
+      },
+      {
+        "region": "us-east-1",
+        "model": "amazon.titan-embed-text-v1",
+        "status": "error",
+        "code": "ThrottlingException",
+        "message": "Too many requests, please wait before trying again."
+      },
+      {
+        "region": "us-east-1",
+        "model": "cohere.embed-v4:0",
+        "status": "error",
+        "code": "ThrottlingException",
+        "message": "Too many tokens per day, please wait before trying again."
+      },
+      {
+        "region": "us-east-1",
+        "model": "cohere.embed-english-v3",
+        "status": "error",
+        "code": "ThrottlingException",
+        "message": "Too many tokens, please wait before trying again."
+      },
+      {
+        "region": "us-east-1",
+        "model": "us.cohere.embed-v4:0",
+        "status": "error",
+        "code": "ThrottlingException",
+        "message": "Too many tokens per day, please wait before trying again."
+      },
+      {
+        "region": "us-east-1",
+        "model": "global.cohere.embed-v4:0",
+        "status": "error",
+        "code": "ThrottlingException",
+        "message": "Too many tokens per day, please wait before trying again."
+      },
+      {
+        "region": "us-west-2",
+        "model": "amazon.titan-embed-text-v2:0",
+        "status": "error",
+        "code": "ThrottlingException",
+        "message": "Too many requests, please wait before trying again."
+      },
+      {
+        "region": "us-west-2",
+        "model": "amazon.titan-embed-text-v1",
+        "status": "error",
+        "code": "ThrottlingException",
+        "message": "Too many requests, please wait before trying again."
+      },
+      {
+        "region": "us-west-2",
+        "model": "amazon.titan-embed-g1-text-02",
+        "status": "error",
+        "code": "ThrottlingException",
+        "message": "Too many requests, please wait before trying again."
+      },
+      {
+        "region": "us-west-2",
+        "model": "cohere.embed-english-v3",
+        "status": "error",
+        "code": "ThrottlingException",
+        "message": "Too many tokens, please wait before trying again."
+      },
+      {
+        "region": "us-west-2",
+        "model": "cohere.embed-multilingual-v3",
+        "status": "error",
+        "code": "ThrottlingException",
+        "message": "Too many tokens, please wait before trying again."
+      },
+      {
+        "region": "us-west-2",
+        "model": "us.cohere.embed-v4:0",
+        "status": "error",
+        "code": "ThrottlingException",
+        "message": "Too many tokens per day, please wait before trying again."
+      },
+      {
+        "region": "us-west-2",
+        "model": "global.cohere.embed-v4:0",
+        "status": "error",
+        "code": "ThrottlingException",
+        "message": "Too many tokens per day, please wait before trying again."
+      },
+      {
+        "region": "eu-west-1",
+        "model": "amazon.titan-embed-text-v2:0",
+        "status": "error",
+        "code": "ThrottlingException",
+        "message": "Too many requests, please wait before trying again."
+      },
+      {
+        "region": "eu-west-1",
+        "model": "cohere.embed-v4:0",
+        "status": "error",
+        "code": "ThrottlingException",
+        "message": "Too many tokens per day, please wait before trying again."
+      },
+      {
+        "region": "eu-west-1",
+        "model": "eu.cohere.embed-v4:0",
+        "status": "error",
+        "code": "ThrottlingException",
+        "message": "Too many tokens per day, please wait before trying again."
+      },
+      {
+        "region": "eu-west-1",
+        "model": "global.cohere.embed-v4:0",
+        "status": "error",
+        "code": "ThrottlingException",
+        "message": "Too many tokens per day, please wait before trying again."
+      },
+      {
+        "region": "eu-west-1",
+        "model": "cohere.embed-english-v3",
+        "status": "error",
+        "code": "ThrottlingException",
+        "message": "Too many tokens, please wait before trying again."
+      },
+      {
+        "region": "ap-northeast-1",
+        "model": "amazon.titan-embed-text-v2:0",
+        "status": "error",
+        "code": "AccessDeniedException",
+        "message": "Your account is currently being verified. Verification normally takes less than 2 hours. Until your account is verified, you may not have access to this operation. If you are still receiving this message after more than "
+      },
+      {
+        "region": "ap-northeast-1",
+        "model": "cohere.embed-v4:0",
+        "status": "error",
+        "code": "AccessDeniedException",
+        "message": "Your account is currently being verified. Verification normally takes less than 2 hours. Until your account is verified, you may not have access to this operation. If you are still receiving this message after more than "
+      },
+      {
+        "region": "eu-central-1",
+        "model": "amazon.titan-embed-text-v2:0",
+        "status": "error",
+        "code": "ThrottlingException",
+        "message": "Too many requests, please wait before trying again."
+      },
+      {
+        "region": "eu-central-1",
+        "model": "cohere.embed-multilingual-v3",
+        "status": "error",
+        "code": "ThrottlingException",
+        "message": "Too many tokens, please wait before trying again."
+      }
+    ]
+  },
+  "sagemaker_serverless": {
+    "region": "us-west-2",
+    "reported_endpoint_quota": 50,
+    "reported_total_concurrency_quota": 10,
+    "active_serverless_concurrency_allocated_before_test": 0,
+    "observed_memory_cap_mb": 3072,
+    "memory_cap_evidence": "CloudFormation endpoint creation at 4096 MB failed with ServiceLimitExceeded; AWS reported an account-level 3072 MB limit.",
+    "note": "Positive quotas do not prove that the selected model can be deployed or invoked."
+  }
+}

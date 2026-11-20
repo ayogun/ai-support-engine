@@ -1,0 +1,17 @@
+{
+  "timestamp_utc": "2026-11-18T08:56:56.132051+00:00",
+  "region": "us-west-2",
+  "checks": {
+    "stack_absent": true,
+    "endpoint_absent": true,
+    "endpoint_config_absent": true,
+    "model_absent": true,
+    "vector_bucket_absent": true,
+    "document_bucket_absent": true,
+    "code_bucket_absent": true,
+    "queue_absent": true,
+    "http_api_absent": true
+  },
+  "all_absent": true,
+  "note": "Checks refer only to this owned disposable lab; this is not a billing statement."
+}

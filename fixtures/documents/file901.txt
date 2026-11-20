@@ -1,0 +1,1 @@
+FILE901: CSV imports fail when a file exceeds ten megabytes. Split the upload into smaller CSV files and retry each import.

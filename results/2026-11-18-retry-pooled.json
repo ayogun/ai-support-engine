@@ -1,0 +1,152 @@
+{
+  "workload": {
+    "region": "us-west-2",
+    "question": "Find RETURN301",
+    "expected_document_id": "return301",
+    "top_k": 3,
+    "endpoint_max_concurrency": 1,
+    "concurrency": 3,
+    "rounds_per_block": 5,
+    "pause_between_bursts_seconds": 2,
+    "read_timeout_seconds": "22"
+  },
+  "runs": [
+    {
+      "1": {
+        "attempts": 30,
+        "successes": 13,
+        "outcomes": {
+          "http_error": 17,
+          "success": 13
+        },
+        "http_statuses": {
+          "200": 13,
+          "502": 17
+        },
+        "http_responses": 30,
+        "http_response_p50_ms": 790.4,
+        "http_response_p95_ms": 2567.7,
+        "retrieval_evaluated": 13,
+        "retrieval_hit_at_1": 13,
+        "retrieval_hit_at_3": 13,
+        "retrieval_misses": 0,
+        "success_p50_ms": 874.9,
+        "success_p95_ms": 2567.8
+      },
+      "3": {
+        "attempts": 30,
+        "successes": 30,
+        "outcomes": {
+          "success": 30
+        },
+        "http_statuses": {
+          "200": 30
+        },
+        "http_responses": 30,
+        "http_response_p50_ms": 1332.2,
+        "http_response_p95_ms": 1927.0,
+        "retrieval_evaluated": 30,
+        "retrieval_hit_at_1": 30,
+        "retrieval_hit_at_3": 30,
+        "retrieval_misses": 0,
+        "success_p50_ms": 1332.2,
+        "success_p95_ms": 1927.0
+      }
+    },
+    {
+      "1": {
+        "attempts": 30,
+        "successes": 13,
+        "outcomes": {
+          "http_error": 17,
+          "success": 13
+        },
+        "http_statuses": {
+          "200": 13,
+          "502": 17
+        },
+        "http_responses": 30,
+        "http_response_p50_ms": 789.9,
+        "http_response_p95_ms": 2311.2,
+        "retrieval_evaluated": 13,
+        "retrieval_hit_at_1": 13,
+        "retrieval_hit_at_3": 13,
+        "retrieval_misses": 0,
+        "success_p50_ms": 836.2,
+        "success_p95_ms": 2399.0
+      },
+      "3": {
+        "attempts": 30,
+        "successes": 30,
+        "outcomes": {
+          "success": 30
+        },
+        "http_statuses": {
+          "200": 30
+        },
+        "http_responses": 30,
+        "http_response_p50_ms": 1143.2,
+        "http_response_p95_ms": 2664.5,
+        "retrieval_evaluated": 30,
+        "retrieval_hit_at_1": 30,
+        "retrieval_hit_at_3": 30,
+        "retrieval_misses": 0,
+        "success_p50_ms": 1143.2,
+        "success_p95_ms": 2664.5
+      }
+    }
+  ],
+  "pooled": {
+    "1": {
+      "attempts": 60,
+      "successes": 26,
+      "outcomes": {
+        "http_error": 34,
+        "success": 26
+      },
+      "http_statuses": {
+        "200": 26,
+        "502": 34
+      },
+      "http_responses": 60,
+      "http_response_p50_ms": 789.9,
+      "http_response_p95_ms": 2311.2,
+      "retrieval_evaluated": 26,
+      "retrieval_hit_at_1": 26,
+      "retrieval_hit_at_3": 26,
+      "retrieval_misses": 0,
+      "success_p50_ms": 851.9,
+      "success_p95_ms": 2567.7
+    },
+    "3": {
+      "attempts": 60,
+      "successes": 60,
+      "outcomes": {
+        "success": 60
+      },
+      "http_statuses": {
+        "200": 60
+      },
+      "http_responses": 60,
+      "http_response_p50_ms": 1275.0,
+      "http_response_p95_ms": 2316.2,
+      "retrieval_evaluated": 60,
+      "retrieval_hit_at_1": 60,
+      "retrieval_hit_at_3": 60,
+      "retrieval_misses": 0,
+      "success_p50_ms": 1275.0,
+      "success_p95_ms": 2316.2
+    }
+  },
+  "limitations": "Pooling does not make requests independent or establish production reliability. HTTP-response latency includes errors but excludes requests without an HTTP response; latency of successful requests has a different denominator. Matching workload fields alone cannot prove that all runtime conditions were identical.",
+  "sources": [
+    {
+      "report_file": "2026-11-18-retry-comparison.json",
+      "report_sha256": "eb3c458fc3d26493205f44a4bc11b74064f4679106effe55b5467ac7877593c4"
+    },
+    {
+      "report_file": "2026-11-18-retry-repeat.json",
+      "report_sha256": "3b58468229a8527a8ba575bffda5d4569827374610a2a373ab03502d55531f1d"
+    }
+  ]
+}

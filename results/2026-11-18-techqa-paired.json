@@ -1,0 +1,26 @@
+{
+  "method": "Paired hit@1 differences; resample the same query pairs with replacement, using a fixed seed and percentile endpoints.",
+  "limitations": "These nonrandom, small datasets and constructed candidate pools do not justify generalizing the interval to a production population. Resampling captures query-to-query variation only, not labeling, model, pool-selection, or run-to-run uncertainty.",
+  "comparisons": [
+    {
+      "queries": 100,
+      "first_mode": "vector",
+      "second_mode": "hybrid",
+      "paired_hit_at_1_counts": {
+        "both_hit": 83,
+        "first_only": 1,
+        "second_only": 2,
+        "neither_hit": 14
+      },
+      "second_minus_first_percentage_points": 1.0,
+      "paired_bootstrap_95_percentile_interval_percentage_points": [
+        -2.0,
+        4.0
+      ],
+      "resamples": 10000,
+      "seed": 20261118,
+      "report_file": "2026-11-18-techqa-support.json",
+      "report_sha256": "92eb78e7a7b36d2785a9c44ab96813ff6f1361c484fbae79f482798cdb6b4867"
+    }
+  ]
+}

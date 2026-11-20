@@ -1,0 +1,3492 @@
+{
+  "timestamp_utc": "2026-11-18T08:38:51.892081+00:00",
+  "region": "us-west-2",
+  "dataset": "Author-created synthetic support tickets and questions; not independently labeled",
+  "fixture_sha256": "22017c9436e522b4b97e22c7c35b831cd125276d8d1fafc69b9783cee1926bf1",
+  "document_count": 16,
+  "query_count": 32,
+  "negative_exact_lookups": 8,
+  "top_k": 3,
+  "model": "BAAI/bge-small-en-v1.5",
+  "model_revision": "5c38ec7c405ec4b44b94cc5a9bb96e735b38267a",
+  "model_fingerprint": "d87ec16a17b312babef5966bf482e1979906a141ddefac6215ea84cfdd62b2b0",
+  "construction": "Each synthetic document includes a unique readiness marker, absent from queries; vectors were written directly to a separate index.",
+  "timing_scope": "Sequential direct S3 Vectors calls; excludes model inference and API Gateway.",
+  "limitations": "Small author-written corpus and labels with constructed lookalike IDs; not representative of a production support corpus or independent relevance judgments.",
+  "summary": {
+    "all": {
+      "keyword": {
+        "queries": 32,
+        "hit_at_1": 22,
+        "hit_at_3": 30,
+        "mrr_at_3": 0.8073,
+        "query_ms_median": 270.8,
+        "query_ms_p95": 275.4
+      },
+      "vector": {
+        "queries": 32,
+        "hit_at_1": 21,
+        "hit_at_3": 28,
+        "mrr_at_3": 0.7604,
+        "query_ms_median": 274.4,
+        "query_ms_p95": 302.2
+      },
+      "hybrid": {
+        "queries": 32,
+        "hit_at_1": 24,
+        "hit_at_3": 31,
+        "mrr_at_3": 0.8542,
+        "query_ms_median": 273.4,
+        "query_ms_p95": 315.4
+      }
+    },
+    "exact_identifier": {
+      "keyword": {
+        "queries": 16,
+        "hit_at_1": 10,
+        "hit_at_3": 16,
+        "mrr_at_3": 0.8021,
+        "query_ms_median": 271.2,
+        "query_ms_p95": 275.7
+      },
+      "vector": {
+        "queries": 16,
+        "hit_at_1": 5,
+        "hit_at_3": 12,
+        "mrr_at_3": 0.5208,
+        "query_ms_median": 275.2,
+        "query_ms_p95": 322.8
+      },
+      "hybrid": {
+        "queries": 16,
+        "hit_at_1": 9,
+        "hit_at_3": 15,
+        "mrr_at_3": 0.7396,
+        "query_ms_median": 275.6,
+        "query_ms_p95": 333.0
+      }
+    },
+    "paraphrase": {
+      "keyword": {
+        "queries": 16,
+        "hit_at_1": 12,
+        "hit_at_3": 14,
+        "mrr_at_3": 0.8125,
+        "query_ms_median": 270.5,
+        "query_ms_p95": 274.8
+      },
+      "vector": {
+        "queries": 16,
+        "hit_at_1": 16,
+        "hit_at_3": 16,
+        "mrr_at_3": 1.0,
+        "query_ms_median": 273.4,
+        "query_ms_p95": 302.2
+      },
+      "hybrid": {
+        "queries": 16,
+        "hit_at_1": 15,
+        "hit_at_3": 16,
+        "mrr_at_3": 0.9688,
+        "query_ms_median": 271.2,
+        "query_ms_p95": 291.9
+      }
+    }
+  },
+  "exact_summary": {
+    "positive_correct": 16,
+    "positive_total": 16,
+    "negative_correct": 8,
+    "negative_total": 8
+  },
+  "observations": [
+    {
+      "query_id": "identifier-01",
+      "kind": "exact_identifier",
+      "mode": "keyword",
+      "relevant": [
+        "AUTH-401"
+      ],
+      "returned_ids": [
+        "AUTH.401",
+        "auth-401",
+        "AUTH-401"
+      ],
+      "rank": 3,
+      "query_ms": 267.88,
+      "scores": [
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 3.221619129180908
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 3.1644089221954346
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 2.9545414447784424
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "query_id": "identifier-01",
+      "kind": "exact_identifier",
+      "mode": "vector",
+      "relevant": [
+        "AUTH-401"
+      ],
+      "returned_ids": [
+        "auth-401",
+        "AUTH_401",
+        "AUTH.401"
+      ],
+      "rank": null,
+      "query_ms": 286.29,
+      "scores": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "query_id": "identifier-01",
+      "kind": "exact_identifier",
+      "mode": "hybrid",
+      "relevant": [
+        "AUTH-401"
+      ],
+      "returned_ids": [
+        "auth-401",
+        "AUTH.401",
+        "AUTH_401"
+      ],
+      "rank": null,
+      "query_ms": 268.08,
+      "scores": [
+        {
+          "fused": 0.03306011110544205,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 3.1644089221954346
+            }
+          ],
+          "vectorDistance": 0.2812877893447876
+        },
+        {
+          "fused": 0.03279569745063782,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 3.221619129180908
+            }
+          ],
+          "vectorDistance": 0.37251418828964233
+        },
+        {
+          "fused": 0.016393441706895828,
+          "vectorDistance": 0.35221028327941895
+        }
+      ]
+    },
+    {
+      "query_id": "identifier-02",
+      "kind": "exact_identifier",
+      "mode": "keyword",
+      "relevant": [
+        "AUTH.401"
+      ],
+      "returned_ids": [
+        "AUTH.401",
+        "auth-401",
+        "AUTH-401"
+      ],
+      "rank": 1,
+      "query_ms": 274.02,
+      "scores": [
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 3.221619129180908
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 3.1644089221954346
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 2.9545414447784424
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "query_id": "identifier-02",
+      "kind": "exact_identifier",
+      "mode": "vector",
+      "relevant": [
+        "AUTH.401"
+      ],
+      "returned_ids": [
+        "auth-401",
+        "AUTH_401",
+        "AUTH.401"
+      ],
+      "rank": 3,
+      "query_ms": 270.64,
+      "scores": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "query_id": "identifier-02",
+      "kind": "exact_identifier",
+      "mode": "hybrid",
+      "relevant": [
+        "AUTH.401"
+      ],
+      "returned_ids": [
+        "auth-401",
+        "AUTH.401",
+        "AUTH_401"
+      ],
+      "rank": 2,
+      "query_ms": 269.86,
+      "scores": [
+        {
+          "fused": 0.03306011110544205,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 3.1644089221954346
+            }
+          ],
+          "vectorDistance": 0.2547059655189514
+        },
+        {
+          "fused": 0.03279569745063782,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 3.221619129180908
+            }
+          ],
+          "vectorDistance": 0.35981476306915283
+        },
+        {
+          "fused": 0.016393441706895828,
+          "vectorDistance": 0.34571677446365356
+        }
+      ]
+    },
+    {
+      "query_id": "identifier-03",
+      "kind": "exact_identifier",
+      "mode": "keyword",
+      "relevant": [
+        "AUTH_401"
+      ],
+      "returned_ids": [
+        "AUTH_401"
+      ],
+      "rank": 1,
+      "query_ms": 269.27,
+      "scores": [
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 2.5199413299560547
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "query_id": "identifier-03",
+      "kind": "exact_identifier",
+      "mode": "vector",
+      "relevant": [
+        "AUTH_401"
+      ],
+      "returned_ids": [
+        "auth-401",
+        "AUTH_401",
+        "AUTH.401"
+      ],
+      "rank": 2,
+      "query_ms": 275.69,
+      "scores": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "query_id": "identifier-03",
+      "kind": "exact_identifier",
+      "mode": "hybrid",
+      "relevant": [
+        "AUTH_401"
+      ],
+      "returned_ids": [
+        "AUTH_401",
+        "auth-401",
+        "AUTH.401"
+      ],
+      "rank": 1,
+      "query_ms": 272.82,
+      "scores": [
+        {
+          "fused": 0.03306011110544205,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 2.5199413299560547
+            }
+          ],
+          "vectorDistance": 0.3579583764076233
+        },
+        {
+          "fused": 0.01666666753590107,
+          "vectorDistance": 0.2630494236946106
+        },
+        {
+          "fused": 0.016129031777381897,
+          "vectorDistance": 0.36617398262023926
+        }
+      ]
+    },
+    {
+      "query_id": "identifier-04",
+      "kind": "exact_identifier",
+      "mode": "keyword",
+      "relevant": [
+        "auth-401"
+      ],
+      "returned_ids": [
+        "AUTH.401",
+        "auth-401",
+        "AUTH-401"
+      ],
+      "rank": 2,
+      "query_ms": 267.56,
+      "scores": [
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 3.221619129180908
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 3.1644089221954346
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 2.9545414447784424
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "query_id": "identifier-04",
+      "kind": "exact_identifier",
+      "mode": "vector",
+      "relevant": [
+        "auth-401"
+      ],
+      "returned_ids": [
+        "auth-401",
+        "AUTH_401",
+        "AUTH.401"
+      ],
+      "rank": 1,
+      "query_ms": 266.66,
+      "scores": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "query_id": "identifier-04",
+      "kind": "exact_identifier",
+      "mode": "hybrid",
+      "relevant": [
+        "auth-401"
+      ],
+      "returned_ids": [
+        "auth-401",
+        "AUTH.401",
+        "AUTH_401"
+      ],
+      "rank": 1,
+      "query_ms": 273.06,
+      "scores": [
+        {
+          "fused": 0.03306011110544205,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 3.1644089221954346
+            }
+          ],
+          "vectorDistance": 0.28714120388031006
+        },
+        {
+          "fused": 0.03279569745063782,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 3.221619129180908
+            }
+          ],
+          "vectorDistance": 0.37524521350860596
+        },
+        {
+          "fused": 0.016393441706895828,
+          "vectorDistance": 0.3666464686393738
+        }
+      ]
+    },
+    {
+      "query_id": "identifier-05",
+      "kind": "exact_identifier",
+      "mode": "keyword",
+      "relevant": [
+        "BILL-12"
+      ],
+      "returned_ids": [
+        "BILL-12",
+        "BILL.12",
+        "BILL-012"
+      ],
+      "rank": 1,
+      "query_ms": 267.83,
+      "scores": [
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 3.5012545585632324
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 3.5012545585632324
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 1.5822044610977173
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "query_id": "identifier-05",
+      "kind": "exact_identifier",
+      "mode": "vector",
+      "relevant": [
+        "BILL-12"
+      ],
+      "returned_ids": [
+        "BILL.12",
+        "BILL-12",
+        "BILL-012"
+      ],
+      "rank": 2,
+      "query_ms": 282.31,
+      "scores": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "query_id": "identifier-05",
+      "kind": "exact_identifier",
+      "mode": "hybrid",
+      "relevant": [
+        "BILL-12"
+      ],
+      "returned_ids": [
+        "BILL-12",
+        "BILL.12",
+        "BILL-012"
+      ],
+      "rank": 1,
+      "query_ms": 273.18,
+      "scores": [
+        {
+          "fused": 0.03306011110544205,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 3.5012545585632324
+            }
+          ],
+          "vectorDistance": 0.4232752323150635
+        },
+        {
+          "fused": 0.03306011110544205,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 3.5012545585632324
+            }
+          ],
+          "vectorDistance": 0.36475419998168945
+        },
+        {
+          "fused": 0.032258063554763794,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 1.5822044610977173
+            }
+          ],
+          "vectorDistance": 0.4361230134963989
+        }
+      ]
+    },
+    {
+      "query_id": "identifier-06",
+      "kind": "exact_identifier",
+      "mode": "keyword",
+      "relevant": [
+        "BILL-012"
+      ],
+      "returned_ids": [
+        "BILL-012",
+        "BILL-12",
+        "BILL.12"
+      ],
+      "rank": 1,
+      "query_ms": 266.85,
+      "scores": [
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 4.0126471519470215
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 1.5822044610977173
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 1.5822044610977173
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "query_id": "identifier-06",
+      "kind": "exact_identifier",
+      "mode": "vector",
+      "relevant": [
+        "BILL-012"
+      ],
+      "returned_ids": [
+        "BILL-012",
+        "BILL.12",
+        "BILL-12"
+      ],
+      "rank": 1,
+      "query_ms": 267.28,
+      "scores": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "query_id": "identifier-06",
+      "kind": "exact_identifier",
+      "mode": "hybrid",
+      "relevant": [
+        "BILL-012"
+      ],
+      "returned_ids": [
+        "BILL-012",
+        "BILL-12",
+        "BILL.12"
+      ],
+      "rank": 1,
+      "query_ms": 287.11,
+      "scores": [
+        {
+          "fused": 0.03333333507180214,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 4.0126471519470215
+            }
+          ],
+          "vectorDistance": 0.37676435708999634
+        },
+        {
+          "fused": 0.032522473484277725,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 1.5822044610977173
+            }
+          ],
+          "vectorDistance": 0.39778298139572144
+        },
+        {
+          "fused": 0.032522473484277725,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 1.5822044610977173
+            }
+          ],
+          "vectorDistance": 0.3831738829612732
+        }
+      ]
+    },
+    {
+      "query_id": "identifier-07",
+      "kind": "exact_identifier",
+      "mode": "keyword",
+      "relevant": [
+        "BILL_12"
+      ],
+      "returned_ids": [
+        "BILL_12"
+      ],
+      "rank": 1,
+      "query_ms": 273.47,
+      "scores": [
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 2.4743831157684326
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "query_id": "identifier-07",
+      "kind": "exact_identifier",
+      "mode": "vector",
+      "relevant": [
+        "BILL_12"
+      ],
+      "returned_ids": [
+        "BILL.12",
+        "BILL-12",
+        "BILL-012"
+      ],
+      "rank": null,
+      "query_ms": 287.65,
+      "scores": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "query_id": "identifier-07",
+      "kind": "exact_identifier",
+      "mode": "hybrid",
+      "relevant": [
+        "BILL_12"
+      ],
+      "returned_ids": [
+        "BILL.12",
+        "BILL_12",
+        "BILL-12"
+      ],
+      "rank": 2,
+      "query_ms": 275.59,
+      "scores": [
+        {
+          "fused": 0.01666666753590107,
+          "vectorDistance": 0.39411890506744385
+        },
+        {
+          "fused": 0.01666666753590107,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 2.4743831157684326
+            }
+          ]
+        },
+        {
+          "fused": 0.016393441706895828,
+          "vectorDistance": 0.4087396264076233
+        }
+      ]
+    },
+    {
+      "query_id": "identifier-08",
+      "kind": "exact_identifier",
+      "mode": "keyword",
+      "relevant": [
+        "BILL.12"
+      ],
+      "returned_ids": [
+        "BILL-12",
+        "BILL.12",
+        "BILL-012"
+      ],
+      "rank": 2,
+      "query_ms": 274.04,
+      "scores": [
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 3.5012545585632324
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 3.5012545585632324
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 1.5822044610977173
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "query_id": "identifier-08",
+      "kind": "exact_identifier",
+      "mode": "vector",
+      "relevant": [
+        "BILL.12"
+      ],
+      "returned_ids": [
+        "BILL.12",
+        "BILL-12",
+        "BILL_12"
+      ],
+      "rank": 1,
+      "query_ms": 294.38,
+      "scores": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "query_id": "identifier-08",
+      "kind": "exact_identifier",
+      "mode": "hybrid",
+      "relevant": [
+        "BILL.12"
+      ],
+      "returned_ids": [
+        "BILL-12",
+        "BILL.12",
+        "BILL-012"
+      ],
+      "rank": 2,
+      "query_ms": 265.02,
+      "scores": [
+        {
+          "fused": 0.03306011110544205,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 3.5012545585632324
+            }
+          ],
+          "vectorDistance": 0.4569014310836792
+        },
+        {
+          "fused": 0.03306011110544205,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 3.5012545585632324
+            }
+          ],
+          "vectorDistance": 0.39076852798461914
+        },
+        {
+          "fused": 0.016129031777381897,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 1.5822044610977173
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "query_id": "identifier-09",
+      "kind": "exact_identifier",
+      "mode": "keyword",
+      "relevant": [
+        "SHIP-1.0"
+      ],
+      "returned_ids": [
+        "ship-1.0",
+        "SHIP-1.0",
+        "SHIP-10"
+      ],
+      "rank": 2,
+      "query_ms": 272.39,
+      "scores": [
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 3.432526111602783
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 3.034139394760132
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 1.3073943853378296
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "query_id": "identifier-09",
+      "kind": "exact_identifier",
+      "mode": "vector",
+      "relevant": [
+        "SHIP-1.0"
+      ],
+      "returned_ids": [
+        "SHIP-1.0",
+        "ship-1.0",
+        "SHIP-1_0"
+      ],
+      "rank": 1,
+      "query_ms": 265.53,
+      "scores": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "query_id": "identifier-09",
+      "kind": "exact_identifier",
+      "mode": "hybrid",
+      "relevant": [
+        "SHIP-1.0"
+      ],
+      "returned_ids": [
+        "ship-1.0",
+        "SHIP-1.0",
+        "SHIP-10"
+      ],
+      "rank": 2,
+      "query_ms": 276.16,
+      "scores": [
+        {
+          "fused": 0.03306011110544205,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 3.432526111602783
+            }
+          ],
+          "vectorDistance": 0.3464077115058899
+        },
+        {
+          "fused": 0.03306011110544205,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 3.034139394760132
+            }
+          ],
+          "vectorDistance": 0.33391112089157104
+        },
+        {
+          "fused": 0.016129031777381897,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 1.3073943853378296
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "query_id": "identifier-10",
+      "kind": "exact_identifier",
+      "mode": "keyword",
+      "relevant": [
+        "SHIP-1_0"
+      ],
+      "returned_ids": [
+        "SHIP-1_0",
+        "ship-1.0",
+        "SHIP-10"
+      ],
+      "rank": 1,
+      "query_ms": 273.83,
+      "scores": [
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 3.6320574283599854
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 1.4054871797561646
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 1.3073943853378296
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "query_id": "identifier-10",
+      "kind": "exact_identifier",
+      "mode": "vector",
+      "relevant": [
+        "SHIP-1_0"
+      ],
+      "returned_ids": [
+        "SHIP-1.0",
+        "SHIP-1_0",
+        "ship-1.0"
+      ],
+      "rank": 2,
+      "query_ms": 276.02,
+      "scores": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "query_id": "identifier-10",
+      "kind": "exact_identifier",
+      "mode": "hybrid",
+      "relevant": [
+        "SHIP-1_0"
+      ],
+      "returned_ids": [
+        "SHIP-1_0",
+        "ship-1.0",
+        "SHIP-1.0"
+      ],
+      "rank": 1,
+      "query_ms": 284.49,
+      "scores": [
+        {
+          "fused": 0.03306011110544205,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 3.6320574283599854
+            }
+          ],
+          "vectorDistance": 0.34369176626205444
+        },
+        {
+          "fused": 0.032522473484277725,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 1.4054871797561646
+            }
+          ],
+          "vectorDistance": 0.36742472648620605
+        },
+        {
+          "fused": 0.01666666753590107,
+          "vectorDistance": 0.3188518285751343
+        }
+      ]
+    },
+    {
+      "query_id": "identifier-11",
+      "kind": "exact_identifier",
+      "mode": "keyword",
+      "relevant": [
+        "SHIP-10"
+      ],
+      "returned_ids": [
+        "SHIP-10",
+        "ship-1.0",
+        "SHIP-1_0"
+      ],
+      "rank": 1,
+      "query_ms": 275.71,
+      "scores": [
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 3.695430278778076
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 1.4054871797561646
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 1.2849738597869873
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "query_id": "identifier-11",
+      "kind": "exact_identifier",
+      "mode": "vector",
+      "relevant": [
+        "SHIP-10"
+      ],
+      "returned_ids": [
+        "SHIP-1_0",
+        "SHIP-10",
+        "SHIP-1.0"
+      ],
+      "rank": 2,
+      "query_ms": 270.35,
+      "scores": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "query_id": "identifier-11",
+      "kind": "exact_identifier",
+      "mode": "hybrid",
+      "relevant": [
+        "SHIP-10"
+      ],
+      "returned_ids": [
+        "SHIP-10",
+        "SHIP-1_0",
+        "ship-1.0"
+      ],
+      "rank": 1,
+      "query_ms": 290.11,
+      "scores": [
+        {
+          "fused": 0.03306011110544205,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 3.695430278778076
+            }
+          ],
+          "vectorDistance": 0.4180259108543396
+        },
+        {
+          "fused": 0.03279569745063782,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 1.2849738597869873
+            }
+          ],
+          "vectorDistance": 0.41674137115478516
+        },
+        {
+          "fused": 0.016393441706895828,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 1.4054871797561646
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "query_id": "identifier-12",
+      "kind": "exact_identifier",
+      "mode": "keyword",
+      "relevant": [
+        "ship-1.0"
+      ],
+      "returned_ids": [
+        "ship-1.0",
+        "SHIP-1.0",
+        "SHIP-10"
+      ],
+      "rank": 1,
+      "query_ms": 275.38,
+      "scores": [
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 3.432526111602783
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 3.034139394760132
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 1.3073943853378296
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "query_id": "identifier-12",
+      "kind": "exact_identifier",
+      "mode": "vector",
+      "relevant": [
+        "ship-1.0"
+      ],
+      "returned_ids": [
+        "SHIP-1.0",
+        "ship-1.0",
+        "SHIP-1_0"
+      ],
+      "rank": 2,
+      "query_ms": 295.18,
+      "scores": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "query_id": "identifier-12",
+      "kind": "exact_identifier",
+      "mode": "hybrid",
+      "relevant": [
+        "ship-1.0"
+      ],
+      "returned_ids": [
+        "ship-1.0",
+        "SHIP-1.0",
+        "SHIP-10"
+      ],
+      "rank": 1,
+      "query_ms": 289.35,
+      "scores": [
+        {
+          "fused": 0.03306011110544205,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 3.432526111602783
+            }
+          ],
+          "vectorDistance": 0.3464077115058899
+        },
+        {
+          "fused": 0.03306011110544205,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 3.034139394760132
+            }
+          ],
+          "vectorDistance": 0.33391112089157104
+        },
+        {
+          "fused": 0.016129031777381897,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 1.3073943853378296
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "query_id": "identifier-13",
+      "kind": "exact_identifier",
+      "mode": "keyword",
+      "relevant": [
+        "API-E500"
+      ],
+      "returned_ids": [
+        "api-e500",
+        "API-E500",
+        "API_E500"
+      ],
+      "rank": 2,
+      "query_ms": 269.76,
+      "scores": [
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 4.919221878051758
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 4.218905925750732
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 1.610809564590454
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "query_id": "identifier-13",
+      "kind": "exact_identifier",
+      "mode": "vector",
+      "relevant": [
+        "API-E500"
+      ],
+      "returned_ids": [
+        "API_E500",
+        "API-E500",
+        "auth-401"
+      ],
+      "rank": 2,
+      "query_ms": 270.72,
+      "scores": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "query_id": "identifier-13",
+      "kind": "exact_identifier",
+      "mode": "hybrid",
+      "relevant": [
+        "API-E500"
+      ],
+      "returned_ids": [
+        "API_E500",
+        "API-E500",
+        "api-e500"
+      ],
+      "rank": 2,
+      "query_ms": 333.01,
+      "scores": [
+        {
+          "fused": 0.03279569745063782,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 1.610809564590454
+            }
+          ],
+          "vectorDistance": 0.3326042890548706
+        },
+        {
+          "fused": 0.032786883413791656,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 4.218905925750732
+            }
+          ],
+          "vectorDistance": 0.3496468663215637
+        },
+        {
+          "fused": 0.01666666753590107,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 4.919221878051758
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "query_id": "identifier-14",
+      "kind": "exact_identifier",
+      "mode": "keyword",
+      "relevant": [
+        "API_E500"
+      ],
+      "returned_ids": [
+        "API_E500"
+      ],
+      "rank": 1,
+      "query_ms": 270.78,
+      "scores": [
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 2.4743831157684326
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "query_id": "identifier-14",
+      "kind": "exact_identifier",
+      "mode": "vector",
+      "relevant": [
+        "API_E500"
+      ],
+      "returned_ids": [
+        "API_E500",
+        "API-E500",
+        "auth-401"
+      ],
+      "rank": 1,
+      "query_ms": 322.78,
+      "scores": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "query_id": "identifier-14",
+      "kind": "exact_identifier",
+      "mode": "hybrid",
+      "relevant": [
+        "API_E500"
+      ],
+      "returned_ids": [
+        "API_E500",
+        "API-E500",
+        "auth-401"
+      ],
+      "rank": 1,
+      "query_ms": 315.39,
+      "scores": [
+        {
+          "fused": 0.03333333507180214,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 2.4743831157684326
+            }
+          ],
+          "vectorDistance": 0.31438636779785156
+        },
+        {
+          "fused": 0.016393441706895828,
+          "vectorDistance": 0.33758479356765747
+        },
+        {
+          "fused": 0.016129031777381897,
+          "vectorDistance": 0.38814955949783325
+        }
+      ]
+    },
+    {
+      "query_id": "identifier-15",
+      "kind": "exact_identifier",
+      "mode": "keyword",
+      "relevant": [
+        "API.E500"
+      ],
+      "returned_ids": [
+        "API.E500"
+      ],
+      "rank": 1,
+      "query_ms": 271.72,
+      "scores": [
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 2.388036012649536
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "query_id": "identifier-15",
+      "kind": "exact_identifier",
+      "mode": "vector",
+      "relevant": [
+        "API.E500"
+      ],
+      "returned_ids": [
+        "API_E500",
+        "API-E500",
+        "auth-401"
+      ],
+      "rank": null,
+      "query_ms": 274.73,
+      "scores": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "query_id": "identifier-15",
+      "kind": "exact_identifier",
+      "mode": "hybrid",
+      "relevant": [
+        "API.E500"
+      ],
+      "returned_ids": [
+        "API.E500",
+        "API_E500",
+        "API-E500"
+      ],
+      "rank": 1,
+      "query_ms": 275.59,
+      "scores": [
+        {
+          "fused": 0.01666666753590107,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 2.388036012649536
+            }
+          ]
+        },
+        {
+          "fused": 0.01666666753590107,
+          "vectorDistance": 0.33062320947647095
+        },
+        {
+          "fused": 0.016393441706895828,
+          "vectorDistance": 0.3353184461593628
+        }
+      ]
+    },
+    {
+      "query_id": "identifier-16",
+      "kind": "exact_identifier",
+      "mode": "keyword",
+      "relevant": [
+        "api-e500"
+      ],
+      "returned_ids": [
+        "API-E500",
+        "api-e500",
+        "API_E500"
+      ],
+      "rank": 2,
+      "query_ms": 266.87,
+      "scores": [
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 4.218905925750732
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 3.5645546913146973
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 1.610809564590454
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "query_id": "identifier-16",
+      "kind": "exact_identifier",
+      "mode": "vector",
+      "relevant": [
+        "api-e500"
+      ],
+      "returned_ids": [
+        "API_E500",
+        "API-E500",
+        "auth-401"
+      ],
+      "rank": null,
+      "query_ms": 273.52,
+      "scores": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "query_id": "identifier-16",
+      "kind": "exact_identifier",
+      "mode": "hybrid",
+      "relevant": [
+        "api-e500"
+      ],
+      "returned_ids": [
+        "API-E500",
+        "API_E500",
+        "api-e500"
+      ],
+      "rank": 3,
+      "query_ms": 265.23,
+      "scores": [
+        {
+          "fused": 0.03306011110544205,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 4.218905925750732
+            }
+          ],
+          "vectorDistance": 0.36234551668167114
+        },
+        {
+          "fused": 0.03279569745063782,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 1.610809564590454
+            }
+          ],
+          "vectorDistance": 0.33500248193740845
+        },
+        {
+          "fused": 0.016393441706895828,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 3.5645546913146973
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "query_id": "support-01",
+      "kind": "paraphrase",
+      "mode": "keyword",
+      "relevant": [
+        "AUTH-401"
+      ],
+      "returned_ids": [
+        "AUTH-401",
+        "SHIP-1.0",
+        "auth-401"
+      ],
+      "rank": 1,
+      "query_ms": 273.16,
+      "scores": [
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 4.784255027770996
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 3.511615753173828
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 2.4304425716400146
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "query_id": "support-01",
+      "kind": "paraphrase",
+      "mode": "vector",
+      "relevant": [
+        "AUTH-401"
+      ],
+      "returned_ids": [
+        "AUTH-401",
+        "AUTH_401",
+        "API.E500"
+      ],
+      "rank": 1,
+      "query_ms": 288.88,
+      "scores": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "query_id": "support-01",
+      "kind": "paraphrase",
+      "mode": "hybrid",
+      "relevant": [
+        "AUTH-401"
+      ],
+      "returned_ids": [
+        "AUTH-401",
+        "SHIP-1.0",
+        "AUTH_401"
+      ],
+      "rank": 1,
+      "query_ms": 291.87,
+      "scores": [
+        {
+          "fused": 0.03333333507180214,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 4.784255027770996
+            }
+          ],
+          "vectorDistance": 0.3088061809539795
+        },
+        {
+          "fused": 0.016393441706895828,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 3.511615753173828
+            }
+          ]
+        },
+        {
+          "fused": 0.016393441706895828,
+          "vectorDistance": 0.4122883677482605
+        }
+      ]
+    },
+    {
+      "query_id": "support-02",
+      "kind": "paraphrase",
+      "mode": "keyword",
+      "relevant": [
+        "AUTH.401"
+      ],
+      "returned_ids": [
+        "AUTH.401",
+        "SHIP-1.0",
+        "AUTH-401"
+      ],
+      "rank": 1,
+      "query_ms": 270.88,
+      "scores": [
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 5.856358528137207
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 3.167897939682007
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 2.2692525386810303
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "query_id": "support-02",
+      "kind": "paraphrase",
+      "mode": "vector",
+      "relevant": [
+        "AUTH.401"
+      ],
+      "returned_ids": [
+        "AUTH.401",
+        "API.E500",
+        "BILL-12"
+      ],
+      "rank": 1,
+      "query_ms": 302.24,
+      "scores": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "query_id": "support-02",
+      "kind": "paraphrase",
+      "mode": "hybrid",
+      "relevant": [
+        "AUTH.401"
+      ],
+      "returned_ids": [
+        "AUTH.401",
+        "API.E500",
+        "SHIP-1.0"
+      ],
+      "rank": 1,
+      "query_ms": 274.4,
+      "scores": [
+        {
+          "fused": 0.03333333507180214,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 5.856358528137207
+            }
+          ],
+          "vectorDistance": 0.19616472721099854
+        },
+        {
+          "fused": 0.016393441706895828,
+          "vectorDistance": 0.38237959146499634
+        },
+        {
+          "fused": 0.016393441706895828,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 3.167897939682007
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "query_id": "support-03",
+      "kind": "paraphrase",
+      "mode": "keyword",
+      "relevant": [
+        "AUTH_401"
+      ],
+      "returned_ids": [
+        "AUTH_401",
+        "AUTH-401",
+        "BILL.12"
+      ],
+      "rank": 1,
+      "query_ms": 265.51,
+      "scores": [
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 5.668842792510986
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 4.992947578430176
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 4.568373680114746
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "query_id": "support-03",
+      "kind": "paraphrase",
+      "mode": "vector",
+      "relevant": [
+        "AUTH_401"
+      ],
+      "returned_ids": [
+        "AUTH_401",
+        "AUTH-401",
+        "AUTH.401"
+      ],
+      "rank": 1,
+      "query_ms": 297.78,
+      "scores": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "query_id": "support-03",
+      "kind": "paraphrase",
+      "mode": "hybrid",
+      "relevant": [
+        "AUTH_401"
+      ],
+      "returned_ids": [
+        "AUTH_401",
+        "AUTH-401",
+        "BILL.12"
+      ],
+      "rank": 1,
+      "query_ms": 267.89,
+      "scores": [
+        {
+          "fused": 0.03333333507180214,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 5.668842792510986
+            }
+          ],
+          "vectorDistance": 0.25149285793304443
+        },
+        {
+          "fused": 0.032786883413791656,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 4.992947578430176
+            }
+          ],
+          "vectorDistance": 0.3483874201774597
+        },
+        {
+          "fused": 0.016129031777381897,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 4.568373680114746
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "query_id": "support-04",
+      "kind": "paraphrase",
+      "mode": "keyword",
+      "relevant": [
+        "auth-401"
+      ],
+      "returned_ids": [
+        "auth-401",
+        "API_E500",
+        "AUTH.401"
+      ],
+      "rank": 1,
+      "query_ms": 265.34,
+      "scores": [
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 9.60924243927002
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 1.9537450075149536
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 1.9537450075149536
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "query_id": "support-04",
+      "kind": "paraphrase",
+      "mode": "vector",
+      "relevant": [
+        "auth-401"
+      ],
+      "returned_ids": [
+        "auth-401",
+        "BILL_12",
+        "BILL-12"
+      ],
+      "rank": 1,
+      "query_ms": 274.45,
+      "scores": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "query_id": "support-04",
+      "kind": "paraphrase",
+      "mode": "hybrid",
+      "relevant": [
+        "auth-401"
+      ],
+      "returned_ids": [
+        "auth-401",
+        "API_E500",
+        "BILL_12"
+      ],
+      "rank": 1,
+      "query_ms": 287.3,
+      "scores": [
+        {
+          "fused": 0.03333333507180214,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 9.60924243927002
+            }
+          ],
+          "vectorDistance": 0.29675477743148804
+        },
+        {
+          "fused": 0.016393441706895828,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 1.9537450075149536
+            }
+          ]
+        },
+        {
+          "fused": 0.016393441706895828,
+          "vectorDistance": 0.3915335536003113
+        }
+      ]
+    },
+    {
+      "query_id": "support-05",
+      "kind": "paraphrase",
+      "mode": "keyword",
+      "relevant": [
+        "BILL-12"
+      ],
+      "returned_ids": [
+        "BILL-12",
+        "SHIP-1_0",
+        "BILL-012"
+      ],
+      "rank": 1,
+      "query_ms": 272.04,
+      "scores": [
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 9.692750930786133
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 4.666142463684082
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 2.912815570831299
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "query_id": "support-05",
+      "kind": "paraphrase",
+      "mode": "vector",
+      "relevant": [
+        "BILL-12"
+      ],
+      "returned_ids": [
+        "BILL-12",
+        "BILL-012",
+        "BILL_12"
+      ],
+      "rank": 1,
+      "query_ms": 269.36,
+      "scores": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "query_id": "support-05",
+      "kind": "paraphrase",
+      "mode": "hybrid",
+      "relevant": [
+        "BILL-12"
+      ],
+      "returned_ids": [
+        "BILL-12",
+        "BILL-012",
+        "SHIP-1_0"
+      ],
+      "rank": 1,
+      "query_ms": 271.39,
+      "scores": [
+        {
+          "fused": 0.03333333507180214,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 9.692750930786133
+            }
+          ],
+          "vectorDistance": 0.297063946723938
+        },
+        {
+          "fused": 0.032522473484277725,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 2.912815570831299
+            }
+          ],
+          "vectorDistance": 0.3368224501609802
+        },
+        {
+          "fused": 0.016393441706895828,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 4.666142463684082
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "query_id": "support-06",
+      "kind": "paraphrase",
+      "mode": "keyword",
+      "relevant": [
+        "BILL-012"
+      ],
+      "returned_ids": [
+        "BILL-012",
+        "BILL.12",
+        "auth-401"
+      ],
+      "rank": 1,
+      "query_ms": 273.59,
+      "scores": [
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 8.344381332397461
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 2.710869312286377
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 2.4014229774475098
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "query_id": "support-06",
+      "kind": "paraphrase",
+      "mode": "vector",
+      "relevant": [
+        "BILL-012"
+      ],
+      "returned_ids": [
+        "BILL-012",
+        "BILL_12",
+        "BILL-12"
+      ],
+      "rank": 1,
+      "query_ms": 268.31,
+      "scores": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "query_id": "support-06",
+      "kind": "paraphrase",
+      "mode": "hybrid",
+      "relevant": [
+        "BILL-012"
+      ],
+      "returned_ids": [
+        "BILL-012",
+        "BILL.12",
+        "BILL_12"
+      ],
+      "rank": 1,
+      "query_ms": 274.55,
+      "scores": [
+        {
+          "fused": 0.03333333507180214,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 8.344381332397461
+            }
+          ],
+          "vectorDistance": 0.18825417757034302
+        },
+        {
+          "fused": 0.016393441706895828,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 2.710869312286377
+            }
+          ]
+        },
+        {
+          "fused": 0.016393441706895828,
+          "vectorDistance": 0.3223334550857544
+        }
+      ]
+    },
+    {
+      "query_id": "support-07",
+      "kind": "paraphrase",
+      "mode": "keyword",
+      "relevant": [
+        "BILL_12"
+      ],
+      "returned_ids": [
+        "AUTH.401",
+        "BILL_12",
+        "auth-401"
+      ],
+      "rank": 2,
+      "query_ms": 271.44,
+      "scores": [
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 4.649713516235352
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 2.922820806503296
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 2.4304425716400146
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "query_id": "support-07",
+      "kind": "paraphrase",
+      "mode": "vector",
+      "relevant": [
+        "BILL_12"
+      ],
+      "returned_ids": [
+        "BILL_12",
+        "AUTH.401",
+        "BILL-12"
+      ],
+      "rank": 1,
+      "query_ms": 274.4,
+      "scores": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "query_id": "support-07",
+      "kind": "paraphrase",
+      "mode": "hybrid",
+      "relevant": [
+        "BILL_12"
+      ],
+      "returned_ids": [
+        "BILL_12",
+        "AUTH.401",
+        "BILL-12"
+      ],
+      "rank": 1,
+      "query_ms": 271.02,
+      "scores": [
+        {
+          "fused": 0.03306011110544205,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 2.922820806503296
+            }
+          ],
+          "vectorDistance": 0.30669379234313965
+        },
+        {
+          "fused": 0.03306011110544205,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 4.649713516235352
+            }
+          ],
+          "vectorDistance": 0.40055030584335327
+        },
+        {
+          "fused": 0.016129031777381897,
+          "vectorDistance": 0.4075521230697632
+        }
+      ]
+    },
+    {
+      "query_id": "support-08",
+      "kind": "paraphrase",
+      "mode": "keyword",
+      "relevant": [
+        "BILL.12"
+      ],
+      "returned_ids": [
+        "BILL.12"
+      ],
+      "rank": 1,
+      "query_ms": 273.3,
+      "scores": [
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 4.860885143280029
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "query_id": "support-08",
+      "kind": "paraphrase",
+      "mode": "vector",
+      "relevant": [
+        "BILL.12"
+      ],
+      "returned_ids": [
+        "BILL.12",
+        "ship-1.0",
+        "BILL-012"
+      ],
+      "rank": 1,
+      "query_ms": 272.33,
+      "scores": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "query_id": "support-08",
+      "kind": "paraphrase",
+      "mode": "hybrid",
+      "relevant": [
+        "BILL.12"
+      ],
+      "returned_ids": [
+        "BILL.12",
+        "ship-1.0",
+        "BILL-012"
+      ],
+      "rank": 1,
+      "query_ms": 270.37,
+      "scores": [
+        {
+          "fused": 0.03333333507180214,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 4.860885143280029
+            }
+          ],
+          "vectorDistance": 0.23957467079162598
+        },
+        {
+          "fused": 0.016393441706895828,
+          "vectorDistance": 0.32932013273239136
+        },
+        {
+          "fused": 0.016129031777381897,
+          "vectorDistance": 0.3642486333847046
+        }
+      ]
+    },
+    {
+      "query_id": "support-09",
+      "kind": "paraphrase",
+      "mode": "keyword",
+      "relevant": [
+        "SHIP-1.0"
+      ],
+      "returned_ids": [
+        "SHIP-1.0",
+        "api-e500",
+        "SHIP-10"
+      ],
+      "rank": 1,
+      "query_ms": 270.11,
+      "scores": [
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 3.511615753173828
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 1.5762525796890259
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 1.574700117111206
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "query_id": "support-09",
+      "kind": "paraphrase",
+      "mode": "vector",
+      "relevant": [
+        "SHIP-1.0"
+      ],
+      "returned_ids": [
+        "SHIP-1.0",
+        "ship-1.0",
+        "SHIP-10"
+      ],
+      "rank": 1,
+      "query_ms": 270.55,
+      "scores": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "query_id": "support-09",
+      "kind": "paraphrase",
+      "mode": "hybrid",
+      "relevant": [
+        "SHIP-1.0"
+      ],
+      "returned_ids": [
+        "SHIP-1.0",
+        "SHIP-10",
+        "api-e500"
+      ],
+      "rank": 1,
+      "query_ms": 269.37,
+      "scores": [
+        {
+          "fused": 0.03333333507180214,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 3.511615753173828
+            }
+          ],
+          "vectorDistance": 0.3332453966140747
+        },
+        {
+          "fused": 0.032258063554763794,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 1.574700117111206
+            }
+          ],
+          "vectorDistance": 0.39886975288391113
+        },
+        {
+          "fused": 0.016393441706895828,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 1.5762525796890259
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "query_id": "support-10",
+      "kind": "paraphrase",
+      "mode": "keyword",
+      "relevant": [
+        "SHIP-1_0"
+      ],
+      "returned_ids": [
+        "SHIP-1_0",
+        "SHIP-1.0",
+        "AUTH-401"
+      ],
+      "rank": 1,
+      "query_ms": 269.89,
+      "scores": [
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 3.4747657775878906
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 3.034139394760132
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 2.7236950397491455
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "query_id": "support-10",
+      "kind": "paraphrase",
+      "mode": "vector",
+      "relevant": [
+        "SHIP-1_0"
+      ],
+      "returned_ids": [
+        "SHIP-1_0",
+        "SHIP-1.0",
+        "ship-1.0"
+      ],
+      "rank": 1,
+      "query_ms": 291.86,
+      "scores": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "query_id": "support-10",
+      "kind": "paraphrase",
+      "mode": "hybrid",
+      "relevant": [
+        "SHIP-1_0"
+      ],
+      "returned_ids": [
+        "SHIP-1_0",
+        "SHIP-1.0",
+        "AUTH-401"
+      ],
+      "rank": 1,
+      "query_ms": 269.52,
+      "scores": [
+        {
+          "fused": 0.03333333507180214,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 3.4747657775878906
+            }
+          ],
+          "vectorDistance": 0.3104811906814575
+        },
+        {
+          "fused": 0.032786883413791656,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 3.034139394760132
+            }
+          ],
+          "vectorDistance": 0.3278387188911438
+        },
+        {
+          "fused": 0.016129031777381897,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 2.7236950397491455
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "query_id": "support-11",
+      "kind": "paraphrase",
+      "mode": "keyword",
+      "relevant": [
+        "SHIP-10"
+      ],
+      "returned_ids": [
+        "SHIP-10",
+        "SHIP-1.0",
+        "api-e500"
+      ],
+      "rank": 1,
+      "query_ms": 264.39,
+      "scores": [
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 14.024077415466309
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 3.034139394760132
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 2.9479799270629883
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "query_id": "support-11",
+      "kind": "paraphrase",
+      "mode": "vector",
+      "relevant": [
+        "SHIP-10"
+      ],
+      "returned_ids": [
+        "SHIP-10",
+        "ship-1.0",
+        "SHIP-1_0"
+      ],
+      "rank": 1,
+      "query_ms": 267.15,
+      "scores": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "query_id": "support-11",
+      "kind": "paraphrase",
+      "mode": "hybrid",
+      "relevant": [
+        "SHIP-10"
+      ],
+      "returned_ids": [
+        "SHIP-10",
+        "ship-1.0",
+        "SHIP-1.0"
+      ],
+      "rank": 1,
+      "query_ms": 268.7,
+      "scores": [
+        {
+          "fused": 0.03333333507180214,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 14.024077415466309
+            }
+          ],
+          "vectorDistance": 0.15521138906478882
+        },
+        {
+          "fused": 0.016393441706895828,
+          "vectorDistance": 0.32057952880859375
+        },
+        {
+          "fused": 0.016393441706895828,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 3.034139394760132
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "query_id": "support-12",
+      "kind": "paraphrase",
+      "mode": "keyword",
+      "relevant": [
+        "ship-1.0"
+      ],
+      "returned_ids": [
+        "ship-1.0",
+        "SHIP-1_0",
+        "BILL_12"
+      ],
+      "rank": 1,
+      "query_ms": 267.92,
+      "scores": [
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 5.0062150955200195
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 3.351870059967041
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 2.5869975090026855
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "query_id": "support-12",
+      "kind": "paraphrase",
+      "mode": "vector",
+      "relevant": [
+        "ship-1.0"
+      ],
+      "returned_ids": [
+        "ship-1.0",
+        "BILL-012",
+        "SHIP-1.0"
+      ],
+      "rank": 1,
+      "query_ms": 271.3,
+      "scores": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "query_id": "support-12",
+      "kind": "paraphrase",
+      "mode": "hybrid",
+      "relevant": [
+        "ship-1.0"
+      ],
+      "returned_ids": [
+        "ship-1.0",
+        "BILL-012",
+        "SHIP-1_0"
+      ],
+      "rank": 1,
+      "query_ms": 273.64,
+      "scores": [
+        {
+          "fused": 0.03333333507180214,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 5.0062150955200195
+            }
+          ],
+          "vectorDistance": 0.3075230121612549
+        },
+        {
+          "fused": 0.016393441706895828,
+          "vectorDistance": 0.4002307653427124
+        },
+        {
+          "fused": 0.016393441706895828,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 3.351870059967041
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "query_id": "support-13",
+      "kind": "paraphrase",
+      "mode": "keyword",
+      "relevant": [
+        "API-E500"
+      ],
+      "returned_ids": [
+        "ship-1.0",
+        "API-E500",
+        "BILL-012"
+      ],
+      "rank": 2,
+      "query_ms": 274.79,
+      "scores": [
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 3.076725482940674
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 3.0200769901275635
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 1.792750358581543
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "query_id": "support-13",
+      "kind": "paraphrase",
+      "mode": "vector",
+      "relevant": [
+        "API-E500"
+      ],
+      "returned_ids": [
+        "API-E500",
+        "BILL_12",
+        "API.E500"
+      ],
+      "rank": 1,
+      "query_ms": 274.66,
+      "scores": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "query_id": "support-13",
+      "kind": "paraphrase",
+      "mode": "hybrid",
+      "relevant": [
+        "API-E500"
+      ],
+      "returned_ids": [
+        "API-E500",
+        "ship-1.0",
+        "BILL_12"
+      ],
+      "rank": 1,
+      "query_ms": 268.99,
+      "scores": [
+        {
+          "fused": 0.03306011110544205,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 3.0200769901275635
+            }
+          ],
+          "vectorDistance": 0.28888213634490967
+        },
+        {
+          "fused": 0.01666666753590107,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 3.076725482940674
+            }
+          ]
+        },
+        {
+          "fused": 0.016393441706895828,
+          "vectorDistance": 0.3658640384674072
+        }
+      ]
+    },
+    {
+      "query_id": "support-14",
+      "kind": "paraphrase",
+      "mode": "keyword",
+      "relevant": [
+        "API_E500"
+      ],
+      "returned_ids": [
+        "API.E500",
+        "auth-401",
+        "BILL_12"
+      ],
+      "rank": null,
+      "query_ms": 272.05,
+      "scores": [
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 4.219799041748047
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 2.9128153324127197
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 1.8936870098114014
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "query_id": "support-14",
+      "kind": "paraphrase",
+      "mode": "vector",
+      "relevant": [
+        "API_E500"
+      ],
+      "returned_ids": [
+        "API_E500",
+        "API-E500",
+        "API.E500"
+      ],
+      "rank": 1,
+      "query_ms": 263.3,
+      "scores": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "query_id": "support-14",
+      "kind": "paraphrase",
+      "mode": "hybrid",
+      "relevant": [
+        "API_E500"
+      ],
+      "returned_ids": [
+        "API.E500",
+        "API_E500",
+        "auth-401"
+      ],
+      "rank": 2,
+      "query_ms": 269.58,
+      "scores": [
+        {
+          "fused": 0.03279569745063782,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 4.219799041748047
+            }
+          ],
+          "vectorDistance": 0.4645403027534485
+        },
+        {
+          "fused": 0.01666666753590107,
+          "vectorDistance": 0.3758389949798584
+        },
+        {
+          "fused": 0.016393441706895828,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 2.9128153324127197
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "query_id": "support-15",
+      "kind": "paraphrase",
+      "mode": "keyword",
+      "relevant": [
+        "API.E500"
+      ],
+      "returned_ids": [
+        "API.E500",
+        "api-e500",
+        "SHIP-10"
+      ],
+      "rank": 1,
+      "query_ms": 269.18,
+      "scores": [
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 9.772027015686035
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 6.71705961227417
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 3.149400234222412
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "query_id": "support-15",
+      "kind": "paraphrase",
+      "mode": "vector",
+      "relevant": [
+        "API.E500"
+      ],
+      "returned_ids": [
+        "API.E500",
+        "api-e500",
+        "AUTH-401"
+      ],
+      "rank": 1,
+      "query_ms": 271.41,
+      "scores": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "query_id": "support-15",
+      "kind": "paraphrase",
+      "mode": "hybrid",
+      "relevant": [
+        "API.E500"
+      ],
+      "returned_ids": [
+        "API.E500",
+        "api-e500",
+        "SHIP-10"
+      ],
+      "rank": 1,
+      "query_ms": 287.5,
+      "scores": [
+        {
+          "fused": 0.03333333507180214,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 9.772027015686035
+            }
+          ],
+          "vectorDistance": 0.1675521731376648
+        },
+        {
+          "fused": 0.032786883413791656,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 6.71705961227417
+            }
+          ],
+          "vectorDistance": 0.31961798667907715
+        },
+        {
+          "fused": 0.016129031777381897,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 3.149400234222412
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "query_id": "support-16",
+      "kind": "paraphrase",
+      "mode": "keyword",
+      "relevant": [
+        "api-e500"
+      ],
+      "returned_ids": [
+        "AUTH.401",
+        "SHIP-1.0",
+        "API-E500"
+      ],
+      "rank": null,
+      "query_ms": 267.96,
+      "scores": [
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 3.5299975872039795
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 3.3225932121276855
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 3.244434118270874
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "query_id": "support-16",
+      "kind": "paraphrase",
+      "mode": "vector",
+      "relevant": [
+        "api-e500"
+      ],
+      "returned_ids": [
+        "api-e500",
+        "auth-401",
+        "BILL_12"
+      ],
+      "rank": 1,
+      "query_ms": 276.65,
+      "scores": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "query_id": "support-16",
+      "kind": "paraphrase",
+      "mode": "hybrid",
+      "relevant": [
+        "api-e500"
+      ],
+      "returned_ids": [
+        "api-e500",
+        "AUTH.401",
+        "auth-401"
+      ],
+      "rank": 1,
+      "query_ms": 275.02,
+      "scores": [
+        {
+          "fused": 0.01666666753590107,
+          "vectorDistance": 0.26990562677383423
+        },
+        {
+          "fused": 0.01666666753590107,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 3.5299975872039795
+            }
+          ]
+        },
+        {
+          "fused": 0.016393441706895828,
+          "vectorDistance": 0.40894800424575806
+        }
+      ]
+    }
+  ],
+  "exact_checks": [
+    {
+      "query_id": "identifier-01",
+      "identifier": "AUTH-401",
+      "expected": "AUTH-401",
+      "returned_ids": [
+        "AUTH-401"
+      ],
+      "correct": true
+    },
+    {
+      "query_id": "identifier-02",
+      "identifier": "AUTH.401",
+      "expected": "AUTH.401",
+      "returned_ids": [
+        "AUTH.401"
+      ],
+      "correct": true
+    },
+    {
+      "query_id": "identifier-03",
+      "identifier": "AUTH_401",
+      "expected": "AUTH_401",
+      "returned_ids": [
+        "AUTH_401"
+      ],
+      "correct": true
+    },
+    {
+      "query_id": "identifier-04",
+      "identifier": "auth-401",
+      "expected": "auth-401",
+      "returned_ids": [
+        "auth-401"
+      ],
+      "correct": true
+    },
+    {
+      "query_id": "identifier-05",
+      "identifier": "BILL-12",
+      "expected": "BILL-12",
+      "returned_ids": [
+        "BILL-12"
+      ],
+      "correct": true
+    },
+    {
+      "query_id": "identifier-06",
+      "identifier": "BILL-012",
+      "expected": "BILL-012",
+      "returned_ids": [
+        "BILL-012"
+      ],
+      "correct": true
+    },
+    {
+      "query_id": "identifier-07",
+      "identifier": "BILL_12",
+      "expected": "BILL_12",
+      "returned_ids": [
+        "BILL_12"
+      ],
+      "correct": true
+    },
+    {
+      "query_id": "identifier-08",
+      "identifier": "BILL.12",
+      "expected": "BILL.12",
+      "returned_ids": [
+        "BILL.12"
+      ],
+      "correct": true
+    },
+    {
+      "query_id": "identifier-09",
+      "identifier": "SHIP-1.0",
+      "expected": "SHIP-1.0",
+      "returned_ids": [
+        "SHIP-1.0"
+      ],
+      "correct": true
+    },
+    {
+      "query_id": "identifier-10",
+      "identifier": "SHIP-1_0",
+      "expected": "SHIP-1_0",
+      "returned_ids": [
+        "SHIP-1_0"
+      ],
+      "correct": true
+    },
+    {
+      "query_id": "identifier-11",
+      "identifier": "SHIP-10",
+      "expected": "SHIP-10",
+      "returned_ids": [
+        "SHIP-10"
+      ],
+      "correct": true
+    },
+    {
+      "query_id": "identifier-12",
+      "identifier": "ship-1.0",
+      "expected": "ship-1.0",
+      "returned_ids": [
+        "ship-1.0"
+      ],
+      "correct": true
+    },
+    {
+      "query_id": "identifier-13",
+      "identifier": "API-E500",
+      "expected": "API-E500",
+      "returned_ids": [
+        "API-E500"
+      ],
+      "correct": true
+    },
+    {
+      "query_id": "identifier-14",
+      "identifier": "API_E500",
+      "expected": "API_E500",
+      "returned_ids": [
+        "API_E500"
+      ],
+      "correct": true
+    },
+    {
+      "query_id": "identifier-15",
+      "identifier": "API.E500",
+      "expected": "API.E500",
+      "returned_ids": [
+        "API.E500"
+      ],
+      "correct": true
+    },
+    {
+      "query_id": "identifier-16",
+      "identifier": "api-e500",
+      "expected": "api-e500",
+      "returned_ids": [
+        "api-e500"
+      ],
+      "correct": true
+    },
+    {
+      "identifier": "Auth-401",
+      "expected": null,
+      "returned_ids": [],
+      "correct": true
+    },
+    {
+      "identifier": "AUTH-0401",
+      "expected": null,
+      "returned_ids": [],
+      "correct": true
+    },
+    {
+      "identifier": "AUTH.0401",
+      "expected": null,
+      "returned_ids": [],
+      "correct": true
+    },
+    {
+      "identifier": "BILL-0012",
+      "expected": null,
+      "returned_ids": [],
+      "correct": true
+    },
+    {
+      "identifier": "bill-12",
+      "expected": null,
+      "returned_ids": [],
+      "correct": true
+    },
+    {
+      "identifier": "SHIP-1-0",
+      "expected": null,
+      "returned_ids": [],
+      "correct": true
+    },
+    {
+      "identifier": "SHIP-010",
+      "expected": null,
+      "returned_ids": [],
+      "correct": true
+    },
+    {
+      "identifier": "Api-E500",
+      "expected": null,
+      "returned_ids": [],
+      "correct": true
+    }
+  ]
+}

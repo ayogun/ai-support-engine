@@ -1,0 +1,13 @@
+{
+  "window_start_utc": "2026-11-18T07:19:30.730826+00:00",
+  "window_end_utc": "2026-11-18T07:22:30.730826+00:00",
+  "burst_http_failures": 3,
+  "dependency_error_counts": [
+    {
+      "code": "ThrottlingException",
+      "operation": "InvokeEndpoint",
+      "count": 3
+    }
+  ],
+  "note": "Counts are matching search Lambda log events in the three-minute window, not per-request tracing."
+}

@@ -1,0 +1,1 @@
+BILL702: A rejected subscription payment can be retried after the customer updates an expired credit card in billing settings.

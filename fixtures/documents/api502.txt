@@ -1,0 +1,1 @@
+API502: API requests require a valid bearer token. A 401 response indicates missing or expired authentication credentials.

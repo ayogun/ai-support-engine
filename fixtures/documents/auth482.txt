@@ -1,0 +1,1 @@
+AUTH482: Session tokens expire eight hours after sign-in. A user who is repeatedly logged out should sign in again to receive a fresh session token.

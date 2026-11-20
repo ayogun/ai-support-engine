@@ -1,0 +1,64 @@
+{
+  "date_checked": "2026-11-18",
+  "workload_region": "us-west-2",
+  "currency": "USD",
+  "scope": "One complete main-article walkthrough: deployment, model check, 16 S3-ingested documents, signed requests, smoke and ingestion checks, baseline and synthetic-identifier evaluations, latency probe, one 60-request ABBA retry comparison, and cleanup. Optional external datasets are excluded.",
+  "disclaimer": "Illustrative assumptions, not measured AWS usage, a quote, a bill, or a spending cap. Public on-demand rates before free tier, discounts, and tax. Actual invocation time, retries, transfer, data volumes, request counts, Region, retained resources, and account usage may differ. SQS and transfer are rounded allowances, not verified rate quotations.",
+  "items": [
+    {
+      "service": "SageMaker Serverless Inference",
+      "assumptions": "300 invocations, 3 billed seconds each, 3072 MB, and 0.01 GB total data in and out",
+      "calculation": "300 * 3 * 0.00006 + 0.01 * 0.016",
+      "estimated_charge_usd": "0.05416"
+    },
+    {
+      "service": "S3 Vectors",
+      "assumptions": "500 QueryVectors requests; 500 other requests; 0.002 GB written and stored for one hour; 500 queries processing 0.002 GB of vector and text data each; responses under the per-query returned-data allowance",
+      "calculation": "500 * 0.0000025 + 500 * 0.000055 + 0.002 * 0.20 + 500 * 0.002 * (0.000003906 + 0.000000117) + 0.002 * 0.06 / 720",
+      "estimated_charge_usd": "0.02915419"
+    },
+    {
+      "service": "Lambda",
+      "assumptions": "300 requests and 300 GB-seconds of x86 compute, first-tier rates",
+      "calculation": "300 * 0.0000002 + 300 * 0.0000166667",
+      "estimated_charge_usd": "0.00506001"
+    },
+    {
+      "service": "S3 Standard",
+      "assumptions": "0.15 GB of deployment artifacts for 24 hours, 200 PUT/LIST and 500 GET requests",
+      "calculation": "0.15 * 0.023 / 30 + 200 * 0.000005 + 500 * 0.0000004",
+      "estimated_charge_usd": "0.001315"
+    },
+    {
+      "service": "API Gateway HTTP API",
+      "assumptions": "200 requests at the first-tier rate",
+      "calculation": "200 * 0.000001",
+      "estimated_charge_usd": "0.0002"
+    },
+    {
+      "service": "CloudWatch Logs",
+      "assumptions": "0.02 GB ingested into Standard log class and stored for 24 hours",
+      "calculation": "0.02 * 0.50 + 0.02 * 0.03 / 30",
+      "estimated_charge_usd": "0.01002"
+    },
+    {
+      "service": "SQS and internet egress",
+      "assumptions": "Combined rounded allowance for a small amount of queue activity and internet egress; not a service rate or usage measurement",
+      "estimated_charge_usd": "0.001"
+    }
+  ],
+  "total_estimated_usd": "0.10090920",
+  "rate_sources": [
+    "AWS Price List API, us-west-2, retrieved 2026-11-18; AmazonSageMaker USW2-ServerlessInf:Mem-3GB and USW2-Hst:Data-Bytes-In/Out",
+    "AWS Price List API, us-west-2, retrieved 2026-11-18; AmazonS3 Vectors request tiers, Put-Bytes, Query-ProcessedBytes-Tier1/Text, TimedStorage-ByteHrs, and S3 Standard Requests-Tier1/Tier2 and TimedStorage-ByteHrs",
+    "AWS Price List API, us-west-2, retrieved 2026-11-18; AWSLambda USW2-Request and USW2-Lambda-GB-Second first tier",
+    "AWS Price List API, us-west-2, retrieved 2026-11-18; AmazonApiGateway USW2-ApiGatewayHttpRequest first tier and AmazonCloudWatch USW2-DataProcessing-Bytes and USW2-TimedStorage-ByteHrs",
+    "https://aws.amazon.com/sagemaker/ai/pricing/",
+    "https://aws.amazon.com/s3/pricing/",
+    "https://aws.amazon.com/lambda/pricing/",
+    "https://aws.amazon.com/api-gateway/pricing/",
+    "https://aws.amazon.com/cloudwatch/pricing/",
+    "https://aws.amazon.com/sqs/pricing/"
+  ],
+  "optional_benchmarks": "A fresh TechQA run adds at least 600 document embeddings, 100 query embeddings, 600 text-readiness queries, and 300 ranked queries, plus writes, reads, storage, retries, and any repeated readiness checks. The SciFact and Bitext experiments have separate additional costs."
+}

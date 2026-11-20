@@ -1,0 +1,12 @@
+[
+    {
+        "name": "On-demand model inference requests per minute for Amazon Titan Text Embeddings V2",
+        "value": 0.0,
+        "code": "L-26C560CE"
+    },
+    {
+        "name": "On-demand model inference tokens per minute for Amazon Titan Text Embeddings V2",
+        "value": 0.0,
+        "code": "L-DE641971"
+    }
+]

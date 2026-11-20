@@ -1,0 +1,1 @@
+BILL701: An apparent duplicate card charge may be a temporary authorization. Check the settled transactions before issuing a refund.

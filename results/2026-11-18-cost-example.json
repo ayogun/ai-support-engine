@@ -1,0 +1,35 @@
+{
+  "lookup_timestamp_utc": "2026-11-18T07:05:12.528835+00:00",
+  "price_api_region": "us-east-1",
+  "workload_region": "us-west-2",
+  "pricing": "public on-demand before free tier, discounts and tax",
+  "rates": [
+    {
+      "service_code": "AmazonSageMaker",
+      "usage_type": "USW2-ServerlessInf:Mem-3GB",
+      "unit": "seconds",
+      "usd_per_unit": "0.0000600000",
+      "description": "$0.00006 per sec for Serverless Inference Mem-3GB in US West (Oregon)",
+      "effective_date": "2026-11-01T00:00:00Z"
+    },
+    {
+      "service_code": "AmazonS3",
+      "usage_type": "USW2-Vectors-Request-Tier3",
+      "unit": "Requests",
+      "usd_per_unit": "0.0000025000",
+      "description": "$0.0000025 per Request Query Vectors API Requests",
+      "effective_date": "2026-11-01T00:00:00Z"
+    }
+  ],
+  "scenario": {
+    "document_embeddings": 300,
+    "query_embeddings": 50,
+    "model_invocations": 350,
+    "assumed_billed_seconds_per_model_invocation": "1",
+    "direct_query_requests": 150,
+    "model_compute_usd": "0.0210000000",
+    "query_request_usd": "0.0003750000",
+    "partial_total_usd": "0.0213750000"
+  },
+  "excluded": "All other charges, including SageMaker data processing, S3 Vectors storage/write/processed and returned bytes, other API requests, S3 storage, Lambda, API Gateway, CloudWatch, transfer, retries, and taxes. This is not a total bill or measured usage."
+}

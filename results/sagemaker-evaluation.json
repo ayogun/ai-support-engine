@@ -1,0 +1,5119 @@
+{
+  "timestamp_utc": "2026-11-17T21:49:59.616077+00:00",
+  "region": "us-west-2",
+  "index_name": "documents",
+  "embedding": {
+    "provider": "sagemaker-serverless",
+    "model": "BAAI/bge-small-en-v1.5",
+    "dimensions": 384,
+    "model_revision": "5c38ec7c405ec4b44b94cc5a9bb96e735b38267a",
+    "serving_image_digest": "sha256:603042f9c6d319824500988b0d7309cc094b75201da96911df7c3ddccd444ec5"
+  },
+  "fixture_sha256": "2de37514f3dc1867095c96fc10a1634592fe2971fad8514c0f6a4fe94a50a695",
+  "document_count": 16,
+  "query_count": 32,
+  "top_k": 3,
+  "timing_scope": "Sequential client-side S3 Vectors query calls; includes network and SDK overhead, excludes embedding and API Gateway.",
+  "summary": {
+    "all": {
+      "keyword": {
+        "queries": 32,
+        "hit_at_1": 27,
+        "hit_at_3": 31,
+        "mrr_at_3": 0.9062,
+        "query_ms_median": 285.6,
+        "query_ms_p95": 467.3
+      },
+      "vector": {
+        "queries": 32,
+        "hit_at_1": 30,
+        "hit_at_3": 32,
+        "mrr_at_3": 0.9688,
+        "query_ms_median": 287.8,
+        "query_ms_p95": 322.0
+      },
+      "hybrid": {
+        "queries": 32,
+        "hit_at_1": 30,
+        "hit_at_3": 32,
+        "mrr_at_3": 0.9635,
+        "query_ms_median": 282.1,
+        "query_ms_p95": 309.9
+      }
+    },
+    "exact_identifier": {
+      "keyword": {
+        "queries": 16,
+        "hit_at_1": 16,
+        "hit_at_3": 16,
+        "mrr_at_3": 1.0,
+        "query_ms_median": 287.1,
+        "query_ms_p95": 1037.9
+      },
+      "vector": {
+        "queries": 16,
+        "hit_at_1": 14,
+        "hit_at_3": 16,
+        "mrr_at_3": 0.9375,
+        "query_ms_median": 287.8,
+        "query_ms_p95": 322.0
+      },
+      "hybrid": {
+        "queries": 16,
+        "hit_at_1": 16,
+        "hit_at_3": 16,
+        "mrr_at_3": 1.0,
+        "query_ms_median": 284.3,
+        "query_ms_p95": 306.7
+      }
+    },
+    "paraphrase": {
+      "keyword": {
+        "queries": 16,
+        "hit_at_1": 11,
+        "hit_at_3": 15,
+        "mrr_at_3": 0.8125,
+        "query_ms_median": 279.8,
+        "query_ms_p95": 467.3
+      },
+      "vector": {
+        "queries": 16,
+        "hit_at_1": 16,
+        "hit_at_3": 16,
+        "mrr_at_3": 1.0,
+        "query_ms_median": 289.0,
+        "query_ms_p95": 1087.6
+      },
+      "hybrid": {
+        "queries": 16,
+        "hit_at_1": 14,
+        "hit_at_3": 16,
+        "mrr_at_3": 0.9271,
+        "query_ms_median": 280.9,
+        "query_ms_p95": 343.8
+      }
+    }
+  },
+  "observations": [
+    {
+      "query_id": "exact-01",
+      "kind": "exact_identifier",
+      "question": "What does AUTH482 mean?",
+      "relevant": [
+        "auth482"
+      ],
+      "mode": "keyword",
+      "rank": 1,
+      "query_ms": 280.72,
+      "results": [
+        {
+          "scores": {
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 2.1938576698303223
+              }
+            ]
+          },
+          "key": "640f13d59d6ad608f09c2b60aa152c73e7458e2756cd50dc49e6a351c7a90293",
+          "metadata": {
+            "text": "AUTH482: Session tokens expire eight hours after sign-in. A user who is repeatedly logged out should sign in again to receive a fresh session token.\n",
+            "document_id": "auth482",
+            "source_version": "3vun4FaQAM6dvSVDRH.K5hRieS7V4tgD",
+            "source_key": "documents/auth482.txt"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "exact-01",
+      "kind": "exact_identifier",
+      "question": "What does AUTH482 mean?",
+      "relevant": [
+        "auth482"
+      ],
+      "mode": "vector",
+      "rank": 1,
+      "query_ms": 321.98,
+      "results": [
+        {
+          "distance": 0.3767220973968506,
+          "key": "640f13d59d6ad608f09c2b60aa152c73e7458e2756cd50dc49e6a351c7a90293",
+          "metadata": {
+            "text": "AUTH482: Session tokens expire eight hours after sign-in. A user who is repeatedly logged out should sign in again to receive a fresh session token.\n",
+            "document_id": "auth482",
+            "source_version": "3vun4FaQAM6dvSVDRH.K5hRieS7V4tgD",
+            "source_key": "documents/auth482.txt"
+          }
+        },
+        {
+          "distance": 0.3844067454338074,
+          "key": "73846ea8e0b874782bf3378c367003d59502aa437ae46a9606bbb96ac036c346",
+          "metadata": {
+            "source_key": "documents/auth483.txt",
+            "text": "AUTH483: Password reset links expire after thirty minutes. Request a new reset email if an old password recovery link no longer works.\n",
+            "source_version": "VF_KOO7Ckfbv11LS9ynbwK4VNUSzVgKx",
+            "document_id": "auth483"
+          }
+        },
+        {
+          "distance": 0.3945567011833191,
+          "key": "cd62c037da79ad1288eddcdf6bb5fa1d4d69f8d982af337ebcf1c3a37011d815",
+          "metadata": {
+            "text": "API502: API requests require a valid bearer token. A 401 response indicates missing or expired authentication credentials.\n",
+            "source_key": "documents/api502.txt",
+            "document_id": "api502",
+            "source_version": "3OqumTNCATR.ZMrroli2gevwAgWV_Y43"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "exact-01",
+      "kind": "exact_identifier",
+      "question": "What does AUTH482 mean?",
+      "relevant": [
+        "auth482"
+      ],
+      "mode": "hybrid",
+      "rank": 1,
+      "query_ms": 286.19,
+      "results": [
+        {
+          "distance": 0.3767220973968506,
+          "scores": {
+            "fused": 0.03333333507180214,
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 2.1938576698303223
+              }
+            ],
+            "vectorDistance": 0.3767220973968506
+          },
+          "key": "640f13d59d6ad608f09c2b60aa152c73e7458e2756cd50dc49e6a351c7a90293",
+          "metadata": {
+            "text": "AUTH482: Session tokens expire eight hours after sign-in. A user who is repeatedly logged out should sign in again to receive a fresh session token.\n",
+            "document_id": "auth482",
+            "source_version": "3vun4FaQAM6dvSVDRH.K5hRieS7V4tgD",
+            "source_key": "documents/auth482.txt"
+          }
+        },
+        {
+          "distance": 0.3844067454338074,
+          "scores": {
+            "fused": 0.016393441706895828,
+            "vectorDistance": 0.3844067454338074
+          },
+          "key": "73846ea8e0b874782bf3378c367003d59502aa437ae46a9606bbb96ac036c346",
+          "metadata": {
+            "source_key": "documents/auth483.txt",
+            "source_version": "VF_KOO7Ckfbv11LS9ynbwK4VNUSzVgKx",
+            "document_id": "auth483",
+            "text": "AUTH483: Password reset links expire after thirty minutes. Request a new reset email if an old password recovery link no longer works.\n"
+          }
+        },
+        {
+          "distance": 0.3945567011833191,
+          "scores": {
+            "fused": 0.016129031777381897,
+            "vectorDistance": 0.3945567011833191
+          },
+          "key": "cd62c037da79ad1288eddcdf6bb5fa1d4d69f8d982af337ebcf1c3a37011d815",
+          "metadata": {
+            "source_version": "3OqumTNCATR.ZMrroli2gevwAgWV_Y43",
+            "source_key": "documents/api502.txt",
+            "document_id": "api502",
+            "text": "API502: API requests require a valid bearer token. A 401 response indicates missing or expired authentication credentials.\n"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "exact-02",
+      "kind": "exact_identifier",
+      "question": "Find AUTH483",
+      "relevant": [
+        "auth483"
+      ],
+      "mode": "keyword",
+      "rank": 1,
+      "query_ms": 287.33,
+      "results": [
+        {
+          "scores": {
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 2.363294839859009
+              }
+            ]
+          },
+          "key": "73846ea8e0b874782bf3378c367003d59502aa437ae46a9606bbb96ac036c346",
+          "metadata": {
+            "source_key": "documents/auth483.txt",
+            "source_version": "VF_KOO7Ckfbv11LS9ynbwK4VNUSzVgKx",
+            "text": "AUTH483: Password reset links expire after thirty minutes. Request a new reset email if an old password recovery link no longer works.\n",
+            "document_id": "auth483"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "exact-02",
+      "kind": "exact_identifier",
+      "question": "Find AUTH483",
+      "relevant": [
+        "auth483"
+      ],
+      "mode": "vector",
+      "rank": 1,
+      "query_ms": 289.23,
+      "results": [
+        {
+          "distance": 0.30714964866638184,
+          "key": "73846ea8e0b874782bf3378c367003d59502aa437ae46a9606bbb96ac036c346",
+          "metadata": {
+            "text": "AUTH483: Password reset links expire after thirty minutes. Request a new reset email if an old password recovery link no longer works.\n",
+            "source_version": "VF_KOO7Ckfbv11LS9ynbwK4VNUSzVgKx",
+            "source_key": "documents/auth483.txt",
+            "document_id": "auth483"
+          }
+        },
+        {
+          "distance": 0.38651329278945923,
+          "key": "cd62c037da79ad1288eddcdf6bb5fa1d4d69f8d982af337ebcf1c3a37011d815",
+          "metadata": {
+            "document_id": "api502",
+            "source_key": "documents/api502.txt",
+            "source_version": "3OqumTNCATR.ZMrroli2gevwAgWV_Y43",
+            "text": "API502: API requests require a valid bearer token. A 401 response indicates missing or expired authentication credentials.\n"
+          }
+        },
+        {
+          "distance": 0.3900831341743469,
+          "key": "640f13d59d6ad608f09c2b60aa152c73e7458e2756cd50dc49e6a351c7a90293",
+          "metadata": {
+            "document_id": "auth482",
+            "source_version": "3vun4FaQAM6dvSVDRH.K5hRieS7V4tgD",
+            "text": "AUTH482: Session tokens expire eight hours after sign-in. A user who is repeatedly logged out should sign in again to receive a fresh session token.\n",
+            "source_key": "documents/auth482.txt"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "exact-02",
+      "kind": "exact_identifier",
+      "question": "Find AUTH483",
+      "relevant": [
+        "auth483"
+      ],
+      "mode": "hybrid",
+      "rank": 1,
+      "query_ms": 273.78,
+      "results": [
+        {
+          "distance": 0.30714964866638184,
+          "scores": {
+            "fused": 0.03333333507180214,
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 2.363294839859009
+              }
+            ],
+            "vectorDistance": 0.30714964866638184
+          },
+          "key": "73846ea8e0b874782bf3378c367003d59502aa437ae46a9606bbb96ac036c346",
+          "metadata": {
+            "source_key": "documents/auth483.txt",
+            "source_version": "VF_KOO7Ckfbv11LS9ynbwK4VNUSzVgKx",
+            "text": "AUTH483: Password reset links expire after thirty minutes. Request a new reset email if an old password recovery link no longer works.\n",
+            "document_id": "auth483"
+          }
+        },
+        {
+          "distance": 0.38651329278945923,
+          "scores": {
+            "fused": 0.016393441706895828,
+            "vectorDistance": 0.38651329278945923
+          },
+          "key": "cd62c037da79ad1288eddcdf6bb5fa1d4d69f8d982af337ebcf1c3a37011d815",
+          "metadata": {
+            "text": "API502: API requests require a valid bearer token. A 401 response indicates missing or expired authentication credentials.\n",
+            "source_key": "documents/api502.txt",
+            "source_version": "3OqumTNCATR.ZMrroli2gevwAgWV_Y43",
+            "document_id": "api502"
+          }
+        },
+        {
+          "distance": 0.3900831341743469,
+          "scores": {
+            "fused": 0.016129031777381897,
+            "vectorDistance": 0.3900831341743469
+          },
+          "key": "640f13d59d6ad608f09c2b60aa152c73e7458e2756cd50dc49e6a351c7a90293",
+          "metadata": {
+            "source_key": "documents/auth482.txt",
+            "source_version": "3vun4FaQAM6dvSVDRH.K5hRieS7V4tgD",
+            "text": "AUTH482: Session tokens expire eight hours after sign-in. A user who is repeatedly logged out should sign in again to receive a fresh session token.\n",
+            "document_id": "auth482"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "exact-03",
+      "kind": "exact_identifier",
+      "question": "Explain ACCESS401",
+      "relevant": [
+        "access401"
+      ],
+      "mode": "keyword",
+      "rank": 1,
+      "query_ms": 284.34,
+      "results": [
+        {
+          "scores": {
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 2.458221912384033
+              }
+            ]
+          },
+          "key": "3a56cbb44b907bd423e56e076dc64fc4f204ed262ff453b0f8cc33dc7555400e",
+          "metadata": {
+            "text": "ACCESS401: Accounts are locked after five incorrect password attempts. An administrator can unlock the account after verifying the user's identity.\n",
+            "source_key": "documents/access401.txt",
+            "source_version": "wgX9efQhT_drSlNYYkf_5bJiW.TTjPdY",
+            "document_id": "access401"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "exact-03",
+      "kind": "exact_identifier",
+      "question": "Explain ACCESS401",
+      "relevant": [
+        "access401"
+      ],
+      "mode": "vector",
+      "rank": 1,
+      "query_ms": 287.6,
+      "results": [
+        {
+          "distance": 0.3848680853843689,
+          "key": "3a56cbb44b907bd423e56e076dc64fc4f204ed262ff453b0f8cc33dc7555400e",
+          "metadata": {
+            "text": "ACCESS401: Accounts are locked after five incorrect password attempts. An administrator can unlock the account after verifying the user's identity.\n",
+            "document_id": "access401",
+            "source_key": "documents/access401.txt",
+            "source_version": "wgX9efQhT_drSlNYYkf_5bJiW.TTjPdY"
+          }
+        },
+        {
+          "distance": 0.41362154483795166,
+          "key": "00b135d12fc2044ec9a570c2392bd03105815e3e87ece4f901a85de9a47fefc4",
+          "metadata": {
+            "source_key": "documents/api501.txt",
+            "document_id": "api501",
+            "source_version": "PYB6HMk7L__O6sl2GdGUHPBGAAcwF3fV",
+            "text": "API501: API requests are limited to one hundred per minute per account. A 429 response means the client should wait and retry with backoff.\n"
+          }
+        },
+        {
+          "distance": 0.41822338104248047,
+          "key": "b3ede43bf149b9a690804aa0a02c8fe3acc3b6d9d2da49c03385813976fd9890",
+          "metadata": {
+            "text": "ACCESS402: To recover multi-factor authentication after losing a phone, use a previously saved recovery code or contact an administrator.\n",
+            "source_version": "FX8GIit9L5QfHJvRlw_bZQG7W_S8xpn8",
+            "document_id": "access402",
+            "source_key": "documents/access402.txt"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "exact-03",
+      "kind": "exact_identifier",
+      "question": "Explain ACCESS401",
+      "relevant": [
+        "access401"
+      ],
+      "mode": "hybrid",
+      "rank": 1,
+      "query_ms": 281.14,
+      "results": [
+        {
+          "distance": 0.3848680853843689,
+          "scores": {
+            "fused": 0.03333333507180214,
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 2.458221912384033
+              }
+            ],
+            "vectorDistance": 0.3848680853843689
+          },
+          "key": "3a56cbb44b907bd423e56e076dc64fc4f204ed262ff453b0f8cc33dc7555400e",
+          "metadata": {
+            "document_id": "access401",
+            "text": "ACCESS401: Accounts are locked after five incorrect password attempts. An administrator can unlock the account after verifying the user's identity.\n",
+            "source_version": "wgX9efQhT_drSlNYYkf_5bJiW.TTjPdY",
+            "source_key": "documents/access401.txt"
+          }
+        },
+        {
+          "distance": 0.41362154483795166,
+          "scores": {
+            "fused": 0.016393441706895828,
+            "vectorDistance": 0.41362154483795166
+          },
+          "key": "00b135d12fc2044ec9a570c2392bd03105815e3e87ece4f901a85de9a47fefc4",
+          "metadata": {
+            "source_version": "PYB6HMk7L__O6sl2GdGUHPBGAAcwF3fV",
+            "document_id": "api501",
+            "text": "API501: API requests are limited to one hundred per minute per account. A 429 response means the client should wait and retry with backoff.\n",
+            "source_key": "documents/api501.txt"
+          }
+        },
+        {
+          "distance": 0.41822338104248047,
+          "scores": {
+            "fused": 0.016129031777381897,
+            "vectorDistance": 0.41822338104248047
+          },
+          "key": "b3ede43bf149b9a690804aa0a02c8fe3acc3b6d9d2da49c03385813976fd9890",
+          "metadata": {
+            "text": "ACCESS402: To recover multi-factor authentication after losing a phone, use a previously saved recovery code or contact an administrator.\n",
+            "source_key": "documents/access402.txt",
+            "source_version": "FX8GIit9L5QfHJvRlw_bZQG7W_S8xpn8",
+            "document_id": "access402"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "exact-04",
+      "kind": "exact_identifier",
+      "question": "How do I resolve ACCESS402?",
+      "relevant": [
+        "access402"
+      ],
+      "mode": "keyword",
+      "rank": 1,
+      "query_ms": 303.9,
+      "results": [
+        {
+          "scores": {
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 2.458221912384033
+              }
+            ]
+          },
+          "key": "b3ede43bf149b9a690804aa0a02c8fe3acc3b6d9d2da49c03385813976fd9890",
+          "metadata": {
+            "source_key": "documents/access402.txt",
+            "source_version": "FX8GIit9L5QfHJvRlw_bZQG7W_S8xpn8",
+            "document_id": "access402",
+            "text": "ACCESS402: To recover multi-factor authentication after losing a phone, use a previously saved recovery code or contact an administrator.\n"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "exact-04",
+      "kind": "exact_identifier",
+      "question": "How do I resolve ACCESS402?",
+      "relevant": [
+        "access402"
+      ],
+      "mode": "vector",
+      "rank": 1,
+      "query_ms": 284.4,
+      "results": [
+        {
+          "distance": 0.3576667904853821,
+          "key": "b3ede43bf149b9a690804aa0a02c8fe3acc3b6d9d2da49c03385813976fd9890",
+          "metadata": {
+            "source_version": "FX8GIit9L5QfHJvRlw_bZQG7W_S8xpn8",
+            "document_id": "access402",
+            "text": "ACCESS402: To recover multi-factor authentication after losing a phone, use a previously saved recovery code or contact an administrator.\n",
+            "source_key": "documents/access402.txt"
+          }
+        },
+        {
+          "distance": 0.37651723623275757,
+          "key": "3a56cbb44b907bd423e56e076dc64fc4f204ed262ff453b0f8cc33dc7555400e",
+          "metadata": {
+            "source_key": "documents/access401.txt",
+            "document_id": "access401",
+            "text": "ACCESS401: Accounts are locked after five incorrect password attempts. An administrator can unlock the account after verifying the user's identity.\n",
+            "source_version": "wgX9efQhT_drSlNYYkf_5bJiW.TTjPdY"
+          }
+        },
+        {
+          "distance": 0.3954225182533264,
+          "key": "73846ea8e0b874782bf3378c367003d59502aa437ae46a9606bbb96ac036c346",
+          "metadata": {
+            "text": "AUTH483: Password reset links expire after thirty minutes. Request a new reset email if an old password recovery link no longer works.\n",
+            "source_version": "VF_KOO7Ckfbv11LS9ynbwK4VNUSzVgKx",
+            "source_key": "documents/auth483.txt",
+            "document_id": "auth483"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "exact-04",
+      "kind": "exact_identifier",
+      "question": "How do I resolve ACCESS402?",
+      "relevant": [
+        "access402"
+      ],
+      "mode": "hybrid",
+      "rank": 1,
+      "query_ms": 281.36,
+      "results": [
+        {
+          "distance": 0.3576667904853821,
+          "scores": {
+            "fused": 0.03333333507180214,
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 2.458221912384033
+              }
+            ],
+            "vectorDistance": 0.3576667904853821
+          },
+          "key": "b3ede43bf149b9a690804aa0a02c8fe3acc3b6d9d2da49c03385813976fd9890",
+          "metadata": {
+            "source_version": "FX8GIit9L5QfHJvRlw_bZQG7W_S8xpn8",
+            "text": "ACCESS402: To recover multi-factor authentication after losing a phone, use a previously saved recovery code or contact an administrator.\n",
+            "source_key": "documents/access402.txt",
+            "document_id": "access402"
+          }
+        },
+        {
+          "distance": 0.37651723623275757,
+          "scores": {
+            "fused": 0.016393441706895828,
+            "vectorDistance": 0.37651723623275757
+          },
+          "key": "3a56cbb44b907bd423e56e076dc64fc4f204ed262ff453b0f8cc33dc7555400e",
+          "metadata": {
+            "text": "ACCESS401: Accounts are locked after five incorrect password attempts. An administrator can unlock the account after verifying the user's identity.\n",
+            "document_id": "access401",
+            "source_key": "documents/access401.txt",
+            "source_version": "wgX9efQhT_drSlNYYkf_5bJiW.TTjPdY"
+          }
+        },
+        {
+          "distance": 0.3954225182533264,
+          "scores": {
+            "fused": 0.016129031777381897,
+            "vectorDistance": 0.3954225182533264
+          },
+          "key": "73846ea8e0b874782bf3378c367003d59502aa437ae46a9606bbb96ac036c346",
+          "metadata": {
+            "document_id": "auth483",
+            "source_key": "documents/auth483.txt",
+            "text": "AUTH483: Password reset links expire after thirty minutes. Request a new reset email if an old password recovery link no longer works.\n",
+            "source_version": "VF_KOO7Ckfbv11LS9ynbwK4VNUSzVgKx"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "exact-05",
+      "kind": "exact_identifier",
+      "question": "Look up BILL701",
+      "relevant": [
+        "bill701"
+      ],
+      "mode": "keyword",
+      "rank": 1,
+      "query_ms": 281.25,
+      "results": [
+        {
+          "scores": {
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 2.5086042881011963
+              }
+            ]
+          },
+          "key": "a90601e0388d65266f58086af61a21dc578acc3f36acdeaa3d85150884a2e872",
+          "metadata": {
+            "text": "BILL701: An apparent duplicate card charge may be a temporary authorization. Check the settled transactions before issuing a refund.\n",
+            "source_key": "documents/bill701.txt",
+            "document_id": "bill701",
+            "source_version": "raGQfDIXlGF_Loccsog.5kAPI95_Mqej"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "exact-05",
+      "kind": "exact_identifier",
+      "question": "Look up BILL701",
+      "relevant": [
+        "bill701"
+      ],
+      "mode": "vector",
+      "rank": 1,
+      "query_ms": 296.52,
+      "results": [
+        {
+          "distance": 0.35815274715423584,
+          "key": "a90601e0388d65266f58086af61a21dc578acc3f36acdeaa3d85150884a2e872",
+          "metadata": {
+            "document_id": "bill701",
+            "source_version": "raGQfDIXlGF_Loccsog.5kAPI95_Mqej",
+            "text": "BILL701: An apparent duplicate card charge may be a temporary authorization. Check the settled transactions before issuing a refund.\n",
+            "source_key": "documents/bill701.txt"
+          }
+        },
+        {
+          "distance": 0.4042482376098633,
+          "key": "222d0eda0de8a2f7727444c167fb812c45970035d8dd11c90160ae304ea0e2d8",
+          "metadata": {
+            "source_version": "XO4689On.1KYIg9M9s25FgdgLqmUEfR1",
+            "source_key": "documents/bill702.txt",
+            "text": "BILL702: A rejected subscription payment can be retried after the customer updates an expired credit card in billing settings.\n",
+            "document_id": "bill702"
+          }
+        },
+        {
+          "distance": 0.47110241651535034,
+          "key": "00b135d12fc2044ec9a570c2392bd03105815e3e87ece4f901a85de9a47fefc4",
+          "metadata": {
+            "source_key": "documents/api501.txt",
+            "document_id": "api501",
+            "text": "API501: API requests are limited to one hundred per minute per account. A 429 response means the client should wait and retry with backoff.\n",
+            "source_version": "PYB6HMk7L__O6sl2GdGUHPBGAAcwF3fV"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "exact-05",
+      "kind": "exact_identifier",
+      "question": "Look up BILL701",
+      "relevant": [
+        "bill701"
+      ],
+      "mode": "hybrid",
+      "rank": 1,
+      "query_ms": 298.87,
+      "results": [
+        {
+          "distance": 0.35815274715423584,
+          "scores": {
+            "fused": 0.03333333507180214,
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 2.5086042881011963
+              }
+            ],
+            "vectorDistance": 0.35815274715423584
+          },
+          "key": "a90601e0388d65266f58086af61a21dc578acc3f36acdeaa3d85150884a2e872",
+          "metadata": {
+            "source_key": "documents/bill701.txt",
+            "text": "BILL701: An apparent duplicate card charge may be a temporary authorization. Check the settled transactions before issuing a refund.\n",
+            "document_id": "bill701",
+            "source_version": "raGQfDIXlGF_Loccsog.5kAPI95_Mqej"
+          }
+        },
+        {
+          "distance": 0.4042482376098633,
+          "scores": {
+            "fused": 0.016393441706895828,
+            "vectorDistance": 0.4042482376098633
+          },
+          "key": "222d0eda0de8a2f7727444c167fb812c45970035d8dd11c90160ae304ea0e2d8",
+          "metadata": {
+            "text": "BILL702: A rejected subscription payment can be retried after the customer updates an expired credit card in billing settings.\n",
+            "document_id": "bill702",
+            "source_version": "XO4689On.1KYIg9M9s25FgdgLqmUEfR1",
+            "source_key": "documents/bill702.txt"
+          }
+        },
+        {
+          "distance": 0.47110241651535034,
+          "scores": {
+            "fused": 0.016129031777381897,
+            "vectorDistance": 0.47110241651535034
+          },
+          "key": "00b135d12fc2044ec9a570c2392bd03105815e3e87ece4f901a85de9a47fefc4",
+          "metadata": {
+            "text": "API501: API requests are limited to one hundred per minute per account. A 429 response means the client should wait and retry with backoff.\n",
+            "source_key": "documents/api501.txt",
+            "source_version": "PYB6HMk7L__O6sl2GdGUHPBGAAcwF3fV",
+            "document_id": "api501"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "exact-06",
+      "kind": "exact_identifier",
+      "question": "What is BILL702?",
+      "relevant": [
+        "bill702"
+      ],
+      "mode": "keyword",
+      "rank": 1,
+      "query_ms": 298.59,
+      "results": [
+        {
+          "scores": {
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 2.5086042881011963
+              }
+            ]
+          },
+          "key": "222d0eda0de8a2f7727444c167fb812c45970035d8dd11c90160ae304ea0e2d8",
+          "metadata": {
+            "source_version": "XO4689On.1KYIg9M9s25FgdgLqmUEfR1",
+            "source_key": "documents/bill702.txt",
+            "document_id": "bill702",
+            "text": "BILL702: A rejected subscription payment can be retried after the customer updates an expired credit card in billing settings.\n"
+          }
+        },
+        {
+          "scores": {
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 1.6002886295318604
+              }
+            ]
+          },
+          "key": "cfbcecf0bc52722a4d26ec60978eeb632965707784900414250e495ae0adbb9a",
+          "metadata": {
+            "text": "SHIP801: If tracking says delivered but the parcel is missing, check the delivery location and ask the carrier to investigate.\n",
+            "source_version": "ObIWETE5_hqvosuR36gahg_D6afD1SNj",
+            "source_key": "documents/ship801.txt",
+            "document_id": "ship801"
+          }
+        },
+        {
+          "scores": {
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 1.50934898853302
+              }
+            ]
+          },
+          "key": "6c730ec0c7d12c193cba57fefa4b9990e42d324e76ef542376bf810e47dc38ee",
+          "metadata": {
+            "source_key": "documents/ship802.txt",
+            "text": "SHIP802: A dispatch delay before a parcel has shipped is shown as awaiting fulfillment. The delivery estimate updates when the carrier collects it.\n",
+            "source_version": "OVmanSwGbnctDSc8stU.QHOaqoZTBI7i",
+            "document_id": "ship802"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "exact-06",
+      "kind": "exact_identifier",
+      "question": "What is BILL702?",
+      "relevant": [
+        "bill702"
+      ],
+      "mode": "vector",
+      "rank": 1,
+      "query_ms": 276.3,
+      "results": [
+        {
+          "distance": 0.3690990209579468,
+          "key": "222d0eda0de8a2f7727444c167fb812c45970035d8dd11c90160ae304ea0e2d8",
+          "metadata": {
+            "source_version": "XO4689On.1KYIg9M9s25FgdgLqmUEfR1",
+            "document_id": "bill702",
+            "source_key": "documents/bill702.txt",
+            "text": "BILL702: A rejected subscription payment can be retried after the customer updates an expired credit card in billing settings.\n"
+          }
+        },
+        {
+          "distance": 0.3844452500343323,
+          "key": "a90601e0388d65266f58086af61a21dc578acc3f36acdeaa3d85150884a2e872",
+          "metadata": {
+            "text": "BILL701: An apparent duplicate card charge may be a temporary authorization. Check the settled transactions before issuing a refund.\n",
+            "document_id": "bill701",
+            "source_version": "raGQfDIXlGF_Loccsog.5kAPI95_Mqej",
+            "source_key": "documents/bill701.txt"
+          }
+        },
+        {
+          "distance": 0.5031212568283081,
+          "key": "cd62c037da79ad1288eddcdf6bb5fa1d4d69f8d982af337ebcf1c3a37011d815",
+          "metadata": {
+            "text": "API502: API requests require a valid bearer token. A 401 response indicates missing or expired authentication credentials.\n",
+            "source_version": "3OqumTNCATR.ZMrroli2gevwAgWV_Y43",
+            "document_id": "api502",
+            "source_key": "documents/api502.txt"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "exact-06",
+      "kind": "exact_identifier",
+      "question": "What is BILL702?",
+      "relevant": [
+        "bill702"
+      ],
+      "mode": "hybrid",
+      "rank": 1,
+      "query_ms": 298.58,
+      "results": [
+        {
+          "distance": 0.3690990209579468,
+          "scores": {
+            "fused": 0.03333333507180214,
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 2.5086042881011963
+              }
+            ],
+            "vectorDistance": 0.3690990209579468
+          },
+          "key": "222d0eda0de8a2f7727444c167fb812c45970035d8dd11c90160ae304ea0e2d8",
+          "metadata": {
+            "source_key": "documents/bill702.txt",
+            "document_id": "bill702",
+            "text": "BILL702: A rejected subscription payment can be retried after the customer updates an expired credit card in billing settings.\n",
+            "source_version": "XO4689On.1KYIg9M9s25FgdgLqmUEfR1"
+          }
+        },
+        {
+          "distance": 0.3844452500343323,
+          "scores": {
+            "fused": 0.016393441706895828,
+            "vectorDistance": 0.3844452500343323
+          },
+          "key": "a90601e0388d65266f58086af61a21dc578acc3f36acdeaa3d85150884a2e872",
+          "metadata": {
+            "document_id": "bill701",
+            "source_key": "documents/bill701.txt",
+            "text": "BILL701: An apparent duplicate card charge may be a temporary authorization. Check the settled transactions before issuing a refund.\n",
+            "source_version": "raGQfDIXlGF_Loccsog.5kAPI95_Mqej"
+          }
+        },
+        {
+          "scores": {
+            "fused": 0.016393441706895828,
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 1.6002886295318604
+              }
+            ]
+          },
+          "key": "cfbcecf0bc52722a4d26ec60978eeb632965707784900414250e495ae0adbb9a",
+          "metadata": {
+            "source_key": "documents/ship801.txt",
+            "text": "SHIP801: If tracking says delivered but the parcel is missing, check the delivery location and ask the carrier to investigate.\n",
+            "source_version": "ObIWETE5_hqvosuR36gahg_D6afD1SNj",
+            "document_id": "ship801"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "exact-07",
+      "kind": "exact_identifier",
+      "question": "Find RETURN301",
+      "relevant": [
+        "return301"
+      ],
+      "mode": "keyword",
+      "rank": 1,
+      "query_ms": 290.15,
+      "results": [
+        {
+          "scores": {
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 2.4098238945007324
+              }
+            ]
+          },
+          "key": "07d8c70add8642299a86e62e6b990d6f3087a674086b96b7f2342746a40f0721",
+          "metadata": {
+            "text": "RETURN301: Most unused purchases can be returned within thirty days of delivery. Final-sale products are excluded from this return window.\n",
+            "source_version": "W8MS98cPH3g_1kw9Hc3nTdbWyubSZHjb",
+            "source_key": "documents/return301.txt",
+            "document_id": "return301"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "exact-07",
+      "kind": "exact_identifier",
+      "question": "Find RETURN301",
+      "relevant": [
+        "return301"
+      ],
+      "mode": "vector",
+      "rank": 2,
+      "query_ms": 275.72,
+      "results": [
+        {
+          "distance": 0.3249809145927429,
+          "key": "141723256a07edd55044353583eec2a9db799c52b2a38d602fb380cdd6e5dc40",
+          "metadata": {
+            "document_id": "return302",
+            "source_version": "kf9JQuvgF.PkX9JTgSST4GdvUJYJbWlE",
+            "source_key": "documents/return302.txt",
+            "text": "RETURN302: To print a prepaid return shipping label, open the order details and select Start a return.\n"
+          }
+        },
+        {
+          "distance": 0.3438785672187805,
+          "key": "07d8c70add8642299a86e62e6b990d6f3087a674086b96b7f2342746a40f0721",
+          "metadata": {
+            "source_key": "documents/return301.txt",
+            "source_version": "W8MS98cPH3g_1kw9Hc3nTdbWyubSZHjb",
+            "text": "RETURN301: Most unused purchases can be returned within thirty days of delivery. Final-sale products are excluded from this return window.\n",
+            "document_id": "return301"
+          }
+        },
+        {
+          "distance": 0.44122612476348877,
+          "key": "a90601e0388d65266f58086af61a21dc578acc3f36acdeaa3d85150884a2e872",
+          "metadata": {
+            "text": "BILL701: An apparent duplicate card charge may be a temporary authorization. Check the settled transactions before issuing a refund.\n",
+            "source_key": "documents/bill701.txt",
+            "source_version": "raGQfDIXlGF_Loccsog.5kAPI95_Mqej",
+            "document_id": "bill701"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "exact-07",
+      "kind": "exact_identifier",
+      "question": "Find RETURN301",
+      "relevant": [
+        "return301"
+      ],
+      "mode": "hybrid",
+      "rank": 1,
+      "query_ms": 293.18,
+      "results": [
+        {
+          "distance": 0.3438785672187805,
+          "scores": {
+            "fused": 0.03306011110544205,
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 2.4098238945007324
+              }
+            ],
+            "vectorDistance": 0.3438785672187805
+          },
+          "key": "07d8c70add8642299a86e62e6b990d6f3087a674086b96b7f2342746a40f0721",
+          "metadata": {
+            "source_version": "W8MS98cPH3g_1kw9Hc3nTdbWyubSZHjb",
+            "document_id": "return301",
+            "text": "RETURN301: Most unused purchases can be returned within thirty days of delivery. Final-sale products are excluded from this return window.\n",
+            "source_key": "documents/return301.txt"
+          }
+        },
+        {
+          "distance": 0.3249809145927429,
+          "scores": {
+            "fused": 0.01666666753590107,
+            "vectorDistance": 0.3249809145927429
+          },
+          "key": "141723256a07edd55044353583eec2a9db799c52b2a38d602fb380cdd6e5dc40",
+          "metadata": {
+            "source_version": "kf9JQuvgF.PkX9JTgSST4GdvUJYJbWlE",
+            "source_key": "documents/return302.txt",
+            "document_id": "return302",
+            "text": "RETURN302: To print a prepaid return shipping label, open the order details and select Start a return.\n"
+          }
+        },
+        {
+          "distance": 0.44122612476348877,
+          "scores": {
+            "fused": 0.016129031777381897,
+            "vectorDistance": 0.44122612476348877
+          },
+          "key": "a90601e0388d65266f58086af61a21dc578acc3f36acdeaa3d85150884a2e872",
+          "metadata": {
+            "document_id": "bill701",
+            "source_version": "raGQfDIXlGF_Loccsog.5kAPI95_Mqej",
+            "text": "BILL701: An apparent duplicate card charge may be a temporary authorization. Check the settled transactions before issuing a refund.\n",
+            "source_key": "documents/bill701.txt"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "exact-08",
+      "kind": "exact_identifier",
+      "question": "What does RETURN302 mean?",
+      "relevant": [
+        "return302"
+      ],
+      "mode": "keyword",
+      "rank": 1,
+      "query_ms": 282.59,
+      "results": [
+        {
+          "scores": {
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 2.615828514099121
+              }
+            ]
+          },
+          "key": "141723256a07edd55044353583eec2a9db799c52b2a38d602fb380cdd6e5dc40",
+          "metadata": {
+            "source_version": "kf9JQuvgF.PkX9JTgSST4GdvUJYJbWlE",
+            "source_key": "documents/return302.txt",
+            "document_id": "return302",
+            "text": "RETURN302: To print a prepaid return shipping label, open the order details and select Start a return.\n"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "exact-08",
+      "kind": "exact_identifier",
+      "question": "What does RETURN302 mean?",
+      "relevant": [
+        "return302"
+      ],
+      "mode": "vector",
+      "rank": 1,
+      "query_ms": 281.98,
+      "results": [
+        {
+          "distance": 0.33507782220840454,
+          "key": "141723256a07edd55044353583eec2a9db799c52b2a38d602fb380cdd6e5dc40",
+          "metadata": {
+            "source_key": "documents/return302.txt",
+            "text": "RETURN302: To print a prepaid return shipping label, open the order details and select Start a return.\n",
+            "document_id": "return302",
+            "source_version": "kf9JQuvgF.PkX9JTgSST4GdvUJYJbWlE"
+          }
+        },
+        {
+          "distance": 0.36459779739379883,
+          "key": "07d8c70add8642299a86e62e6b990d6f3087a674086b96b7f2342746a40f0721",
+          "metadata": {
+            "source_key": "documents/return301.txt",
+            "source_version": "W8MS98cPH3g_1kw9Hc3nTdbWyubSZHjb",
+            "text": "RETURN301: Most unused purchases can be returned within thirty days of delivery. Final-sale products are excluded from this return window.\n",
+            "document_id": "return301"
+          }
+        },
+        {
+          "distance": 0.4358852505683899,
+          "key": "222d0eda0de8a2f7727444c167fb812c45970035d8dd11c90160ae304ea0e2d8",
+          "metadata": {
+            "source_version": "XO4689On.1KYIg9M9s25FgdgLqmUEfR1",
+            "source_key": "documents/bill702.txt",
+            "text": "BILL702: A rejected subscription payment can be retried after the customer updates an expired credit card in billing settings.\n",
+            "document_id": "bill702"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "exact-08",
+      "kind": "exact_identifier",
+      "question": "What does RETURN302 mean?",
+      "relevant": [
+        "return302"
+      ],
+      "mode": "hybrid",
+      "rank": 1,
+      "query_ms": 291.51,
+      "results": [
+        {
+          "distance": 0.33507782220840454,
+          "scores": {
+            "fused": 0.03333333507180214,
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 2.615828514099121
+              }
+            ],
+            "vectorDistance": 0.33507782220840454
+          },
+          "key": "141723256a07edd55044353583eec2a9db799c52b2a38d602fb380cdd6e5dc40",
+          "metadata": {
+            "text": "RETURN302: To print a prepaid return shipping label, open the order details and select Start a return.\n",
+            "source_key": "documents/return302.txt",
+            "document_id": "return302",
+            "source_version": "kf9JQuvgF.PkX9JTgSST4GdvUJYJbWlE"
+          }
+        },
+        {
+          "distance": 0.36459779739379883,
+          "scores": {
+            "fused": 0.016393441706895828,
+            "vectorDistance": 0.36459779739379883
+          },
+          "key": "07d8c70add8642299a86e62e6b990d6f3087a674086b96b7f2342746a40f0721",
+          "metadata": {
+            "source_key": "documents/return301.txt",
+            "document_id": "return301",
+            "source_version": "W8MS98cPH3g_1kw9Hc3nTdbWyubSZHjb",
+            "text": "RETURN301: Most unused purchases can be returned within thirty days of delivery. Final-sale products are excluded from this return window.\n"
+          }
+        },
+        {
+          "distance": 0.4358852505683899,
+          "scores": {
+            "fused": 0.016129031777381897,
+            "vectorDistance": 0.4358852505683899
+          },
+          "key": "222d0eda0de8a2f7727444c167fb812c45970035d8dd11c90160ae304ea0e2d8",
+          "metadata": {
+            "source_version": "XO4689On.1KYIg9M9s25FgdgLqmUEfR1",
+            "text": "BILL702: A rejected subscription payment can be retried after the customer updates an expired credit card in billing settings.\n",
+            "source_key": "documents/bill702.txt",
+            "document_id": "bill702"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "exact-09",
+      "kind": "exact_identifier",
+      "question": "Look up SHIP801",
+      "relevant": [
+        "ship801"
+      ],
+      "mode": "keyword",
+      "rank": 1,
+      "query_ms": 315.38,
+      "results": [
+        {
+          "scores": {
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 2.458221912384033
+              }
+            ]
+          },
+          "key": "cfbcecf0bc52722a4d26ec60978eeb632965707784900414250e495ae0adbb9a",
+          "metadata": {
+            "source_key": "documents/ship801.txt",
+            "text": "SHIP801: If tracking says delivered but the parcel is missing, check the delivery location and ask the carrier to investigate.\n",
+            "document_id": "ship801",
+            "source_version": "ObIWETE5_hqvosuR36gahg_D6afD1SNj"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "exact-09",
+      "kind": "exact_identifier",
+      "question": "Look up SHIP801",
+      "relevant": [
+        "ship801"
+      ],
+      "mode": "vector",
+      "rank": 1,
+      "query_ms": 294.24,
+      "results": [
+        {
+          "distance": 0.2972865700721741,
+          "key": "cfbcecf0bc52722a4d26ec60978eeb632965707784900414250e495ae0adbb9a",
+          "metadata": {
+            "source_key": "documents/ship801.txt",
+            "text": "SHIP801: If tracking says delivered but the parcel is missing, check the delivery location and ask the carrier to investigate.\n",
+            "source_version": "ObIWETE5_hqvosuR36gahg_D6afD1SNj",
+            "document_id": "ship801"
+          }
+        },
+        {
+          "distance": 0.3416525721549988,
+          "key": "6c730ec0c7d12c193cba57fefa4b9990e42d324e76ef542376bf810e47dc38ee",
+          "metadata": {
+            "text": "SHIP802: A dispatch delay before a parcel has shipped is shown as awaiting fulfillment. The delivery estimate updates when the carrier collects it.\n",
+            "source_key": "documents/ship802.txt",
+            "source_version": "OVmanSwGbnctDSc8stU.QHOaqoZTBI7i",
+            "document_id": "ship802"
+          }
+        },
+        {
+          "distance": 0.4121108651161194,
+          "key": "141723256a07edd55044353583eec2a9db799c52b2a38d602fb380cdd6e5dc40",
+          "metadata": {
+            "source_version": "kf9JQuvgF.PkX9JTgSST4GdvUJYJbWlE",
+            "source_key": "documents/return302.txt",
+            "document_id": "return302",
+            "text": "RETURN302: To print a prepaid return shipping label, open the order details and select Start a return.\n"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "exact-09",
+      "kind": "exact_identifier",
+      "question": "Look up SHIP801",
+      "relevant": [
+        "ship801"
+      ],
+      "mode": "hybrid",
+      "rank": 1,
+      "query_ms": 280.64,
+      "results": [
+        {
+          "distance": 0.2972865700721741,
+          "scores": {
+            "fused": 0.03333333507180214,
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 2.458221912384033
+              }
+            ],
+            "vectorDistance": 0.2972865700721741
+          },
+          "key": "cfbcecf0bc52722a4d26ec60978eeb632965707784900414250e495ae0adbb9a",
+          "metadata": {
+            "source_version": "ObIWETE5_hqvosuR36gahg_D6afD1SNj",
+            "text": "SHIP801: If tracking says delivered but the parcel is missing, check the delivery location and ask the carrier to investigate.\n",
+            "document_id": "ship801",
+            "source_key": "documents/ship801.txt"
+          }
+        },
+        {
+          "distance": 0.3416525721549988,
+          "scores": {
+            "fused": 0.016393441706895828,
+            "vectorDistance": 0.3416525721549988
+          },
+          "key": "6c730ec0c7d12c193cba57fefa4b9990e42d324e76ef542376bf810e47dc38ee",
+          "metadata": {
+            "source_version": "OVmanSwGbnctDSc8stU.QHOaqoZTBI7i",
+            "document_id": "ship802",
+            "source_key": "documents/ship802.txt",
+            "text": "SHIP802: A dispatch delay before a parcel has shipped is shown as awaiting fulfillment. The delivery estimate updates when the carrier collects it.\n"
+          }
+        },
+        {
+          "distance": 0.4121108651161194,
+          "scores": {
+            "fused": 0.016129031777381897,
+            "vectorDistance": 0.4121108651161194
+          },
+          "key": "141723256a07edd55044353583eec2a9db799c52b2a38d602fb380cdd6e5dc40",
+          "metadata": {
+            "source_key": "documents/return302.txt",
+            "source_version": "kf9JQuvgF.PkX9JTgSST4GdvUJYJbWlE",
+            "text": "RETURN302: To print a prepaid return shipping label, open the order details and select Start a return.\n",
+            "document_id": "return302"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "exact-10",
+      "kind": "exact_identifier",
+      "question": "Explain SHIP802",
+      "relevant": [
+        "ship802"
+      ],
+      "mode": "keyword",
+      "rank": 1,
+      "query_ms": 305.79,
+      "results": [
+        {
+          "scores": {
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 2.318528413772583
+              }
+            ]
+          },
+          "key": "6c730ec0c7d12c193cba57fefa4b9990e42d324e76ef542376bf810e47dc38ee",
+          "metadata": {
+            "text": "SHIP802: A dispatch delay before a parcel has shipped is shown as awaiting fulfillment. The delivery estimate updates when the carrier collects it.\n",
+            "source_key": "documents/ship802.txt",
+            "document_id": "ship802",
+            "source_version": "OVmanSwGbnctDSc8stU.QHOaqoZTBI7i"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "exact-10",
+      "kind": "exact_identifier",
+      "question": "Explain SHIP802",
+      "relevant": [
+        "ship802"
+      ],
+      "mode": "vector",
+      "rank": 1,
+      "query_ms": 296.23,
+      "results": [
+        {
+          "distance": 0.3154597282409668,
+          "key": "6c730ec0c7d12c193cba57fefa4b9990e42d324e76ef542376bf810e47dc38ee",
+          "metadata": {
+            "text": "SHIP802: A dispatch delay before a parcel has shipped is shown as awaiting fulfillment. The delivery estimate updates when the carrier collects it.\n",
+            "source_version": "OVmanSwGbnctDSc8stU.QHOaqoZTBI7i",
+            "document_id": "ship802",
+            "source_key": "documents/ship802.txt"
+          }
+        },
+        {
+          "distance": 0.39463305473327637,
+          "key": "cfbcecf0bc52722a4d26ec60978eeb632965707784900414250e495ae0adbb9a",
+          "metadata": {
+            "source_key": "documents/ship801.txt",
+            "document_id": "ship801",
+            "text": "SHIP801: If tracking says delivered but the parcel is missing, check the delivery location and ask the carrier to investigate.\n",
+            "source_version": "ObIWETE5_hqvosuR36gahg_D6afD1SNj"
+          }
+        },
+        {
+          "distance": 0.4443880319595337,
+          "key": "141723256a07edd55044353583eec2a9db799c52b2a38d602fb380cdd6e5dc40",
+          "metadata": {
+            "text": "RETURN302: To print a prepaid return shipping label, open the order details and select Start a return.\n",
+            "source_key": "documents/return302.txt",
+            "document_id": "return302",
+            "source_version": "kf9JQuvgF.PkX9JTgSST4GdvUJYJbWlE"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "exact-10",
+      "kind": "exact_identifier",
+      "question": "Explain SHIP802",
+      "relevant": [
+        "ship802"
+      ],
+      "mode": "hybrid",
+      "rank": 1,
+      "query_ms": 282.49,
+      "results": [
+        {
+          "distance": 0.3154597282409668,
+          "scores": {
+            "fused": 0.03333333507180214,
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 2.318528413772583
+              }
+            ],
+            "vectorDistance": 0.3154597282409668
+          },
+          "key": "6c730ec0c7d12c193cba57fefa4b9990e42d324e76ef542376bf810e47dc38ee",
+          "metadata": {
+            "document_id": "ship802",
+            "text": "SHIP802: A dispatch delay before a parcel has shipped is shown as awaiting fulfillment. The delivery estimate updates when the carrier collects it.\n",
+            "source_key": "documents/ship802.txt",
+            "source_version": "OVmanSwGbnctDSc8stU.QHOaqoZTBI7i"
+          }
+        },
+        {
+          "distance": 0.39463305473327637,
+          "scores": {
+            "fused": 0.016393441706895828,
+            "vectorDistance": 0.39463305473327637
+          },
+          "key": "cfbcecf0bc52722a4d26ec60978eeb632965707784900414250e495ae0adbb9a",
+          "metadata": {
+            "source_key": "documents/ship801.txt",
+            "source_version": "ObIWETE5_hqvosuR36gahg_D6afD1SNj",
+            "document_id": "ship801",
+            "text": "SHIP801: If tracking says delivered but the parcel is missing, check the delivery location and ask the carrier to investigate.\n"
+          }
+        },
+        {
+          "distance": 0.4443880319595337,
+          "scores": {
+            "fused": 0.016129031777381897,
+            "vectorDistance": 0.4443880319595337
+          },
+          "key": "141723256a07edd55044353583eec2a9db799c52b2a38d602fb380cdd6e5dc40",
+          "metadata": {
+            "text": "RETURN302: To print a prepaid return shipping label, open the order details and select Start a return.\n",
+            "source_version": "kf9JQuvgF.PkX9JTgSST4GdvUJYJbWlE",
+            "document_id": "return302",
+            "source_key": "documents/return302.txt"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "exact-11",
+      "kind": "exact_identifier",
+      "question": "Find ORDER601",
+      "relevant": [
+        "order601"
+      ],
+      "mode": "keyword",
+      "rank": 1,
+      "query_ms": 293.42,
+      "results": [
+        {
+          "scores": {
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 2.458221912384033
+              }
+            ]
+          },
+          "key": "05ed65ed6545d32398afb10f260d40e46895406b944677513c5d02532d93c184",
+          "metadata": {
+            "source_version": "0HmPgCx3ma7.BBwK7C1Tk33EwX7pze3N",
+            "source_key": "documents/order601.txt",
+            "document_id": "order601",
+            "text": "ORDER601: An order can be canceled before dispatch. After it ships, wait for delivery and use the return process instead.\n"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "exact-11",
+      "kind": "exact_identifier",
+      "question": "Find ORDER601",
+      "relevant": [
+        "order601"
+      ],
+      "mode": "vector",
+      "rank": 1,
+      "query_ms": 305.01,
+      "results": [
+        {
+          "distance": 0.3154188394546509,
+          "key": "05ed65ed6545d32398afb10f260d40e46895406b944677513c5d02532d93c184",
+          "metadata": {
+            "source_version": "0HmPgCx3ma7.BBwK7C1Tk33EwX7pze3N",
+            "text": "ORDER601: An order can be canceled before dispatch. After it ships, wait for delivery and use the return process instead.\n",
+            "source_key": "documents/order601.txt",
+            "document_id": "order601"
+          }
+        },
+        {
+          "distance": 0.3608344793319702,
+          "key": "2189ee3ca1a953d09515dd6270536c7f5a2979950c10f877c23aaf2ed17d65a9",
+          "metadata": {
+            "text": "ORDER602: To change the destination address, edit order details before dispatch. Contact support once the carrier has collected the parcel.\n",
+            "source_version": "kaHCAwNNS4W68D1wEAmStH7DH8t64zC1",
+            "document_id": "order602",
+            "source_key": "documents/order602.txt"
+          }
+        },
+        {
+          "distance": 0.41507089138031006,
+          "key": "141723256a07edd55044353583eec2a9db799c52b2a38d602fb380cdd6e5dc40",
+          "metadata": {
+            "source_key": "documents/return302.txt",
+            "text": "RETURN302: To print a prepaid return shipping label, open the order details and select Start a return.\n",
+            "source_version": "kf9JQuvgF.PkX9JTgSST4GdvUJYJbWlE",
+            "document_id": "return302"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "exact-11",
+      "kind": "exact_identifier",
+      "question": "Find ORDER601",
+      "relevant": [
+        "order601"
+      ],
+      "mode": "hybrid",
+      "rank": 1,
+      "query_ms": 306.69,
+      "results": [
+        {
+          "distance": 0.3154188394546509,
+          "scores": {
+            "fused": 0.03333333507180214,
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 2.458221912384033
+              }
+            ],
+            "vectorDistance": 0.3154188394546509
+          },
+          "key": "05ed65ed6545d32398afb10f260d40e46895406b944677513c5d02532d93c184",
+          "metadata": {
+            "text": "ORDER601: An order can be canceled before dispatch. After it ships, wait for delivery and use the return process instead.\n",
+            "document_id": "order601",
+            "source_version": "0HmPgCx3ma7.BBwK7C1Tk33EwX7pze3N",
+            "source_key": "documents/order601.txt"
+          }
+        },
+        {
+          "distance": 0.3608344793319702,
+          "scores": {
+            "fused": 0.016393441706895828,
+            "vectorDistance": 0.3608344793319702
+          },
+          "key": "2189ee3ca1a953d09515dd6270536c7f5a2979950c10f877c23aaf2ed17d65a9",
+          "metadata": {
+            "source_key": "documents/order602.txt",
+            "source_version": "kaHCAwNNS4W68D1wEAmStH7DH8t64zC1",
+            "document_id": "order602",
+            "text": "ORDER602: To change the destination address, edit order details before dispatch. Contact support once the carrier has collected the parcel.\n"
+          }
+        },
+        {
+          "distance": 0.41507089138031006,
+          "scores": {
+            "fused": 0.016129031777381897,
+            "vectorDistance": 0.41507089138031006
+          },
+          "key": "141723256a07edd55044353583eec2a9db799c52b2a38d602fb380cdd6e5dc40",
+          "metadata": {
+            "text": "RETURN302: To print a prepaid return shipping label, open the order details and select Start a return.\n",
+            "source_key": "documents/return302.txt",
+            "source_version": "kf9JQuvgF.PkX9JTgSST4GdvUJYJbWlE",
+            "document_id": "return302"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "exact-12",
+      "kind": "exact_identifier",
+      "question": "What is ORDER602?",
+      "relevant": [
+        "order602"
+      ],
+      "mode": "keyword",
+      "rank": 1,
+      "query_ms": 278.29,
+      "results": [
+        {
+          "scores": {
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 2.458221912384033
+              }
+            ]
+          },
+          "key": "2189ee3ca1a953d09515dd6270536c7f5a2979950c10f877c23aaf2ed17d65a9",
+          "metadata": {
+            "source_key": "documents/order602.txt",
+            "source_version": "kaHCAwNNS4W68D1wEAmStH7DH8t64zC1",
+            "text": "ORDER602: To change the destination address, edit order details before dispatch. Contact support once the carrier has collected the parcel.\n",
+            "document_id": "order602"
+          }
+        },
+        {
+          "scores": {
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 1.6002886295318604
+              }
+            ]
+          },
+          "key": "cfbcecf0bc52722a4d26ec60978eeb632965707784900414250e495ae0adbb9a",
+          "metadata": {
+            "source_key": "documents/ship801.txt",
+            "text": "SHIP801: If tracking says delivered but the parcel is missing, check the delivery location and ask the carrier to investigate.\n",
+            "source_version": "ObIWETE5_hqvosuR36gahg_D6afD1SNj",
+            "document_id": "ship801"
+          }
+        },
+        {
+          "scores": {
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 1.50934898853302
+              }
+            ]
+          },
+          "key": "6c730ec0c7d12c193cba57fefa4b9990e42d324e76ef542376bf810e47dc38ee",
+          "metadata": {
+            "document_id": "ship802",
+            "source_version": "OVmanSwGbnctDSc8stU.QHOaqoZTBI7i",
+            "source_key": "documents/ship802.txt",
+            "text": "SHIP802: A dispatch delay before a parcel has shipped is shown as awaiting fulfillment. The delivery estimate updates when the carrier collects it.\n"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "exact-12",
+      "kind": "exact_identifier",
+      "question": "What is ORDER602?",
+      "relevant": [
+        "order602"
+      ],
+      "mode": "vector",
+      "rank": 1,
+      "query_ms": 282.56,
+      "results": [
+        {
+          "distance": 0.3549676537513733,
+          "key": "2189ee3ca1a953d09515dd6270536c7f5a2979950c10f877c23aaf2ed17d65a9",
+          "metadata": {
+            "source_version": "kaHCAwNNS4W68D1wEAmStH7DH8t64zC1",
+            "document_id": "order602",
+            "text": "ORDER602: To change the destination address, edit order details before dispatch. Contact support once the carrier has collected the parcel.\n",
+            "source_key": "documents/order602.txt"
+          }
+        },
+        {
+          "distance": 0.3635393977165222,
+          "key": "05ed65ed6545d32398afb10f260d40e46895406b944677513c5d02532d93c184",
+          "metadata": {
+            "document_id": "order601",
+            "source_version": "0HmPgCx3ma7.BBwK7C1Tk33EwX7pze3N",
+            "source_key": "documents/order601.txt",
+            "text": "ORDER601: An order can be canceled before dispatch. After it ships, wait for delivery and use the return process instead.\n"
+          }
+        },
+        {
+          "distance": 0.41623610258102417,
+          "key": "6c730ec0c7d12c193cba57fefa4b9990e42d324e76ef542376bf810e47dc38ee",
+          "metadata": {
+            "source_version": "OVmanSwGbnctDSc8stU.QHOaqoZTBI7i",
+            "text": "SHIP802: A dispatch delay before a parcel has shipped is shown as awaiting fulfillment. The delivery estimate updates when the carrier collects it.\n",
+            "source_key": "documents/ship802.txt",
+            "document_id": "ship802"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "exact-12",
+      "kind": "exact_identifier",
+      "question": "What is ORDER602?",
+      "relevant": [
+        "order602"
+      ],
+      "mode": "hybrid",
+      "rank": 1,
+      "query_ms": 288.61,
+      "results": [
+        {
+          "distance": 0.3549676537513733,
+          "scores": {
+            "fused": 0.03333333507180214,
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 2.458221912384033
+              }
+            ],
+            "vectorDistance": 0.3549676537513733
+          },
+          "key": "2189ee3ca1a953d09515dd6270536c7f5a2979950c10f877c23aaf2ed17d65a9",
+          "metadata": {
+            "document_id": "order602",
+            "source_version": "kaHCAwNNS4W68D1wEAmStH7DH8t64zC1",
+            "source_key": "documents/order602.txt",
+            "text": "ORDER602: To change the destination address, edit order details before dispatch. Contact support once the carrier has collected the parcel.\n"
+          }
+        },
+        {
+          "distance": 0.41623610258102417,
+          "scores": {
+            "fused": 0.032258063554763794,
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 1.50934898853302
+              }
+            ],
+            "vectorDistance": 0.41623610258102417
+          },
+          "key": "6c730ec0c7d12c193cba57fefa4b9990e42d324e76ef542376bf810e47dc38ee",
+          "metadata": {
+            "document_id": "ship802",
+            "source_version": "OVmanSwGbnctDSc8stU.QHOaqoZTBI7i",
+            "text": "SHIP802: A dispatch delay before a parcel has shipped is shown as awaiting fulfillment. The delivery estimate updates when the carrier collects it.\n",
+            "source_key": "documents/ship802.txt"
+          }
+        },
+        {
+          "distance": 0.3635393977165222,
+          "scores": {
+            "fused": 0.016393441706895828,
+            "vectorDistance": 0.3635393977165222
+          },
+          "key": "05ed65ed6545d32398afb10f260d40e46895406b944677513c5d02532d93c184",
+          "metadata": {
+            "source_version": "0HmPgCx3ma7.BBwK7C1Tk33EwX7pze3N",
+            "source_key": "documents/order601.txt",
+            "text": "ORDER601: An order can be canceled before dispatch. After it ships, wait for delivery and use the return process instead.\n",
+            "document_id": "order601"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "exact-13",
+      "kind": "exact_identifier",
+      "question": "Find FILE901",
+      "relevant": [
+        "file901"
+      ],
+      "mode": "keyword",
+      "rank": 1,
+      "query_ms": 286.84,
+      "results": [
+        {
+          "scores": {
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 2.4098238945007324
+              }
+            ]
+          },
+          "key": "1b460490b3896104788b4eae82fb3083156eb8660a0abd0235bc172a069ff09d",
+          "metadata": {
+            "source_version": "giL_l4gAk.hgLWLMya3JoFVZwYu_npAo",
+            "text": "FILE901: CSV imports fail when a file exceeds ten megabytes. Split the upload into smaller CSV files and retry each import.\n",
+            "source_key": "documents/file901.txt",
+            "document_id": "file901"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "exact-13",
+      "kind": "exact_identifier",
+      "question": "Find FILE901",
+      "relevant": [
+        "file901"
+      ],
+      "mode": "vector",
+      "rank": 1,
+      "query_ms": 288.08,
+      "results": [
+        {
+          "distance": 0.34238743782043457,
+          "key": "1b460490b3896104788b4eae82fb3083156eb8660a0abd0235bc172a069ff09d",
+          "metadata": {
+            "document_id": "file901",
+            "source_key": "documents/file901.txt",
+            "text": "FILE901: CSV imports fail when a file exceeds ten megabytes. Split the upload into smaller CSV files and retry each import.\n",
+            "source_version": "giL_l4gAk.hgLWLMya3JoFVZwYu_npAo"
+          }
+        },
+        {
+          "distance": 0.42911064624786377,
+          "key": "c1c58cbfca0e8272d6b7286da8d3f5d013e3ee6f88ed90fa3a4b6df5ac214d3d",
+          "metadata": {
+            "source_version": ".RgxAu6rV2ze1kha.f8FR1gMZqDrZzEq",
+            "document_id": "file902",
+            "text": "FILE902: CSV imports require UTF-8 encoding. Re-export a spreadsheet as UTF-8 CSV if non-English characters appear corrupted.\n",
+            "source_key": "documents/file902.txt"
+          }
+        },
+        {
+          "distance": 0.4748103618621826,
+          "key": "00b135d12fc2044ec9a570c2392bd03105815e3e87ece4f901a85de9a47fefc4",
+          "metadata": {
+            "text": "API501: API requests are limited to one hundred per minute per account. A 429 response means the client should wait and retry with backoff.\n",
+            "source_key": "documents/api501.txt",
+            "source_version": "PYB6HMk7L__O6sl2GdGUHPBGAAcwF3fV",
+            "document_id": "api501"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "exact-13",
+      "kind": "exact_identifier",
+      "question": "Find FILE901",
+      "relevant": [
+        "file901"
+      ],
+      "mode": "hybrid",
+      "rank": 1,
+      "query_ms": 279.7,
+      "results": [
+        {
+          "distance": 0.34238743782043457,
+          "scores": {
+            "fused": 0.03333333507180214,
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 2.4098238945007324
+              }
+            ],
+            "vectorDistance": 0.34238743782043457
+          },
+          "key": "1b460490b3896104788b4eae82fb3083156eb8660a0abd0235bc172a069ff09d",
+          "metadata": {
+            "source_key": "documents/file901.txt",
+            "document_id": "file901",
+            "text": "FILE901: CSV imports fail when a file exceeds ten megabytes. Split the upload into smaller CSV files and retry each import.\n",
+            "source_version": "giL_l4gAk.hgLWLMya3JoFVZwYu_npAo"
+          }
+        },
+        {
+          "distance": 0.42911064624786377,
+          "scores": {
+            "fused": 0.016393441706895828,
+            "vectorDistance": 0.42911064624786377
+          },
+          "key": "c1c58cbfca0e8272d6b7286da8d3f5d013e3ee6f88ed90fa3a4b6df5ac214d3d",
+          "metadata": {
+            "source_key": "documents/file902.txt",
+            "source_version": ".RgxAu6rV2ze1kha.f8FR1gMZqDrZzEq",
+            "document_id": "file902",
+            "text": "FILE902: CSV imports require UTF-8 encoding. Re-export a spreadsheet as UTF-8 CSV if non-English characters appear corrupted.\n"
+          }
+        },
+        {
+          "distance": 0.4748103618621826,
+          "scores": {
+            "fused": 0.016129031777381897,
+            "vectorDistance": 0.4748103618621826
+          },
+          "key": "00b135d12fc2044ec9a570c2392bd03105815e3e87ece4f901a85de9a47fefc4",
+          "metadata": {
+            "source_key": "documents/api501.txt",
+            "document_id": "api501",
+            "text": "API501: API requests are limited to one hundred per minute per account. A 429 response means the client should wait and retry with backoff.\n",
+            "source_version": "PYB6HMk7L__O6sl2GdGUHPBGAAcwF3fV"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "exact-14",
+      "kind": "exact_identifier",
+      "question": "Explain FILE902",
+      "relevant": [
+        "file902"
+      ],
+      "mode": "keyword",
+      "rank": 1,
+      "query_ms": 281.23,
+      "results": [
+        {
+          "scores": {
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 2.4098238945007324
+              }
+            ]
+          },
+          "key": "c1c58cbfca0e8272d6b7286da8d3f5d013e3ee6f88ed90fa3a4b6df5ac214d3d",
+          "metadata": {
+            "text": "FILE902: CSV imports require UTF-8 encoding. Re-export a spreadsheet as UTF-8 CSV if non-English characters appear corrupted.\n",
+            "source_version": ".RgxAu6rV2ze1kha.f8FR1gMZqDrZzEq",
+            "source_key": "documents/file902.txt",
+            "document_id": "file902"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "exact-14",
+      "kind": "exact_identifier",
+      "question": "Explain FILE902",
+      "relevant": [
+        "file902"
+      ],
+      "mode": "vector",
+      "rank": 2,
+      "query_ms": 280.82,
+      "results": [
+        {
+          "distance": 0.3527241349220276,
+          "key": "1b460490b3896104788b4eae82fb3083156eb8660a0abd0235bc172a069ff09d",
+          "metadata": {
+            "source_version": "giL_l4gAk.hgLWLMya3JoFVZwYu_npAo",
+            "source_key": "documents/file901.txt",
+            "document_id": "file901",
+            "text": "FILE901: CSV imports fail when a file exceeds ten megabytes. Split the upload into smaller CSV files and retry each import.\n"
+          }
+        },
+        {
+          "distance": 0.4077467918395996,
+          "key": "c1c58cbfca0e8272d6b7286da8d3f5d013e3ee6f88ed90fa3a4b6df5ac214d3d",
+          "metadata": {
+            "text": "FILE902: CSV imports require UTF-8 encoding. Re-export a spreadsheet as UTF-8 CSV if non-English characters appear corrupted.\n",
+            "source_version": ".RgxAu6rV2ze1kha.f8FR1gMZqDrZzEq",
+            "document_id": "file902",
+            "source_key": "documents/file902.txt"
+          }
+        },
+        {
+          "distance": 0.5019628405570984,
+          "key": "a90601e0388d65266f58086af61a21dc578acc3f36acdeaa3d85150884a2e872",
+          "metadata": {
+            "source_version": "raGQfDIXlGF_Loccsog.5kAPI95_Mqej",
+            "document_id": "bill701",
+            "text": "BILL701: An apparent duplicate card charge may be a temporary authorization. Check the settled transactions before issuing a refund.\n",
+            "source_key": "documents/bill701.txt"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "exact-14",
+      "kind": "exact_identifier",
+      "question": "Explain FILE902",
+      "relevant": [
+        "file902"
+      ],
+      "mode": "hybrid",
+      "rank": 1,
+      "query_ms": 279.62,
+      "results": [
+        {
+          "distance": 0.4077467918395996,
+          "scores": {
+            "fused": 0.03306011110544205,
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 2.4098238945007324
+              }
+            ],
+            "vectorDistance": 0.4077467918395996
+          },
+          "key": "c1c58cbfca0e8272d6b7286da8d3f5d013e3ee6f88ed90fa3a4b6df5ac214d3d",
+          "metadata": {
+            "text": "FILE902: CSV imports require UTF-8 encoding. Re-export a spreadsheet as UTF-8 CSV if non-English characters appear corrupted.\n",
+            "source_key": "documents/file902.txt",
+            "document_id": "file902",
+            "source_version": ".RgxAu6rV2ze1kha.f8FR1gMZqDrZzEq"
+          }
+        },
+        {
+          "distance": 0.3527241349220276,
+          "scores": {
+            "fused": 0.01666666753590107,
+            "vectorDistance": 0.3527241349220276
+          },
+          "key": "1b460490b3896104788b4eae82fb3083156eb8660a0abd0235bc172a069ff09d",
+          "metadata": {
+            "source_key": "documents/file901.txt",
+            "text": "FILE901: CSV imports fail when a file exceeds ten megabytes. Split the upload into smaller CSV files and retry each import.\n",
+            "source_version": "giL_l4gAk.hgLWLMya3JoFVZwYu_npAo",
+            "document_id": "file901"
+          }
+        },
+        {
+          "distance": 0.5019628405570984,
+          "scores": {
+            "fused": 0.016129031777381897,
+            "vectorDistance": 0.5019628405570984
+          },
+          "key": "a90601e0388d65266f58086af61a21dc578acc3f36acdeaa3d85150884a2e872",
+          "metadata": {
+            "text": "BILL701: An apparent duplicate card charge may be a temporary authorization. Check the settled transactions before issuing a refund.\n",
+            "source_key": "documents/bill701.txt",
+            "source_version": "raGQfDIXlGF_Loccsog.5kAPI95_Mqej",
+            "document_id": "bill701"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "exact-15",
+      "kind": "exact_identifier",
+      "question": "What does API501 mean?",
+      "relevant": [
+        "api501"
+      ],
+      "mode": "keyword",
+      "rank": 1,
+      "query_ms": 285.61,
+      "results": [
+        {
+          "scores": {
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 2.275426149368286
+              }
+            ]
+          },
+          "key": "00b135d12fc2044ec9a570c2392bd03105815e3e87ece4f901a85de9a47fefc4",
+          "metadata": {
+            "source_key": "documents/api501.txt",
+            "text": "API501: API requests are limited to one hundred per minute per account. A 429 response means the client should wait and retry with backoff.\n",
+            "source_version": "PYB6HMk7L__O6sl2GdGUHPBGAAcwF3fV",
+            "document_id": "api501"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "exact-15",
+      "kind": "exact_identifier",
+      "question": "What does API501 mean?",
+      "relevant": [
+        "api501"
+      ],
+      "mode": "vector",
+      "rank": 1,
+      "query_ms": 309.51,
+      "results": [
+        {
+          "distance": 0.32844865322113037,
+          "key": "00b135d12fc2044ec9a570c2392bd03105815e3e87ece4f901a85de9a47fefc4",
+          "metadata": {
+            "source_version": "PYB6HMk7L__O6sl2GdGUHPBGAAcwF3fV",
+            "document_id": "api501",
+            "text": "API501: API requests are limited to one hundred per minute per account. A 429 response means the client should wait and retry with backoff.\n",
+            "source_key": "documents/api501.txt"
+          }
+        },
+        {
+          "distance": 0.3293514847755432,
+          "key": "cd62c037da79ad1288eddcdf6bb5fa1d4d69f8d982af337ebcf1c3a37011d815",
+          "metadata": {
+            "source_version": "3OqumTNCATR.ZMrroli2gevwAgWV_Y43",
+            "document_id": "api502",
+            "text": "API502: API requests require a valid bearer token. A 401 response indicates missing or expired authentication credentials.\n",
+            "source_key": "documents/api502.txt"
+          }
+        },
+        {
+          "distance": 0.48738181591033936,
+          "key": "a90601e0388d65266f58086af61a21dc578acc3f36acdeaa3d85150884a2e872",
+          "metadata": {
+            "source_key": "documents/bill701.txt",
+            "text": "BILL701: An apparent duplicate card charge may be a temporary authorization. Check the settled transactions before issuing a refund.\n",
+            "document_id": "bill701",
+            "source_version": "raGQfDIXlGF_Loccsog.5kAPI95_Mqej"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "exact-15",
+      "kind": "exact_identifier",
+      "question": "What does API501 mean?",
+      "relevant": [
+        "api501"
+      ],
+      "mode": "hybrid",
+      "rank": 1,
+      "query_ms": 286.96,
+      "results": [
+        {
+          "distance": 0.32844865322113037,
+          "scores": {
+            "fused": 0.03333333507180214,
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 2.275426149368286
+              }
+            ],
+            "vectorDistance": 0.32844865322113037
+          },
+          "key": "00b135d12fc2044ec9a570c2392bd03105815e3e87ece4f901a85de9a47fefc4",
+          "metadata": {
+            "document_id": "api501",
+            "source_version": "PYB6HMk7L__O6sl2GdGUHPBGAAcwF3fV",
+            "source_key": "documents/api501.txt",
+            "text": "API501: API requests are limited to one hundred per minute per account. A 429 response means the client should wait and retry with backoff.\n"
+          }
+        },
+        {
+          "distance": 0.3293514847755432,
+          "scores": {
+            "fused": 0.016393441706895828,
+            "vectorDistance": 0.3293514847755432
+          },
+          "key": "cd62c037da79ad1288eddcdf6bb5fa1d4d69f8d982af337ebcf1c3a37011d815",
+          "metadata": {
+            "source_version": "3OqumTNCATR.ZMrroli2gevwAgWV_Y43",
+            "text": "API502: API requests require a valid bearer token. A 401 response indicates missing or expired authentication credentials.\n",
+            "document_id": "api502",
+            "source_key": "documents/api502.txt"
+          }
+        },
+        {
+          "distance": 0.48738181591033936,
+          "scores": {
+            "fused": 0.016129031777381897,
+            "vectorDistance": 0.48738181591033936
+          },
+          "key": "a90601e0388d65266f58086af61a21dc578acc3f36acdeaa3d85150884a2e872",
+          "metadata": {
+            "source_key": "documents/bill701.txt",
+            "text": "BILL701: An apparent duplicate card charge may be a temporary authorization. Check the settled transactions before issuing a refund.\n",
+            "source_version": "raGQfDIXlGF_Loccsog.5kAPI95_Mqej",
+            "document_id": "bill701"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "exact-16",
+      "kind": "exact_identifier",
+      "question": "Look up API502",
+      "relevant": [
+        "api502"
+      ],
+      "mode": "keyword",
+      "rank": 1,
+      "query_ms": 1037.91,
+      "results": [
+        {
+          "scores": {
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 2.615828514099121
+              }
+            ]
+          },
+          "key": "cd62c037da79ad1288eddcdf6bb5fa1d4d69f8d982af337ebcf1c3a37011d815",
+          "metadata": {
+            "source_version": "3OqumTNCATR.ZMrroli2gevwAgWV_Y43",
+            "source_key": "documents/api502.txt",
+            "document_id": "api502",
+            "text": "API502: API requests require a valid bearer token. A 401 response indicates missing or expired authentication credentials.\n"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "exact-16",
+      "kind": "exact_identifier",
+      "question": "Look up API502",
+      "relevant": [
+        "api502"
+      ],
+      "mode": "vector",
+      "rank": 1,
+      "query_ms": 285.69,
+      "results": [
+        {
+          "distance": 0.31706947088241577,
+          "key": "cd62c037da79ad1288eddcdf6bb5fa1d4d69f8d982af337ebcf1c3a37011d815",
+          "metadata": {
+            "source_version": "3OqumTNCATR.ZMrroli2gevwAgWV_Y43",
+            "source_key": "documents/api502.txt",
+            "text": "API502: API requests require a valid bearer token. A 401 response indicates missing or expired authentication credentials.\n",
+            "document_id": "api502"
+          }
+        },
+        {
+          "distance": 0.3727635145187378,
+          "key": "00b135d12fc2044ec9a570c2392bd03105815e3e87ece4f901a85de9a47fefc4",
+          "metadata": {
+            "text": "API501: API requests are limited to one hundred per minute per account. A 429 response means the client should wait and retry with backoff.\n",
+            "document_id": "api501",
+            "source_key": "documents/api501.txt",
+            "source_version": "PYB6HMk7L__O6sl2GdGUHPBGAAcwF3fV"
+          }
+        },
+        {
+          "distance": 0.4665331244468689,
+          "key": "2189ee3ca1a953d09515dd6270536c7f5a2979950c10f877c23aaf2ed17d65a9",
+          "metadata": {
+            "source_version": "kaHCAwNNS4W68D1wEAmStH7DH8t64zC1",
+            "document_id": "order602",
+            "source_key": "documents/order602.txt",
+            "text": "ORDER602: To change the destination address, edit order details before dispatch. Contact support once the carrier has collected the parcel.\n"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "exact-16",
+      "kind": "exact_identifier",
+      "question": "Look up API502",
+      "relevant": [
+        "api502"
+      ],
+      "mode": "hybrid",
+      "rank": 1,
+      "query_ms": 280.96,
+      "results": [
+        {
+          "distance": 0.31706947088241577,
+          "scores": {
+            "fused": 0.03333333507180214,
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 2.615828514099121
+              }
+            ],
+            "vectorDistance": 0.31706947088241577
+          },
+          "key": "cd62c037da79ad1288eddcdf6bb5fa1d4d69f8d982af337ebcf1c3a37011d815",
+          "metadata": {
+            "source_version": "3OqumTNCATR.ZMrroli2gevwAgWV_Y43",
+            "text": "API502: API requests require a valid bearer token. A 401 response indicates missing or expired authentication credentials.\n",
+            "document_id": "api502",
+            "source_key": "documents/api502.txt"
+          }
+        },
+        {
+          "distance": 0.3727635145187378,
+          "scores": {
+            "fused": 0.016393441706895828,
+            "vectorDistance": 0.3727635145187378
+          },
+          "key": "00b135d12fc2044ec9a570c2392bd03105815e3e87ece4f901a85de9a47fefc4",
+          "metadata": {
+            "source_key": "documents/api501.txt",
+            "document_id": "api501",
+            "text": "API501: API requests are limited to one hundred per minute per account. A 429 response means the client should wait and retry with backoff.\n",
+            "source_version": "PYB6HMk7L__O6sl2GdGUHPBGAAcwF3fV"
+          }
+        },
+        {
+          "distance": 0.4665331244468689,
+          "scores": {
+            "fused": 0.016129031777381897,
+            "vectorDistance": 0.4665331244468689
+          },
+          "key": "2189ee3ca1a953d09515dd6270536c7f5a2979950c10f877c23aaf2ed17d65a9",
+          "metadata": {
+            "text": "ORDER602: To change the destination address, edit order details before dispatch. Contact support once the carrier has collected the parcel.\n",
+            "source_version": "kaHCAwNNS4W68D1wEAmStH7DH8t64zC1",
+            "source_key": "documents/order602.txt",
+            "document_id": "order602"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "meaning-01",
+      "kind": "paraphrase",
+      "question": "Why does my login session end after eight hours?",
+      "relevant": [
+        "auth482"
+      ],
+      "mode": "keyword",
+      "rank": 1,
+      "query_ms": 280.04,
+      "results": [
+        {
+          "scores": {
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 8.366694450378418
+              }
+            ]
+          },
+          "key": "640f13d59d6ad608f09c2b60aa152c73e7458e2756cd50dc49e6a351c7a90293",
+          "metadata": {
+            "source_key": "documents/auth482.txt",
+            "text": "AUTH482: Session tokens expire eight hours after sign-in. A user who is repeatedly logged out should sign in again to receive a fresh session token.\n",
+            "document_id": "auth482",
+            "source_version": "3vun4FaQAM6dvSVDRH.K5hRieS7V4tgD"
+          }
+        },
+        {
+          "scores": {
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 1.3333038091659546
+              }
+            ]
+          },
+          "key": "3a56cbb44b907bd423e56e076dc64fc4f204ed262ff453b0f8cc33dc7555400e",
+          "metadata": {
+            "source_version": "wgX9efQhT_drSlNYYkf_5bJiW.TTjPdY",
+            "text": "ACCESS401: Accounts are locked after five incorrect password attempts. An administrator can unlock the account after verifying the user's identity.\n",
+            "source_key": "documents/access401.txt",
+            "document_id": "access401"
+          }
+        },
+        {
+          "scores": {
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 0.9934309124946594
+              }
+            ]
+          },
+          "key": "222d0eda0de8a2f7727444c167fb812c45970035d8dd11c90160ae304ea0e2d8",
+          "metadata": {
+            "document_id": "bill702",
+            "text": "BILL702: A rejected subscription payment can be retried after the customer updates an expired credit card in billing settings.\n",
+            "source_key": "documents/bill702.txt",
+            "source_version": "XO4689On.1KYIg9M9s25FgdgLqmUEfR1"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "meaning-01",
+      "kind": "paraphrase",
+      "question": "Why does my login session end after eight hours?",
+      "relevant": [
+        "auth482"
+      ],
+      "mode": "vector",
+      "rank": 1,
+      "query_ms": 279.08,
+      "results": [
+        {
+          "distance": 0.28693509101867676,
+          "key": "640f13d59d6ad608f09c2b60aa152c73e7458e2756cd50dc49e6a351c7a90293",
+          "metadata": {
+            "source_version": "3vun4FaQAM6dvSVDRH.K5hRieS7V4tgD",
+            "text": "AUTH482: Session tokens expire eight hours after sign-in. A user who is repeatedly logged out should sign in again to receive a fresh session token.\n",
+            "document_id": "auth482",
+            "source_key": "documents/auth482.txt"
+          }
+        },
+        {
+          "distance": 0.3730711340904236,
+          "key": "73846ea8e0b874782bf3378c367003d59502aa437ae46a9606bbb96ac036c346",
+          "metadata": {
+            "text": "AUTH483: Password reset links expire after thirty minutes. Request a new reset email if an old password recovery link no longer works.\n",
+            "document_id": "auth483",
+            "source_version": "VF_KOO7Ckfbv11LS9ynbwK4VNUSzVgKx",
+            "source_key": "documents/auth483.txt"
+          }
+        },
+        {
+          "distance": 0.4179944396018982,
+          "key": "3a56cbb44b907bd423e56e076dc64fc4f204ed262ff453b0f8cc33dc7555400e",
+          "metadata": {
+            "source_key": "documents/access401.txt",
+            "source_version": "wgX9efQhT_drSlNYYkf_5bJiW.TTjPdY",
+            "text": "ACCESS401: Accounts are locked after five incorrect password attempts. An administrator can unlock the account after verifying the user's identity.\n",
+            "document_id": "access401"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "meaning-01",
+      "kind": "paraphrase",
+      "question": "Why does my login session end after eight hours?",
+      "relevant": [
+        "auth482"
+      ],
+      "mode": "hybrid",
+      "rank": 1,
+      "query_ms": 277.75,
+      "results": [
+        {
+          "distance": 0.28693509101867676,
+          "scores": {
+            "fused": 0.03333333507180214,
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 8.366694450378418
+              }
+            ],
+            "vectorDistance": 0.28693509101867676
+          },
+          "key": "640f13d59d6ad608f09c2b60aa152c73e7458e2756cd50dc49e6a351c7a90293",
+          "metadata": {
+            "document_id": "auth482",
+            "text": "AUTH482: Session tokens expire eight hours after sign-in. A user who is repeatedly logged out should sign in again to receive a fresh session token.\n",
+            "source_version": "3vun4FaQAM6dvSVDRH.K5hRieS7V4tgD",
+            "source_key": "documents/auth482.txt"
+          }
+        },
+        {
+          "distance": 0.4179944396018982,
+          "scores": {
+            "fused": 0.032522473484277725,
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 1.3333038091659546
+              }
+            ],
+            "vectorDistance": 0.4179944396018982
+          },
+          "key": "3a56cbb44b907bd423e56e076dc64fc4f204ed262ff453b0f8cc33dc7555400e",
+          "metadata": {
+            "text": "ACCESS401: Accounts are locked after five incorrect password attempts. An administrator can unlock the account after verifying the user's identity.\n",
+            "document_id": "access401",
+            "source_version": "wgX9efQhT_drSlNYYkf_5bJiW.TTjPdY",
+            "source_key": "documents/access401.txt"
+          }
+        },
+        {
+          "distance": 0.3730711340904236,
+          "scores": {
+            "fused": 0.016393441706895828,
+            "vectorDistance": 0.3730711340904236
+          },
+          "key": "73846ea8e0b874782bf3378c367003d59502aa437ae46a9606bbb96ac036c346",
+          "metadata": {
+            "text": "AUTH483: Password reset links expire after thirty minutes. Request a new reset email if an old password recovery link no longer works.\n",
+            "document_id": "auth483",
+            "source_key": "documents/auth483.txt",
+            "source_version": "VF_KOO7Ckfbv11LS9ynbwK4VNUSzVgKx"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "meaning-02",
+      "kind": "paraphrase",
+      "question": "My password recovery email is too old to use.",
+      "relevant": [
+        "auth483"
+      ],
+      "mode": "keyword",
+      "rank": 1,
+      "query_ms": 297.87,
+      "results": [
+        {
+          "scores": {
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 9.179878234863281
+              }
+            ]
+          },
+          "key": "73846ea8e0b874782bf3378c367003d59502aa437ae46a9606bbb96ac036c346",
+          "metadata": {
+            "text": "AUTH483: Password reset links expire after thirty minutes. Request a new reset email if an old password recovery link no longer works.\n",
+            "source_key": "documents/auth483.txt",
+            "document_id": "auth483",
+            "source_version": "VF_KOO7Ckfbv11LS9ynbwK4VNUSzVgKx"
+          }
+        },
+        {
+          "scores": {
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 4.855447769165039
+              }
+            ]
+          },
+          "key": "b3ede43bf149b9a690804aa0a02c8fe3acc3b6d9d2da49c03385813976fd9890",
+          "metadata": {
+            "text": "ACCESS402: To recover multi-factor authentication after losing a phone, use a previously saved recovery code or contact an administrator.\n",
+            "source_key": "documents/access402.txt",
+            "document_id": "access402",
+            "source_version": "FX8GIit9L5QfHJvRlw_bZQG7W_S8xpn8"
+          }
+        },
+        {
+          "scores": {
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 2.57376766204834
+              }
+            ]
+          },
+          "key": "cfbcecf0bc52722a4d26ec60978eeb632965707784900414250e495ae0adbb9a",
+          "metadata": {
+            "source_key": "documents/ship801.txt",
+            "document_id": "ship801",
+            "text": "SHIP801: If tracking says delivered but the parcel is missing, check the delivery location and ask the carrier to investigate.\n",
+            "source_version": "ObIWETE5_hqvosuR36gahg_D6afD1SNj"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "meaning-02",
+      "kind": "paraphrase",
+      "question": "My password recovery email is too old to use.",
+      "relevant": [
+        "auth483"
+      ],
+      "mode": "vector",
+      "rank": 1,
+      "query_ms": 295.48,
+      "results": [
+        {
+          "distance": 0.23279941082000732,
+          "key": "73846ea8e0b874782bf3378c367003d59502aa437ae46a9606bbb96ac036c346",
+          "metadata": {
+            "text": "AUTH483: Password reset links expire after thirty minutes. Request a new reset email if an old password recovery link no longer works.\n",
+            "source_key": "documents/auth483.txt",
+            "document_id": "auth483",
+            "source_version": "VF_KOO7Ckfbv11LS9ynbwK4VNUSzVgKx"
+          }
+        },
+        {
+          "distance": 0.3578476905822754,
+          "key": "b3ede43bf149b9a690804aa0a02c8fe3acc3b6d9d2da49c03385813976fd9890",
+          "metadata": {
+            "text": "ACCESS402: To recover multi-factor authentication after losing a phone, use a previously saved recovery code or contact an administrator.\n",
+            "source_key": "documents/access402.txt",
+            "document_id": "access402",
+            "source_version": "FX8GIit9L5QfHJvRlw_bZQG7W_S8xpn8"
+          }
+        },
+        {
+          "distance": 0.37281733751296997,
+          "key": "3a56cbb44b907bd423e56e076dc64fc4f204ed262ff453b0f8cc33dc7555400e",
+          "metadata": {
+            "document_id": "access401",
+            "source_version": "wgX9efQhT_drSlNYYkf_5bJiW.TTjPdY",
+            "text": "ACCESS401: Accounts are locked after five incorrect password attempts. An administrator can unlock the account after verifying the user's identity.\n",
+            "source_key": "documents/access401.txt"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "meaning-02",
+      "kind": "paraphrase",
+      "question": "My password recovery email is too old to use.",
+      "relevant": [
+        "auth483"
+      ],
+      "mode": "hybrid",
+      "rank": 1,
+      "query_ms": 278.64,
+      "results": [
+        {
+          "distance": 0.23279941082000732,
+          "scores": {
+            "fused": 0.03333333507180214,
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 9.179878234863281
+              }
+            ],
+            "vectorDistance": 0.23279941082000732
+          },
+          "key": "73846ea8e0b874782bf3378c367003d59502aa437ae46a9606bbb96ac036c346",
+          "metadata": {
+            "source_key": "documents/auth483.txt",
+            "source_version": "VF_KOO7Ckfbv11LS9ynbwK4VNUSzVgKx",
+            "text": "AUTH483: Password reset links expire after thirty minutes. Request a new reset email if an old password recovery link no longer works.\n",
+            "document_id": "auth483"
+          }
+        },
+        {
+          "distance": 0.3578476905822754,
+          "scores": {
+            "fused": 0.032786883413791656,
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 4.855447769165039
+              }
+            ],
+            "vectorDistance": 0.3578476905822754
+          },
+          "key": "b3ede43bf149b9a690804aa0a02c8fe3acc3b6d9d2da49c03385813976fd9890",
+          "metadata": {
+            "document_id": "access402",
+            "source_key": "documents/access402.txt",
+            "source_version": "FX8GIit9L5QfHJvRlw_bZQG7W_S8xpn8",
+            "text": "ACCESS402: To recover multi-factor authentication after losing a phone, use a previously saved recovery code or contact an administrator.\n"
+          }
+        },
+        {
+          "distance": 0.37281733751296997,
+          "scores": {
+            "fused": 0.016129031777381897,
+            "vectorDistance": 0.37281733751296997
+          },
+          "key": "3a56cbb44b907bd423e56e076dc64fc4f204ed262ff453b0f8cc33dc7555400e",
+          "metadata": {
+            "text": "ACCESS401: Accounts are locked after five incorrect password attempts. An administrator can unlock the account after verifying the user's identity.\n",
+            "source_key": "documents/access401.txt",
+            "document_id": "access401",
+            "source_version": "wgX9efQhT_drSlNYYkf_5bJiW.TTjPdY"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "meaning-03",
+      "kind": "paraphrase",
+      "question": "How can an administrator reopen an account after too many wrong passwords?",
+      "relevant": [
+        "access401"
+      ],
+      "mode": "keyword",
+      "rank": 1,
+      "query_ms": 275.83,
+      "results": [
+        {
+          "scores": {
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 8.508049964904785
+              }
+            ]
+          },
+          "key": "3a56cbb44b907bd423e56e076dc64fc4f204ed262ff453b0f8cc33dc7555400e",
+          "metadata": {
+            "document_id": "access401",
+            "text": "ACCESS401: Accounts are locked after five incorrect password attempts. An administrator can unlock the account after verifying the user's identity.\n",
+            "source_version": "wgX9efQhT_drSlNYYkf_5bJiW.TTjPdY",
+            "source_key": "documents/access401.txt"
+          }
+        },
+        {
+          "scores": {
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 4.861421585083008
+              }
+            ]
+          },
+          "key": "b3ede43bf149b9a690804aa0a02c8fe3acc3b6d9d2da49c03385813976fd9890",
+          "metadata": {
+            "text": "ACCESS402: To recover multi-factor authentication after losing a phone, use a previously saved recovery code or contact an administrator.\n",
+            "source_version": "FX8GIit9L5QfHJvRlw_bZQG7W_S8xpn8",
+            "document_id": "access402",
+            "source_key": "documents/access402.txt"
+          }
+        },
+        {
+          "scores": {
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 4.353695392608643
+              }
+            ]
+          },
+          "key": "222d0eda0de8a2f7727444c167fb812c45970035d8dd11c90160ae304ea0e2d8",
+          "metadata": {
+            "source_key": "documents/bill702.txt",
+            "source_version": "XO4689On.1KYIg9M9s25FgdgLqmUEfR1",
+            "document_id": "bill702",
+            "text": "BILL702: A rejected subscription payment can be retried after the customer updates an expired credit card in billing settings.\n"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "meaning-03",
+      "kind": "paraphrase",
+      "question": "How can an administrator reopen an account after too many wrong passwords?",
+      "relevant": [
+        "access401"
+      ],
+      "mode": "vector",
+      "rank": 1,
+      "query_ms": 278.2,
+      "results": [
+        {
+          "distance": 0.20055538415908813,
+          "key": "3a56cbb44b907bd423e56e076dc64fc4f204ed262ff453b0f8cc33dc7555400e",
+          "metadata": {
+            "source_key": "documents/access401.txt",
+            "source_version": "wgX9efQhT_drSlNYYkf_5bJiW.TTjPdY",
+            "document_id": "access401",
+            "text": "ACCESS401: Accounts are locked after five incorrect password attempts. An administrator can unlock the account after verifying the user's identity.\n"
+          }
+        },
+        {
+          "distance": 0.3164443373680115,
+          "key": "73846ea8e0b874782bf3378c367003d59502aa437ae46a9606bbb96ac036c346",
+          "metadata": {
+            "source_version": "VF_KOO7Ckfbv11LS9ynbwK4VNUSzVgKx",
+            "source_key": "documents/auth483.txt",
+            "text": "AUTH483: Password reset links expire after thirty minutes. Request a new reset email if an old password recovery link no longer works.\n",
+            "document_id": "auth483"
+          }
+        },
+        {
+          "distance": 0.3648550510406494,
+          "key": "b3ede43bf149b9a690804aa0a02c8fe3acc3b6d9d2da49c03385813976fd9890",
+          "metadata": {
+            "source_version": "FX8GIit9L5QfHJvRlw_bZQG7W_S8xpn8",
+            "document_id": "access402",
+            "source_key": "documents/access402.txt",
+            "text": "ACCESS402: To recover multi-factor authentication after losing a phone, use a previously saved recovery code or contact an administrator.\n"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "meaning-03",
+      "kind": "paraphrase",
+      "question": "How can an administrator reopen an account after too many wrong passwords?",
+      "relevant": [
+        "access401"
+      ],
+      "mode": "hybrid",
+      "rank": 1,
+      "query_ms": 284.15,
+      "results": [
+        {
+          "distance": 0.20055538415908813,
+          "scores": {
+            "fused": 0.03333333507180214,
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 8.508049964904785
+              }
+            ],
+            "vectorDistance": 0.20055538415908813
+          },
+          "key": "3a56cbb44b907bd423e56e076dc64fc4f204ed262ff453b0f8cc33dc7555400e",
+          "metadata": {
+            "source_version": "wgX9efQhT_drSlNYYkf_5bJiW.TTjPdY",
+            "source_key": "documents/access401.txt",
+            "text": "ACCESS401: Accounts are locked after five incorrect password attempts. An administrator can unlock the account after verifying the user's identity.\n",
+            "document_id": "access401"
+          }
+        },
+        {
+          "distance": 0.3648550510406494,
+          "scores": {
+            "fused": 0.032522473484277725,
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 4.861421585083008
+              }
+            ],
+            "vectorDistance": 0.3648550510406494
+          },
+          "key": "b3ede43bf149b9a690804aa0a02c8fe3acc3b6d9d2da49c03385813976fd9890",
+          "metadata": {
+            "source_version": "FX8GIit9L5QfHJvRlw_bZQG7W_S8xpn8",
+            "text": "ACCESS402: To recover multi-factor authentication after losing a phone, use a previously saved recovery code or contact an administrator.\n",
+            "document_id": "access402",
+            "source_key": "documents/access402.txt"
+          }
+        },
+        {
+          "distance": 0.3164443373680115,
+          "scores": {
+            "fused": 0.016393441706895828,
+            "vectorDistance": 0.3164443373680115
+          },
+          "key": "73846ea8e0b874782bf3378c367003d59502aa437ae46a9606bbb96ac036c346",
+          "metadata": {
+            "document_id": "auth483",
+            "source_version": "VF_KOO7Ckfbv11LS9ynbwK4VNUSzVgKx",
+            "source_key": "documents/auth483.txt",
+            "text": "AUTH483: Password reset links expire after thirty minutes. Request a new reset email if an old password recovery link no longer works.\n"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "meaning-04",
+      "kind": "paraphrase",
+      "question": "I lost the phone used for my second sign-in factor.",
+      "relevant": [
+        "access402"
+      ],
+      "mode": "keyword",
+      "rank": 2,
+      "query_ms": 279.52,
+      "results": [
+        {
+          "scores": {
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 5.565962791442871
+              }
+            ]
+          },
+          "key": "640f13d59d6ad608f09c2b60aa152c73e7458e2756cd50dc49e6a351c7a90293",
+          "metadata": {
+            "text": "AUTH482: Session tokens expire eight hours after sign-in. A user who is repeatedly logged out should sign in again to receive a fresh session token.\n",
+            "source_version": "3vun4FaQAM6dvSVDRH.K5hRieS7V4tgD",
+            "source_key": "documents/auth482.txt",
+            "document_id": "auth482"
+          }
+        },
+        {
+          "scores": {
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 4.916443824768066
+              }
+            ]
+          },
+          "key": "b3ede43bf149b9a690804aa0a02c8fe3acc3b6d9d2da49c03385813976fd9890",
+          "metadata": {
+            "text": "ACCESS402: To recover multi-factor authentication after losing a phone, use a previously saved recovery code or contact an administrator.\n",
+            "source_version": "FX8GIit9L5QfHJvRlw_bZQG7W_S8xpn8",
+            "document_id": "access402",
+            "source_key": "documents/access402.txt"
+          }
+        },
+        {
+          "scores": {
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 2.946108102798462
+              }
+            ]
+          },
+          "key": "05ed65ed6545d32398afb10f260d40e46895406b944677513c5d02532d93c184",
+          "metadata": {
+            "document_id": "order601",
+            "text": "ORDER601: An order can be canceled before dispatch. After it ships, wait for delivery and use the return process instead.\n",
+            "source_key": "documents/order601.txt",
+            "source_version": "0HmPgCx3ma7.BBwK7C1Tk33EwX7pze3N"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "meaning-04",
+      "kind": "paraphrase",
+      "question": "I lost the phone used for my second sign-in factor.",
+      "relevant": [
+        "access402"
+      ],
+      "mode": "vector",
+      "rank": 1,
+      "query_ms": 278.59,
+      "results": [
+        {
+          "distance": 0.2011575698852539,
+          "key": "b3ede43bf149b9a690804aa0a02c8fe3acc3b6d9d2da49c03385813976fd9890",
+          "metadata": {
+            "source_version": "FX8GIit9L5QfHJvRlw_bZQG7W_S8xpn8",
+            "text": "ACCESS402: To recover multi-factor authentication after losing a phone, use a previously saved recovery code or contact an administrator.\n",
+            "source_key": "documents/access402.txt",
+            "document_id": "access402"
+          }
+        },
+        {
+          "distance": 0.4166720509529114,
+          "key": "222d0eda0de8a2f7727444c167fb812c45970035d8dd11c90160ae304ea0e2d8",
+          "metadata": {
+            "text": "BILL702: A rejected subscription payment can be retried after the customer updates an expired credit card in billing settings.\n",
+            "source_version": "XO4689On.1KYIg9M9s25FgdgLqmUEfR1",
+            "document_id": "bill702",
+            "source_key": "documents/bill702.txt"
+          }
+        },
+        {
+          "distance": 0.42361027002334595,
+          "key": "a90601e0388d65266f58086af61a21dc578acc3f36acdeaa3d85150884a2e872",
+          "metadata": {
+            "text": "BILL701: An apparent duplicate card charge may be a temporary authorization. Check the settled transactions before issuing a refund.\n",
+            "source_key": "documents/bill701.txt",
+            "document_id": "bill701",
+            "source_version": "raGQfDIXlGF_Loccsog.5kAPI95_Mqej"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "meaning-04",
+      "kind": "paraphrase",
+      "question": "I lost the phone used for my second sign-in factor.",
+      "relevant": [
+        "access402"
+      ],
+      "mode": "hybrid",
+      "rank": 1,
+      "query_ms": 280.11,
+      "results": [
+        {
+          "distance": 0.2011575698852539,
+          "scores": {
+            "fused": 0.03306011110544205,
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 4.916443824768066
+              }
+            ],
+            "vectorDistance": 0.2011575698852539
+          },
+          "key": "b3ede43bf149b9a690804aa0a02c8fe3acc3b6d9d2da49c03385813976fd9890",
+          "metadata": {
+            "text": "ACCESS402: To recover multi-factor authentication after losing a phone, use a previously saved recovery code or contact an administrator.\n",
+            "source_version": "FX8GIit9L5QfHJvRlw_bZQG7W_S8xpn8",
+            "document_id": "access402",
+            "source_key": "documents/access402.txt"
+          }
+        },
+        {
+          "scores": {
+            "fused": 0.01666666753590107,
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 5.565962791442871
+              }
+            ]
+          },
+          "key": "640f13d59d6ad608f09c2b60aa152c73e7458e2756cd50dc49e6a351c7a90293",
+          "metadata": {
+            "source_version": "3vun4FaQAM6dvSVDRH.K5hRieS7V4tgD",
+            "document_id": "auth482",
+            "text": "AUTH482: Session tokens expire eight hours after sign-in. A user who is repeatedly logged out should sign in again to receive a fresh session token.\n",
+            "source_key": "documents/auth482.txt"
+          }
+        },
+        {
+          "distance": 0.4166720509529114,
+          "scores": {
+            "fused": 0.016393441706895828,
+            "vectorDistance": 0.4166720509529114
+          },
+          "key": "222d0eda0de8a2f7727444c167fb812c45970035d8dd11c90160ae304ea0e2d8",
+          "metadata": {
+            "text": "BILL702: A rejected subscription payment can be retried after the customer updates an expired credit card in billing settings.\n",
+            "document_id": "bill702",
+            "source_key": "documents/bill702.txt",
+            "source_version": "XO4689On.1KYIg9M9s25FgdgLqmUEfR1"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "meaning-05",
+      "kind": "paraphrase",
+      "question": "Why does my credit card show the same purchase twice?",
+      "relevant": [
+        "bill701"
+      ],
+      "mode": "keyword",
+      "rank": 2,
+      "query_ms": 306.03,
+      "results": [
+        {
+          "scores": {
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 4.987255573272705
+              }
+            ]
+          },
+          "key": "222d0eda0de8a2f7727444c167fb812c45970035d8dd11c90160ae304ea0e2d8",
+          "metadata": {
+            "source_key": "documents/bill702.txt",
+            "document_id": "bill702",
+            "source_version": "XO4689On.1KYIg9M9s25FgdgLqmUEfR1",
+            "text": "BILL702: A rejected subscription payment can be retried after the customer updates an expired credit card in billing settings.\n"
+          }
+        },
+        {
+          "scores": {
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 2.478651285171509
+              }
+            ]
+          },
+          "key": "a90601e0388d65266f58086af61a21dc578acc3f36acdeaa3d85150884a2e872",
+          "metadata": {
+            "text": "BILL701: An apparent duplicate card charge may be a temporary authorization. Check the settled transactions before issuing a refund.\n",
+            "source_key": "documents/bill701.txt",
+            "source_version": "raGQfDIXlGF_Loccsog.5kAPI95_Mqej",
+            "document_id": "bill701"
+          }
+        },
+        {
+          "scores": {
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 0.7621229887008667
+              }
+            ]
+          },
+          "key": "cfbcecf0bc52722a4d26ec60978eeb632965707784900414250e495ae0adbb9a",
+          "metadata": {
+            "source_key": "documents/ship801.txt",
+            "document_id": "ship801",
+            "text": "SHIP801: If tracking says delivered but the parcel is missing, check the delivery location and ask the carrier to investigate.\n",
+            "source_version": "ObIWETE5_hqvosuR36gahg_D6afD1SNj"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "meaning-05",
+      "kind": "paraphrase",
+      "question": "Why does my credit card show the same purchase twice?",
+      "relevant": [
+        "bill701"
+      ],
+      "mode": "vector",
+      "rank": 1,
+      "query_ms": 303.08,
+      "results": [
+        {
+          "distance": 0.25066477060317993,
+          "key": "a90601e0388d65266f58086af61a21dc578acc3f36acdeaa3d85150884a2e872",
+          "metadata": {
+            "document_id": "bill701",
+            "source_version": "raGQfDIXlGF_Loccsog.5kAPI95_Mqej",
+            "text": "BILL701: An apparent duplicate card charge may be a temporary authorization. Check the settled transactions before issuing a refund.\n",
+            "source_key": "documents/bill701.txt"
+          }
+        },
+        {
+          "distance": 0.35857558250427246,
+          "key": "222d0eda0de8a2f7727444c167fb812c45970035d8dd11c90160ae304ea0e2d8",
+          "metadata": {
+            "document_id": "bill702",
+            "source_version": "XO4689On.1KYIg9M9s25FgdgLqmUEfR1",
+            "source_key": "documents/bill702.txt",
+            "text": "BILL702: A rejected subscription payment can be retried after the customer updates an expired credit card in billing settings.\n"
+          }
+        },
+        {
+          "distance": 0.42980849742889404,
+          "key": "07d8c70add8642299a86e62e6b990d6f3087a674086b96b7f2342746a40f0721",
+          "metadata": {
+            "source_key": "documents/return301.txt",
+            "source_version": "W8MS98cPH3g_1kw9Hc3nTdbWyubSZHjb",
+            "document_id": "return301",
+            "text": "RETURN301: Most unused purchases can be returned within thirty days of delivery. Final-sale products are excluded from this return window.\n"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "meaning-05",
+      "kind": "paraphrase",
+      "question": "Why does my credit card show the same purchase twice?",
+      "relevant": [
+        "bill701"
+      ],
+      "mode": "hybrid",
+      "rank": 2,
+      "query_ms": 281.7,
+      "results": [
+        {
+          "distance": 0.35857558250427246,
+          "scores": {
+            "fused": 0.03306011110544205,
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 4.987255573272705
+              }
+            ],
+            "vectorDistance": 0.35857558250427246
+          },
+          "key": "222d0eda0de8a2f7727444c167fb812c45970035d8dd11c90160ae304ea0e2d8",
+          "metadata": {
+            "source_key": "documents/bill702.txt",
+            "text": "BILL702: A rejected subscription payment can be retried after the customer updates an expired credit card in billing settings.\n",
+            "source_version": "XO4689On.1KYIg9M9s25FgdgLqmUEfR1",
+            "document_id": "bill702"
+          }
+        },
+        {
+          "distance": 0.25066477060317993,
+          "scores": {
+            "fused": 0.03306011110544205,
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 2.478651285171509
+              }
+            ],
+            "vectorDistance": 0.25066477060317993
+          },
+          "key": "a90601e0388d65266f58086af61a21dc578acc3f36acdeaa3d85150884a2e872",
+          "metadata": {
+            "source_version": "raGQfDIXlGF_Loccsog.5kAPI95_Mqej",
+            "text": "BILL701: An apparent duplicate card charge may be a temporary authorization. Check the settled transactions before issuing a refund.\n",
+            "source_key": "documents/bill701.txt",
+            "document_id": "bill701"
+          }
+        },
+        {
+          "distance": 0.42980849742889404,
+          "scores": {
+            "fused": 0.016129031777381897,
+            "vectorDistance": 0.42980849742889404
+          },
+          "key": "07d8c70add8642299a86e62e6b990d6f3087a674086b96b7f2342746a40f0721",
+          "metadata": {
+            "source_key": "documents/return301.txt",
+            "source_version": "W8MS98cPH3g_1kw9Hc3nTdbWyubSZHjb",
+            "text": "RETURN301: Most unused purchases can be returned within thirty days of delivery. Final-sale products are excluded from this return window.\n",
+            "document_id": "return301"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "meaning-06",
+      "kind": "paraphrase",
+      "question": "My subscription failed because my payment card expired.",
+      "relevant": [
+        "bill702"
+      ],
+      "mode": "keyword",
+      "rank": 1,
+      "query_ms": 276.72,
+      "results": [
+        {
+          "scores": {
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 8.978739738464355
+              }
+            ]
+          },
+          "key": "222d0eda0de8a2f7727444c167fb812c45970035d8dd11c90160ae304ea0e2d8",
+          "metadata": {
+            "source_key": "documents/bill702.txt",
+            "source_version": "XO4689On.1KYIg9M9s25FgdgLqmUEfR1",
+            "text": "BILL702: A rejected subscription payment can be retried after the customer updates an expired credit card in billing settings.\n",
+            "document_id": "bill702"
+          }
+        },
+        {
+          "scores": {
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 2.0654287338256836
+              }
+            ]
+          },
+          "key": "cd62c037da79ad1288eddcdf6bb5fa1d4d69f8d982af337ebcf1c3a37011d815",
+          "metadata": {
+            "source_key": "documents/api502.txt",
+            "text": "API502: API requests require a valid bearer token. A 401 response indicates missing or expired authentication credentials.\n",
+            "document_id": "api502",
+            "source_version": "3OqumTNCATR.ZMrroli2gevwAgWV_Y43"
+          }
+        },
+        {
+          "scores": {
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 1.9807655811309814
+              }
+            ]
+          },
+          "key": "a90601e0388d65266f58086af61a21dc578acc3f36acdeaa3d85150884a2e872",
+          "metadata": {
+            "source_version": "raGQfDIXlGF_Loccsog.5kAPI95_Mqej",
+            "document_id": "bill701",
+            "source_key": "documents/bill701.txt",
+            "text": "BILL701: An apparent duplicate card charge may be a temporary authorization. Check the settled transactions before issuing a refund.\n"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "meaning-06",
+      "kind": "paraphrase",
+      "question": "My subscription failed because my payment card expired.",
+      "relevant": [
+        "bill702"
+      ],
+      "mode": "vector",
+      "rank": 1,
+      "query_ms": 295.3,
+      "results": [
+        {
+          "distance": 0.19241267442703247,
+          "key": "222d0eda0de8a2f7727444c167fb812c45970035d8dd11c90160ae304ea0e2d8",
+          "metadata": {
+            "source_key": "documents/bill702.txt",
+            "document_id": "bill702",
+            "text": "BILL702: A rejected subscription payment can be retried after the customer updates an expired credit card in billing settings.\n",
+            "source_version": "XO4689On.1KYIg9M9s25FgdgLqmUEfR1"
+          }
+        },
+        {
+          "distance": 0.3428211808204651,
+          "key": "a90601e0388d65266f58086af61a21dc578acc3f36acdeaa3d85150884a2e872",
+          "metadata": {
+            "source_key": "documents/bill701.txt",
+            "document_id": "bill701",
+            "text": "BILL701: An apparent duplicate card charge may be a temporary authorization. Check the settled transactions before issuing a refund.\n",
+            "source_version": "raGQfDIXlGF_Loccsog.5kAPI95_Mqej"
+          }
+        },
+        {
+          "distance": 0.416917622089386,
+          "key": "73846ea8e0b874782bf3378c367003d59502aa437ae46a9606bbb96ac036c346",
+          "metadata": {
+            "source_version": "VF_KOO7Ckfbv11LS9ynbwK4VNUSzVgKx",
+            "text": "AUTH483: Password reset links expire after thirty minutes. Request a new reset email if an old password recovery link no longer works.\n",
+            "source_key": "documents/auth483.txt",
+            "document_id": "auth483"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "meaning-06",
+      "kind": "paraphrase",
+      "question": "My subscription failed because my payment card expired.",
+      "relevant": [
+        "bill702"
+      ],
+      "mode": "hybrid",
+      "rank": 1,
+      "query_ms": 287.48,
+      "results": [
+        {
+          "distance": 0.19241267442703247,
+          "scores": {
+            "fused": 0.03333333507180214,
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 8.978739738464355
+              }
+            ],
+            "vectorDistance": 0.19241267442703247
+          },
+          "key": "222d0eda0de8a2f7727444c167fb812c45970035d8dd11c90160ae304ea0e2d8",
+          "metadata": {
+            "source_version": "XO4689On.1KYIg9M9s25FgdgLqmUEfR1",
+            "source_key": "documents/bill702.txt",
+            "text": "BILL702: A rejected subscription payment can be retried after the customer updates an expired credit card in billing settings.\n",
+            "document_id": "bill702"
+          }
+        },
+        {
+          "distance": 0.3428211808204651,
+          "scores": {
+            "fused": 0.032522473484277725,
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 1.9807655811309814
+              }
+            ],
+            "vectorDistance": 0.3428211808204651
+          },
+          "key": "a90601e0388d65266f58086af61a21dc578acc3f36acdeaa3d85150884a2e872",
+          "metadata": {
+            "document_id": "bill701",
+            "source_key": "documents/bill701.txt",
+            "source_version": "raGQfDIXlGF_Loccsog.5kAPI95_Mqej",
+            "text": "BILL701: An apparent duplicate card charge may be a temporary authorization. Check the settled transactions before issuing a refund.\n"
+          }
+        },
+        {
+          "scores": {
+            "fused": 0.016393441706895828,
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 2.0654287338256836
+              }
+            ]
+          },
+          "key": "cd62c037da79ad1288eddcdf6bb5fa1d4d69f8d982af337ebcf1c3a37011d815",
+          "metadata": {
+            "document_id": "api502",
+            "text": "API502: API requests require a valid bearer token. A 401 response indicates missing or expired authentication credentials.\n",
+            "source_version": "3OqumTNCATR.ZMrroli2gevwAgWV_Y43",
+            "source_key": "documents/api502.txt"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "meaning-07",
+      "kind": "paraphrase",
+      "question": "How long do I have to send back an unused purchase?",
+      "relevant": [
+        "return301"
+      ],
+      "mode": "keyword",
+      "rank": 1,
+      "query_ms": 277.36,
+      "results": [
+        {
+          "scores": {
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 2.4098238945007324
+              }
+            ]
+          },
+          "key": "07d8c70add8642299a86e62e6b990d6f3087a674086b96b7f2342746a40f0721",
+          "metadata": {
+            "source_version": "W8MS98cPH3g_1kw9Hc3nTdbWyubSZHjb",
+            "source_key": "documents/return301.txt",
+            "document_id": "return301",
+            "text": "RETURN301: Most unused purchases can be returned within thirty days of delivery. Final-sale products are excluded from this return window.\n"
+          }
+        },
+        {
+          "scores": {
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 1.9469581842422485
+              }
+            ]
+          },
+          "key": "b3ede43bf149b9a690804aa0a02c8fe3acc3b6d9d2da49c03385813976fd9890",
+          "metadata": {
+            "source_version": "FX8GIit9L5QfHJvRlw_bZQG7W_S8xpn8",
+            "document_id": "access402",
+            "text": "ACCESS402: To recover multi-factor authentication after losing a phone, use a previously saved recovery code or contact an administrator.\n",
+            "source_key": "documents/access402.txt"
+          }
+        },
+        {
+          "scores": {
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 1.0358928442001343
+              }
+            ]
+          },
+          "key": "141723256a07edd55044353583eec2a9db799c52b2a38d602fb380cdd6e5dc40",
+          "metadata": {
+            "text": "RETURN302: To print a prepaid return shipping label, open the order details and select Start a return.\n",
+            "document_id": "return302",
+            "source_key": "documents/return302.txt",
+            "source_version": "kf9JQuvgF.PkX9JTgSST4GdvUJYJbWlE"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "meaning-07",
+      "kind": "paraphrase",
+      "question": "How long do I have to send back an unused purchase?",
+      "relevant": [
+        "return301"
+      ],
+      "mode": "vector",
+      "rank": 1,
+      "query_ms": 287.36,
+      "results": [
+        {
+          "distance": 0.11837536096572876,
+          "key": "07d8c70add8642299a86e62e6b990d6f3087a674086b96b7f2342746a40f0721",
+          "metadata": {
+            "source_version": "W8MS98cPH3g_1kw9Hc3nTdbWyubSZHjb",
+            "document_id": "return301",
+            "text": "RETURN301: Most unused purchases can be returned within thirty days of delivery. Final-sale products are excluded from this return window.\n",
+            "source_key": "documents/return301.txt"
+          }
+        },
+        {
+          "distance": 0.30305445194244385,
+          "key": "05ed65ed6545d32398afb10f260d40e46895406b944677513c5d02532d93c184",
+          "metadata": {
+            "text": "ORDER601: An order can be canceled before dispatch. After it ships, wait for delivery and use the return process instead.\n",
+            "source_key": "documents/order601.txt",
+            "document_id": "order601",
+            "source_version": "0HmPgCx3ma7.BBwK7C1Tk33EwX7pze3N"
+          }
+        },
+        {
+          "distance": 0.3386150002479553,
+          "key": "222d0eda0de8a2f7727444c167fb812c45970035d8dd11c90160ae304ea0e2d8",
+          "metadata": {
+            "document_id": "bill702",
+            "source_version": "XO4689On.1KYIg9M9s25FgdgLqmUEfR1",
+            "text": "BILL702: A rejected subscription payment can be retried after the customer updates an expired credit card in billing settings.\n",
+            "source_key": "documents/bill702.txt"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "meaning-07",
+      "kind": "paraphrase",
+      "question": "How long do I have to send back an unused purchase?",
+      "relevant": [
+        "return301"
+      ],
+      "mode": "hybrid",
+      "rank": 1,
+      "query_ms": 280.17,
+      "results": [
+        {
+          "distance": 0.11837536096572876,
+          "scores": {
+            "fused": 0.03333333507180214,
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 2.4098238945007324
+              }
+            ],
+            "vectorDistance": 0.11837536096572876
+          },
+          "key": "07d8c70add8642299a86e62e6b990d6f3087a674086b96b7f2342746a40f0721",
+          "metadata": {
+            "document_id": "return301",
+            "source_version": "W8MS98cPH3g_1kw9Hc3nTdbWyubSZHjb",
+            "text": "RETURN301: Most unused purchases can be returned within thirty days of delivery. Final-sale products are excluded from this return window.\n",
+            "source_key": "documents/return301.txt"
+          }
+        },
+        {
+          "distance": 0.30305445194244385,
+          "scores": {
+            "fused": 0.016393441706895828,
+            "vectorDistance": 0.30305445194244385
+          },
+          "key": "05ed65ed6545d32398afb10f260d40e46895406b944677513c5d02532d93c184",
+          "metadata": {
+            "source_key": "documents/order601.txt",
+            "document_id": "order601",
+            "text": "ORDER601: An order can be canceled before dispatch. After it ships, wait for delivery and use the return process instead.\n",
+            "source_version": "0HmPgCx3ma7.BBwK7C1Tk33EwX7pze3N"
+          }
+        },
+        {
+          "scores": {
+            "fused": 0.016393441706895828,
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 1.9469581842422485
+              }
+            ]
+          },
+          "key": "b3ede43bf149b9a690804aa0a02c8fe3acc3b6d9d2da49c03385813976fd9890",
+          "metadata": {
+            "source_version": "FX8GIit9L5QfHJvRlw_bZQG7W_S8xpn8",
+            "source_key": "documents/access402.txt",
+            "text": "ACCESS402: To recover multi-factor authentication after losing a phone, use a previously saved recovery code or contact an administrator.\n",
+            "document_id": "access402"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "meaning-08",
+      "kind": "paraphrase",
+      "question": "Where do I download the postage label for a return?",
+      "relevant": [
+        "return302"
+      ],
+      "mode": "keyword",
+      "rank": 1,
+      "query_ms": 271.53,
+      "results": [
+        {
+          "scores": {
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 5.98651123046875
+              }
+            ]
+          },
+          "key": "141723256a07edd55044353583eec2a9db799c52b2a38d602fb380cdd6e5dc40",
+          "metadata": {
+            "document_id": "return302",
+            "text": "RETURN302: To print a prepaid return shipping label, open the order details and select Start a return.\n",
+            "source_version": "kf9JQuvgF.PkX9JTgSST4GdvUJYJbWlE",
+            "source_key": "documents/return302.txt"
+          }
+        },
+        {
+          "scores": {
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 4.546396732330322
+              }
+            ]
+          },
+          "key": "05ed65ed6545d32398afb10f260d40e46895406b944677513c5d02532d93c184",
+          "metadata": {
+            "source_key": "documents/order601.txt",
+            "source_version": "0HmPgCx3ma7.BBwK7C1Tk33EwX7pze3N",
+            "text": "ORDER601: An order can be canceled before dispatch. After it ships, wait for delivery and use the return process instead.\n",
+            "document_id": "order601"
+          }
+        },
+        {
+          "scores": {
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 1.5687817335128784
+              }
+            ]
+          },
+          "key": "07d8c70add8642299a86e62e6b990d6f3087a674086b96b7f2342746a40f0721",
+          "metadata": {
+            "source_key": "documents/return301.txt",
+            "source_version": "W8MS98cPH3g_1kw9Hc3nTdbWyubSZHjb",
+            "document_id": "return301",
+            "text": "RETURN301: Most unused purchases can be returned within thirty days of delivery. Final-sale products are excluded from this return window.\n"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "meaning-08",
+      "kind": "paraphrase",
+      "question": "Where do I download the postage label for a return?",
+      "relevant": [
+        "return302"
+      ],
+      "mode": "vector",
+      "rank": 1,
+      "query_ms": 283.25,
+      "results": [
+        {
+          "distance": 0.23092085123062134,
+          "key": "141723256a07edd55044353583eec2a9db799c52b2a38d602fb380cdd6e5dc40",
+          "metadata": {
+            "source_key": "documents/return302.txt",
+            "text": "RETURN302: To print a prepaid return shipping label, open the order details and select Start a return.\n",
+            "document_id": "return302",
+            "source_version": "kf9JQuvgF.PkX9JTgSST4GdvUJYJbWlE"
+          }
+        },
+        {
+          "distance": 0.3667043447494507,
+          "key": "cfbcecf0bc52722a4d26ec60978eeb632965707784900414250e495ae0adbb9a",
+          "metadata": {
+            "text": "SHIP801: If tracking says delivered but the parcel is missing, check the delivery location and ask the carrier to investigate.\n",
+            "document_id": "ship801",
+            "source_version": "ObIWETE5_hqvosuR36gahg_D6afD1SNj",
+            "source_key": "documents/ship801.txt"
+          }
+        },
+        {
+          "distance": 0.39907723665237427,
+          "key": "07d8c70add8642299a86e62e6b990d6f3087a674086b96b7f2342746a40f0721",
+          "metadata": {
+            "document_id": "return301",
+            "source_key": "documents/return301.txt",
+            "text": "RETURN301: Most unused purchases can be returned within thirty days of delivery. Final-sale products are excluded from this return window.\n",
+            "source_version": "W8MS98cPH3g_1kw9Hc3nTdbWyubSZHjb"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "meaning-08",
+      "kind": "paraphrase",
+      "question": "Where do I download the postage label for a return?",
+      "relevant": [
+        "return302"
+      ],
+      "mode": "hybrid",
+      "rank": 1,
+      "query_ms": 274.83,
+      "results": [
+        {
+          "distance": 0.23092085123062134,
+          "scores": {
+            "fused": 0.03333333507180214,
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 5.98651123046875
+              }
+            ],
+            "vectorDistance": 0.23092085123062134
+          },
+          "key": "141723256a07edd55044353583eec2a9db799c52b2a38d602fb380cdd6e5dc40",
+          "metadata": {
+            "text": "RETURN302: To print a prepaid return shipping label, open the order details and select Start a return.\n",
+            "source_key": "documents/return302.txt",
+            "source_version": "kf9JQuvgF.PkX9JTgSST4GdvUJYJbWlE",
+            "document_id": "return302"
+          }
+        },
+        {
+          "distance": 0.39907723665237427,
+          "scores": {
+            "fused": 0.032258063554763794,
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 1.5687817335128784
+              }
+            ],
+            "vectorDistance": 0.39907723665237427
+          },
+          "key": "07d8c70add8642299a86e62e6b990d6f3087a674086b96b7f2342746a40f0721",
+          "metadata": {
+            "source_version": "W8MS98cPH3g_1kw9Hc3nTdbWyubSZHjb",
+            "source_key": "documents/return301.txt",
+            "document_id": "return301",
+            "text": "RETURN301: Most unused purchases can be returned within thirty days of delivery. Final-sale products are excluded from this return window.\n"
+          }
+        },
+        {
+          "scores": {
+            "fused": 0.016393441706895828,
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 4.546396732330322
+              }
+            ]
+          },
+          "key": "05ed65ed6545d32398afb10f260d40e46895406b944677513c5d02532d93c184",
+          "metadata": {
+            "source_key": "documents/order601.txt",
+            "text": "ORDER601: An order can be canceled before dispatch. After it ships, wait for delivery and use the return process instead.\n",
+            "document_id": "order601",
+            "source_version": "0HmPgCx3ma7.BBwK7C1Tk33EwX7pze3N"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "meaning-09",
+      "kind": "paraphrase",
+      "question": "The courier says my package arrived but I cannot find it.",
+      "relevant": [
+        "ship801"
+      ],
+      "mode": "keyword",
+      "rank": 1,
+      "query_ms": 279.5,
+      "results": [
+        {
+          "scores": {
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 5.678566932678223
+              }
+            ]
+          },
+          "key": "cfbcecf0bc52722a4d26ec60978eeb632965707784900414250e495ae0adbb9a",
+          "metadata": {
+            "source_version": "ObIWETE5_hqvosuR36gahg_D6afD1SNj",
+            "source_key": "documents/ship801.txt",
+            "text": "SHIP801: If tracking says delivered but the parcel is missing, check the delivery location and ask the carrier to investigate.\n",
+            "document_id": "ship801"
+          }
+        },
+        {
+          "scores": {
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 2.4724273681640625
+              }
+            ]
+          },
+          "key": "6c730ec0c7d12c193cba57fefa4b9990e42d324e76ef542376bf810e47dc38ee",
+          "metadata": {
+            "source_key": "documents/ship802.txt",
+            "document_id": "ship802",
+            "source_version": "OVmanSwGbnctDSc8stU.QHOaqoZTBI7i",
+            "text": "SHIP802: A dispatch delay before a parcel has shipped is shown as awaiting fulfillment. The delivery estimate updates when the carrier collects it.\n"
+          }
+        },
+        {
+          "scores": {
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 2.428870439529419
+              }
+            ]
+          },
+          "key": "05ed65ed6545d32398afb10f260d40e46895406b944677513c5d02532d93c184",
+          "metadata": {
+            "source_version": "0HmPgCx3ma7.BBwK7C1Tk33EwX7pze3N",
+            "source_key": "documents/order601.txt",
+            "text": "ORDER601: An order can be canceled before dispatch. After it ships, wait for delivery and use the return process instead.\n",
+            "document_id": "order601"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "meaning-09",
+      "kind": "paraphrase",
+      "question": "The courier says my package arrived but I cannot find it.",
+      "relevant": [
+        "ship801"
+      ],
+      "mode": "vector",
+      "rank": 1,
+      "query_ms": 280.16,
+      "results": [
+        {
+          "distance": 0.2305208444595337,
+          "key": "cfbcecf0bc52722a4d26ec60978eeb632965707784900414250e495ae0adbb9a",
+          "metadata": {
+            "document_id": "ship801",
+            "source_version": "ObIWETE5_hqvosuR36gahg_D6afD1SNj",
+            "source_key": "documents/ship801.txt",
+            "text": "SHIP801: If tracking says delivered but the parcel is missing, check the delivery location and ask the carrier to investigate.\n"
+          }
+        },
+        {
+          "distance": 0.3213570713996887,
+          "key": "6c730ec0c7d12c193cba57fefa4b9990e42d324e76ef542376bf810e47dc38ee",
+          "metadata": {
+            "source_version": "OVmanSwGbnctDSc8stU.QHOaqoZTBI7i",
+            "document_id": "ship802",
+            "source_key": "documents/ship802.txt",
+            "text": "SHIP802: A dispatch delay before a parcel has shipped is shown as awaiting fulfillment. The delivery estimate updates when the carrier collects it.\n"
+          }
+        },
+        {
+          "distance": 0.3996683359146118,
+          "key": "2189ee3ca1a953d09515dd6270536c7f5a2979950c10f877c23aaf2ed17d65a9",
+          "metadata": {
+            "document_id": "order602",
+            "source_key": "documents/order602.txt",
+            "text": "ORDER602: To change the destination address, edit order details before dispatch. Contact support once the carrier has collected the parcel.\n",
+            "source_version": "kaHCAwNNS4W68D1wEAmStH7DH8t64zC1"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "meaning-09",
+      "kind": "paraphrase",
+      "question": "The courier says my package arrived but I cannot find it.",
+      "relevant": [
+        "ship801"
+      ],
+      "mode": "hybrid",
+      "rank": 1,
+      "query_ms": 275.19,
+      "results": [
+        {
+          "distance": 0.2305208444595337,
+          "scores": {
+            "fused": 0.03333333507180214,
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 5.678566932678223
+              }
+            ],
+            "vectorDistance": 0.2305208444595337
+          },
+          "key": "cfbcecf0bc52722a4d26ec60978eeb632965707784900414250e495ae0adbb9a",
+          "metadata": {
+            "source_version": "ObIWETE5_hqvosuR36gahg_D6afD1SNj",
+            "source_key": "documents/ship801.txt",
+            "document_id": "ship801",
+            "text": "SHIP801: If tracking says delivered but the parcel is missing, check the delivery location and ask the carrier to investigate.\n"
+          }
+        },
+        {
+          "distance": 0.3213570713996887,
+          "scores": {
+            "fused": 0.032786883413791656,
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 2.4724273681640625
+              }
+            ],
+            "vectorDistance": 0.3213570713996887
+          },
+          "key": "6c730ec0c7d12c193cba57fefa4b9990e42d324e76ef542376bf810e47dc38ee",
+          "metadata": {
+            "document_id": "ship802",
+            "source_key": "documents/ship802.txt",
+            "text": "SHIP802: A dispatch delay before a parcel has shipped is shown as awaiting fulfillment. The delivery estimate updates when the carrier collects it.\n",
+            "source_version": "OVmanSwGbnctDSc8stU.QHOaqoZTBI7i"
+          }
+        },
+        {
+          "scores": {
+            "fused": 0.016129031777381897,
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 2.428870439529419
+              }
+            ]
+          },
+          "key": "05ed65ed6545d32398afb10f260d40e46895406b944677513c5d02532d93c184",
+          "metadata": {
+            "document_id": "order601",
+            "text": "ORDER601: An order can be canceled before dispatch. After it ships, wait for delivery and use the return process instead.\n",
+            "source_key": "documents/order601.txt",
+            "source_version": "0HmPgCx3ma7.BBwK7C1Tk33EwX7pze3N"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "meaning-10",
+      "kind": "paraphrase",
+      "question": "My order is still waiting to leave the warehouse.",
+      "relevant": [
+        "ship802"
+      ],
+      "mode": "keyword",
+      "rank": null,
+      "query_ms": 272.64,
+      "results": [
+        {
+          "scores": {
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 3.335890769958496
+              }
+            ]
+          },
+          "key": "2189ee3ca1a953d09515dd6270536c7f5a2979950c10f877c23aaf2ed17d65a9",
+          "metadata": {
+            "text": "ORDER602: To change the destination address, edit order details before dispatch. Contact support once the carrier has collected the parcel.\n",
+            "source_key": "documents/order602.txt",
+            "source_version": "kaHCAwNNS4W68D1wEAmStH7DH8t64zC1",
+            "document_id": "order602"
+          }
+        },
+        {
+          "scores": {
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 3.335890769958496
+              }
+            ]
+          },
+          "key": "cfbcecf0bc52722a4d26ec60978eeb632965707784900414250e495ae0adbb9a",
+          "metadata": {
+            "text": "SHIP801: If tracking says delivered but the parcel is missing, check the delivery location and ask the carrier to investigate.\n",
+            "document_id": "ship801",
+            "source_version": "ObIWETE5_hqvosuR36gahg_D6afD1SNj",
+            "source_key": "documents/ship801.txt"
+          }
+        },
+        {
+          "scores": {
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 3.257949113845825
+              }
+            ]
+          },
+          "key": "141723256a07edd55044353583eec2a9db799c52b2a38d602fb380cdd6e5dc40",
+          "metadata": {
+            "document_id": "return302",
+            "source_key": "documents/return302.txt",
+            "source_version": "kf9JQuvgF.PkX9JTgSST4GdvUJYJbWlE",
+            "text": "RETURN302: To print a prepaid return shipping label, open the order details and select Start a return.\n"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "meaning-10",
+      "kind": "paraphrase",
+      "question": "My order is still waiting to leave the warehouse.",
+      "relevant": [
+        "ship802"
+      ],
+      "mode": "vector",
+      "rank": 1,
+      "query_ms": 278.28,
+      "results": [
+        {
+          "distance": 0.32252877950668335,
+          "key": "6c730ec0c7d12c193cba57fefa4b9990e42d324e76ef542376bf810e47dc38ee",
+          "metadata": {
+            "source_version": "OVmanSwGbnctDSc8stU.QHOaqoZTBI7i",
+            "document_id": "ship802",
+            "source_key": "documents/ship802.txt",
+            "text": "SHIP802: A dispatch delay before a parcel has shipped is shown as awaiting fulfillment. The delivery estimate updates when the carrier collects it.\n"
+          }
+        },
+        {
+          "distance": 0.3719291687011719,
+          "key": "05ed65ed6545d32398afb10f260d40e46895406b944677513c5d02532d93c184",
+          "metadata": {
+            "source_key": "documents/order601.txt",
+            "document_id": "order601",
+            "text": "ORDER601: An order can be canceled before dispatch. After it ships, wait for delivery and use the return process instead.\n",
+            "source_version": "0HmPgCx3ma7.BBwK7C1Tk33EwX7pze3N"
+          }
+        },
+        {
+          "distance": 0.37278348207473755,
+          "key": "cfbcecf0bc52722a4d26ec60978eeb632965707784900414250e495ae0adbb9a",
+          "metadata": {
+            "source_key": "documents/ship801.txt",
+            "document_id": "ship801",
+            "text": "SHIP801: If tracking says delivered but the parcel is missing, check the delivery location and ask the carrier to investigate.\n",
+            "source_version": "ObIWETE5_hqvosuR36gahg_D6afD1SNj"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "meaning-10",
+      "kind": "paraphrase",
+      "question": "My order is still waiting to leave the warehouse.",
+      "relevant": [
+        "ship802"
+      ],
+      "mode": "hybrid",
+      "rank": 3,
+      "query_ms": 284.56,
+      "results": [
+        {
+          "distance": 0.37278348207473755,
+          "scores": {
+            "fused": 0.032522473484277725,
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 3.335890769958496
+              }
+            ],
+            "vectorDistance": 0.37278348207473755
+          },
+          "key": "cfbcecf0bc52722a4d26ec60978eeb632965707784900414250e495ae0adbb9a",
+          "metadata": {
+            "source_key": "documents/ship801.txt",
+            "source_version": "ObIWETE5_hqvosuR36gahg_D6afD1SNj",
+            "document_id": "ship801",
+            "text": "SHIP801: If tracking says delivered but the parcel is missing, check the delivery location and ask the carrier to investigate.\n"
+          }
+        },
+        {
+          "scores": {
+            "fused": 0.01666666753590107,
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 3.335890769958496
+              }
+            ]
+          },
+          "key": "2189ee3ca1a953d09515dd6270536c7f5a2979950c10f877c23aaf2ed17d65a9",
+          "metadata": {
+            "document_id": "order602",
+            "source_key": "documents/order602.txt",
+            "text": "ORDER602: To change the destination address, edit order details before dispatch. Contact support once the carrier has collected the parcel.\n",
+            "source_version": "kaHCAwNNS4W68D1wEAmStH7DH8t64zC1"
+          }
+        },
+        {
+          "distance": 0.32252877950668335,
+          "scores": {
+            "fused": 0.01666666753590107,
+            "vectorDistance": 0.32252877950668335
+          },
+          "key": "6c730ec0c7d12c193cba57fefa4b9990e42d324e76ef542376bf810e47dc38ee",
+          "metadata": {
+            "document_id": "ship802",
+            "text": "SHIP802: A dispatch delay before a parcel has shipped is shown as awaiting fulfillment. The delivery estimate updates when the carrier collects it.\n",
+            "source_version": "OVmanSwGbnctDSc8stU.QHOaqoZTBI7i",
+            "source_key": "documents/ship802.txt"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "meaning-11",
+      "kind": "paraphrase",
+      "question": "Can I stop a purchase before it is sent?",
+      "relevant": [
+        "order601"
+      ],
+      "mode": "keyword",
+      "rank": 2,
+      "query_ms": 274.61,
+      "results": [
+        {
+          "scores": {
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 5.129954814910889
+              }
+            ]
+          },
+          "key": "6c730ec0c7d12c193cba57fefa4b9990e42d324e76ef542376bf810e47dc38ee",
+          "metadata": {
+            "source_version": "OVmanSwGbnctDSc8stU.QHOaqoZTBI7i",
+            "document_id": "ship802",
+            "source_key": "documents/ship802.txt",
+            "text": "SHIP802: A dispatch delay before a parcel has shipped is shown as awaiting fulfillment. The delivery estimate updates when the carrier collects it.\n"
+          }
+        },
+        {
+          "scores": {
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 4.632623672485352
+              }
+            ]
+          },
+          "key": "05ed65ed6545d32398afb10f260d40e46895406b944677513c5d02532d93c184",
+          "metadata": {
+            "source_key": "documents/order601.txt",
+            "source_version": "0HmPgCx3ma7.BBwK7C1Tk33EwX7pze3N",
+            "document_id": "order601",
+            "text": "ORDER601: An order can be canceled before dispatch. After it ships, wait for delivery and use the return process instead.\n"
+          }
+        },
+        {
+          "scores": {
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 1.9289281368255615
+              }
+            ]
+          },
+          "key": "640f13d59d6ad608f09c2b60aa152c73e7458e2756cd50dc49e6a351c7a90293",
+          "metadata": {
+            "text": "AUTH482: Session tokens expire eight hours after sign-in. A user who is repeatedly logged out should sign in again to receive a fresh session token.\n",
+            "document_id": "auth482",
+            "source_version": "3vun4FaQAM6dvSVDRH.K5hRieS7V4tgD",
+            "source_key": "documents/auth482.txt"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "meaning-11",
+      "kind": "paraphrase",
+      "question": "Can I stop a purchase before it is sent?",
+      "relevant": [
+        "order601"
+      ],
+      "mode": "vector",
+      "rank": 1,
+      "query_ms": 290.61,
+      "results": [
+        {
+          "distance": 0.24720269441604614,
+          "key": "05ed65ed6545d32398afb10f260d40e46895406b944677513c5d02532d93c184",
+          "metadata": {
+            "source_version": "0HmPgCx3ma7.BBwK7C1Tk33EwX7pze3N",
+            "text": "ORDER601: An order can be canceled before dispatch. After it ships, wait for delivery and use the return process instead.\n",
+            "source_key": "documents/order601.txt",
+            "document_id": "order601"
+          }
+        },
+        {
+          "distance": 0.31318724155426025,
+          "key": "07d8c70add8642299a86e62e6b990d6f3087a674086b96b7f2342746a40f0721",
+          "metadata": {
+            "document_id": "return301",
+            "text": "RETURN301: Most unused purchases can be returned within thirty days of delivery. Final-sale products are excluded from this return window.\n",
+            "source_key": "documents/return301.txt",
+            "source_version": "W8MS98cPH3g_1kw9Hc3nTdbWyubSZHjb"
+          }
+        },
+        {
+          "distance": 0.32654517889022827,
+          "key": "a90601e0388d65266f58086af61a21dc578acc3f36acdeaa3d85150884a2e872",
+          "metadata": {
+            "document_id": "bill701",
+            "source_version": "raGQfDIXlGF_Loccsog.5kAPI95_Mqej",
+            "text": "BILL701: An apparent duplicate card charge may be a temporary authorization. Check the settled transactions before issuing a refund.\n",
+            "source_key": "documents/bill701.txt"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "meaning-11",
+      "kind": "paraphrase",
+      "question": "Can I stop a purchase before it is sent?",
+      "relevant": [
+        "order601"
+      ],
+      "mode": "hybrid",
+      "rank": 1,
+      "query_ms": 279.48,
+      "results": [
+        {
+          "distance": 0.24720269441604614,
+          "scores": {
+            "fused": 0.03306011110544205,
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 4.632623672485352
+              }
+            ],
+            "vectorDistance": 0.24720269441604614
+          },
+          "key": "05ed65ed6545d32398afb10f260d40e46895406b944677513c5d02532d93c184",
+          "metadata": {
+            "document_id": "order601",
+            "source_key": "documents/order601.txt",
+            "text": "ORDER601: An order can be canceled before dispatch. After it ships, wait for delivery and use the return process instead.\n",
+            "source_version": "0HmPgCx3ma7.BBwK7C1Tk33EwX7pze3N"
+          }
+        },
+        {
+          "scores": {
+            "fused": 0.01666666753590107,
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 5.129954814910889
+              }
+            ]
+          },
+          "key": "6c730ec0c7d12c193cba57fefa4b9990e42d324e76ef542376bf810e47dc38ee",
+          "metadata": {
+            "source_version": "OVmanSwGbnctDSc8stU.QHOaqoZTBI7i",
+            "text": "SHIP802: A dispatch delay before a parcel has shipped is shown as awaiting fulfillment. The delivery estimate updates when the carrier collects it.\n",
+            "source_key": "documents/ship802.txt",
+            "document_id": "ship802"
+          }
+        },
+        {
+          "distance": 0.31318724155426025,
+          "scores": {
+            "fused": 0.016393441706895828,
+            "vectorDistance": 0.31318724155426025
+          },
+          "key": "07d8c70add8642299a86e62e6b990d6f3087a674086b96b7f2342746a40f0721",
+          "metadata": {
+            "text": "RETURN301: Most unused purchases can be returned within thirty days of delivery. Final-sale products are excluded from this return window.\n",
+            "document_id": "return301",
+            "source_key": "documents/return301.txt",
+            "source_version": "W8MS98cPH3g_1kw9Hc3nTdbWyubSZHjb"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "meaning-12",
+      "kind": "paraphrase",
+      "question": "How can I send my order to a different address?",
+      "relevant": [
+        "order602"
+      ],
+      "mode": "keyword",
+      "rank": 1,
+      "query_ms": 335.0,
+      "results": [
+        {
+          "scores": {
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 5.031989574432373
+              }
+            ]
+          },
+          "key": "2189ee3ca1a953d09515dd6270536c7f5a2979950c10f877c23aaf2ed17d65a9",
+          "metadata": {
+            "source_version": "kaHCAwNNS4W68D1wEAmStH7DH8t64zC1",
+            "document_id": "order602",
+            "text": "ORDER602: To change the destination address, edit order details before dispatch. Contact support once the carrier has collected the parcel.\n",
+            "source_key": "documents/order602.txt"
+          }
+        },
+        {
+          "scores": {
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 3.3041720390319824
+              }
+            ]
+          },
+          "key": "141723256a07edd55044353583eec2a9db799c52b2a38d602fb380cdd6e5dc40",
+          "metadata": {
+            "source_version": "kf9JQuvgF.PkX9JTgSST4GdvUJYJbWlE",
+            "text": "RETURN302: To print a prepaid return shipping label, open the order details and select Start a return.\n",
+            "source_key": "documents/return302.txt",
+            "document_id": "return302"
+          }
+        },
+        {
+          "scores": {
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 2.946108341217041
+              }
+            ]
+          },
+          "key": "05ed65ed6545d32398afb10f260d40e46895406b944677513c5d02532d93c184",
+          "metadata": {
+            "source_version": "0HmPgCx3ma7.BBwK7C1Tk33EwX7pze3N",
+            "source_key": "documents/order601.txt",
+            "text": "ORDER601: An order can be canceled before dispatch. After it ships, wait for delivery and use the return process instead.\n",
+            "document_id": "order601"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "meaning-12",
+      "kind": "paraphrase",
+      "question": "How can I send my order to a different address?",
+      "relevant": [
+        "order602"
+      ],
+      "mode": "vector",
+      "rank": 1,
+      "query_ms": 1087.62,
+      "results": [
+        {
+          "distance": 0.21827268600463867,
+          "key": "2189ee3ca1a953d09515dd6270536c7f5a2979950c10f877c23aaf2ed17d65a9",
+          "metadata": {
+            "source_key": "documents/order602.txt",
+            "document_id": "order602",
+            "text": "ORDER602: To change the destination address, edit order details before dispatch. Contact support once the carrier has collected the parcel.\n",
+            "source_version": "kaHCAwNNS4W68D1wEAmStH7DH8t64zC1"
+          }
+        },
+        {
+          "distance": 0.3533703088760376,
+          "key": "05ed65ed6545d32398afb10f260d40e46895406b944677513c5d02532d93c184",
+          "metadata": {
+            "source_version": "0HmPgCx3ma7.BBwK7C1Tk33EwX7pze3N",
+            "document_id": "order601",
+            "source_key": "documents/order601.txt",
+            "text": "ORDER601: An order can be canceled before dispatch. After it ships, wait for delivery and use the return process instead.\n"
+          }
+        },
+        {
+          "distance": 0.3923293352127075,
+          "key": "cfbcecf0bc52722a4d26ec60978eeb632965707784900414250e495ae0adbb9a",
+          "metadata": {
+            "source_version": "ObIWETE5_hqvosuR36gahg_D6afD1SNj",
+            "document_id": "ship801",
+            "text": "SHIP801: If tracking says delivered but the parcel is missing, check the delivery location and ask the carrier to investigate.\n",
+            "source_key": "documents/ship801.txt"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "meaning-12",
+      "kind": "paraphrase",
+      "question": "How can I send my order to a different address?",
+      "relevant": [
+        "order602"
+      ],
+      "mode": "hybrid",
+      "rank": 1,
+      "query_ms": 343.8,
+      "results": [
+        {
+          "distance": 0.21827268600463867,
+          "scores": {
+            "fused": 0.03333333507180214,
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 5.031989574432373
+              }
+            ],
+            "vectorDistance": 0.21827268600463867
+          },
+          "key": "2189ee3ca1a953d09515dd6270536c7f5a2979950c10f877c23aaf2ed17d65a9",
+          "metadata": {
+            "document_id": "order602",
+            "text": "ORDER602: To change the destination address, edit order details before dispatch. Contact support once the carrier has collected the parcel.\n",
+            "source_version": "kaHCAwNNS4W68D1wEAmStH7DH8t64zC1",
+            "source_key": "documents/order602.txt"
+          }
+        },
+        {
+          "distance": 0.3533703088760376,
+          "scores": {
+            "fused": 0.032522473484277725,
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 2.946108341217041
+              }
+            ],
+            "vectorDistance": 0.3533703088760376
+          },
+          "key": "05ed65ed6545d32398afb10f260d40e46895406b944677513c5d02532d93c184",
+          "metadata": {
+            "source_version": "0HmPgCx3ma7.BBwK7C1Tk33EwX7pze3N",
+            "document_id": "order601",
+            "source_key": "documents/order601.txt",
+            "text": "ORDER601: An order can be canceled before dispatch. After it ships, wait for delivery and use the return process instead.\n"
+          }
+        },
+        {
+          "scores": {
+            "fused": 0.016393441706895828,
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 3.3041720390319824
+              }
+            ]
+          },
+          "key": "141723256a07edd55044353583eec2a9db799c52b2a38d602fb380cdd6e5dc40",
+          "metadata": {
+            "document_id": "return302",
+            "source_version": "kf9JQuvgF.PkX9JTgSST4GdvUJYJbWlE",
+            "source_key": "documents/return302.txt",
+            "text": "RETURN302: To print a prepaid return shipping label, open the order details and select Start a return.\n"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "meaning-13",
+      "kind": "paraphrase",
+      "question": "The spreadsheet upload is too big to import.",
+      "relevant": [
+        "file901"
+      ],
+      "mode": "keyword",
+      "rank": 1,
+      "query_ms": 288.41,
+      "results": [
+        {
+          "scores": {
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 5.297928333282471
+              }
+            ]
+          },
+          "key": "1b460490b3896104788b4eae82fb3083156eb8660a0abd0235bc172a069ff09d",
+          "metadata": {
+            "document_id": "file901",
+            "source_version": "giL_l4gAk.hgLWLMya3JoFVZwYu_npAo",
+            "source_key": "documents/file901.txt",
+            "text": "FILE901: CSV imports fail when a file exceeds ten megabytes. Split the upload into smaller CSV files and retry each import.\n"
+          }
+        },
+        {
+          "scores": {
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 3.335890769958496
+              }
+            ]
+          },
+          "key": "cfbcecf0bc52722a4d26ec60978eeb632965707784900414250e495ae0adbb9a",
+          "metadata": {
+            "text": "SHIP801: If tracking says delivered but the parcel is missing, check the delivery location and ask the carrier to investigate.\n",
+            "source_version": "ObIWETE5_hqvosuR36gahg_D6afD1SNj",
+            "document_id": "ship801",
+            "source_key": "documents/ship801.txt"
+          }
+        },
+        {
+          "scores": {
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 2.4098238945007324
+              }
+            ]
+          },
+          "key": "c1c58cbfca0e8272d6b7286da8d3f5d013e3ee6f88ed90fa3a4b6df5ac214d3d",
+          "metadata": {
+            "source_version": ".RgxAu6rV2ze1kha.f8FR1gMZqDrZzEq",
+            "text": "FILE902: CSV imports require UTF-8 encoding. Re-export a spreadsheet as UTF-8 CSV if non-English characters appear corrupted.\n",
+            "document_id": "file902",
+            "source_key": "documents/file902.txt"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "meaning-13",
+      "kind": "paraphrase",
+      "question": "The spreadsheet upload is too big to import.",
+      "relevant": [
+        "file901"
+      ],
+      "mode": "vector",
+      "rank": 1,
+      "query_ms": 321.95,
+      "results": [
+        {
+          "distance": 0.2428755760192871,
+          "key": "1b460490b3896104788b4eae82fb3083156eb8660a0abd0235bc172a069ff09d",
+          "metadata": {
+            "document_id": "file901",
+            "source_version": "giL_l4gAk.hgLWLMya3JoFVZwYu_npAo",
+            "text": "FILE901: CSV imports fail when a file exceeds ten megabytes. Split the upload into smaller CSV files and retry each import.\n",
+            "source_key": "documents/file901.txt"
+          }
+        },
+        {
+          "distance": 0.33061683177948,
+          "key": "c1c58cbfca0e8272d6b7286da8d3f5d013e3ee6f88ed90fa3a4b6df5ac214d3d",
+          "metadata": {
+            "source_version": ".RgxAu6rV2ze1kha.f8FR1gMZqDrZzEq",
+            "source_key": "documents/file902.txt",
+            "document_id": "file902",
+            "text": "FILE902: CSV imports require UTF-8 encoding. Re-export a spreadsheet as UTF-8 CSV if non-English characters appear corrupted.\n"
+          }
+        },
+        {
+          "distance": 0.48869746923446655,
+          "key": "00b135d12fc2044ec9a570c2392bd03105815e3e87ece4f901a85de9a47fefc4",
+          "metadata": {
+            "document_id": "api501",
+            "source_version": "PYB6HMk7L__O6sl2GdGUHPBGAAcwF3fV",
+            "text": "API501: API requests are limited to one hundred per minute per account. A 429 response means the client should wait and retry with backoff.\n",
+            "source_key": "documents/api501.txt"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "meaning-13",
+      "kind": "paraphrase",
+      "question": "The spreadsheet upload is too big to import.",
+      "relevant": [
+        "file901"
+      ],
+      "mode": "hybrid",
+      "rank": 1,
+      "query_ms": 277.13,
+      "results": [
+        {
+          "distance": 0.2428755760192871,
+          "scores": {
+            "fused": 0.03333333507180214,
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 5.297928333282471
+              }
+            ],
+            "vectorDistance": 0.2428755760192871
+          },
+          "key": "1b460490b3896104788b4eae82fb3083156eb8660a0abd0235bc172a069ff09d",
+          "metadata": {
+            "source_version": "giL_l4gAk.hgLWLMya3JoFVZwYu_npAo",
+            "source_key": "documents/file901.txt",
+            "document_id": "file901",
+            "text": "FILE901: CSV imports fail when a file exceeds ten megabytes. Split the upload into smaller CSV files and retry each import.\n"
+          }
+        },
+        {
+          "distance": 0.33061683177948,
+          "scores": {
+            "fused": 0.032522473484277725,
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 2.4098238945007324
+              }
+            ],
+            "vectorDistance": 0.33061683177948
+          },
+          "key": "c1c58cbfca0e8272d6b7286da8d3f5d013e3ee6f88ed90fa3a4b6df5ac214d3d",
+          "metadata": {
+            "text": "FILE902: CSV imports require UTF-8 encoding. Re-export a spreadsheet as UTF-8 CSV if non-English characters appear corrupted.\n",
+            "source_version": ".RgxAu6rV2ze1kha.f8FR1gMZqDrZzEq",
+            "source_key": "documents/file902.txt",
+            "document_id": "file902"
+          }
+        },
+        {
+          "scores": {
+            "fused": 0.016393441706895828,
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 3.335890769958496
+              }
+            ]
+          },
+          "key": "cfbcecf0bc52722a4d26ec60978eeb632965707784900414250e495ae0adbb9a",
+          "metadata": {
+            "source_version": "ObIWETE5_hqvosuR36gahg_D6afD1SNj",
+            "document_id": "ship801",
+            "text": "SHIP801: If tracking says delivered but the parcel is missing, check the delivery location and ask the carrier to investigate.\n",
+            "source_key": "documents/ship801.txt"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "meaning-14",
+      "kind": "paraphrase",
+      "question": "Accented characters are broken after uploading a spreadsheet.",
+      "relevant": [
+        "file902"
+      ],
+      "mode": "keyword",
+      "rank": 1,
+      "query_ms": 292.08,
+      "results": [
+        {
+          "scores": {
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 5.20762825012207
+              }
+            ]
+          },
+          "key": "c1c58cbfca0e8272d6b7286da8d3f5d013e3ee6f88ed90fa3a4b6df5ac214d3d",
+          "metadata": {
+            "document_id": "file902",
+            "source_version": ".RgxAu6rV2ze1kha.f8FR1gMZqDrZzEq",
+            "source_key": "documents/file902.txt",
+            "text": "FILE902: CSV imports require UTF-8 encoding. Re-export a spreadsheet as UTF-8 CSV if non-English characters appear corrupted.\n"
+          }
+        },
+        {
+          "scores": {
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 2.9335923194885254
+              }
+            ]
+          },
+          "key": "3a56cbb44b907bd423e56e076dc64fc4f204ed262ff453b0f8cc33dc7555400e",
+          "metadata": {
+            "document_id": "access401",
+            "source_version": "wgX9efQhT_drSlNYYkf_5bJiW.TTjPdY",
+            "text": "ACCESS401: Accounts are locked after five incorrect password attempts. An administrator can unlock the account after verifying the user's identity.\n",
+            "source_key": "documents/access401.txt"
+          }
+        },
+        {
+          "scores": {
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 1.8476321697235107
+              }
+            ]
+          },
+          "key": "00b135d12fc2044ec9a570c2392bd03105815e3e87ece4f901a85de9a47fefc4",
+          "metadata": {
+            "source_version": "PYB6HMk7L__O6sl2GdGUHPBGAAcwF3fV",
+            "document_id": "api501",
+            "source_key": "documents/api501.txt",
+            "text": "API501: API requests are limited to one hundred per minute per account. A 429 response means the client should wait and retry with backoff.\n"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "meaning-14",
+      "kind": "paraphrase",
+      "question": "Accented characters are broken after uploading a spreadsheet.",
+      "relevant": [
+        "file902"
+      ],
+      "mode": "vector",
+      "rank": 1,
+      "query_ms": 294.51,
+      "results": [
+        {
+          "distance": 0.24263685941696167,
+          "key": "c1c58cbfca0e8272d6b7286da8d3f5d013e3ee6f88ed90fa3a4b6df5ac214d3d",
+          "metadata": {
+            "source_version": ".RgxAu6rV2ze1kha.f8FR1gMZqDrZzEq",
+            "source_key": "documents/file902.txt",
+            "document_id": "file902",
+            "text": "FILE902: CSV imports require UTF-8 encoding. Re-export a spreadsheet as UTF-8 CSV if non-English characters appear corrupted.\n"
+          }
+        },
+        {
+          "distance": 0.36867839097976685,
+          "key": "1b460490b3896104788b4eae82fb3083156eb8660a0abd0235bc172a069ff09d",
+          "metadata": {
+            "document_id": "file901",
+            "source_version": "giL_l4gAk.hgLWLMya3JoFVZwYu_npAo",
+            "text": "FILE901: CSV imports fail when a file exceeds ten megabytes. Split the upload into smaller CSV files and retry each import.\n",
+            "source_key": "documents/file901.txt"
+          }
+        },
+        {
+          "distance": 0.47820383310317993,
+          "key": "222d0eda0de8a2f7727444c167fb812c45970035d8dd11c90160ae304ea0e2d8",
+          "metadata": {
+            "source_key": "documents/bill702.txt",
+            "document_id": "bill702",
+            "source_version": "XO4689On.1KYIg9M9s25FgdgLqmUEfR1",
+            "text": "BILL702: A rejected subscription payment can be retried after the customer updates an expired credit card in billing settings.\n"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "meaning-14",
+      "kind": "paraphrase",
+      "question": "Accented characters are broken after uploading a spreadsheet.",
+      "relevant": [
+        "file902"
+      ],
+      "mode": "hybrid",
+      "rank": 1,
+      "query_ms": 292.41,
+      "results": [
+        {
+          "distance": 0.24263685941696167,
+          "scores": {
+            "fused": 0.03333333507180214,
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 5.20762825012207
+              }
+            ],
+            "vectorDistance": 0.24263685941696167
+          },
+          "key": "c1c58cbfca0e8272d6b7286da8d3f5d013e3ee6f88ed90fa3a4b6df5ac214d3d",
+          "metadata": {
+            "source_version": ".RgxAu6rV2ze1kha.f8FR1gMZqDrZzEq",
+            "document_id": "file902",
+            "source_key": "documents/file902.txt",
+            "text": "FILE902: CSV imports require UTF-8 encoding. Re-export a spreadsheet as UTF-8 CSV if non-English characters appear corrupted.\n"
+          }
+        },
+        {
+          "distance": 0.36867839097976685,
+          "scores": {
+            "fused": 0.016393441706895828,
+            "vectorDistance": 0.36867839097976685
+          },
+          "key": "1b460490b3896104788b4eae82fb3083156eb8660a0abd0235bc172a069ff09d",
+          "metadata": {
+            "source_version": "giL_l4gAk.hgLWLMya3JoFVZwYu_npAo",
+            "source_key": "documents/file901.txt",
+            "text": "FILE901: CSV imports fail when a file exceeds ten megabytes. Split the upload into smaller CSV files and retry each import.\n",
+            "document_id": "file901"
+          }
+        },
+        {
+          "scores": {
+            "fused": 0.016393441706895828,
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 2.9335923194885254
+              }
+            ]
+          },
+          "key": "3a56cbb44b907bd423e56e076dc64fc4f204ed262ff453b0f8cc33dc7555400e",
+          "metadata": {
+            "source_version": "wgX9efQhT_drSlNYYkf_5bJiW.TTjPdY",
+            "text": "ACCESS401: Accounts are locked after five incorrect password attempts. An administrator can unlock the account after verifying the user's identity.\n",
+            "document_id": "access401",
+            "source_key": "documents/access401.txt"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "meaning-15",
+      "kind": "paraphrase",
+      "question": "Why am I getting too many requests errors from the API?",
+      "relevant": [
+        "api501"
+      ],
+      "mode": "keyword",
+      "rank": 2,
+      "query_ms": 467.34,
+      "results": [
+        {
+          "scores": {
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 4.130857467651367
+              }
+            ]
+          },
+          "key": "cd62c037da79ad1288eddcdf6bb5fa1d4d69f8d982af337ebcf1c3a37011d815",
+          "metadata": {
+            "text": "API502: API requests require a valid bearer token. A 401 response indicates missing or expired authentication credentials.\n",
+            "source_version": "3OqumTNCATR.ZMrroli2gevwAgWV_Y43",
+            "document_id": "api502",
+            "source_key": "documents/api502.txt"
+          }
+        },
+        {
+          "scores": {
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 4.044908046722412
+              }
+            ]
+          },
+          "key": "00b135d12fc2044ec9a570c2392bd03105815e3e87ece4f901a85de9a47fefc4",
+          "metadata": {
+            "document_id": "api501",
+            "source_version": "PYB6HMk7L__O6sl2GdGUHPBGAAcwF3fV",
+            "text": "API501: API requests are limited to one hundred per minute per account. A 429 response means the client should wait and retry with backoff.\n",
+            "source_key": "documents/api501.txt"
+          }
+        },
+        {
+          "scores": {
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 2.4098238945007324
+              }
+            ]
+          },
+          "key": "07d8c70add8642299a86e62e6b990d6f3087a674086b96b7f2342746a40f0721",
+          "metadata": {
+            "document_id": "return301",
+            "source_version": "W8MS98cPH3g_1kw9Hc3nTdbWyubSZHjb",
+            "source_key": "documents/return301.txt",
+            "text": "RETURN301: Most unused purchases can be returned within thirty days of delivery. Final-sale products are excluded from this return window.\n"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "meaning-15",
+      "kind": "paraphrase",
+      "question": "Why am I getting too many requests errors from the API?",
+      "relevant": [
+        "api501"
+      ],
+      "mode": "vector",
+      "rank": 1,
+      "query_ms": 277.84,
+      "results": [
+        {
+          "distance": 0.2693808078765869,
+          "key": "00b135d12fc2044ec9a570c2392bd03105815e3e87ece4f901a85de9a47fefc4",
+          "metadata": {
+            "text": "API501: API requests are limited to one hundred per minute per account. A 429 response means the client should wait and retry with backoff.\n",
+            "source_key": "documents/api501.txt",
+            "document_id": "api501",
+            "source_version": "PYB6HMk7L__O6sl2GdGUHPBGAAcwF3fV"
+          }
+        },
+        {
+          "distance": 0.32875943183898926,
+          "key": "cd62c037da79ad1288eddcdf6bb5fa1d4d69f8d982af337ebcf1c3a37011d815",
+          "metadata": {
+            "text": "API502: API requests require a valid bearer token. A 401 response indicates missing or expired authentication credentials.\n",
+            "document_id": "api502",
+            "source_version": "3OqumTNCATR.ZMrroli2gevwAgWV_Y43",
+            "source_key": "documents/api502.txt"
+          }
+        },
+        {
+          "distance": 0.35823220014572144,
+          "key": "1b460490b3896104788b4eae82fb3083156eb8660a0abd0235bc172a069ff09d",
+          "metadata": {
+            "source_version": "giL_l4gAk.hgLWLMya3JoFVZwYu_npAo",
+            "document_id": "file901",
+            "source_key": "documents/file901.txt",
+            "text": "FILE901: CSV imports fail when a file exceeds ten megabytes. Split the upload into smaller CSV files and retry each import.\n"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "meaning-15",
+      "kind": "paraphrase",
+      "question": "Why am I getting too many requests errors from the API?",
+      "relevant": [
+        "api501"
+      ],
+      "mode": "hybrid",
+      "rank": 1,
+      "query_ms": 309.89,
+      "results": [
+        {
+          "distance": 0.2693808078765869,
+          "scores": {
+            "fused": 0.03306011110544205,
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 4.044908046722412
+              }
+            ],
+            "vectorDistance": 0.2693808078765869
+          },
+          "key": "00b135d12fc2044ec9a570c2392bd03105815e3e87ece4f901a85de9a47fefc4",
+          "metadata": {
+            "text": "API501: API requests are limited to one hundred per minute per account. A 429 response means the client should wait and retry with backoff.\n",
+            "source_version": "PYB6HMk7L__O6sl2GdGUHPBGAAcwF3fV",
+            "source_key": "documents/api501.txt",
+            "document_id": "api501"
+          }
+        },
+        {
+          "distance": 0.32875943183898926,
+          "scores": {
+            "fused": 0.03306011110544205,
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 4.130857467651367
+              }
+            ],
+            "vectorDistance": 0.32875943183898926
+          },
+          "key": "cd62c037da79ad1288eddcdf6bb5fa1d4d69f8d982af337ebcf1c3a37011d815",
+          "metadata": {
+            "source_key": "documents/api502.txt",
+            "document_id": "api502",
+            "text": "API502: API requests require a valid bearer token. A 401 response indicates missing or expired authentication credentials.\n",
+            "source_version": "3OqumTNCATR.ZMrroli2gevwAgWV_Y43"
+          }
+        },
+        {
+          "scores": {
+            "fused": 0.016129031777381897,
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 2.4098238945007324
+              }
+            ]
+          },
+          "key": "07d8c70add8642299a86e62e6b990d6f3087a674086b96b7f2342746a40f0721",
+          "metadata": {
+            "document_id": "return301",
+            "source_version": "W8MS98cPH3g_1kw9Hc3nTdbWyubSZHjb",
+            "text": "RETURN301: Most unused purchases can be returned within thirty days of delivery. Final-sale products are excluded from this return window.\n",
+            "source_key": "documents/return301.txt"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "meaning-16",
+      "kind": "paraphrase",
+      "question": "Why does the API reject an expired authentication token?",
+      "relevant": [
+        "api502"
+      ],
+      "mode": "keyword",
+      "rank": 1,
+      "query_ms": 285.62,
+      "results": [
+        {
+          "scores": {
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 8.261714935302734
+              }
+            ]
+          },
+          "key": "cd62c037da79ad1288eddcdf6bb5fa1d4d69f8d982af337ebcf1c3a37011d815",
+          "metadata": {
+            "source_key": "documents/api502.txt",
+            "text": "API502: API requests require a valid bearer token. A 401 response indicates missing or expired authentication credentials.\n",
+            "document_id": "api502",
+            "source_version": "3OqumTNCATR.ZMrroli2gevwAgWV_Y43"
+          }
+        },
+        {
+          "scores": {
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 3.4720821380615234
+              }
+            ]
+          },
+          "key": "222d0eda0de8a2f7727444c167fb812c45970035d8dd11c90160ae304ea0e2d8",
+          "metadata": {
+            "source_version": "XO4689On.1KYIg9M9s25FgdgLqmUEfR1",
+            "text": "BILL702: A rejected subscription payment can be retried after the customer updates an expired credit card in billing settings.\n",
+            "source_key": "documents/bill702.txt",
+            "document_id": "bill702"
+          }
+        },
+        {
+          "scores": {
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 2.9144632816314697
+              }
+            ]
+          },
+          "key": "b3ede43bf149b9a690804aa0a02c8fe3acc3b6d9d2da49c03385813976fd9890",
+          "metadata": {
+            "text": "ACCESS402: To recover multi-factor authentication after losing a phone, use a previously saved recovery code or contact an administrator.\n",
+            "source_key": "documents/access402.txt",
+            "source_version": "FX8GIit9L5QfHJvRlw_bZQG7W_S8xpn8",
+            "document_id": "access402"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "meaning-16",
+      "kind": "paraphrase",
+      "question": "Why does the API reject an expired authentication token?",
+      "relevant": [
+        "api502"
+      ],
+      "mode": "vector",
+      "rank": 1,
+      "query_ms": 298.77,
+      "results": [
+        {
+          "distance": 0.2036043405532837,
+          "key": "cd62c037da79ad1288eddcdf6bb5fa1d4d69f8d982af337ebcf1c3a37011d815",
+          "metadata": {
+            "source_version": "3OqumTNCATR.ZMrroli2gevwAgWV_Y43",
+            "text": "API502: API requests require a valid bearer token. A 401 response indicates missing or expired authentication credentials.\n",
+            "document_id": "api502",
+            "source_key": "documents/api502.txt"
+          }
+        },
+        {
+          "distance": 0.2673802375793457,
+          "key": "640f13d59d6ad608f09c2b60aa152c73e7458e2756cd50dc49e6a351c7a90293",
+          "metadata": {
+            "source_key": "documents/auth482.txt",
+            "document_id": "auth482",
+            "source_version": "3vun4FaQAM6dvSVDRH.K5hRieS7V4tgD",
+            "text": "AUTH482: Session tokens expire eight hours after sign-in. A user who is repeatedly logged out should sign in again to receive a fresh session token.\n"
+          }
+        },
+        {
+          "distance": 0.30813902616500854,
+          "key": "222d0eda0de8a2f7727444c167fb812c45970035d8dd11c90160ae304ea0e2d8",
+          "metadata": {
+            "document_id": "bill702",
+            "source_key": "documents/bill702.txt",
+            "source_version": "XO4689On.1KYIg9M9s25FgdgLqmUEfR1",
+            "text": "BILL702: A rejected subscription payment can be retried after the customer updates an expired credit card in billing settings.\n"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "meaning-16",
+      "kind": "paraphrase",
+      "question": "Why does the API reject an expired authentication token?",
+      "relevant": [
+        "api502"
+      ],
+      "mode": "hybrid",
+      "rank": 1,
+      "query_ms": 294.18,
+      "results": [
+        {
+          "distance": 0.2036043405532837,
+          "scores": {
+            "fused": 0.03333333507180214,
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 8.261714935302734
+              }
+            ],
+            "vectorDistance": 0.2036043405532837
+          },
+          "key": "cd62c037da79ad1288eddcdf6bb5fa1d4d69f8d982af337ebcf1c3a37011d815",
+          "metadata": {
+            "source_key": "documents/api502.txt",
+            "source_version": "3OqumTNCATR.ZMrroli2gevwAgWV_Y43",
+            "text": "API502: API requests require a valid bearer token. A 401 response indicates missing or expired authentication credentials.\n",
+            "document_id": "api502"
+          }
+        },
+        {
+          "distance": 0.30813902616500854,
+          "scores": {
+            "fused": 0.032522473484277725,
+            "bm25Scores": [
+              {
+                "metadataKey": "text",
+                "score": 3.4720821380615234
+              }
+            ],
+            "vectorDistance": 0.30813902616500854
+          },
+          "key": "222d0eda0de8a2f7727444c167fb812c45970035d8dd11c90160ae304ea0e2d8",
+          "metadata": {
+            "source_key": "documents/bill702.txt",
+            "text": "BILL702: A rejected subscription payment can be retried after the customer updates an expired credit card in billing settings.\n",
+            "document_id": "bill702",
+            "source_version": "XO4689On.1KYIg9M9s25FgdgLqmUEfR1"
+          }
+        },
+        {
+          "distance": 0.2673802375793457,
+          "scores": {
+            "fused": 0.016393441706895828,
+            "vectorDistance": 0.2673802375793457
+          },
+          "key": "640f13d59d6ad608f09c2b60aa152c73e7458e2756cd50dc49e6a351c7a90293",
+          "metadata": {
+            "document_id": "auth482",
+            "source_version": "3vun4FaQAM6dvSVDRH.K5hRieS7V4tgD",
+            "text": "AUTH482: Session tokens expire eight hours after sign-in. A user who is repeatedly logged out should sign in again to receive a fresh session token.\n",
+            "source_key": "documents/auth482.txt"
+          }
+        }
+      ]
+    }
+  ]
+}

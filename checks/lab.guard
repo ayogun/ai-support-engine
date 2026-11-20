@@ -1,0 +1,40 @@
+let buckets = Resources.*[ Type == 'AWS::S3::Bucket' ]
+let functions = Resources.*[ Type == 'AWS::Lambda::Function' ]
+let routes = Resources.*[ Type == 'AWS::ApiGatewayV2::Route' ]
+let queues = Resources.*[ Type == 'AWS::SQS::Queue' ]
+let endpoint_configs = Resources.*[ Type == 'AWS::SageMaker::EndpointConfig' ]
+
+rule document_bucket_is_private when %buckets !empty {
+    %buckets.Properties.PublicAccessBlockConfiguration.BlockPublicAcls == true
+    %buckets.Properties.PublicAccessBlockConfiguration.BlockPublicPolicy == true
+    %buckets.Properties.PublicAccessBlockConfiguration.IgnorePublicAcls == true
+    %buckets.Properties.PublicAccessBlockConfiguration.RestrictPublicBuckets == true
+    %buckets.Properties.BucketEncryption exists
+    %buckets.Properties.VersioningConfiguration.Status == 'Enabled'
+}
+
+rule functions_have_timeouts when %functions !empty {
+    %functions.Properties.Timeout exists
+    %functions.Properties.Runtime == 'python3.13'
+}
+
+rule api_routes_require_iam when %routes !empty {
+    %routes.Properties.AuthorizationType == 'AWS_IAM'
+}
+
+rule queues_are_encrypted when %queues !empty {
+    %queues.Properties.SqsManagedSseEnabled == true
+}
+
+rule embedding_is_on_demand_serverless when %endpoint_configs !empty {
+    %endpoint_configs.Properties.ProductionVariants[*].ServerlessConfig.MaxConcurrency == 1
+    %endpoint_configs.Properties.ProductionVariants[*].ServerlessConfig.MemorySizeInMB == 3072
+    %endpoint_configs.Properties.ProductionVariants[*].ServerlessConfig.ProvisionedConcurrency !exists
+}
+
+rule model_permissions_use_endpoint_arn {
+    Resources.IngestRole.Properties.Policies[0].PolicyDocument.Statement[1].Action == 'sagemaker:InvokeEndpoint'
+    Resources.IngestRole.Properties.Policies[0].PolicyDocument.Statement[1].Resource.Ref == 'EmbeddingEndpoint'
+    Resources.SearchRole.Properties.Policies[0].PolicyDocument.Statement[0].Action == 'sagemaker:InvokeEndpoint'
+    Resources.SearchRole.Properties.Policies[0].PolicyDocument.Statement[0].Resource.Ref == 'EmbeddingEndpoint'
+}

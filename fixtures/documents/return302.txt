@@ -1,0 +1,1 @@
+RETURN302: To print a prepaid return shipping label, open the order details and select Start a return.

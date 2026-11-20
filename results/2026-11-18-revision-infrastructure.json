@@ -1,0 +1,32 @@
+{
+  "timestamp_utc": "2026-11-18T08:53:27.172584+00:00",
+  "region": "us-west-2",
+  "stack_status": "CREATE_COMPLETE",
+  "ownership_tags_match": true,
+  "endpoint_status": "InService",
+  "serverless_memory_mb": 3072,
+  "endpoint_max_concurrency": 1,
+  "search_model_max_attempts": 3,
+  "search_lambda_timeout_seconds": 28,
+  "indexes": [
+    {
+      "name": "documents",
+      "mode": "ENHANCED",
+      "dimension": 384,
+      "vector_count": 16
+    },
+    {
+      "name": "support-evaluation",
+      "mode": "ENHANCED",
+      "dimension": 384,
+      "vector_count": 16
+    },
+    {
+      "name": "bitext-support",
+      "mode": "ENHANCED",
+      "dimension": 384,
+      "vector_count": 270
+    }
+  ],
+  "note": "Sanitized live configuration observation; account-specific resource identifiers and credentials are omitted. Counts are not billing or capacity guarantees."
+}

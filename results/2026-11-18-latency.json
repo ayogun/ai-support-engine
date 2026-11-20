@@ -1,0 +1,328 @@
+{
+  "timestamp_utc": "2026-11-18T07:00:18.035388+00:00",
+  "region": "us-west-2",
+  "question": "Find RETURN301",
+  "top_k": 3,
+  "scope": "Client-side signed HTTP round trips include signing, network, API Gateway, Lambda, S3 Vectors, and model inference for vector/hybrid. Warm-up requests are reported separately.",
+  "limitations": "Small repeated-query sample, fixed mode order, one client, nearest-rank p95; not a capacity test or latency SLA. Failed requests are excluded from success percentiles and counted separately.",
+  "warmups": {
+    "keyword": {
+      "outcome": "success",
+      "http_status": 200,
+      "elapsed_ms": 815.71
+    },
+    "vector": {
+      "outcome": "success",
+      "http_status": 200,
+      "elapsed_ms": 833.6
+    },
+    "hybrid": {
+      "outcome": "success",
+      "http_status": 200,
+      "elapsed_ms": 804.75
+    }
+  },
+  "sequential": {
+    "keyword": {
+      "summary": {
+        "attempts": 10,
+        "successes": 10,
+        "outcomes": {
+          "success": 10
+        },
+        "http_statuses": {
+          "200": 10
+        },
+        "success_p50_ms": 716.7,
+        "success_p95_ms": 789.1
+      },
+      "samples": [
+        {
+          "outcome": "success",
+          "http_status": 200,
+          "elapsed_ms": 779.93
+        },
+        {
+          "outcome": "success",
+          "http_status": 200,
+          "elapsed_ms": 789.15
+        },
+        {
+          "outcome": "success",
+          "http_status": 200,
+          "elapsed_ms": 710.88
+        },
+        {
+          "outcome": "success",
+          "http_status": 200,
+          "elapsed_ms": 718.38
+        },
+        {
+          "outcome": "success",
+          "http_status": 200,
+          "elapsed_ms": 715.06
+        },
+        {
+          "outcome": "success",
+          "http_status": 200,
+          "elapsed_ms": 730.15
+        },
+        {
+          "outcome": "success",
+          "http_status": 200,
+          "elapsed_ms": 705.37
+        },
+        {
+          "outcome": "success",
+          "http_status": 200,
+          "elapsed_ms": 776.62
+        },
+        {
+          "outcome": "success",
+          "http_status": 200,
+          "elapsed_ms": 712.22
+        },
+        {
+          "outcome": "success",
+          "http_status": 200,
+          "elapsed_ms": 706.76
+        }
+      ]
+    },
+    "vector": {
+      "summary": {
+        "attempts": 10,
+        "successes": 10,
+        "outcomes": {
+          "success": 10
+        },
+        "http_statuses": {
+          "200": 10
+        },
+        "success_p50_ms": 794.3,
+        "success_p95_ms": 812.6
+      },
+      "samples": [
+        {
+          "outcome": "success",
+          "http_status": 200,
+          "elapsed_ms": 802.46
+        },
+        {
+          "outcome": "success",
+          "http_status": 200,
+          "elapsed_ms": 791.49
+        },
+        {
+          "outcome": "success",
+          "http_status": 200,
+          "elapsed_ms": 784.96
+        },
+        {
+          "outcome": "success",
+          "http_status": 200,
+          "elapsed_ms": 774.42
+        },
+        {
+          "outcome": "success",
+          "http_status": 200,
+          "elapsed_ms": 812.57
+        },
+        {
+          "outcome": "success",
+          "http_status": 200,
+          "elapsed_ms": 791.84
+        },
+        {
+          "outcome": "success",
+          "http_status": 200,
+          "elapsed_ms": 796.79
+        },
+        {
+          "outcome": "success",
+          "http_status": 200,
+          "elapsed_ms": 761.81
+        },
+        {
+          "outcome": "success",
+          "http_status": 200,
+          "elapsed_ms": 804.19
+        },
+        {
+          "outcome": "success",
+          "http_status": 200,
+          "elapsed_ms": 800.16
+        }
+      ]
+    },
+    "hybrid": {
+      "summary": {
+        "attempts": 10,
+        "successes": 10,
+        "outcomes": {
+          "success": 10
+        },
+        "http_statuses": {
+          "200": 10
+        },
+        "success_p50_ms": 793.7,
+        "success_p95_ms": 818.1
+      },
+      "samples": [
+        {
+          "outcome": "success",
+          "http_status": 200,
+          "elapsed_ms": 788.48
+        },
+        {
+          "outcome": "success",
+          "http_status": 200,
+          "elapsed_ms": 799.69
+        },
+        {
+          "outcome": "success",
+          "http_status": 200,
+          "elapsed_ms": 791.85
+        },
+        {
+          "outcome": "success",
+          "http_status": 200,
+          "elapsed_ms": 808.2
+        },
+        {
+          "outcome": "success",
+          "http_status": 200,
+          "elapsed_ms": 794.39
+        },
+        {
+          "outcome": "success",
+          "http_status": 200,
+          "elapsed_ms": 805.0
+        },
+        {
+          "outcome": "success",
+          "http_status": 200,
+          "elapsed_ms": 818.11
+        },
+        {
+          "outcome": "success",
+          "http_status": 200,
+          "elapsed_ms": 787.39
+        },
+        {
+          "outcome": "success",
+          "http_status": 200,
+          "elapsed_ms": 793.02
+        },
+        {
+          "outcome": "success",
+          "http_status": 200,
+          "elapsed_ms": 791.05
+        }
+      ]
+    }
+  },
+  "burst_concurrency": 3,
+  "bursts": [
+    {
+      "client_start_skew_ms": 0.6,
+      "summary": {
+        "attempts": 3,
+        "successes": 3,
+        "outcomes": {
+          "success": 3
+        },
+        "http_statuses": {
+          "200": 3
+        },
+        "success_p50_ms": 917.3,
+        "success_p95_ms": 2426.6
+      },
+      "samples": [
+        {
+          "outcome": "success",
+          "http_status": 200,
+          "elapsed_ms": 757.65
+        },
+        {
+          "outcome": "success",
+          "http_status": 200,
+          "elapsed_ms": 2426.59
+        },
+        {
+          "outcome": "success",
+          "http_status": 200,
+          "elapsed_ms": 917.3
+        }
+      ]
+    },
+    {
+      "client_start_skew_ms": 0.46,
+      "summary": {
+        "attempts": 3,
+        "successes": 2,
+        "outcomes": {
+          "http_error": 1,
+          "success": 2
+        },
+        "http_statuses": {
+          "200": 2,
+          "502": 1
+        },
+        "success_p50_ms": 1082.5,
+        "success_p95_ms": 1379.3
+      },
+      "samples": [
+        {
+          "outcome": "success",
+          "http_status": 200,
+          "elapsed_ms": 1379.32
+        },
+        {
+          "outcome": "http_error",
+          "http_status": 502,
+          "elapsed_ms": 667.68
+        },
+        {
+          "outcome": "success",
+          "http_status": 200,
+          "elapsed_ms": 785.63
+        }
+      ]
+    },
+    {
+      "client_start_skew_ms": 0.46,
+      "summary": {
+        "attempts": 3,
+        "successes": 1,
+        "outcomes": {
+          "http_error": 2,
+          "success": 1
+        },
+        "http_statuses": {
+          "200": 1,
+          "502": 2
+        },
+        "success_p50_ms": 789.0,
+        "success_p95_ms": 789.0
+      },
+      "samples": [
+        {
+          "outcome": "http_error",
+          "http_status": 502,
+          "elapsed_ms": 686.06
+        },
+        {
+          "outcome": "http_error",
+          "http_status": 502,
+          "elapsed_ms": 675.25
+        },
+        {
+          "outcome": "success",
+          "http_status": 200,
+          "elapsed_ms": 788.99
+        }
+      ]
+    }
+  ]
+}

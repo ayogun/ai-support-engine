@@ -1,0 +1,5711 @@
+{
+  "timestamp_utc": "2026-11-18T07:14:32.439061+00:00",
+  "region": "us-west-2",
+  "dataset": "SciFact original release, development split",
+  "dataset_url": "https://scifact.s3-us-west-2.amazonaws.com/release/latest/data.tar.gz",
+  "dataset_sha256": "11c621288d41ac144d29b13b0f8503b3820b7d6e8b1f6ff24dff335c196d76be",
+  "seed": "20261118",
+  "pool": "random",
+  "selection": "SHA-256 claim order; include all annotated evidence, then SHA-256-order background documents",
+  "selected_data_sha256": "71f2f7190bbba79f9d566c03848df64fb1241d17b21722af2994ccbc4dfbd956",
+  "source_counts": {
+    "source_documents": 5183,
+    "eligible_documents": 5181,
+    "development_claims": 300,
+    "eligible_evidence_claims": 188,
+    "selected_evidence_documents": 52
+  },
+  "document_count": 300,
+  "query_count": 50,
+  "top_k": 3,
+  "selected_document_ids": [
+    "10072941",
+    "102662",
+    "10624000",
+    "10648422",
+    "11083121",
+    "11195653",
+    "11459139",
+    "11718220",
+    "11899391",
+    "11915280",
+    "12030735",
+    "12122482",
+    "12265561",
+    "123859",
+    "12440953",
+    "12580014",
+    "12885341",
+    "12991445",
+    "13048272",
+    "13106686",
+    "13108582",
+    "13277118",
+    "13322804",
+    "13338820",
+    "13441537",
+    "13458119",
+    "13519661",
+    "13823200",
+    "13843341",
+    "13912224",
+    "13923140",
+    "13940200",
+    "14079881",
+    "14092737",
+    "14105446",
+    "14376683",
+    "14407673",
+    "14437255",
+    "14460402",
+    "14581009",
+    "14806256",
+    "14874811",
+    "14938990",
+    "15129362",
+    "15488881",
+    "155200372",
+    "15615957",
+    "15617300",
+    "15655418",
+    "1568684",
+    "1569031",
+    "15692098",
+    "15721252",
+    "15836115",
+    "15907458",
+    "15928989",
+    "15946643",
+    "1605196",
+    "1605392",
+    "1606628",
+    "16280642",
+    "16284655",
+    "16355392",
+    "16361581",
+    "16465895",
+    "16472469",
+    "16495649",
+    "16510361",
+    "17049436",
+    "17077004",
+    "1709625",
+    "17240457",
+    "17587795",
+    "17628888",
+    "17768946",
+    "17814815",
+    "1791714",
+    "17997584",
+    "18174210",
+    "1840993",
+    "18488986",
+    "18494847",
+    "1887056",
+    "18988265",
+    "18998807",
+    "1900152",
+    "19205326",
+    "19238",
+    "19358586",
+    "19427410",
+    "19450341",
+    "19673227",
+    "19701340",
+    "20008796",
+    "2015126",
+    "20179918",
+    "20186513",
+    "20381484",
+    "20758340",
+    "20888849",
+    "2095573",
+    "21257564",
+    "21274496",
+    "21323587",
+    "21366394",
+    "21502234",
+    "2158500",
+    "21676556",
+    "21719289",
+    "21868715",
+    "21902400",
+    "22038539",
+    "22362025",
+    "22482024",
+    "22490293",
+    "22647695",
+    "22688699",
+    "22703082",
+    "22874817",
+    "22948960",
+    "22980205",
+    "23260700",
+    "23573229",
+    "23801039",
+    "23887844",
+    "23895668",
+    "23959496",
+    "2405259",
+    "24088502",
+    "24142891",
+    "24221369",
+    "24237492",
+    "2425364",
+    "24278870",
+    "24338780",
+    "24443043",
+    "24510595",
+    "24640046",
+    "24921368",
+    "25079962",
+    "25254425",
+    "25344732",
+    "25628793",
+    "25629722",
+    "2576811",
+    "25799020",
+    "25953438",
+    "26008462",
+    "26019505",
+    "26064942",
+    "26071782",
+    "2617858",
+    "26199970",
+    "26873988",
+    "27134931",
+    "2722988",
+    "27391365",
+    "2754534",
+    "27768226",
+    "2831620",
+    "28369117",
+    "28806780",
+    "28809022",
+    "2883827",
+    "29387024",
+    "29564505",
+    "29828242",
+    "29877890",
+    "2988714",
+    "30041340",
+    "30221601",
+    "306006",
+    "31543713",
+    "31554917",
+    "32084655",
+    "33370",
+    "33499189",
+    "3367829",
+    "33872649",
+    "34436231",
+    "34481589",
+    "34630025",
+    "35768199",
+    "3621011",
+    "36497180",
+    "36618603",
+    "36637129",
+    "36654066",
+    "36799998",
+    "3684342",
+    "37336085",
+    "37424881",
+    "37549932",
+    "38143689",
+    "38727075",
+    "38844612",
+    "3893473",
+    "3896759",
+    "3898784",
+    "39059143",
+    "3930020",
+    "39580129",
+    "39729277",
+    "3981244",
+    "39851630",
+    "4020950",
+    "40254495",
+    "40590358",
+    "40655970",
+    "40760684",
+    "4085204",
+    "40905302",
+    "40971746",
+    "41182002",
+    "41496215",
+    "4200695",
+    "42520882",
+    "4320424",
+    "4335423",
+    "4350400",
+    "4381486",
+    "4388470",
+    "4389394",
+    "4391685",
+    "4394525",
+    "4399268",
+    "4406819",
+    "4411655",
+    "4417558",
+    "4444861",
+    "4454788",
+    "4456756",
+    "4462139",
+    "44674301",
+    "45199834",
+    "45581752",
+    "4700428",
+    "4942718",
+    "516867",
+    "51706771",
+    "5271210",
+    "5436081",
+    "54561709",
+    "5476778",
+    "55128127",
+    "5531479",
+    "5573975",
+    "5824955",
+    "5884524",
+    "5885376",
+    "5922085",
+    "5956016",
+    "6158879",
+    "6327940",
+    "6501747",
+    "6517763",
+    "6580081",
+    "6588614",
+    "6670101",
+    "680949",
+    "6985854",
+    "7111021",
+    "7177329",
+    "7370282",
+    "7386360",
+    "7438803",
+    "7451607",
+    "7552215",
+    "7581911",
+    "7645565",
+    "7650066",
+    "7666498",
+    "7708803",
+    "7717468",
+    "7875158",
+    "791050",
+    "803312",
+    "8122346",
+    "8144920",
+    "8219248",
+    "8426046",
+    "8548635",
+    "8596357",
+    "86160128",
+    "8629328",
+    "8646760",
+    "8654183",
+    "87758",
+    "9113824",
+    "9178310",
+    "9217800",
+    "9272598",
+    "9285396",
+    "9315213",
+    "9433958",
+    "9591368",
+    "9612317",
+    "9646449",
+    "97884",
+    "9955779"
+  ],
+  "selected_claims": [
+    {
+      "id": "904",
+      "question": "PDPN promotes efficient motility along stromal surfaces by activating the C-type lectin receptor to rearrange the actin cytoskeleton in dendritic cells.",
+      "relevant": [
+        "7370282"
+      ]
+    },
+    {
+      "id": "133",
+      "question": "Assembly of invadopodia is triggered by focal generation of phosphatidylinositol-3,4-biphosphate and the activation of the nonreceptor tyrosine kinase Src.",
+      "relevant": [
+        "16280642"
+      ]
+    },
+    {
+      "id": "343",
+      "question": "Diabetic patients with acute coronary syndrome experience increased short-term and long-term risk for bleeding events.",
+      "relevant": [
+        "5884524"
+      ]
+    },
+    {
+      "id": "1319",
+      "question": "Transplanted human glial cells can differentiate within the host animal.",
+      "relevant": [
+        "16284655"
+      ]
+    },
+    {
+      "id": "1130",
+      "question": "T regulatory cells (tTregs) lacking \u03b1v\u03b28 are more adept at suppressing pathogenic T-cell responses during active inflammation.",
+      "relevant": [
+        "17997584"
+      ]
+    },
+    {
+      "id": "1385",
+      "question": "cSMAC formation enhances weak ligand signalling.",
+      "relevant": [
+        "306006"
+      ]
+    },
+    {
+      "id": "399",
+      "question": "Exposure to fine particulate air pollution is relate to anxiety prevalence.",
+      "relevant": [
+        "791050"
+      ]
+    },
+    {
+      "id": "718",
+      "question": "Low nucleosome occupancy correlates with low methylation levels across species.",
+      "relevant": [
+        "17587795"
+      ]
+    },
+    {
+      "id": "528",
+      "question": "Human T-lymphotropic virus type-I-associated myelopathy / tropical spastic paraparesis (HAM/TSP) patients produce Immunoglobulin G (IgG) antibodies which cross-react with an immunodominant epitope in Tax.",
+      "relevant": [
+        "5476778"
+      ]
+    },
+    {
+      "id": "279",
+      "question": "Commelina yellow mottle virus' (ComYMV) genome consists of 7489 baise pairs.",
+      "relevant": [
+        "14376683"
+      ]
+    },
+    {
+      "id": "516",
+      "question": "High levels of CRP reduces the risk of exacerbations in chronic obstructive pulmonary disease (COPD).",
+      "relevant": [
+        "29564505"
+      ]
+    },
+    {
+      "id": "781",
+      "question": "Mice that lack Interferon-\u03b3 or its receptor exhibit high resistance to experimental autoimmune myocarditis.",
+      "relevant": [
+        "24338780"
+      ]
+    },
+    {
+      "id": "1298",
+      "question": "Thigh-length graduated compression stockings (GCS) did not reduce deep vein thrombosis in patients admitted to hospital who are immobile because of acute stroke.",
+      "relevant": [
+        "11718220"
+      ]
+    },
+    {
+      "id": "1062",
+      "question": "S-nitrosylated GAPDH physiologically transnitrosylates histone deacetylases.",
+      "relevant": [
+        "20381484"
+      ]
+    },
+    {
+      "id": "922",
+      "question": "Patients in stable partnerships have a faster progression from HIV to AIDS.",
+      "relevant": [
+        "17077004"
+      ]
+    },
+    {
+      "id": "982",
+      "question": "Proteins synthesized at the growth cone are ubiquitinated at a higher rate than proteins from the cell body.",
+      "relevant": [
+        "2988714"
+      ]
+    },
+    {
+      "id": "837",
+      "question": "NR5A2 is important in development of endometrial tissues.",
+      "relevant": [
+        "15928989"
+      ]
+    },
+    {
+      "id": "1216",
+      "question": "The extracellular domain of TMEM27 is cleaved in human beta cells.",
+      "relevant": [
+        "24142891"
+      ]
+    },
+    {
+      "id": "42",
+      "question": "A high microerythrocyte count raises vulnerability to severe anemia in homozygous alpha (+)- thalassemia trait subjects.",
+      "relevant": [
+        "18174210"
+      ]
+    },
+    {
+      "id": "756",
+      "question": "Many proteins in human cells can be post-translationally modified at lysine residues via acetylation.",
+      "relevant": [
+        "2831620"
+      ]
+    },
+    {
+      "id": "1041",
+      "question": "Replacement of histone H2A with H2A.Z slows gene activation in yeasts by stabilizing +1 nucleosomes.",
+      "relevant": [
+        "25254425"
+      ]
+    },
+    {
+      "id": "212",
+      "question": "CR is associated with higher methylation age.",
+      "relevant": [
+        "22038539"
+      ]
+    },
+    {
+      "id": "239",
+      "question": "Cellular aging closely links to an older appearance.",
+      "relevant": [
+        "14079881"
+      ]
+    },
+    {
+      "id": "674",
+      "question": "LDL cholesterol has no involvement in the development of cardiovascular disease.",
+      "relevant": [
+        "2095573"
+      ]
+    },
+    {
+      "id": "50",
+      "question": "AIRE is expressed in some skin tumors.",
+      "relevant": [
+        "12580014"
+      ]
+    },
+    {
+      "id": "993",
+      "question": "Pyridostatin destabilizes the G - quadruplex in the telomeric region.",
+      "relevant": [
+        "16472469"
+      ]
+    },
+    {
+      "id": "249",
+      "question": "Chenodeosycholic acid treatment reduces whole-body energy expenditure.",
+      "relevant": [
+        "1568684"
+      ]
+    },
+    {
+      "id": "115",
+      "question": "Anthrax spores can be disposed of easily after they are dispersed.",
+      "relevant": [
+        "33872649"
+      ]
+    },
+    {
+      "id": "1352",
+      "question": "Upregulation of mosGCTL-1 is induced upon infection with West Nile virus.",
+      "relevant": [
+        "12885341"
+      ]
+    },
+    {
+      "id": "1121",
+      "question": "Synaptic activity enhances local release of brain derived neurotrophic factor from postsynaptic dendrites.",
+      "relevant": [
+        "4456756"
+      ]
+    },
+    {
+      "id": "236",
+      "question": "Cell autonomous sex determination in somatic cells occurs in Passeriformes.",
+      "relevant": [
+        "4388470"
+      ]
+    },
+    {
+      "id": "219",
+      "question": "CX3CR1 on the Th2 cells suppresses airway inflammation.",
+      "relevant": [
+        "21366394"
+      ]
+    },
+    {
+      "id": "532",
+      "question": "Hyperfibrinogenemia decreases rates of femoropopliteal bypass thrombosis.",
+      "relevant": [
+        "12991445"
+      ]
+    },
+    {
+      "id": "1029",
+      "question": "Reduced responsiveness to interleukin-2 in regulatory T cells is associated with greater resistance to autoimmune diseases such as Type 1 Diabetes.",
+      "relevant": [
+        "11899391",
+        "13923140",
+        "13940200"
+      ]
+    },
+    {
+      "id": "1370",
+      "question": "Vitamin D deficiency is unrelated to birth weight.",
+      "relevant": [
+        "2425364"
+      ]
+    },
+    {
+      "id": "1137",
+      "question": "TNFAIP3 is a tumor suppressor in glioblastoma.",
+      "relevant": [
+        "33370"
+      ]
+    },
+    {
+      "id": "879",
+      "question": "Occupancy of ribosomes by IncRNAs do not make functional peptides.",
+      "relevant": [
+        "8426046"
+      ]
+    },
+    {
+      "id": "385",
+      "question": "Epigenetic modulating agents (EMAs) modulate antitumor immune response in a cancer model system.",
+      "relevant": [
+        "9955779"
+      ]
+    },
+    {
+      "id": "1132",
+      "question": "TCR/CD3 microdomains are a required to induce the immunologic synapse to activate T cells.",
+      "relevant": [
+        "33499189"
+      ]
+    },
+    {
+      "id": "852",
+      "question": "Non-invasive ventilation use should be decreased if there is inadequate response to conventional treatment.",
+      "relevant": [
+        "13843341"
+      ]
+    },
+    {
+      "id": "692",
+      "question": "Leuko-increased blood increases infectious complications in red blood cell transfusion.",
+      "relevant": [
+        "24088502"
+      ]
+    },
+    {
+      "id": "1088",
+      "question": "Silencing of Bcl2 is important for the maintenance and progression of tumors.",
+      "relevant": [
+        "37549932"
+      ]
+    },
+    {
+      "id": "1089",
+      "question": "Smc5/6 engagment drives the activation of SUMO E3 ligase Mms21 by ATP-dependent remolding.",
+      "relevant": [
+        "17628888"
+      ]
+    },
+    {
+      "id": "1389",
+      "question": "mTORC2 regulates intracellular cysteine levels through xCT inhibition.",
+      "relevant": [
+        "23895668"
+      ]
+    },
+    {
+      "id": "208",
+      "question": "CHEK2 is not associated with breast cancer.",
+      "relevant": [
+        "13519661"
+      ]
+    },
+    {
+      "id": "1021",
+      "question": "Rapid up-regulation and higher basal expression of interferon-induced genes reduce survival of granule cell neurons that are infected by West Nile virus.",
+      "relevant": [
+        "9433958"
+      ]
+    },
+    {
+      "id": "619",
+      "question": "Increased vessel density along with a reduction in fibrosis decreases the efficacy of chemotherapy treatments.",
+      "relevant": [
+        "20888849"
+      ]
+    },
+    {
+      "id": "1274",
+      "question": "The tip of the inner tube of the toxic type VI secretion system (T6SS) antibacterial effector in Escherichia coli (E. coli) carries toxic effector proteins.",
+      "relevant": [
+        "4406819"
+      ]
+    },
+    {
+      "id": "100",
+      "question": "All hematopoietic stem cells segregate their chromosomes randomly.",
+      "relevant": [
+        "4381486"
+      ]
+    },
+    {
+      "id": "1104",
+      "question": "Stroke patients with prior use of direct oral anticoagulants have a lower risk of in-hospital mortality than stroke patients with prior use of warfarin.",
+      "relevant": [
+        "3898784"
+      ]
+    }
+  ],
+  "model": "BAAI/bge-small-en-v1.5",
+  "model_revision": "5c38ec7c405ec4b44b94cc5a9bb96e735b38267a",
+  "model_fingerprint": "d87ec16a17b312babef5966bf482e1979906a141ddefac6215ea84cfdd62b2b0",
+  "timing_scope": "Sequential direct S3 Vectors calls; excludes model inference and API Gateway.",
+  "label_limitations": "Only annotated SUPPORT/CONTRADICT evidence counts; other documents may be relevant but unjudged. Development claims without evidence are excluded.",
+  "summary": {
+    "keyword": {
+      "queries": 50,
+      "hit_at_1": 43,
+      "hit_at_3": 48,
+      "mrr_at_3": 0.91,
+      "macro_recall_at_3": 0.96,
+      "query_ms_median": 340.5,
+      "query_ms_p95": 373.6
+    },
+    "vector": {
+      "queries": 50,
+      "hit_at_1": 49,
+      "hit_at_3": 50,
+      "mrr_at_3": 0.9867,
+      "macro_recall_at_3": 1.0,
+      "query_ms_median": 344.2,
+      "query_ms_p95": 376.0
+    },
+    "hybrid": {
+      "queries": 50,
+      "hit_at_1": 47,
+      "hit_at_3": 50,
+      "mrr_at_3": 0.97,
+      "macro_recall_at_3": 1.0,
+      "query_ms_median": 345.1,
+      "query_ms_p95": 382.5
+    }
+  },
+  "observations": [
+    {
+      "claim_id": "904",
+      "mode": "keyword",
+      "relevant": [
+        "7370282"
+      ],
+      "returned_ids": [
+        "7370282",
+        "8596357",
+        "12885341"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 331.72,
+      "scores": [
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 81.44911193847656
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 19.222471237182617
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 14.360392570495605
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "904",
+      "mode": "vector",
+      "relevant": [
+        "7370282"
+      ],
+      "returned_ids": [
+        "7370282",
+        "4417558",
+        "3930020"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 352.56,
+      "scores": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "claim_id": "904",
+      "mode": "hybrid",
+      "relevant": [
+        "7370282"
+      ],
+      "returned_ids": [
+        "7370282",
+        "4417558",
+        "8596357"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 345.08,
+      "scores": [
+        {
+          "fused": 0.03333333507180214,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 81.44911193847656
+            }
+          ],
+          "vectorDistance": 0.1195446252822876
+        },
+        {
+          "fused": 0.016393441706895828,
+          "vectorDistance": 0.25739729404449463
+        },
+        {
+          "fused": 0.016393441706895828,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 19.222471237182617
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "133",
+      "mode": "keyword",
+      "relevant": [
+        "16280642"
+      ],
+      "returned_ids": [
+        "16280642",
+        "23260700",
+        "9612317"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 340.43,
+      "scores": [
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 30.9921817779541
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 18.833913803100586
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 15.609530448913574
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "133",
+      "mode": "vector",
+      "relevant": [
+        "16280642"
+      ],
+      "returned_ids": [
+        "16280642",
+        "16355392",
+        "4350400"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 361.78,
+      "scores": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "claim_id": "133",
+      "mode": "hybrid",
+      "relevant": [
+        "16280642"
+      ],
+      "returned_ids": [
+        "16280642",
+        "16355392",
+        "23260700"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 362.33,
+      "scores": [
+        {
+          "fused": 0.03333333507180214,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 30.9921817779541
+            }
+          ],
+          "vectorDistance": 0.17651891708374023
+        },
+        {
+          "fused": 0.016393441706895828,
+          "vectorDistance": 0.2970317602157593
+        },
+        {
+          "fused": 0.016393441706895828,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 18.833913803100586
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "343",
+      "mode": "keyword",
+      "relevant": [
+        "5884524"
+      ],
+      "returned_ids": [
+        "5884524",
+        "6158879",
+        "6517763"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 364.72,
+      "scores": [
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 34.48514175415039
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 22.751853942871094
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 20.941295623779297
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "343",
+      "mode": "vector",
+      "relevant": [
+        "5884524"
+      ],
+      "returned_ids": [
+        "5884524",
+        "6158879",
+        "29387024"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 363.77,
+      "scores": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "claim_id": "343",
+      "mode": "hybrid",
+      "relevant": [
+        "5884524"
+      ],
+      "returned_ids": [
+        "5884524",
+        "6158879",
+        "6517763"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 366.83,
+      "scores": [
+        {
+          "fused": 0.03333333507180214,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 34.48514175415039
+            }
+          ],
+          "vectorDistance": 0.16808849573135376
+        },
+        {
+          "fused": 0.032786883413791656,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 22.751853942871094
+            }
+          ],
+          "vectorDistance": 0.26006847620010376
+        },
+        {
+          "fused": 0.016129031777381897,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 20.941295623779297
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "1319",
+      "mode": "keyword",
+      "relevant": [
+        "16284655"
+      ],
+      "returned_ids": [
+        "4388470",
+        "16284655",
+        "36637129"
+      ],
+      "first_relevant_rank": 2,
+      "query_ms": 364.93,
+      "scores": [
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 15.458271980285645
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 14.912641525268555
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 11.838583946228027
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "1319",
+      "mode": "vector",
+      "relevant": [
+        "16284655"
+      ],
+      "returned_ids": [
+        "16284655",
+        "803312",
+        "4388470"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 361.16,
+      "scores": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "claim_id": "1319",
+      "mode": "hybrid",
+      "relevant": [
+        "16284655"
+      ],
+      "returned_ids": [
+        "16284655",
+        "4388470",
+        "803312"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 362.56,
+      "scores": [
+        {
+          "fused": 0.03306011110544205,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 14.912641525268555
+            }
+          ],
+          "vectorDistance": 0.21404558420181274
+        },
+        {
+          "fused": 0.03279569745063782,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 15.458271980285645
+            }
+          ],
+          "vectorDistance": 0.30084025859832764
+        },
+        {
+          "fused": 0.016393441706895828,
+          "vectorDistance": 0.29512470960617065
+        }
+      ]
+    },
+    {
+      "claim_id": "1130",
+      "mode": "keyword",
+      "relevant": [
+        "17997584"
+      ],
+      "returned_ids": [
+        "17997584",
+        "22647695",
+        "11899391"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 367.22,
+      "scores": [
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 53.703651428222656
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 20.855661392211914
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 17.142314910888672
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "1130",
+      "mode": "vector",
+      "relevant": [
+        "17997584"
+      ],
+      "returned_ids": [
+        "17997584",
+        "11899391",
+        "13923140"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 360.4,
+      "scores": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "claim_id": "1130",
+      "mode": "hybrid",
+      "relevant": [
+        "17997584"
+      ],
+      "returned_ids": [
+        "17997584",
+        "11899391",
+        "22647695"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 365.53,
+      "scores": [
+        {
+          "fused": 0.03333333507180214,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 53.703651428222656
+            }
+          ],
+          "vectorDistance": 0.16731756925582886
+        },
+        {
+          "fused": 0.032522473484277725,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 17.142314910888672
+            }
+          ],
+          "vectorDistance": 0.2248673439025879
+        },
+        {
+          "fused": 0.016393441706895828,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 20.855661392211914
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "1385",
+      "mode": "keyword",
+      "relevant": [
+        "306006"
+      ],
+      "returned_ids": [
+        "306006",
+        "12265561",
+        "4320424"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 372.48,
+      "scores": [
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 23.088790893554688
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 13.167154312133789
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 6.364447593688965
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "1385",
+      "mode": "vector",
+      "relevant": [
+        "306006"
+      ],
+      "returned_ids": [
+        "306006",
+        "12265561",
+        "15946643"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 375.84,
+      "scores": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "claim_id": "1385",
+      "mode": "hybrid",
+      "relevant": [
+        "306006"
+      ],
+      "returned_ids": [
+        "306006",
+        "12265561",
+        "15946643"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 382.5,
+      "scores": [
+        {
+          "fused": 0.03333333507180214,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 23.088790893554688
+            }
+          ],
+          "vectorDistance": 0.23587501049041748
+        },
+        {
+          "fused": 0.032786883413791656,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 13.167154312133789
+            }
+          ],
+          "vectorDistance": 0.32099252939224243
+        },
+        {
+          "fused": 0.016129031777381897,
+          "vectorDistance": 0.3388487696647644
+        }
+      ]
+    },
+    {
+      "claim_id": "399",
+      "mode": "keyword",
+      "relevant": [
+        "791050"
+      ],
+      "returned_ids": [
+        "791050",
+        "2158500",
+        "1606628"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 369.96,
+      "scores": [
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 45.339900970458984
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 8.411199569702148
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 7.494500637054443
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "399",
+      "mode": "vector",
+      "relevant": [
+        "791050"
+      ],
+      "returned_ids": [
+        "791050",
+        "18988265",
+        "29564505"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 369.01,
+      "scores": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "claim_id": "399",
+      "mode": "hybrid",
+      "relevant": [
+        "791050"
+      ],
+      "returned_ids": [
+        "791050",
+        "2158500",
+        "18988265"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 370.82,
+      "scores": [
+        {
+          "fused": 0.03333333507180214,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 45.339900970458984
+            }
+          ],
+          "vectorDistance": 0.11208570003509521
+        },
+        {
+          "fused": 0.016393441706895828,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 8.411199569702148
+            }
+          ]
+        },
+        {
+          "fused": 0.016393441706895828,
+          "vectorDistance": 0.3484157919883728
+        }
+      ]
+    },
+    {
+      "claim_id": "718",
+      "mode": "keyword",
+      "relevant": [
+        "17587795"
+      ],
+      "returned_ids": [
+        "22038539",
+        "17587795",
+        "2754534"
+      ],
+      "first_relevant_rank": 2,
+      "query_ms": 373.58,
+      "scores": [
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 18.796558380126953
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 18.23909568786621
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 13.398659706115723
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "718",
+      "mode": "vector",
+      "relevant": [
+        "17587795"
+      ],
+      "returned_ids": [
+        "17587795",
+        "25254425",
+        "22038539"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 366.3,
+      "scores": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "claim_id": "718",
+      "mode": "hybrid",
+      "relevant": [
+        "17587795"
+      ],
+      "returned_ids": [
+        "17587795",
+        "22038539",
+        "25254425"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 339.76,
+      "scores": [
+        {
+          "fused": 0.03306011110544205,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 18.23909568786621
+            }
+          ],
+          "vectorDistance": 0.2222808599472046
+        },
+        {
+          "fused": 0.03279569745063782,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 18.796558380126953
+            }
+          ],
+          "vectorDistance": 0.28165382146835327
+        },
+        {
+          "fused": 0.016393441706895828,
+          "vectorDistance": 0.2586410641670227
+        }
+      ]
+    },
+    {
+      "claim_id": "528",
+      "mode": "keyword",
+      "relevant": [
+        "5476778"
+      ],
+      "returned_ids": [
+        "5476778",
+        "7177329",
+        "18488986"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 334.47,
+      "scores": [
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 87.56591796875
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 21.02068519592285
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 16.1868896484375
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "528",
+      "mode": "vector",
+      "relevant": [
+        "5476778"
+      ],
+      "returned_ids": [
+        "5476778",
+        "13322804",
+        "11899391"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 345.69,
+      "scores": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "claim_id": "528",
+      "mode": "hybrid",
+      "relevant": [
+        "5476778"
+      ],
+      "returned_ids": [
+        "5476778",
+        "13322804",
+        "7177329"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 354.0,
+      "scores": [
+        {
+          "fused": 0.03333333507180214,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 87.56591796875
+            }
+          ],
+          "vectorDistance": 0.1871490478515625
+        },
+        {
+          "fused": 0.016393441706895828,
+          "vectorDistance": 0.3246687054634094
+        },
+        {
+          "fused": 0.016393441706895828,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 21.02068519592285
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "279",
+      "mode": "keyword",
+      "relevant": [
+        "14376683"
+      ],
+      "returned_ids": [
+        "14376683",
+        "25799020",
+        "24221369"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 353.18,
+      "scores": [
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 32.75529861450195
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 9.398017883300781
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 7.646243095397949
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "279",
+      "mode": "vector",
+      "relevant": [
+        "14376683"
+      ],
+      "returned_ids": [
+        "14376683",
+        "21274496",
+        "12885341"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 358.8,
+      "scores": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "claim_id": "279",
+      "mode": "hybrid",
+      "relevant": [
+        "14376683"
+      ],
+      "returned_ids": [
+        "14376683",
+        "21274496",
+        "25799020"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 381.97,
+      "scores": [
+        {
+          "fused": 0.03333333507180214,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 32.75529861450195
+            }
+          ],
+          "vectorDistance": 0.15784406661987305
+        },
+        {
+          "fused": 0.016393441706895828,
+          "vectorDistance": 0.30630528926849365
+        },
+        {
+          "fused": 0.016393441706895828,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 9.398017883300781
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "516",
+      "mode": "keyword",
+      "relevant": [
+        "29564505"
+      ],
+      "returned_ids": [
+        "29564505",
+        "18988265",
+        "13843341"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 367.5,
+      "scores": [
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 46.82740783691406
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 34.71738052368164
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 23.24887466430664
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "516",
+      "mode": "vector",
+      "relevant": [
+        "29564505"
+      ],
+      "returned_ids": [
+        "29564505",
+        "18988265",
+        "13843341"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 370.81,
+      "scores": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "claim_id": "516",
+      "mode": "hybrid",
+      "relevant": [
+        "29564505"
+      ],
+      "returned_ids": [
+        "29564505",
+        "18988265",
+        "13843341"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 365.65,
+      "scores": [
+        {
+          "fused": 0.03333333507180214,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 46.82740783691406
+            }
+          ],
+          "vectorDistance": 0.1473996639251709
+        },
+        {
+          "fused": 0.032786883413791656,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 34.71738052368164
+            }
+          ],
+          "vectorDistance": 0.19335055351257324
+        },
+        {
+          "fused": 0.032258063554763794,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 23.24887466430664
+            }
+          ],
+          "vectorDistance": 0.2969054579734802
+        }
+      ]
+    },
+    {
+      "claim_id": "781",
+      "mode": "keyword",
+      "relevant": [
+        "24338780"
+      ],
+      "returned_ids": [
+        "24338780",
+        "22647695",
+        "13106686"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 353.06,
+      "scores": [
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 30.875286102294922
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 15.237436294555664
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 15.028135299682617
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "781",
+      "mode": "vector",
+      "relevant": [
+        "24338780"
+      ],
+      "returned_ids": [
+        "24338780",
+        "13923140",
+        "23573229"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 402.27,
+      "scores": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "claim_id": "781",
+      "mode": "hybrid",
+      "relevant": [
+        "24338780"
+      ],
+      "returned_ids": [
+        "24338780",
+        "22647695",
+        "13923140"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 362.57,
+      "scores": [
+        {
+          "fused": 0.03333333507180214,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 30.875286102294922
+            }
+          ],
+          "vectorDistance": 0.1282995343208313
+        },
+        {
+          "fused": 0.016393441706895828,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 15.237436294555664
+            }
+          ]
+        },
+        {
+          "fused": 0.016393441706895828,
+          "vectorDistance": 0.26347815990448
+        }
+      ]
+    },
+    {
+      "claim_id": "1298",
+      "mode": "keyword",
+      "relevant": [
+        "11718220"
+      ],
+      "returned_ids": [
+        "11718220",
+        "39059143",
+        "40905302"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 364.68,
+      "scores": [
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 95.25296783447266
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 26.78082275390625
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 21.18973159790039
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "1298",
+      "mode": "vector",
+      "relevant": [
+        "11718220"
+      ],
+      "returned_ids": [
+        "11718220",
+        "12991445",
+        "24088502"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 365.75,
+      "scores": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "claim_id": "1298",
+      "mode": "hybrid",
+      "relevant": [
+        "11718220"
+      ],
+      "returned_ids": [
+        "11718220",
+        "39059143",
+        "12991445"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 364.08,
+      "scores": [
+        {
+          "fused": 0.03333333507180214,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 95.25296783447266
+            }
+          ],
+          "vectorDistance": 0.08526396751403809
+        },
+        {
+          "fused": 0.016393441706895828,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 26.78082275390625
+            }
+          ]
+        },
+        {
+          "fused": 0.016393441706895828,
+          "vectorDistance": 0.3257859945297241
+        }
+      ]
+    },
+    {
+      "claim_id": "1062",
+      "mode": "keyword",
+      "relevant": [
+        "20381484"
+      ],
+      "returned_ids": [
+        "20381484",
+        "2831620",
+        "29877890"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 366.7,
+      "scores": [
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 35.43503189086914
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 12.575801849365234
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 6.024689197540283
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "1062",
+      "mode": "vector",
+      "relevant": [
+        "20381484"
+      ],
+      "returned_ids": [
+        "20381484",
+        "2831620",
+        "8646760"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 370.32,
+      "scores": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "claim_id": "1062",
+      "mode": "hybrid",
+      "relevant": [
+        "20381484"
+      ],
+      "returned_ids": [
+        "20381484",
+        "2831620",
+        "8646760"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 381.0,
+      "scores": [
+        {
+          "fused": 0.03333333507180214,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 35.43503189086914
+            }
+          ],
+          "vectorDistance": 0.1821002960205078
+        },
+        {
+          "fused": 0.032786883413791656,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 12.575801849365234
+            }
+          ],
+          "vectorDistance": 0.2608101963996887
+        },
+        {
+          "fused": 0.016129031777381897,
+          "vectorDistance": 0.3086860775947571
+        }
+      ]
+    },
+    {
+      "claim_id": "922",
+      "mode": "keyword",
+      "relevant": [
+        "17077004"
+      ],
+      "returned_ids": [
+        "17077004",
+        "21274496",
+        "7111021"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 350.08,
+      "scores": [
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 27.182422637939453
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 13.451037406921387
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 10.232073783874512
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "922",
+      "mode": "vector",
+      "relevant": [
+        "17077004"
+      ],
+      "returned_ids": [
+        "17077004",
+        "7111021",
+        "14806256"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 396.79,
+      "scores": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "claim_id": "922",
+      "mode": "hybrid",
+      "relevant": [
+        "17077004"
+      ],
+      "returned_ids": [
+        "17077004",
+        "7111021",
+        "21274496"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 362.98,
+      "scores": [
+        {
+          "fused": 0.03333333507180214,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 27.182422637939453
+            }
+          ],
+          "vectorDistance": 0.17658460140228271
+        },
+        {
+          "fused": 0.032522473484277725,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 10.232073783874512
+            }
+          ],
+          "vectorDistance": 0.2656096816062927
+        },
+        {
+          "fused": 0.016393441706895828,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 13.451037406921387
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "982",
+      "mode": "keyword",
+      "relevant": [
+        "2988714"
+      ],
+      "returned_ids": [
+        "2988714",
+        "4389394",
+        "7111021"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 370.73,
+      "scores": [
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 28.996122360229492
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 12.28386116027832
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 12.195198059082031
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "982",
+      "mode": "vector",
+      "relevant": [
+        "2988714"
+      ],
+      "returned_ids": [
+        "2988714",
+        "4389394",
+        "7451607"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 369.43,
+      "scores": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "claim_id": "982",
+      "mode": "hybrid",
+      "relevant": [
+        "2988714"
+      ],
+      "returned_ids": [
+        "2988714",
+        "4389394",
+        "7451607"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 344.96,
+      "scores": [
+        {
+          "fused": 0.03333333507180214,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 28.996122360229492
+            }
+          ],
+          "vectorDistance": 0.2059205174446106
+        },
+        {
+          "fused": 0.032786883413791656,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 12.28386116027832
+            }
+          ],
+          "vectorDistance": 0.3032274842262268
+        },
+        {
+          "fused": 0.016129031777381897,
+          "vectorDistance": 0.3094785213470459
+        }
+      ]
+    },
+    {
+      "claim_id": "837",
+      "mode": "keyword",
+      "relevant": [
+        "15928989"
+      ],
+      "returned_ids": [
+        "15928989",
+        "38844612",
+        "3896759"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 409.49,
+      "scores": [
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 17.47827911376953
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 9.12923812866211
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 8.090987205505371
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "837",
+      "mode": "vector",
+      "relevant": [
+        "15928989"
+      ],
+      "returned_ids": [
+        "15928989",
+        "25628793",
+        "38727075"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 369.75,
+      "scores": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "claim_id": "837",
+      "mode": "hybrid",
+      "relevant": [
+        "15928989"
+      ],
+      "returned_ids": [
+        "15928989",
+        "38844612",
+        "25628793"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 369.47,
+      "scores": [
+        {
+          "fused": 0.03333333507180214,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 17.47827911376953
+            }
+          ],
+          "vectorDistance": 0.2424553632736206
+        },
+        {
+          "fused": 0.016393441706895828,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 9.12923812866211
+            }
+          ]
+        },
+        {
+          "fused": 0.016393441706895828,
+          "vectorDistance": 0.3093782067298889
+        }
+      ]
+    },
+    {
+      "claim_id": "1216",
+      "mode": "keyword",
+      "relevant": [
+        "24142891"
+      ],
+      "returned_ids": [
+        "24142891",
+        "8219248",
+        "4020950"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 370.96,
+      "scores": [
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 35.82301712036133
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 15.575460433959961
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 8.886452674865723
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "1216",
+      "mode": "vector",
+      "relevant": [
+        "24142891"
+      ],
+      "returned_ids": [
+        "24142891",
+        "3621011",
+        "9178310"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 371.76,
+      "scores": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "claim_id": "1216",
+      "mode": "hybrid",
+      "relevant": [
+        "24142891"
+      ],
+      "returned_ids": [
+        "24142891",
+        "8219248",
+        "3621011"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 385.92,
+      "scores": [
+        {
+          "fused": 0.03333333507180214,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 35.82301712036133
+            }
+          ],
+          "vectorDistance": 0.13306015729904175
+        },
+        {
+          "fused": 0.016393441706895828,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 15.575460433959961
+            }
+          ]
+        },
+        {
+          "fused": 0.016393441706895828,
+          "vectorDistance": 0.2697974443435669
+        }
+      ]
+    },
+    {
+      "claim_id": "42",
+      "mode": "keyword",
+      "relevant": [
+        "18174210"
+      ],
+      "returned_ids": [
+        "18174210",
+        "24338780",
+        "8219248"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 373.06,
+      "scores": [
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 31.20023536682129
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 9.454507827758789
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 9.024114608764648
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "42",
+      "mode": "vector",
+      "relevant": [
+        "18174210"
+      ],
+      "returned_ids": [
+        "18174210",
+        "14407673",
+        "37424881"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 376.03,
+      "scores": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "claim_id": "42",
+      "mode": "hybrid",
+      "relevant": [
+        "18174210"
+      ],
+      "returned_ids": [
+        "18174210",
+        "14407673",
+        "24338780"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 365.93,
+      "scores": [
+        {
+          "fused": 0.03333333507180214,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 31.20023536682129
+            }
+          ],
+          "vectorDistance": 0.1561892032623291
+        },
+        {
+          "fused": 0.016393441706895828,
+          "vectorDistance": 0.2804703116416931
+        },
+        {
+          "fused": 0.016393441706895828,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 9.454507827758789
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "756",
+      "mode": "keyword",
+      "relevant": [
+        "2831620"
+      ],
+      "returned_ids": [
+        "8646760",
+        "2831620",
+        "42520882"
+      ],
+      "first_relevant_rank": 2,
+      "query_ms": 364.23,
+      "scores": [
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 21.20559310913086
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 18.274845123291016
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 11.719869613647461
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "756",
+      "mode": "vector",
+      "relevant": [
+        "2831620"
+      ],
+      "returned_ids": [
+        "2831620",
+        "8646760",
+        "5885376"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 369.6,
+      "scores": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "claim_id": "756",
+      "mode": "hybrid",
+      "relevant": [
+        "2831620"
+      ],
+      "returned_ids": [
+        "2831620",
+        "8646760",
+        "42520882"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 369.31,
+      "scores": [
+        {
+          "fused": 0.03306011110544205,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 18.274845123291016
+            }
+          ],
+          "vectorDistance": 0.1985604166984558
+        },
+        {
+          "fused": 0.03306011110544205,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 21.20559310913086
+            }
+          ],
+          "vectorDistance": 0.21687138080596924
+        },
+        {
+          "fused": 0.016129031777381897,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 11.719869613647461
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "1041",
+      "mode": "keyword",
+      "relevant": [
+        "25254425"
+      ],
+      "returned_ids": [
+        "25254425",
+        "28809022",
+        "15928989"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 362.23,
+      "scores": [
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 31.243453979492188
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 20.617931365966797
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 10.067192077636719
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "1041",
+      "mode": "vector",
+      "relevant": [
+        "25254425"
+      ],
+      "returned_ids": [
+        "25254425",
+        "28809022",
+        "5824955"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 336.37,
+      "scores": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "claim_id": "1041",
+      "mode": "hybrid",
+      "relevant": [
+        "25254425"
+      ],
+      "returned_ids": [
+        "25254425",
+        "28809022",
+        "15928989"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 347.15,
+      "scores": [
+        {
+          "fused": 0.03333333507180214,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 31.243453979492188
+            }
+          ],
+          "vectorDistance": 0.19827818870544434
+        },
+        {
+          "fused": 0.032786883413791656,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 20.617931365966797
+            }
+          ],
+          "vectorDistance": 0.2490120530128479
+        },
+        {
+          "fused": 0.016129031777381897,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 10.067192077636719
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "212",
+      "mode": "keyword",
+      "relevant": [
+        "22038539"
+      ],
+      "returned_ids": [
+        "22038539",
+        "28806780",
+        "14079881"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 343.51,
+      "scores": [
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 13.354804039001465
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 8.797414779663086
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 7.933277606964111
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "212",
+      "mode": "vector",
+      "relevant": [
+        "22038539"
+      ],
+      "returned_ids": [
+        "22038539",
+        "14079881",
+        "2754534"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 346.25,
+      "scores": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "claim_id": "212",
+      "mode": "hybrid",
+      "relevant": [
+        "22038539"
+      ],
+      "returned_ids": [
+        "22038539",
+        "14079881",
+        "28806780"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 346.34,
+      "scores": [
+        {
+          "fused": 0.03333333507180214,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 13.354804039001465
+            }
+          ],
+          "vectorDistance": 0.2615078091621399
+        },
+        {
+          "fused": 0.032522473484277725,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 7.933277606964111
+            }
+          ],
+          "vectorDistance": 0.3024577498435974
+        },
+        {
+          "fused": 0.016393441706895828,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 8.797414779663086
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "239",
+      "mode": "keyword",
+      "relevant": [
+        "14079881"
+      ],
+      "returned_ids": [
+        "516867",
+        "5824955",
+        "36497180"
+      ],
+      "first_relevant_rank": null,
+      "query_ms": 349.19,
+      "scores": [
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 13.877523422241211
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 9.21552562713623
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 7.554722309112549
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "239",
+      "mode": "vector",
+      "relevant": [
+        "14079881"
+      ],
+      "returned_ids": [
+        "14079881",
+        "516867",
+        "22038539"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 353.14,
+      "scores": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "claim_id": "239",
+      "mode": "hybrid",
+      "relevant": [
+        "14079881"
+      ],
+      "returned_ids": [
+        "516867",
+        "14079881",
+        "5824955"
+      ],
+      "first_relevant_rank": 2,
+      "query_ms": 354.82,
+      "scores": [
+        {
+          "fused": 0.03306011110544205,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 13.877523422241211
+            }
+          ],
+          "vectorDistance": 0.3126141428947449
+        },
+        {
+          "fused": 0.01666666753590107,
+          "vectorDistance": 0.2809932231903076
+        },
+        {
+          "fused": 0.016393441706895828,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 9.21552562713623
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "674",
+      "mode": "keyword",
+      "relevant": [
+        "2095573"
+      ],
+      "returned_ids": [
+        "2095573",
+        "6327940",
+        "5884524"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 363.1,
+      "scores": [
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 24.632400512695312
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 11.455921173095703
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 9.751834869384766
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "674",
+      "mode": "vector",
+      "relevant": [
+        "2095573"
+      ],
+      "returned_ids": [
+        "2095573",
+        "5884524",
+        "14407673"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 361.88,
+      "scores": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "claim_id": "674",
+      "mode": "hybrid",
+      "relevant": [
+        "2095573"
+      ],
+      "returned_ids": [
+        "2095573",
+        "5884524",
+        "6327940"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 364.47,
+      "scores": [
+        {
+          "fused": 0.03333333507180214,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 24.632400512695312
+            }
+          ],
+          "vectorDistance": 0.27998173236846924
+        },
+        {
+          "fused": 0.032522473484277725,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 9.751834869384766
+            }
+          ],
+          "vectorDistance": 0.32405275106430054
+        },
+        {
+          "fused": 0.016393441706895828,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 11.455921173095703
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "50",
+      "mode": "keyword",
+      "relevant": [
+        "12580014"
+      ],
+      "returned_ids": [
+        "12580014",
+        "18488986",
+        "14105446"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 379.03,
+      "scores": [
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 21.389204025268555
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 15.003547668457031
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 9.111947059631348
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "50",
+      "mode": "vector",
+      "relevant": [
+        "12580014"
+      ],
+      "returned_ids": [
+        "12580014",
+        "18488986",
+        "3684342"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 351.62,
+      "scores": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "claim_id": "50",
+      "mode": "hybrid",
+      "relevant": [
+        "12580014"
+      ],
+      "returned_ids": [
+        "12580014",
+        "18488986",
+        "3684342"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 346.26,
+      "scores": [
+        {
+          "fused": 0.03333333507180214,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 21.389204025268555
+            }
+          ],
+          "vectorDistance": 0.1840120553970337
+        },
+        {
+          "fused": 0.032786883413791656,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 15.003547668457031
+            }
+          ],
+          "vectorDistance": 0.26142579317092896
+        },
+        {
+          "fused": 0.016129031777381897,
+          "vectorDistance": 0.34605544805526733
+        }
+      ]
+    },
+    {
+      "claim_id": "993",
+      "mode": "keyword",
+      "relevant": [
+        "16472469"
+      ],
+      "returned_ids": [
+        "16472469",
+        "4411655",
+        "16465895"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 336.39,
+      "scores": [
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 23.921110153198242
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 7.245952606201172
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 6.987492084503174
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "993",
+      "mode": "vector",
+      "relevant": [
+        "16472469"
+      ],
+      "returned_ids": [
+        "16472469",
+        "27134931",
+        "4411655"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 349.7,
+      "scores": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "claim_id": "993",
+      "mode": "hybrid",
+      "relevant": [
+        "16472469"
+      ],
+      "returned_ids": [
+        "16472469",
+        "4411655",
+        "27134931"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 353.39,
+      "scores": [
+        {
+          "fused": 0.03333333507180214,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 23.921110153198242
+            }
+          ],
+          "vectorDistance": 0.14951932430267334
+        },
+        {
+          "fused": 0.032522473484277725,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 7.245952606201172
+            }
+          ],
+          "vectorDistance": 0.2962542772293091
+        },
+        {
+          "fused": 0.016393441706895828,
+          "vectorDistance": 0.2894155979156494
+        }
+      ]
+    },
+    {
+      "claim_id": "249",
+      "mode": "keyword",
+      "relevant": [
+        "1568684"
+      ],
+      "returned_ids": [
+        "1568684",
+        "87758",
+        "2158500"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 351.87,
+      "scores": [
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 28.580718994140625
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 11.562158584594727
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 9.275489807128906
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "249",
+      "mode": "vector",
+      "relevant": [
+        "1568684"
+      ],
+      "returned_ids": [
+        "1568684",
+        "7552215",
+        "37424881"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 334.96,
+      "scores": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "claim_id": "249",
+      "mode": "hybrid",
+      "relevant": [
+        "1568684"
+      ],
+      "returned_ids": [
+        "1568684",
+        "7552215",
+        "87758"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 335.48,
+      "scores": [
+        {
+          "fused": 0.03333333507180214,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 28.580718994140625
+            }
+          ],
+          "vectorDistance": 0.23636764287948608
+        },
+        {
+          "fused": 0.016393441706895828,
+          "vectorDistance": 0.2817646265029907
+        },
+        {
+          "fused": 0.016393441706895828,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 11.562158584594727
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "115",
+      "mode": "keyword",
+      "relevant": [
+        "33872649"
+      ],
+      "returned_ids": [
+        "33872649",
+        "22490293",
+        "27768226"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 342.25,
+      "scores": [
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 14.979978561401367
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 12.614021301269531
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 7.821210861206055
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "115",
+      "mode": "vector",
+      "relevant": [
+        "33872649"
+      ],
+      "returned_ids": [
+        "33872649",
+        "8654183",
+        "45199834"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 340.5,
+      "scores": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "claim_id": "115",
+      "mode": "hybrid",
+      "relevant": [
+        "33872649"
+      ],
+      "returned_ids": [
+        "33872649",
+        "22490293",
+        "8654183"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 428.71,
+      "scores": [
+        {
+          "fused": 0.03333333507180214,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 14.979978561401367
+            }
+          ],
+          "vectorDistance": 0.2241000533103943
+        },
+        {
+          "fused": 0.016393441706895828,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 12.614021301269531
+            }
+          ]
+        },
+        {
+          "fused": 0.016393441706895828,
+          "vectorDistance": 0.4189549684524536
+        }
+      ]
+    },
+    {
+      "claim_id": "1352",
+      "mode": "keyword",
+      "relevant": [
+        "12885341"
+      ],
+      "returned_ids": [
+        "12885341",
+        "10648422",
+        "22703082"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 339.08,
+      "scores": [
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 38.6486930847168
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 13.721081733703613
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 12.677417755126953
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "1352",
+      "mode": "vector",
+      "relevant": [
+        "12885341"
+      ],
+      "returned_ids": [
+        "12885341",
+        "10648422",
+        "9433958"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 330.86,
+      "scores": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "claim_id": "1352",
+      "mode": "hybrid",
+      "relevant": [
+        "12885341"
+      ],
+      "returned_ids": [
+        "12885341",
+        "10648422",
+        "9433958"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 332.69,
+      "scores": [
+        {
+          "fused": 0.03333333507180214,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 38.6486930847168
+            }
+          ],
+          "vectorDistance": 0.1533457636833191
+        },
+        {
+          "fused": 0.032786883413791656,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 13.721081733703613
+            }
+          ],
+          "vectorDistance": 0.29724884033203125
+        },
+        {
+          "fused": 0.016129031777381897,
+          "vectorDistance": 0.3122750520706177
+        }
+      ]
+    },
+    {
+      "claim_id": "1121",
+      "mode": "keyword",
+      "relevant": [
+        "4456756"
+      ],
+      "returned_ids": [
+        "4456756",
+        "36637129",
+        "10624000"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 340.59,
+      "scores": [
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 31.009632110595703
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 22.033912658691406
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 13.620296478271484
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "1121",
+      "mode": "vector",
+      "relevant": [
+        "4456756"
+      ],
+      "returned_ids": [
+        "4456756",
+        "36637129",
+        "7708803"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 342.81,
+      "scores": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "claim_id": "1121",
+      "mode": "hybrid",
+      "relevant": [
+        "4456756"
+      ],
+      "returned_ids": [
+        "4456756",
+        "36637129",
+        "10624000"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 345.16,
+      "scores": [
+        {
+          "fused": 0.03333333507180214,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 31.009632110595703
+            }
+          ],
+          "vectorDistance": 0.23063057661056519
+        },
+        {
+          "fused": 0.032786883413791656,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 22.033912658691406
+            }
+          ],
+          "vectorDistance": 0.27358055114746094
+        },
+        {
+          "fused": 0.016129031777381897,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 13.620296478271484
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "236",
+      "mode": "keyword",
+      "relevant": [
+        "4388470"
+      ],
+      "returned_ids": [
+        "4388470",
+        "22490293",
+        "17049436"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 326.69,
+      "scores": [
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 26.11684799194336
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 8.916055679321289
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 8.350519180297852
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "236",
+      "mode": "vector",
+      "relevant": [
+        "4388470"
+      ],
+      "returned_ids": [
+        "4388470",
+        "40971746",
+        "22490293"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 332.33,
+      "scores": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "claim_id": "236",
+      "mode": "hybrid",
+      "relevant": [
+        "4388470"
+      ],
+      "returned_ids": [
+        "4388470",
+        "22490293",
+        "40971746"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 322.0,
+      "scores": [
+        {
+          "fused": 0.03333333507180214,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 26.11684799194336
+            }
+          ],
+          "vectorDistance": 0.16298401355743408
+        },
+        {
+          "fused": 0.032522473484277725,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 8.916055679321289
+            }
+          ],
+          "vectorDistance": 0.29374438524246216
+        },
+        {
+          "fused": 0.016393441706895828,
+          "vectorDistance": 0.2771031856536865
+        }
+      ]
+    },
+    {
+      "claim_id": "219",
+      "mode": "keyword",
+      "relevant": [
+        "21366394"
+      ],
+      "returned_ids": [
+        "21366394",
+        "23801039",
+        "5824955"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 320.26,
+      "scores": [
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 26.271312713623047
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 9.380342483520508
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 6.81183385848999
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "219",
+      "mode": "vector",
+      "relevant": [
+        "21366394"
+      ],
+      "returned_ids": [
+        "21366394",
+        "23801039",
+        "13923140"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 311.69,
+      "scores": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "claim_id": "219",
+      "mode": "hybrid",
+      "relevant": [
+        "21366394"
+      ],
+      "returned_ids": [
+        "21366394",
+        "23801039",
+        "13923140"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 319.01,
+      "scores": [
+        {
+          "fused": 0.03333333507180214,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 26.271312713623047
+            }
+          ],
+          "vectorDistance": 0.11221921443939209
+        },
+        {
+          "fused": 0.032786883413791656,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 9.380342483520508
+            }
+          ],
+          "vectorDistance": 0.27743053436279297
+        },
+        {
+          "fused": 0.016129031777381897,
+          "vectorDistance": 0.2790987491607666
+        }
+      ]
+    },
+    {
+      "claim_id": "532",
+      "mode": "keyword",
+      "relevant": [
+        "12991445"
+      ],
+      "returned_ids": [
+        "12991445",
+        "39059143",
+        "5884524"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 317.19,
+      "scores": [
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 14.477991104125977
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 8.263872146606445
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 7.864570617675781
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "532",
+      "mode": "vector",
+      "relevant": [
+        "12991445"
+      ],
+      "returned_ids": [
+        "12991445",
+        "11718220",
+        "6158879"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 319.66,
+      "scores": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "claim_id": "532",
+      "mode": "hybrid",
+      "relevant": [
+        "12991445"
+      ],
+      "returned_ids": [
+        "12991445",
+        "11718220",
+        "39059143"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 316.89,
+      "scores": [
+        {
+          "fused": 0.03333333507180214,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 14.477991104125977
+            }
+          ],
+          "vectorDistance": 0.20184463262557983
+        },
+        {
+          "fused": 0.016393441706895828,
+          "vectorDistance": 0.2672571539878845
+        },
+        {
+          "fused": 0.016393441706895828,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 8.263872146606445
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "1029",
+      "mode": "keyword",
+      "relevant": [
+        "11899391",
+        "13923140",
+        "13940200"
+      ],
+      "returned_ids": [
+        "11899391",
+        "13923140",
+        "13940200"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 303.26,
+      "scores": [
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 39.25813674926758
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 32.68917465209961
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 22.12210464477539
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "1029",
+      "mode": "vector",
+      "relevant": [
+        "11899391",
+        "13923140",
+        "13940200"
+      ],
+      "returned_ids": [
+        "11899391",
+        "13923140",
+        "13940200"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 303.12,
+      "scores": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "claim_id": "1029",
+      "mode": "hybrid",
+      "relevant": [
+        "11899391",
+        "13923140",
+        "13940200"
+      ],
+      "returned_ids": [
+        "11899391",
+        "13923140",
+        "13940200"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 308.64,
+      "scores": [
+        {
+          "fused": 0.03333333507180214,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 39.25813674926758
+            }
+          ],
+          "vectorDistance": 0.1372835636138916
+        },
+        {
+          "fused": 0.032786883413791656,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 32.68917465209961
+            }
+          ],
+          "vectorDistance": 0.17171889543533325
+        },
+        {
+          "fused": 0.032258063554763794,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 22.12210464477539
+            }
+          ],
+          "vectorDistance": 0.2010982632637024
+        }
+      ]
+    },
+    {
+      "claim_id": "1370",
+      "mode": "keyword",
+      "relevant": [
+        "2425364"
+      ],
+      "returned_ids": [
+        "2425364",
+        "36618603",
+        "21502234"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 308.32,
+      "scores": [
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 21.79789161682129
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 6.115000247955322
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 5.880613327026367
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "1370",
+      "mode": "vector",
+      "relevant": [
+        "2425364"
+      ],
+      "returned_ids": [
+        "2425364",
+        "13338820",
+        "37424881"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 302.98,
+      "scores": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "claim_id": "1370",
+      "mode": "hybrid",
+      "relevant": [
+        "2425364"
+      ],
+      "returned_ids": [
+        "2425364",
+        "13338820",
+        "36618603"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 294.12,
+      "scores": [
+        {
+          "fused": 0.03333333507180214,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 21.79789161682129
+            }
+          ],
+          "vectorDistance": 0.1991032361984253
+        },
+        {
+          "fused": 0.016393441706895828,
+          "vectorDistance": 0.3220001459121704
+        },
+        {
+          "fused": 0.016393441706895828,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 6.115000247955322
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "1137",
+      "mode": "keyword",
+      "relevant": [
+        "33370"
+      ],
+      "returned_ids": [
+        "33370",
+        "51706771",
+        "22703082"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 292.3,
+      "scores": [
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 18.607040405273438
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 9.159425735473633
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 8.366789817810059
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "1137",
+      "mode": "vector",
+      "relevant": [
+        "33370"
+      ],
+      "returned_ids": [
+        "33370",
+        "6517763",
+        "41496215"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 307.96,
+      "scores": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "claim_id": "1137",
+      "mode": "hybrid",
+      "relevant": [
+        "33370"
+      ],
+      "returned_ids": [
+        "33370",
+        "51706771",
+        "6517763"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 296.24,
+      "scores": [
+        {
+          "fused": 0.03333333507180214,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 18.607040405273438
+            }
+          ],
+          "vectorDistance": 0.1749982237815857
+        },
+        {
+          "fused": 0.016393441706895828,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 9.159425735473633
+            }
+          ]
+        },
+        {
+          "fused": 0.016393441706895828,
+          "vectorDistance": 0.2746925950050354
+        }
+      ]
+    },
+    {
+      "claim_id": "879",
+      "mode": "keyword",
+      "relevant": [
+        "8426046"
+      ],
+      "returned_ids": [
+        "8426046",
+        "39851630",
+        "8219248"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 297.4,
+      "scores": [
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 25.306764602661133
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 9.597009658813477
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 8.263833999633789
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "879",
+      "mode": "vector",
+      "relevant": [
+        "8426046"
+      ],
+      "returned_ids": [
+        "8426046",
+        "19358586",
+        "24221369"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 302.28,
+      "scores": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "claim_id": "879",
+      "mode": "hybrid",
+      "relevant": [
+        "8426046"
+      ],
+      "returned_ids": [
+        "8426046",
+        "19358586",
+        "39851630"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 289.81,
+      "scores": [
+        {
+          "fused": 0.03333333507180214,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 25.306764602661133
+            }
+          ],
+          "vectorDistance": 0.20254886150360107
+        },
+        {
+          "fused": 0.016393441706895828,
+          "vectorDistance": 0.31878870725631714
+        },
+        {
+          "fused": 0.016393441706895828,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 9.597009658813477
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "385",
+      "mode": "keyword",
+      "relevant": [
+        "9955779"
+      ],
+      "returned_ids": [
+        "9955779",
+        "23801039",
+        "5476778"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 295.43,
+      "scores": [
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 15.362292289733887
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 14.932406425476074
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 14.526121139526367
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "385",
+      "mode": "vector",
+      "relevant": [
+        "9955779"
+      ],
+      "returned_ids": [
+        "9955779",
+        "1791714",
+        "20888849"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 288.33,
+      "scores": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "claim_id": "385",
+      "mode": "hybrid",
+      "relevant": [
+        "9955779"
+      ],
+      "returned_ids": [
+        "9955779",
+        "23801039",
+        "1791714"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 290.09,
+      "scores": [
+        {
+          "fused": 0.03333333507180214,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 15.362292289733887
+            }
+          ],
+          "vectorDistance": 0.28295791149139404
+        },
+        {
+          "fused": 0.016393441706895828,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 14.932406425476074
+            }
+          ]
+        },
+        {
+          "fused": 0.016393441706895828,
+          "vectorDistance": 0.29103660583496094
+        }
+      ]
+    },
+    {
+      "claim_id": "1132",
+      "mode": "keyword",
+      "relevant": [
+        "33499189"
+      ],
+      "returned_ids": [
+        "33499189",
+        "4394525",
+        "11195653"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 286.4,
+      "scores": [
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 25.716312408447266
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 13.438328742980957
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 12.665568351745605
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "1132",
+      "mode": "vector",
+      "relevant": [
+        "33499189"
+      ],
+      "returned_ids": [
+        "33499189",
+        "306006",
+        "22647695"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 326.78,
+      "scores": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "claim_id": "1132",
+      "mode": "hybrid",
+      "relevant": [
+        "33499189"
+      ],
+      "returned_ids": [
+        "33499189",
+        "4394525",
+        "306006"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 295.13,
+      "scores": [
+        {
+          "fused": 0.03333333507180214,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 25.716312408447266
+            }
+          ],
+          "vectorDistance": 0.23297351598739624
+        },
+        {
+          "fused": 0.016393441706895828,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 13.438328742980957
+            }
+          ]
+        },
+        {
+          "fused": 0.016393441706895828,
+          "vectorDistance": 0.26467365026474
+        }
+      ]
+    },
+    {
+      "claim_id": "852",
+      "mode": "keyword",
+      "relevant": [
+        "13843341"
+      ],
+      "returned_ids": [
+        "13843341",
+        "23801039",
+        "13338820"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 298.13,
+      "scores": [
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 26.76629638671875
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 16.906335830688477
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 13.736736297607422
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "852",
+      "mode": "vector",
+      "relevant": [
+        "13843341"
+      ],
+      "returned_ids": [
+        "13843341",
+        "21323587",
+        "24088502"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 299.2,
+      "scores": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "claim_id": "852",
+      "mode": "hybrid",
+      "relevant": [
+        "13843341"
+      ],
+      "returned_ids": [
+        "13843341",
+        "23801039",
+        "21323587"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 295.78,
+      "scores": [
+        {
+          "fused": 0.03333333507180214,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 26.76629638671875
+            }
+          ],
+          "vectorDistance": 0.2729657292366028
+        },
+        {
+          "fused": 0.016393441706895828,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 16.906335830688477
+            }
+          ]
+        },
+        {
+          "fused": 0.016393441706895828,
+          "vectorDistance": 0.3789936304092407
+        }
+      ]
+    },
+    {
+      "claim_id": "692",
+      "mode": "keyword",
+      "relevant": [
+        "24088502"
+      ],
+      "returned_ids": [
+        "24088502",
+        "1887056",
+        "4335423"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 295.42,
+      "scores": [
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 22.929813385009766
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 12.54753303527832
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 11.469027519226074
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "692",
+      "mode": "vector",
+      "relevant": [
+        "24088502"
+      ],
+      "returned_ids": [
+        "24088502",
+        "18174210",
+        "10648422"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 310.72,
+      "scores": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "claim_id": "692",
+      "mode": "hybrid",
+      "relevant": [
+        "24088502"
+      ],
+      "returned_ids": [
+        "24088502",
+        "1887056",
+        "18174210"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 300.16,
+      "scores": [
+        {
+          "fused": 0.03333333507180214,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 22.929813385009766
+            }
+          ],
+          "vectorDistance": 0.20117241144180298
+        },
+        {
+          "fused": 0.016393441706895828,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 12.54753303527832
+            }
+          ]
+        },
+        {
+          "fused": 0.016393441706895828,
+          "vectorDistance": 0.3063228130340576
+        }
+      ]
+    },
+    {
+      "claim_id": "1088",
+      "mode": "keyword",
+      "relevant": [
+        "37549932"
+      ],
+      "returned_ids": [
+        "11915280",
+        "16472469",
+        "27134931"
+      ],
+      "first_relevant_rank": null,
+      "query_ms": 291.74,
+      "scores": [
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 15.892763137817383
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 7.127280235290527
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 7.109646320343018
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "1088",
+      "mode": "vector",
+      "relevant": [
+        "37549932"
+      ],
+      "returned_ids": [
+        "37549932",
+        "15946643",
+        "16361581"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 292.72,
+      "scores": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "claim_id": "1088",
+      "mode": "hybrid",
+      "relevant": [
+        "37549932"
+      ],
+      "returned_ids": [
+        "11915280",
+        "37549932",
+        "15946643"
+      ],
+      "first_relevant_rank": 2,
+      "query_ms": 294.83,
+      "scores": [
+        {
+          "fused": 0.01666666753590107,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 15.892763137817383
+            }
+          ]
+        },
+        {
+          "fused": 0.01666666753590107,
+          "vectorDistance": 0.21247440576553345
+        },
+        {
+          "fused": 0.016393441706895828,
+          "vectorDistance": 0.28922945261001587
+        }
+      ]
+    },
+    {
+      "claim_id": "1089",
+      "mode": "keyword",
+      "relevant": [
+        "17628888"
+      ],
+      "returned_ids": [
+        "17628888",
+        "7645565",
+        "21868715"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 298.05,
+      "scores": [
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 57.55620193481445
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 24.229366302490234
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 11.179767608642578
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "1089",
+      "mode": "vector",
+      "relevant": [
+        "17628888"
+      ],
+      "returned_ids": [
+        "17628888",
+        "7645565",
+        "5436081"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 290.43,
+      "scores": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "claim_id": "1089",
+      "mode": "hybrid",
+      "relevant": [
+        "17628888"
+      ],
+      "returned_ids": [
+        "17628888",
+        "7645565",
+        "21868715"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 286.69,
+      "scores": [
+        {
+          "fused": 0.03333333507180214,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 57.55620193481445
+            }
+          ],
+          "vectorDistance": 0.14431142807006836
+        },
+        {
+          "fused": 0.032786883413791656,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 24.229366302490234
+            }
+          ],
+          "vectorDistance": 0.2753329873085022
+        },
+        {
+          "fused": 0.016129031777381897,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 11.179767608642578
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "1389",
+      "mode": "keyword",
+      "relevant": [
+        "23895668"
+      ],
+      "returned_ids": [
+        "23895668",
+        "4700428",
+        "14874811"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 283.25,
+      "scores": [
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 26.396076202392578
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 10.22389030456543
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 10.08802604675293
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "1389",
+      "mode": "vector",
+      "relevant": [
+        "23895668"
+      ],
+      "returned_ids": [
+        "23895668",
+        "14874811",
+        "7875158"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 285.38,
+      "scores": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "claim_id": "1389",
+      "mode": "hybrid",
+      "relevant": [
+        "23895668"
+      ],
+      "returned_ids": [
+        "23895668",
+        "14874811",
+        "4700428"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 290.21,
+      "scores": [
+        {
+          "fused": 0.03333333507180214,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 26.396076202392578
+            }
+          ],
+          "vectorDistance": 0.1615268588066101
+        },
+        {
+          "fused": 0.032522473484277725,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 10.08802604675293
+            }
+          ],
+          "vectorDistance": 0.2811736464500427
+        },
+        {
+          "fused": 0.016393441706895828,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 10.22389030456543
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "208",
+      "mode": "keyword",
+      "relevant": [
+        "13519661"
+      ],
+      "returned_ids": [
+        "13519661",
+        "15721252",
+        "2015126"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 285.37,
+      "scores": [
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 20.216398239135742
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 12.252714157104492
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 9.609479904174805
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "208",
+      "mode": "vector",
+      "relevant": [
+        "13519661"
+      ],
+      "returned_ids": [
+        "13519661",
+        "15721252",
+        "15946643"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 289.12,
+      "scores": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "claim_id": "208",
+      "mode": "hybrid",
+      "relevant": [
+        "13519661"
+      ],
+      "returned_ids": [
+        "13519661",
+        "15721252",
+        "15946643"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 287.39,
+      "scores": [
+        {
+          "fused": 0.03333333507180214,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 20.216398239135742
+            }
+          ],
+          "vectorDistance": 0.17001134157180786
+        },
+        {
+          "fused": 0.032786883413791656,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 12.252714157104492
+            }
+          ],
+          "vectorDistance": 0.29062318801879883
+        },
+        {
+          "fused": 0.016129031777381897,
+          "vectorDistance": 0.300079345703125
+        }
+      ]
+    },
+    {
+      "claim_id": "1021",
+      "mode": "keyword",
+      "relevant": [
+        "9433958"
+      ],
+      "returned_ids": [
+        "12885341",
+        "9433958",
+        "26071782"
+      ],
+      "first_relevant_rank": 2,
+      "query_ms": 299.87,
+      "scores": [
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 25.078025817871094
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 24.56752586364746
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 19.88842010498047
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "1021",
+      "mode": "vector",
+      "relevant": [
+        "9433958"
+      ],
+      "returned_ids": [
+        "9433958",
+        "12885341",
+        "26873988"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 287.66,
+      "scores": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "claim_id": "1021",
+      "mode": "hybrid",
+      "relevant": [
+        "9433958"
+      ],
+      "returned_ids": [
+        "12885341",
+        "9433958",
+        "26071782"
+      ],
+      "first_relevant_rank": 2,
+      "query_ms": 283.86,
+      "scores": [
+        {
+          "fused": 0.03306011110544205,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 25.078025817871094
+            }
+          ],
+          "vectorDistance": 0.2519727945327759
+        },
+        {
+          "fused": 0.03306011110544205,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 24.56752586364746
+            }
+          ],
+          "vectorDistance": 0.19858121871948242
+        },
+        {
+          "fused": 0.016129031777381897,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 19.88842010498047
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "619",
+      "mode": "keyword",
+      "relevant": [
+        "20888849"
+      ],
+      "returned_ids": [
+        "15946643",
+        "20888849",
+        "5573975"
+      ],
+      "first_relevant_rank": 2,
+      "query_ms": 284.57,
+      "scores": [
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 14.033004760742188
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 13.629409790039062
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 11.74166488647461
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "619",
+      "mode": "vector",
+      "relevant": [
+        "20888849"
+      ],
+      "returned_ids": [
+        "19673227",
+        "12991445",
+        "20888849"
+      ],
+      "first_relevant_rank": 3,
+      "query_ms": 286.69,
+      "scores": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "claim_id": "619",
+      "mode": "hybrid",
+      "relevant": [
+        "20888849"
+      ],
+      "returned_ids": [
+        "20888849",
+        "15946643",
+        "19673227"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 277.49,
+      "scores": [
+        {
+          "fused": 0.032522473484277725,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 13.629409790039062
+            }
+          ],
+          "vectorDistance": 0.319771409034729
+        },
+        {
+          "fused": 0.01666666753590107,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 14.033004760742188
+            }
+          ]
+        },
+        {
+          "fused": 0.01666666753590107,
+          "vectorDistance": 0.3089669346809387
+        }
+      ]
+    },
+    {
+      "claim_id": "1274",
+      "mode": "keyword",
+      "relevant": [
+        "4406819"
+      ],
+      "returned_ids": [
+        "4406819",
+        "3893473",
+        "23801039"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 286.47,
+      "scores": [
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 56.532989501953125
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 20.66980743408203
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 14.017940521240234
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "1274",
+      "mode": "vector",
+      "relevant": [
+        "4406819"
+      ],
+      "returned_ids": [
+        "4406819",
+        "7717468",
+        "3893473"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 299.71,
+      "scores": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "claim_id": "1274",
+      "mode": "hybrid",
+      "relevant": [
+        "4406819"
+      ],
+      "returned_ids": [
+        "4406819",
+        "3893473",
+        "7717468"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 281.89,
+      "scores": [
+        {
+          "fused": 0.03333333507180214,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 56.532989501953125
+            }
+          ],
+          "vectorDistance": 0.19727247953414917
+        },
+        {
+          "fused": 0.032522473484277725,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 20.66980743408203
+            }
+          ],
+          "vectorDistance": 0.3352259397506714
+        },
+        {
+          "fused": 0.016393441706895828,
+          "vectorDistance": 0.3346720337867737
+        }
+      ]
+    },
+    {
+      "claim_id": "100",
+      "mode": "keyword",
+      "relevant": [
+        "4381486"
+      ],
+      "returned_ids": [
+        "4381486",
+        "16361581",
+        "39851630"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 292.02,
+      "scores": [
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 29.052433013916016
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 11.839579582214355
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 10.825544357299805
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "100",
+      "mode": "vector",
+      "relevant": [
+        "4381486"
+      ],
+      "returned_ids": [
+        "4381486",
+        "39851630",
+        "13048272"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 293.07,
+      "scores": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "claim_id": "100",
+      "mode": "hybrid",
+      "relevant": [
+        "4381486"
+      ],
+      "returned_ids": [
+        "4381486",
+        "39851630",
+        "16361581"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 284.79,
+      "scores": [
+        {
+          "fused": 0.03333333507180214,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 29.052433013916016
+            }
+          ],
+          "vectorDistance": 0.2399793267250061
+        },
+        {
+          "fused": 0.032522473484277725,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 10.825544357299805
+            }
+          ],
+          "vectorDistance": 0.2969807982444763
+        },
+        {
+          "fused": 0.016393441706895828,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 11.839579582214355
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "1104",
+      "mode": "keyword",
+      "relevant": [
+        "3898784"
+      ],
+      "returned_ids": [
+        "3898784",
+        "11718220",
+        "5884524"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 291.46,
+      "scores": [
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 78.02497863769531
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 35.12312316894531
+            }
+          ]
+        },
+        {
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 30.839187622070312
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "1104",
+      "mode": "vector",
+      "relevant": [
+        "3898784"
+      ],
+      "returned_ids": [
+        "3898784",
+        "6158879",
+        "10072941"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 286.23,
+      "scores": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "claim_id": "1104",
+      "mode": "hybrid",
+      "relevant": [
+        "3898784"
+      ],
+      "returned_ids": [
+        "3898784",
+        "11718220",
+        "6158879"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 287.17,
+      "scores": [
+        {
+          "fused": 0.03333333507180214,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 78.02497863769531
+            }
+          ],
+          "vectorDistance": 0.16173017024993896
+        },
+        {
+          "fused": 0.016393441706895828,
+          "bm25Scores": [
+            {
+              "metadataKey": "text",
+              "score": 35.12312316894531
+            }
+          ]
+        },
+        {
+          "fused": 0.016393441706895828,
+          "vectorDistance": 0.23955106735229492
+        }
+      ]
+    }
+  ]
+}

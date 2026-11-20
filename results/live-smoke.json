@@ -1,0 +1,25 @@
+{
+  "timestamp_utc": "2026-11-17T20:35:41.657887+00:00",
+  "region": "us-west-2",
+  "checks": {
+    "anonymous_request": {
+      "http_status": 403,
+      "passed": true
+    },
+    "invalid_request": {
+      "http_status": 400,
+      "passed": true
+    },
+    "signed_keyword": {
+      "http_status": 200,
+      "passed": true,
+      "returned_documents": 1,
+      "temporary_non_model_vector_used_for_keyword_only": true
+    },
+    "bedrock_hybrid": {
+      "http_status": 502,
+      "passed": false,
+      "dependency_code": "ThrottlingException"
+    }
+  }
+}

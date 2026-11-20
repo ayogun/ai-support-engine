@@ -1,0 +1,46 @@
+{
+  "timestamp_utc": "2026-11-18T07:22:05.913685+00:00",
+  "region": "us-west-2",
+  "indexed_vectors_before_checks": 16,
+  "checks": {
+    "anonymous_request": {
+      "http_status": 403,
+      "passed": true
+    },
+    "invalid_request": {
+      "http_status": 400,
+      "passed": true
+    },
+    "signed_keyword": {
+      "http_status": 200,
+      "passed": true,
+      "returned_documents": 1,
+      "returned_document_ids": [
+        "auth482"
+      ],
+      "temporary_non_model_vector_used_for_keyword_only": false
+    },
+    "sagemaker_vector": {
+      "http_status": 200,
+      "passed": true,
+      "dependency_code": null,
+      "returned_documents": 3,
+      "returned_document_ids": [
+        "auth482",
+        "auth483",
+        "bill702"
+      ]
+    },
+    "sagemaker_hybrid": {
+      "http_status": 200,
+      "passed": true,
+      "dependency_code": null,
+      "returned_documents": 3,
+      "returned_document_ids": [
+        "auth482",
+        "auth483",
+        "bill702"
+      ]
+    }
+  }
+}

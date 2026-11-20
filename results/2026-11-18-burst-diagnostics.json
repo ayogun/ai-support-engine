@@ -1,0 +1,8 @@
+{
+  "window_start_utc": "2026-11-18T06:55:18.035388+00:00",
+  "window_end_utc": "2026-11-18T07:00:18.035388+00:00",
+  "dependency_error_counts": {
+    "ThrottlingException": 3
+  },
+  "note": "Counts are matching search Lambda log events in the five-minute window, not per-request tracing."
+}

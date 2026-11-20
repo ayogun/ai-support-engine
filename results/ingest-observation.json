@@ -1,0 +1,10 @@
+{
+  "timestamp_utc": "2026-11-17T20:37:04.603768+00:00",
+  "region": "us-west-2",
+  "ingest_throttle_log_events": 3,
+  "approximate_visible_dlq_messages": 1,
+  "sample_event_keys": [
+    "documents/auth482.txt"
+  ],
+  "note": "The queue sample used zero-second visibility and did not delete the message."
+}

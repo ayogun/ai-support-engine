@@ -1,0 +1,1 @@
+ORDER601: An order can be canceled before dispatch. After it ships, wait for delivery and use the return process instead.

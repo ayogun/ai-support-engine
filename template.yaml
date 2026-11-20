@@ -1,0 +1,404 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Disposable, IAM-protected hybrid search lab with S3 ingestion and serverless embeddings.
+Metadata:
+  AWSToolsMetrics:
+    AWSAgentToolkit: aws-cloudformation@2
+  com.aws.cloudformation.Context:
+    arch: S3 invokes an ingestion Lambda; an IAM-protected HTTP API invokes a search Lambda; both use a SageMaker serverless embedding endpoint.
+    must:
+      - Use synthetic data only. The cleanup process deletes the lab's data and vector index.
+      - The enhanced, text-searchable vector index is configured after stack creation.
+      - The on-demand embedding endpoint has no provisioned concurrency and may have cold starts.
+Parameters:
+  CodeBucket:
+    Type: String
+    AllowedPattern: '[a-z0-9][a-z0-9.-]{1,61}[a-z0-9]'
+  CodeKey:
+    Type: String
+    MinLength: 1
+  DocumentBucketName:
+    Type: String
+    AllowedPattern: '[a-z0-9][a-z0-9-]{1,61}[a-z0-9]'
+  VectorBucketName:
+    Type: String
+    AllowedPattern: '[a-z0-9][a-z0-9-]{1,61}[a-z0-9]'
+  LabId:
+    Type: String
+    AllowedPattern: '[a-f0-9]{12}'
+  IndexName:
+    Type: String
+    Default: documents
+    AllowedPattern: '[a-z0-9][a-z0-9-]{0,62}'
+  InferenceImageUri:
+    Type: String
+    AllowedPattern: '[0-9]{12}\.dkr\.ecr\.[a-z0-9-]+\.amazonaws\.com/huggingface-pytorch-inference@sha256:[a-f0-9]{64}'
+  InferenceRegistry:
+    Type: String
+    AllowedPattern: '[0-9]{12}'
+Resources:
+  FailedIngestQueue:
+    Type: AWS::SQS::Queue
+    Metadata:
+      com.aws.cloudformation.Context:
+        why: Retains asynchronously failed S3 ingestion events for inspection and replay.
+    Properties:
+      MessageRetentionPeriod: 86400
+      SqsManagedSseEnabled: true
+      Tags:
+        - Key: Project
+          Value: hybrid-search-lab
+        - Key: LabId
+          Value: !Ref LabId
+  VectorBucket:
+    Type: AWS::S3Vectors::VectorBucket
+    DeletionPolicy: Delete
+    UpdateReplacePolicy: Delete
+    Metadata:
+      com.aws.cloudformation.Context:
+        why: Stores the lab vectors; the current CloudFormation schema cannot configure the new text-searchable index.
+        must:
+          - Delete the separately created index before deleting this disposable bucket.
+    Properties:
+      VectorBucketName: !Ref VectorBucketName
+      EncryptionConfiguration:
+        SseType: AES256
+      Tags:
+        - Key: Project
+          Value: hybrid-search-lab
+        - Key: LabId
+          Value: !Ref LabId
+  IngestLogGroup:
+    Type: AWS::Logs::LogGroup
+    Properties:
+      LogGroupName: !Sub '/aws/lambda/${AWS::StackName}-ingest'
+      RetentionInDays: 7
+  SearchLogGroup:
+    Type: AWS::Logs::LogGroup
+    Properties:
+      LogGroupName: !Sub '/aws/lambda/${AWS::StackName}-search'
+      RetentionInDays: 7
+  EmbeddingLogGroup:
+    Type: AWS::Logs::LogGroup
+    Metadata:
+      com.aws.cloudformation.Context:
+        why: Retains serverless model-container logs temporarily and deletes them with the lab.
+    Properties:
+      LogGroupName: !Sub '/aws/sagemaker/Endpoints/${AWS::StackName}-embedding'
+      RetentionInDays: 7
+  EmbeddingRole:
+    Type: AWS::IAM::Role
+    Metadata:
+      com.aws.cloudformation.Context:
+        why: Gives SageMaker access only to the pinned model artifact, serving image, and endpoint logs.
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: sagemaker.amazonaws.com
+            Action: sts:AssumeRole
+      Policies:
+        - PolicyName: ServeEmbeddingModel
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action: s3:GetObject
+                Resource: !Sub 'arn:${AWS::Partition}:s3:::${CodeBucket}/releases/bge-model.tar.gz'
+              - Effect: Allow
+                Action: ecr:GetAuthorizationToken
+                Resource: '*'
+              - Effect: Allow
+                Action: [ecr:BatchCheckLayerAvailability, ecr:BatchGetImage, ecr:GetDownloadUrlForLayer]
+                Resource: !Sub 'arn:${AWS::Partition}:ecr:${AWS::Region}:${InferenceRegistry}:repository/huggingface-pytorch-inference'
+              - Effect: Allow
+                Action: [logs:CreateLogStream, logs:PutLogEvents]
+                Resource: !GetAtt EmbeddingLogGroup.Arn
+  EmbeddingModel:
+    Type: AWS::SageMaker::Model
+    Metadata:
+      com.aws.cloudformation.Context:
+        why: Loads pinned BGE weights and a small, locally packaged inference handler into an AWS serving image.
+        must:
+          - Use only the model artifact and image versions verified by the deployment helper.
+    Properties:
+      ExecutionRoleArn: !GetAtt EmbeddingRole.Arn
+      PrimaryContainer:
+        Image: !Ref InferenceImageUri
+        ModelDataUrl: !Sub 's3://${CodeBucket}/releases/bge-model.tar.gz'
+        Environment:
+          SAGEMAKER_PROGRAM: inference.py
+          SAGEMAKER_SUBMIT_DIRECTORY: /opt/ml/model/code
+          SAGEMAKER_MODEL_SERVER_WORKERS: '1'
+          HF_HUB_OFFLINE: '1'
+          TRANSFORMERS_OFFLINE: '1'
+          TOKENIZERS_PARALLELISM: 'false'
+          OMP_NUM_THREADS: '1'
+      Tags:
+        - Key: Project
+          Value: hybrid-search-lab
+        - Key: LabId
+          Value: !Ref LabId
+  EmbeddingEndpointConfig:
+    Type: AWS::SageMaker::EndpointConfig
+    Metadata:
+      com.aws.cloudformation.Context:
+        why: Limits the disposable endpoint to one on-demand serverless invocation at a time.
+        must:
+          - Do not configure provisioned concurrency for this pay-per-use lab.
+    Properties:
+      ProductionVariants:
+        - VariantName: AllTraffic
+          ModelName: !GetAtt EmbeddingModel.ModelName
+          ServerlessConfig:
+            MaxConcurrency: 1
+            MemorySizeInMB: 3072
+      Tags:
+        - Key: Project
+          Value: hybrid-search-lab
+        - Key: LabId
+          Value: !Ref LabId
+  EmbeddingEndpoint:
+    Type: AWS::SageMaker::Endpoint
+    DependsOn: EmbeddingLogGroup
+    Metadata:
+      com.aws.cloudformation.Context:
+        why: Serves the same embedding model for document ingestion and query vectors.
+    Properties:
+      EndpointName: !Sub '${AWS::StackName}-embedding'
+      EndpointConfigName: !GetAtt EmbeddingEndpointConfig.EndpointConfigName
+      Tags:
+        - Key: Project
+          Value: hybrid-search-lab
+        - Key: LabId
+          Value: !Ref LabId
+  IngestRole:
+    Type: AWS::IAM::Role
+    Metadata:
+      com.aws.cloudformation.Context:
+        why: Limits ingestion to this lab's document objects, embedding endpoint, vector index, failure queue, and log group.
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: lambda.amazonaws.com
+            Action: sts:AssumeRole
+      Policies:
+        - PolicyName: IngestLabData
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action: [s3:GetObject, s3:GetObjectVersion]
+                Resource: !Sub 'arn:${AWS::Partition}:s3:::${DocumentBucketName}/documents/*'
+              - Effect: Allow
+                Action: sagemaker:InvokeEndpoint
+                Resource: !Ref EmbeddingEndpoint
+              - Effect: Allow
+                Action: s3vectors:PutVectors
+                Resource: !Sub 'arn:${AWS::Partition}:s3vectors:${AWS::Region}:${AWS::AccountId}:bucket/${VectorBucketName}/index/${IndexName}'
+              - Effect: Allow
+                Action: sqs:SendMessage
+                Resource: !GetAtt FailedIngestQueue.Arn
+              - Effect: Allow
+                Action: [logs:CreateLogStream, logs:PutLogEvents]
+                Resource: !GetAtt IngestLogGroup.Arn
+  SearchRole:
+    Type: AWS::IAM::Role
+    Metadata:
+      com.aws.cloudformation.Context:
+        why: Lets search invoke only the lab embedding endpoint and query the lab index.
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: lambda.amazonaws.com
+            Action: sts:AssumeRole
+      Policies:
+        - PolicyName: QueryLabData
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action: sagemaker:InvokeEndpoint
+                Resource: !Ref EmbeddingEndpoint
+              - Effect: Allow
+                Action: [s3vectors:QueryVectors, s3vectors:GetVectors]
+                Resource: !Sub 'arn:${AWS::Partition}:s3vectors:${AWS::Region}:${AWS::AccountId}:bucket/${VectorBucketName}/index/${IndexName}'
+              - Effect: Allow
+                Action: [logs:CreateLogStream, logs:PutLogEvents]
+                Resource: !GetAtt SearchLogGroup.Arn
+  IngestFunction:
+    Type: AWS::Lambda::Function
+    Metadata:
+      com.aws.cloudformation.Context:
+        why: Embeds each small immutable document after upload; failed asynchronous events go to the queue.
+    Properties:
+      FunctionName: !Sub '${AWS::StackName}-ingest'
+      Runtime: python3.13
+      Handler: search_lab.ingest.handler
+      Role: !GetAtt IngestRole.Arn
+      Timeout: 180
+      MemorySize: 512
+      DeadLetterConfig:
+        TargetArn: !GetAtt FailedIngestQueue.Arn
+      Code:
+        S3Bucket: !Ref CodeBucket
+        S3Key: !Ref CodeKey
+      Environment:
+        Variables:
+          DOCUMENT_BUCKET: !Ref DocumentBucketName
+          VECTOR_BUCKET: !Ref VectorBucketName
+          INDEX_NAME: !Ref IndexName
+          EMBEDDING_ENDPOINT: !GetAtt EmbeddingEndpoint.EndpointName
+          MODEL_READ_TIMEOUT: '90'
+  SearchFunction:
+    Type: AWS::Lambda::Function
+    Metadata:
+      com.aws.cloudformation.Context:
+        why: Exposes the same searchable index in keyword, vector, and hybrid modes for comparison.
+        must:
+          - Keep model retries bounded; the function timeout can end a request before all attempts complete.
+    Properties:
+      FunctionName: !Sub '${AWS::StackName}-search'
+      Runtime: python3.13
+      Handler: search_lab.api.handler
+      Role: !GetAtt SearchRole.Arn
+      Timeout: 28
+      MemorySize: 512
+      Code:
+        S3Bucket: !Ref CodeBucket
+        S3Key: !Ref CodeKey
+      Environment:
+        Variables:
+          DOCUMENT_BUCKET: !Ref DocumentBucketName
+          VECTOR_BUCKET: !Ref VectorBucketName
+          INDEX_NAME: !Ref IndexName
+          EMBEDDING_ENDPOINT: !GetAtt EmbeddingEndpoint.EndpointName
+          MODEL_READ_TIMEOUT: '22'
+          MODEL_MAX_ATTEMPTS: '3'
+  IngestPermission:
+    Type: AWS::Lambda::Permission
+    Properties:
+      Action: lambda:InvokeFunction
+      FunctionName: !Ref IngestFunction
+      Principal: s3.amazonaws.com
+      SourceAccount: !Ref AWS::AccountId
+      SourceArn: !Sub 'arn:${AWS::Partition}:s3:::${DocumentBucketName}'
+  DocumentBucket:
+    Type: AWS::S3::Bucket
+    DependsOn: IngestPermission
+    DeletionPolicy: Delete
+    UpdateReplacePolicy: Delete
+    Metadata:
+      com.aws.cloudformation.Context:
+        why: Holds disposable, versioned synthetic documents and invokes ingestion only for the documents prefix.
+        must:
+          - Treat document keys as immutable; versioned updates and deletes are not reconciled by this lab.
+    Properties:
+      BucketName: !Ref DocumentBucketName
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: true
+        BlockPublicPolicy: true
+        IgnorePublicAcls: true
+        RestrictPublicBuckets: true
+      BucketEncryption:
+        ServerSideEncryptionConfiguration:
+          - ServerSideEncryptionByDefault:
+              SSEAlgorithm: AES256
+      VersioningConfiguration:
+        Status: Enabled
+      NotificationConfiguration:
+        LambdaConfigurations:
+          - Event: 's3:ObjectCreated:*'
+            Function: !GetAtt IngestFunction.Arn
+            Filter:
+              S3Key:
+                Rules:
+                  - Name: prefix
+                    Value: documents/
+                  - Name: suffix
+                    Value: .txt
+      Tags:
+        - Key: Project
+          Value: hybrid-search-lab
+        - Key: LabId
+          Value: !Ref LabId
+  DocumentBucketPolicy:
+    Type: AWS::S3::BucketPolicy
+    Properties:
+      Bucket: !Ref DocumentBucket
+      PolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Sid: DenyInsecureTransport
+            Effect: Deny
+            Principal: '*'
+            Action: 's3:*'
+            Resource:
+              - !Sub 'arn:${AWS::Partition}:s3:::${DocumentBucketName}'
+              - !Sub 'arn:${AWS::Partition}:s3:::${DocumentBucketName}/*'
+            Condition:
+              Bool:
+                'aws:SecureTransport': 'false'
+  SearchApi:
+    Type: AWS::ApiGatewayV2::Api
+    Metadata:
+      com.aws.cloudformation.Context:
+        why: Exposes a small HTTP endpoint; IAM authorization prevents anonymous use of the lab.
+    Properties:
+      Name: !Sub '${AWS::StackName}-search'
+      ProtocolType: HTTP
+  SearchIntegration:
+    Type: AWS::ApiGatewayV2::Integration
+    Properties:
+      ApiId: !Ref SearchApi
+      IntegrationType: AWS_PROXY
+      IntegrationUri: !GetAtt SearchFunction.Arn
+      PayloadFormatVersion: '2.0'
+  SearchRoute:
+    Type: AWS::ApiGatewayV2::Route
+    Properties:
+      ApiId: !Ref SearchApi
+      RouteKey: 'POST /search'
+      AuthorizationType: AWS_IAM
+      Target: !Sub 'integrations/${SearchIntegration}'
+  SearchStage:
+    Type: AWS::ApiGatewayV2::Stage
+    Properties:
+      ApiId: !Ref SearchApi
+      StageName: '$default'
+      AutoDeploy: true
+      DefaultRouteSettings:
+        ThrottlingBurstLimit: 10
+        ThrottlingRateLimit: 5
+  SearchPermission:
+    Type: AWS::Lambda::Permission
+    Properties:
+      Action: lambda:InvokeFunction
+      FunctionName: !Ref SearchFunction
+      Principal: apigateway.amazonaws.com
+      SourceAccount: !Ref AWS::AccountId
+      SourceArn: !Sub 'arn:${AWS::Partition}:execute-api:${AWS::Region}:${AWS::AccountId}:${SearchApi}/*/POST/search'
+Outputs:
+  DocumentBucket:
+    Value: !Ref DocumentBucket
+  VectorBucket:
+    Value: !Ref VectorBucket
+  IndexName:
+    Value: !Ref IndexName
+  SearchUrl:
+    Value: !Sub 'https://${SearchApi}.execute-api.${AWS::Region}.${AWS::URLSuffix}/search'
+  FailedIngestQueueUrl:
+    Value: !Ref FailedIngestQueue
+  IngestFunctionName:
+    Value: !Ref IngestFunction
+  SearchFunctionName:
+    Value: !Ref SearchFunction
+  EmbeddingEndpointName:
+    Value: !GetAtt EmbeddingEndpoint.EndpointName

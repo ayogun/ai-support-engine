@@ -1,0 +1,1 @@
+ACCESS401: Accounts are locked after five incorrect password attempts. An administrator can unlock the account after verifying the user's identity.

@@ -1,0 +1,13 @@
+{
+  "timestamp_utc": "2026-11-18T07:26:18.570665+00:00",
+  "region": "us-west-2",
+  "checks": {
+    "stack_deleted": true,
+    "document_bucket_deleted": true,
+    "code_bucket_deleted": true,
+    "vector_bucket_deleted": true,
+    "endpoint_deleted": true
+  },
+  "registered_indexes_deleted": 3,
+  "all_confirmed": true
+}

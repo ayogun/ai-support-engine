@@ -1,0 +1,1 @@
+FILE902: CSV imports require UTF-8 encoding. Re-export a spreadsheet as UTF-8 CSV if non-English characters appear corrupted.

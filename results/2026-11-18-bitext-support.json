@@ -1,0 +1,3944 @@
+{
+  "timestamp_utc": "2026-11-18T08:50:45.165051+00:00",
+  "region": "us-west-2",
+  "dataset": "bitext/Bitext-customer-support-llm-chatbot-training-dataset",
+  "dataset_revision": "430d1a89bd93bd1fa23c16f29dd53e73f0087443",
+  "dataset_url": "https://huggingface.co/datasets/bitext/Bitext-customer-support-llm-chatbot-training-dataset/resolve/430d1a89bd93bd1fa23c16f29dd53e73f0087443/Bitext_Sample_Customer_Support_Training_Dataset_27K_responses-v11.csv",
+  "dataset_sha256": "6f81102b0100b97b8468eb04368033a23206bf1fde9d53500d5806ec1001a434",
+  "dataset_license": "CDLA-Sharing-1.0",
+  "source_row_count": 26872,
+  "selected_data_sha256": "b2c2574515435aaae32fe597431ec04ceec2f96f26063cc27f7f0ebd22bbc29c",
+  "selection": "Fixed SHA-256 ordering of zero-based CSV row numbers; per intent, select 10 distinct response texts and 2 held-out instruction rows. Query text is not an exact duplicate of a selected document row's instruction. A unique readiness marker is appended to each indexed response.",
+  "seed": "20261118",
+  "intent_count": 27,
+  "documents_per_intent": 10,
+  "queries_per_intent": 2,
+  "document_count": 270,
+  "query_count": 54,
+  "top_k": 3,
+  "model": "BAAI/bge-small-en-v1.5",
+  "model_revision": "5c38ec7c405ec4b44b94cc5a9bb96e735b38267a",
+  "model_fingerprint": "d87ec16a17b312babef5966bf482e1979906a141ddefac6215ea84cfdd62b2b0",
+  "label_definition": "An indexed response is counted as a hit if its source row has the same Bitext intent as the held-out question; this is a proxy, not a document-relevance judgment.",
+  "limitations": "Synthetic question/answer data, not a real support knowledge base; balanced deterministic sample is not actual traffic. Same-intent responses can be unsuitable or generic, and other intents can be relevant. Row holdout and exact text deduplication do not eliminate paraphrase, template, or model-training overlap.",
+  "timing_scope": "Sequential direct S3 Vectors calls; excludes model inference and API Gateway.",
+  "summary": {
+    "keyword": {
+      "queries": 54,
+      "hit_at_1": 39,
+      "hit_at_3": 48,
+      "mrr_at_3": 0.7963,
+      "macro_recall_at_3": 0.1889,
+      "query_ms_median": 272.8,
+      "query_ms_p95": 277.4
+    },
+    "vector": {
+      "queries": 54,
+      "hit_at_1": 46,
+      "hit_at_3": 52,
+      "mrr_at_3": 0.9012,
+      "macro_recall_at_3": 0.2481,
+      "query_ms_median": 275.0,
+      "query_ms_p95": 292.4
+    },
+    "hybrid": {
+      "queries": 54,
+      "hit_at_1": 45,
+      "hit_at_3": 52,
+      "mrr_at_3": 0.8981,
+      "macro_recall_at_3": 0.2222,
+      "query_ms_median": 273.7,
+      "query_ms_p95": 293.5
+    }
+  },
+  "observations": [
+    {
+      "query_id": "bitext-query-680",
+      "intent": "cancel_order",
+      "mode": "keyword",
+      "relevant": [
+        "bitext-733",
+        "bitext-880",
+        "bitext-900",
+        "bitext-18",
+        "bitext-72",
+        "bitext-485",
+        "bitext-881",
+        "bitext-495",
+        "bitext-958",
+        "bitext-916"
+      ],
+      "returned_ids": [
+        "bitext-25510",
+        "bitext-900",
+        "bitext-25125"
+      ],
+      "first_relevant_rank": 2,
+      "query_ms": 267.63
+    },
+    {
+      "query_id": "bitext-query-680",
+      "intent": "cancel_order",
+      "mode": "vector",
+      "relevant": [
+        "bitext-733",
+        "bitext-880",
+        "bitext-900",
+        "bitext-18",
+        "bitext-72",
+        "bitext-485",
+        "bitext-881",
+        "bitext-495",
+        "bitext-958",
+        "bitext-916"
+      ],
+      "returned_ids": [
+        "bitext-18",
+        "bitext-916",
+        "bitext-733"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 285.47
+    },
+    {
+      "query_id": "bitext-query-680",
+      "intent": "cancel_order",
+      "mode": "hybrid",
+      "relevant": [
+        "bitext-733",
+        "bitext-880",
+        "bitext-900",
+        "bitext-18",
+        "bitext-72",
+        "bitext-485",
+        "bitext-881",
+        "bitext-495",
+        "bitext-958",
+        "bitext-916"
+      ],
+      "returned_ids": [
+        "bitext-18",
+        "bitext-25510",
+        "bitext-900"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 273.24
+    },
+    {
+      "query_id": "bitext-query-525",
+      "intent": "cancel_order",
+      "mode": "keyword",
+      "relevant": [
+        "bitext-733",
+        "bitext-880",
+        "bitext-900",
+        "bitext-18",
+        "bitext-72",
+        "bitext-485",
+        "bitext-881",
+        "bitext-495",
+        "bitext-958",
+        "bitext-916"
+      ],
+      "returned_ids": [
+        "bitext-916",
+        "bitext-485",
+        "bitext-18"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 267.36
+    },
+    {
+      "query_id": "bitext-query-525",
+      "intent": "cancel_order",
+      "mode": "vector",
+      "relevant": [
+        "bitext-733",
+        "bitext-880",
+        "bitext-900",
+        "bitext-18",
+        "bitext-72",
+        "bitext-485",
+        "bitext-881",
+        "bitext-495",
+        "bitext-958",
+        "bitext-916"
+      ],
+      "returned_ids": [
+        "bitext-72",
+        "bitext-485",
+        "bitext-881"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 286.05
+    },
+    {
+      "query_id": "bitext-query-525",
+      "intent": "cancel_order",
+      "mode": "hybrid",
+      "relevant": [
+        "bitext-733",
+        "bitext-880",
+        "bitext-900",
+        "bitext-18",
+        "bitext-72",
+        "bitext-485",
+        "bitext-881",
+        "bitext-495",
+        "bitext-958",
+        "bitext-916"
+      ],
+      "returned_ids": [
+        "bitext-485",
+        "bitext-916",
+        "bitext-72"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 293.33
+    },
+    {
+      "query_id": "bitext-query-1333",
+      "intent": "change_order",
+      "mode": "keyword",
+      "relevant": [
+        "bitext-1607",
+        "bitext-1577",
+        "bitext-1387",
+        "bitext-1474",
+        "bitext-1917",
+        "bitext-1359",
+        "bitext-1719",
+        "bitext-1136",
+        "bitext-1565",
+        "bitext-1938"
+      ],
+      "returned_ids": [
+        "bitext-916",
+        "bitext-25344",
+        "bitext-25303"
+      ],
+      "first_relevant_rank": null,
+      "query_ms": 270.55
+    },
+    {
+      "query_id": "bitext-query-1333",
+      "intent": "change_order",
+      "mode": "vector",
+      "relevant": [
+        "bitext-1607",
+        "bitext-1577",
+        "bitext-1387",
+        "bitext-1474",
+        "bitext-1917",
+        "bitext-1359",
+        "bitext-1719",
+        "bitext-1136",
+        "bitext-1565",
+        "bitext-1938"
+      ],
+      "returned_ids": [
+        "bitext-1387",
+        "bitext-1565",
+        "bitext-1136"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 300.68
+    },
+    {
+      "query_id": "bitext-query-1333",
+      "intent": "change_order",
+      "mode": "hybrid",
+      "relevant": [
+        "bitext-1607",
+        "bitext-1577",
+        "bitext-1387",
+        "bitext-1474",
+        "bitext-1917",
+        "bitext-1359",
+        "bitext-1719",
+        "bitext-1136",
+        "bitext-1565",
+        "bitext-1938"
+      ],
+      "returned_ids": [
+        "bitext-1387",
+        "bitext-916",
+        "bitext-1565"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 267.34
+    },
+    {
+      "query_id": "bitext-query-1289",
+      "intent": "change_order",
+      "mode": "keyword",
+      "relevant": [
+        "bitext-1607",
+        "bitext-1577",
+        "bitext-1387",
+        "bitext-1474",
+        "bitext-1917",
+        "bitext-1359",
+        "bitext-1719",
+        "bitext-1136",
+        "bitext-1565",
+        "bitext-1938"
+      ],
+      "returned_ids": [
+        "bitext-13077",
+        "bitext-1607",
+        "bitext-19429"
+      ],
+      "first_relevant_rank": 2,
+      "query_ms": 274.89
+    },
+    {
+      "query_id": "bitext-query-1289",
+      "intent": "change_order",
+      "mode": "vector",
+      "relevant": [
+        "bitext-1607",
+        "bitext-1577",
+        "bitext-1387",
+        "bitext-1474",
+        "bitext-1917",
+        "bitext-1359",
+        "bitext-1719",
+        "bitext-1136",
+        "bitext-1565",
+        "bitext-1938"
+      ],
+      "returned_ids": [
+        "bitext-1136",
+        "bitext-1607",
+        "bitext-1565"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 292.42
+    },
+    {
+      "query_id": "bitext-query-1289",
+      "intent": "change_order",
+      "mode": "hybrid",
+      "relevant": [
+        "bitext-1607",
+        "bitext-1577",
+        "bitext-1387",
+        "bitext-1474",
+        "bitext-1917",
+        "bitext-1359",
+        "bitext-1719",
+        "bitext-1136",
+        "bitext-1565",
+        "bitext-1938"
+      ],
+      "returned_ids": [
+        "bitext-1607",
+        "bitext-1136",
+        "bitext-13077"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 270.44
+    },
+    {
+      "query_id": "bitext-query-2263",
+      "intent": "change_shipping_address",
+      "mode": "keyword",
+      "relevant": [
+        "bitext-2529",
+        "bitext-2443",
+        "bitext-2081",
+        "bitext-2527",
+        "bitext-2183",
+        "bitext-2932",
+        "bitext-2723",
+        "bitext-2286",
+        "bitext-2360",
+        "bitext-2926"
+      ],
+      "returned_ids": [
+        "bitext-23156",
+        "bitext-22913",
+        "bitext-2081"
+      ],
+      "first_relevant_rank": 3,
+      "query_ms": 274.24
+    },
+    {
+      "query_id": "bitext-query-2263",
+      "intent": "change_shipping_address",
+      "mode": "vector",
+      "relevant": [
+        "bitext-2529",
+        "bitext-2443",
+        "bitext-2081",
+        "bitext-2527",
+        "bitext-2183",
+        "bitext-2932",
+        "bitext-2723",
+        "bitext-2286",
+        "bitext-2360",
+        "bitext-2926"
+      ],
+      "returned_ids": [
+        "bitext-23201",
+        "bitext-23156",
+        "bitext-2723"
+      ],
+      "first_relevant_rank": 3,
+      "query_ms": 275.37
+    },
+    {
+      "query_id": "bitext-query-2263",
+      "intent": "change_shipping_address",
+      "mode": "hybrid",
+      "relevant": [
+        "bitext-2529",
+        "bitext-2443",
+        "bitext-2081",
+        "bitext-2527",
+        "bitext-2183",
+        "bitext-2932",
+        "bitext-2723",
+        "bitext-2286",
+        "bitext-2360",
+        "bitext-2926"
+      ],
+      "returned_ids": [
+        "bitext-23156",
+        "bitext-23201",
+        "bitext-22913"
+      ],
+      "first_relevant_rank": null,
+      "query_ms": 293.84
+    },
+    {
+      "query_id": "bitext-query-2750",
+      "intent": "change_shipping_address",
+      "mode": "keyword",
+      "relevant": [
+        "bitext-2529",
+        "bitext-2443",
+        "bitext-2081",
+        "bitext-2527",
+        "bitext-2183",
+        "bitext-2932",
+        "bitext-2723",
+        "bitext-2286",
+        "bitext-2360",
+        "bitext-2926"
+      ],
+      "returned_ids": [
+        "bitext-2926",
+        "bitext-14244",
+        "bitext-26692"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 274.75
+    },
+    {
+      "query_id": "bitext-query-2750",
+      "intent": "change_shipping_address",
+      "mode": "vector",
+      "relevant": [
+        "bitext-2529",
+        "bitext-2443",
+        "bitext-2081",
+        "bitext-2527",
+        "bitext-2183",
+        "bitext-2932",
+        "bitext-2723",
+        "bitext-2286",
+        "bitext-2360",
+        "bitext-2926"
+      ],
+      "returned_ids": [
+        "bitext-2529",
+        "bitext-2527",
+        "bitext-2183"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 269.08
+    },
+    {
+      "query_id": "bitext-query-2750",
+      "intent": "change_shipping_address",
+      "mode": "hybrid",
+      "relevant": [
+        "bitext-2529",
+        "bitext-2443",
+        "bitext-2081",
+        "bitext-2527",
+        "bitext-2183",
+        "bitext-2932",
+        "bitext-2723",
+        "bitext-2286",
+        "bitext-2360",
+        "bitext-2926"
+      ],
+      "returned_ids": [
+        "bitext-2926",
+        "bitext-2529",
+        "bitext-2527"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 272.12
+    },
+    {
+      "query_id": "bitext-query-3124",
+      "intent": "check_cancellation_fee",
+      "mode": "keyword",
+      "relevant": [
+        "bitext-3114",
+        "bitext-3289",
+        "bitext-3034",
+        "bitext-3283",
+        "bitext-3247",
+        "bitext-2993",
+        "bitext-3476",
+        "bitext-3053",
+        "bitext-3602",
+        "bitext-3038"
+      ],
+      "returned_ids": [
+        "bitext-6828",
+        "bitext-16723",
+        "bitext-4940"
+      ],
+      "first_relevant_rank": null,
+      "query_ms": 270.29
+    },
+    {
+      "query_id": "bitext-query-3124",
+      "intent": "check_cancellation_fee",
+      "mode": "vector",
+      "relevant": [
+        "bitext-3114",
+        "bitext-3289",
+        "bitext-3034",
+        "bitext-3283",
+        "bitext-3247",
+        "bitext-2993",
+        "bitext-3476",
+        "bitext-3053",
+        "bitext-3602",
+        "bitext-3038"
+      ],
+      "returned_ids": [
+        "bitext-3283",
+        "bitext-3114",
+        "bitext-3476"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 271.94
+    },
+    {
+      "query_id": "bitext-query-3124",
+      "intent": "check_cancellation_fee",
+      "mode": "hybrid",
+      "relevant": [
+        "bitext-3114",
+        "bitext-3289",
+        "bitext-3034",
+        "bitext-3283",
+        "bitext-3247",
+        "bitext-2993",
+        "bitext-3476",
+        "bitext-3053",
+        "bitext-3602",
+        "bitext-3038"
+      ],
+      "returned_ids": [
+        "bitext-3283",
+        "bitext-6828",
+        "bitext-3114"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 274.81
+    },
+    {
+      "query_id": "bitext-query-3443",
+      "intent": "check_cancellation_fee",
+      "mode": "keyword",
+      "relevant": [
+        "bitext-3114",
+        "bitext-3289",
+        "bitext-3034",
+        "bitext-3283",
+        "bitext-3247",
+        "bitext-2993",
+        "bitext-3476",
+        "bitext-3053",
+        "bitext-3602",
+        "bitext-3038"
+      ],
+      "returned_ids": [
+        "bitext-3114",
+        "bitext-3053",
+        "bitext-3034"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 277.38
+    },
+    {
+      "query_id": "bitext-query-3443",
+      "intent": "check_cancellation_fee",
+      "mode": "vector",
+      "relevant": [
+        "bitext-3114",
+        "bitext-3289",
+        "bitext-3034",
+        "bitext-3283",
+        "bitext-3247",
+        "bitext-2993",
+        "bitext-3476",
+        "bitext-3053",
+        "bitext-3602",
+        "bitext-3038"
+      ],
+      "returned_ids": [
+        "bitext-3114",
+        "bitext-3602",
+        "bitext-3053"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 269.93
+    },
+    {
+      "query_id": "bitext-query-3443",
+      "intent": "check_cancellation_fee",
+      "mode": "hybrid",
+      "relevant": [
+        "bitext-3114",
+        "bitext-3289",
+        "bitext-3034",
+        "bitext-3283",
+        "bitext-3247",
+        "bitext-2993",
+        "bitext-3476",
+        "bitext-3053",
+        "bitext-3602",
+        "bitext-3038"
+      ],
+      "returned_ids": [
+        "bitext-3114",
+        "bitext-3053",
+        "bitext-3602"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 267.46
+    },
+    {
+      "query_id": "bitext-query-4464",
+      "intent": "check_invoice",
+      "mode": "keyword",
+      "relevant": [
+        "bitext-4602",
+        "bitext-4047",
+        "bitext-4763",
+        "bitext-4870",
+        "bitext-3928",
+        "bitext-4581",
+        "bitext-4816",
+        "bitext-4268",
+        "bitext-4755",
+        "bitext-4055"
+      ],
+      "returned_ids": [
+        "bitext-15059",
+        "bitext-4047",
+        "bitext-15297"
+      ],
+      "first_relevant_rank": 2,
+      "query_ms": 269.73
+    },
+    {
+      "query_id": "bitext-query-4464",
+      "intent": "check_invoice",
+      "mode": "vector",
+      "relevant": [
+        "bitext-4602",
+        "bitext-4047",
+        "bitext-4763",
+        "bitext-4870",
+        "bitext-3928",
+        "bitext-4581",
+        "bitext-4816",
+        "bitext-4268",
+        "bitext-4755",
+        "bitext-4055"
+      ],
+      "returned_ids": [
+        "bitext-15059",
+        "bitext-15130",
+        "bitext-4047"
+      ],
+      "first_relevant_rank": 3,
+      "query_ms": 270.37
+    },
+    {
+      "query_id": "bitext-query-4464",
+      "intent": "check_invoice",
+      "mode": "hybrid",
+      "relevant": [
+        "bitext-4602",
+        "bitext-4047",
+        "bitext-4763",
+        "bitext-4870",
+        "bitext-3928",
+        "bitext-4581",
+        "bitext-4816",
+        "bitext-4268",
+        "bitext-4755",
+        "bitext-4055"
+      ],
+      "returned_ids": [
+        "bitext-15059",
+        "bitext-4047",
+        "bitext-15130"
+      ],
+      "first_relevant_rank": 2,
+      "query_ms": 270.09
+    },
+    {
+      "query_id": "bitext-query-4801",
+      "intent": "check_invoice",
+      "mode": "keyword",
+      "relevant": [
+        "bitext-4602",
+        "bitext-4047",
+        "bitext-4763",
+        "bitext-4870",
+        "bitext-3928",
+        "bitext-4581",
+        "bitext-4816",
+        "bitext-4268",
+        "bitext-4755",
+        "bitext-4055"
+      ],
+      "returned_ids": [
+        "bitext-4047",
+        "bitext-15214",
+        "bitext-15059"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 271.1
+    },
+    {
+      "query_id": "bitext-query-4801",
+      "intent": "check_invoice",
+      "mode": "vector",
+      "relevant": [
+        "bitext-4602",
+        "bitext-4047",
+        "bitext-4763",
+        "bitext-4870",
+        "bitext-3928",
+        "bitext-4581",
+        "bitext-4816",
+        "bitext-4268",
+        "bitext-4755",
+        "bitext-4055"
+      ],
+      "returned_ids": [
+        "bitext-4047",
+        "bitext-15059",
+        "bitext-4581"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 269.84
+    },
+    {
+      "query_id": "bitext-query-4801",
+      "intent": "check_invoice",
+      "mode": "hybrid",
+      "relevant": [
+        "bitext-4602",
+        "bitext-4047",
+        "bitext-4763",
+        "bitext-4870",
+        "bitext-3928",
+        "bitext-4581",
+        "bitext-4816",
+        "bitext-4268",
+        "bitext-4755",
+        "bitext-4055"
+      ],
+      "returned_ids": [
+        "bitext-4047",
+        "bitext-15059",
+        "bitext-15214"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 276.5
+    },
+    {
+      "query_id": "bitext-query-5265",
+      "intent": "check_payment_methods",
+      "mode": "keyword",
+      "relevant": [
+        "bitext-5157",
+        "bitext-4990",
+        "bitext-4940",
+        "bitext-5289",
+        "bitext-5436",
+        "bitext-5627",
+        "bitext-5467",
+        "bitext-5258",
+        "bitext-5573",
+        "bitext-5776"
+      ],
+      "returned_ids": [
+        "bitext-5467",
+        "bitext-5627",
+        "bitext-4990"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 274.19
+    },
+    {
+      "query_id": "bitext-query-5265",
+      "intent": "check_payment_methods",
+      "mode": "vector",
+      "relevant": [
+        "bitext-5157",
+        "bitext-4990",
+        "bitext-4940",
+        "bitext-5289",
+        "bitext-5436",
+        "bitext-5627",
+        "bitext-5467",
+        "bitext-5258",
+        "bitext-5573",
+        "bitext-5776"
+      ],
+      "returned_ids": [
+        "bitext-5467",
+        "bitext-5627",
+        "bitext-5258"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 277.67
+    },
+    {
+      "query_id": "bitext-query-5265",
+      "intent": "check_payment_methods",
+      "mode": "hybrid",
+      "relevant": [
+        "bitext-5157",
+        "bitext-4990",
+        "bitext-4940",
+        "bitext-5289",
+        "bitext-5436",
+        "bitext-5627",
+        "bitext-5467",
+        "bitext-5258",
+        "bitext-5573",
+        "bitext-5776"
+      ],
+      "returned_ids": [
+        "bitext-5467",
+        "bitext-5627",
+        "bitext-4990"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 288.82
+    },
+    {
+      "query_id": "bitext-query-5694",
+      "intent": "check_payment_methods",
+      "mode": "keyword",
+      "relevant": [
+        "bitext-5157",
+        "bitext-4990",
+        "bitext-4940",
+        "bitext-5289",
+        "bitext-5436",
+        "bitext-5627",
+        "bitext-5467",
+        "bitext-5258",
+        "bitext-5573",
+        "bitext-5776"
+      ],
+      "returned_ids": [
+        "bitext-5467",
+        "bitext-5258",
+        "bitext-5157"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 270.11
+    },
+    {
+      "query_id": "bitext-query-5694",
+      "intent": "check_payment_methods",
+      "mode": "vector",
+      "relevant": [
+        "bitext-5157",
+        "bitext-4990",
+        "bitext-4940",
+        "bitext-5289",
+        "bitext-5436",
+        "bitext-5627",
+        "bitext-5467",
+        "bitext-5258",
+        "bitext-5573",
+        "bitext-5776"
+      ],
+      "returned_ids": [
+        "bitext-5467",
+        "bitext-5627",
+        "bitext-5258"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 292.37
+    },
+    {
+      "query_id": "bitext-query-5694",
+      "intent": "check_payment_methods",
+      "mode": "hybrid",
+      "relevant": [
+        "bitext-5157",
+        "bitext-4990",
+        "bitext-4940",
+        "bitext-5289",
+        "bitext-5436",
+        "bitext-5627",
+        "bitext-5467",
+        "bitext-5258",
+        "bitext-5573",
+        "bitext-5776"
+      ],
+      "returned_ids": [
+        "bitext-5467",
+        "bitext-5258",
+        "bitext-5627"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 273.44
+    },
+    {
+      "query_id": "bitext-query-6241",
+      "intent": "check_refund_policy",
+      "mode": "keyword",
+      "relevant": [
+        "bitext-6552",
+        "bitext-6073",
+        "bitext-6518",
+        "bitext-6828",
+        "bitext-6891",
+        "bitext-6020",
+        "bitext-6874",
+        "bitext-6009",
+        "bitext-6758",
+        "bitext-6166"
+      ],
+      "returned_ids": [
+        "bitext-6874",
+        "bitext-6073",
+        "bitext-6518"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 278.25
+    },
+    {
+      "query_id": "bitext-query-6241",
+      "intent": "check_refund_policy",
+      "mode": "vector",
+      "relevant": [
+        "bitext-6552",
+        "bitext-6073",
+        "bitext-6518",
+        "bitext-6828",
+        "bitext-6891",
+        "bitext-6020",
+        "bitext-6874",
+        "bitext-6009",
+        "bitext-6758",
+        "bitext-6166"
+      ],
+      "returned_ids": [
+        "bitext-6891",
+        "bitext-16508",
+        "bitext-6518"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 275.66
+    },
+    {
+      "query_id": "bitext-query-6241",
+      "intent": "check_refund_policy",
+      "mode": "hybrid",
+      "relevant": [
+        "bitext-6552",
+        "bitext-6073",
+        "bitext-6518",
+        "bitext-6828",
+        "bitext-6891",
+        "bitext-6020",
+        "bitext-6874",
+        "bitext-6009",
+        "bitext-6758",
+        "bitext-6166"
+      ],
+      "returned_ids": [
+        "bitext-6518",
+        "bitext-6874",
+        "bitext-6891"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 277.96
+    },
+    {
+      "query_id": "bitext-query-6202",
+      "intent": "check_refund_policy",
+      "mode": "keyword",
+      "relevant": [
+        "bitext-6552",
+        "bitext-6073",
+        "bitext-6518",
+        "bitext-6828",
+        "bitext-6891",
+        "bitext-6020",
+        "bitext-6874",
+        "bitext-6009",
+        "bitext-6758",
+        "bitext-6166"
+      ],
+      "returned_ids": [
+        "bitext-6874",
+        "bitext-26800",
+        "bitext-6518"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 271.01
+    },
+    {
+      "query_id": "bitext-query-6202",
+      "intent": "check_refund_policy",
+      "mode": "vector",
+      "relevant": [
+        "bitext-6552",
+        "bitext-6073",
+        "bitext-6518",
+        "bitext-6828",
+        "bitext-6891",
+        "bitext-6020",
+        "bitext-6874",
+        "bitext-6009",
+        "bitext-6758",
+        "bitext-6166"
+      ],
+      "returned_ids": [
+        "bitext-6518",
+        "bitext-6020",
+        "bitext-6758"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 274.4
+    },
+    {
+      "query_id": "bitext-query-6202",
+      "intent": "check_refund_policy",
+      "mode": "hybrid",
+      "relevant": [
+        "bitext-6552",
+        "bitext-6073",
+        "bitext-6518",
+        "bitext-6828",
+        "bitext-6891",
+        "bitext-6020",
+        "bitext-6874",
+        "bitext-6009",
+        "bitext-6758",
+        "bitext-6166"
+      ],
+      "returned_ids": [
+        "bitext-6518",
+        "bitext-6874",
+        "bitext-6020"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 279.03
+    },
+    {
+      "query_id": "bitext-query-7213",
+      "intent": "complaint",
+      "mode": "keyword",
+      "relevant": [
+        "bitext-6993",
+        "bitext-7674",
+        "bitext-7774",
+        "bitext-7452",
+        "bitext-7467",
+        "bitext-7856",
+        "bitext-7236",
+        "bitext-7582",
+        "bitext-7105",
+        "bitext-7427"
+      ],
+      "returned_ids": [
+        "bitext-7452",
+        "bitext-7427",
+        "bitext-7856"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 272.14
+    },
+    {
+      "query_id": "bitext-query-7213",
+      "intent": "complaint",
+      "mode": "vector",
+      "relevant": [
+        "bitext-6993",
+        "bitext-7674",
+        "bitext-7774",
+        "bitext-7452",
+        "bitext-7467",
+        "bitext-7856",
+        "bitext-7236",
+        "bitext-7582",
+        "bitext-7105",
+        "bitext-7427"
+      ],
+      "returned_ids": [
+        "bitext-7452",
+        "bitext-16561",
+        "bitext-7427"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 292.5
+    },
+    {
+      "query_id": "bitext-query-7213",
+      "intent": "complaint",
+      "mode": "hybrid",
+      "relevant": [
+        "bitext-6993",
+        "bitext-7674",
+        "bitext-7774",
+        "bitext-7452",
+        "bitext-7467",
+        "bitext-7856",
+        "bitext-7236",
+        "bitext-7582",
+        "bitext-7105",
+        "bitext-7427"
+      ],
+      "returned_ids": [
+        "bitext-7452",
+        "bitext-7427",
+        "bitext-16561"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 272.03
+    },
+    {
+      "query_id": "bitext-query-7450",
+      "intent": "complaint",
+      "mode": "keyword",
+      "relevant": [
+        "bitext-6993",
+        "bitext-7674",
+        "bitext-7774",
+        "bitext-7452",
+        "bitext-7467",
+        "bitext-7856",
+        "bitext-7236",
+        "bitext-7582",
+        "bitext-7105",
+        "bitext-7427"
+      ],
+      "returned_ids": [
+        "bitext-7236",
+        "bitext-7774",
+        "bitext-7467"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 270.43
+    },
+    {
+      "query_id": "bitext-query-7450",
+      "intent": "complaint",
+      "mode": "vector",
+      "relevant": [
+        "bitext-6993",
+        "bitext-7674",
+        "bitext-7774",
+        "bitext-7452",
+        "bitext-7467",
+        "bitext-7856",
+        "bitext-7236",
+        "bitext-7582",
+        "bitext-7105",
+        "bitext-7427"
+      ],
+      "returned_ids": [
+        "bitext-7236",
+        "bitext-7774",
+        "bitext-6993"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 273.45
+    },
+    {
+      "query_id": "bitext-query-7450",
+      "intent": "complaint",
+      "mode": "hybrid",
+      "relevant": [
+        "bitext-6993",
+        "bitext-7674",
+        "bitext-7774",
+        "bitext-7452",
+        "bitext-7467",
+        "bitext-7856",
+        "bitext-7236",
+        "bitext-7582",
+        "bitext-7105",
+        "bitext-7427"
+      ],
+      "returned_ids": [
+        "bitext-7236",
+        "bitext-7774",
+        "bitext-6993"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 315.75
+    },
+    {
+      "query_id": "bitext-query-8325",
+      "intent": "contact_customer_service",
+      "mode": "keyword",
+      "relevant": [
+        "bitext-8474",
+        "bitext-8471",
+        "bitext-8240",
+        "bitext-7937",
+        "bitext-8126",
+        "bitext-8697",
+        "bitext-8231",
+        "bitext-8309",
+        "bitext-8749",
+        "bitext-8317"
+      ],
+      "returned_ids": [
+        "bitext-3289",
+        "bitext-8471",
+        "bitext-7937"
+      ],
+      "first_relevant_rank": 2,
+      "query_ms": 270.55
+    },
+    {
+      "query_id": "bitext-query-8325",
+      "intent": "contact_customer_service",
+      "mode": "vector",
+      "relevant": [
+        "bitext-8474",
+        "bitext-8471",
+        "bitext-8240",
+        "bitext-7937",
+        "bitext-8126",
+        "bitext-8697",
+        "bitext-8231",
+        "bitext-8309",
+        "bitext-8749",
+        "bitext-8317"
+      ],
+      "returned_ids": [
+        "bitext-8474",
+        "bitext-8309",
+        "bitext-9440"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 269.22
+    },
+    {
+      "query_id": "bitext-query-8325",
+      "intent": "contact_customer_service",
+      "mode": "hybrid",
+      "relevant": [
+        "bitext-8474",
+        "bitext-8471",
+        "bitext-8240",
+        "bitext-7937",
+        "bitext-8126",
+        "bitext-8697",
+        "bitext-8231",
+        "bitext-8309",
+        "bitext-8749",
+        "bitext-8317"
+      ],
+      "returned_ids": [
+        "bitext-8474",
+        "bitext-3289",
+        "bitext-8309"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 274.5
+    },
+    {
+      "query_id": "bitext-query-8621",
+      "intent": "contact_customer_service",
+      "mode": "keyword",
+      "relevant": [
+        "bitext-8474",
+        "bitext-8471",
+        "bitext-8240",
+        "bitext-7937",
+        "bitext-8126",
+        "bitext-8697",
+        "bitext-8231",
+        "bitext-8309",
+        "bitext-8749",
+        "bitext-8317"
+      ],
+      "returned_ids": [
+        "bitext-8474",
+        "bitext-9795",
+        "bitext-9592"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 268.25
+    },
+    {
+      "query_id": "bitext-query-8621",
+      "intent": "contact_customer_service",
+      "mode": "vector",
+      "relevant": [
+        "bitext-8474",
+        "bitext-8471",
+        "bitext-8240",
+        "bitext-7937",
+        "bitext-8126",
+        "bitext-8697",
+        "bitext-8231",
+        "bitext-8309",
+        "bitext-8749",
+        "bitext-8317"
+      ],
+      "returned_ids": [
+        "bitext-8240",
+        "bitext-8309",
+        "bitext-8474"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 272.57
+    },
+    {
+      "query_id": "bitext-query-8621",
+      "intent": "contact_customer_service",
+      "mode": "hybrid",
+      "relevant": [
+        "bitext-8474",
+        "bitext-8471",
+        "bitext-8240",
+        "bitext-7937",
+        "bitext-8126",
+        "bitext-8697",
+        "bitext-8231",
+        "bitext-8309",
+        "bitext-8749",
+        "bitext-8317"
+      ],
+      "returned_ids": [
+        "bitext-8474",
+        "bitext-8240",
+        "bitext-9795"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 275.45
+    },
+    {
+      "query_id": "bitext-query-9277",
+      "intent": "contact_human_agent",
+      "mode": "keyword",
+      "relevant": [
+        "bitext-9461",
+        "bitext-9692",
+        "bitext-9605",
+        "bitext-9082",
+        "bitext-9249",
+        "bitext-9483",
+        "bitext-9440",
+        "bitext-9795",
+        "bitext-9592",
+        "bitext-9910"
+      ],
+      "returned_ids": [
+        "bitext-1607",
+        "bitext-2527",
+        "bitext-19855"
+      ],
+      "first_relevant_rank": null,
+      "query_ms": 275.16
+    },
+    {
+      "query_id": "bitext-query-9277",
+      "intent": "contact_human_agent",
+      "mode": "vector",
+      "relevant": [
+        "bitext-9461",
+        "bitext-9692",
+        "bitext-9605",
+        "bitext-9082",
+        "bitext-9249",
+        "bitext-9483",
+        "bitext-9440",
+        "bitext-9795",
+        "bitext-9592",
+        "bitext-9910"
+      ],
+      "returned_ids": [
+        "bitext-8309",
+        "bitext-9440",
+        "bitext-9249"
+      ],
+      "first_relevant_rank": 2,
+      "query_ms": 290.35
+    },
+    {
+      "query_id": "bitext-query-9277",
+      "intent": "contact_human_agent",
+      "mode": "hybrid",
+      "relevant": [
+        "bitext-9461",
+        "bitext-9692",
+        "bitext-9605",
+        "bitext-9082",
+        "bitext-9249",
+        "bitext-9483",
+        "bitext-9440",
+        "bitext-9795",
+        "bitext-9592",
+        "bitext-9910"
+      ],
+      "returned_ids": [
+        "bitext-8309",
+        "bitext-1607",
+        "bitext-2527"
+      ],
+      "first_relevant_rank": null,
+      "query_ms": 290.14
+    },
+    {
+      "query_id": "bitext-query-9268",
+      "intent": "contact_human_agent",
+      "mode": "keyword",
+      "relevant": [
+        "bitext-9461",
+        "bitext-9692",
+        "bitext-9605",
+        "bitext-9082",
+        "bitext-9249",
+        "bitext-9483",
+        "bitext-9440",
+        "bitext-9795",
+        "bitext-9592",
+        "bitext-9910"
+      ],
+      "returned_ids": [
+        "bitext-20360",
+        "bitext-24082",
+        "bitext-26692"
+      ],
+      "first_relevant_rank": null,
+      "query_ms": 271.32
+    },
+    {
+      "query_id": "bitext-query-9268",
+      "intent": "contact_human_agent",
+      "mode": "vector",
+      "relevant": [
+        "bitext-9461",
+        "bitext-9692",
+        "bitext-9605",
+        "bitext-9082",
+        "bitext-9249",
+        "bitext-9483",
+        "bitext-9440",
+        "bitext-9795",
+        "bitext-9592",
+        "bitext-9910"
+      ],
+      "returned_ids": [
+        "bitext-9249",
+        "bitext-9082",
+        "bitext-9440"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 276.34
+    },
+    {
+      "query_id": "bitext-query-9268",
+      "intent": "contact_human_agent",
+      "mode": "hybrid",
+      "relevant": [
+        "bitext-9461",
+        "bitext-9692",
+        "bitext-9605",
+        "bitext-9082",
+        "bitext-9249",
+        "bitext-9483",
+        "bitext-9440",
+        "bitext-9795",
+        "bitext-9592",
+        "bitext-9910"
+      ],
+      "returned_ids": [
+        "bitext-9249",
+        "bitext-20360",
+        "bitext-24082"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 271.76
+    },
+    {
+      "query_id": "bitext-query-10617",
+      "intent": "create_account",
+      "mode": "keyword",
+      "relevant": [
+        "bitext-9990",
+        "bitext-10053",
+        "bitext-10163",
+        "bitext-10434",
+        "bitext-10701",
+        "bitext-10708",
+        "bitext-10395",
+        "bitext-10292",
+        "bitext-10514",
+        "bitext-10892"
+      ],
+      "returned_ids": [
+        "bitext-10434",
+        "bitext-14289",
+        "bitext-10708"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 271.62
+    },
+    {
+      "query_id": "bitext-query-10617",
+      "intent": "create_account",
+      "mode": "vector",
+      "relevant": [
+        "bitext-9990",
+        "bitext-10053",
+        "bitext-10163",
+        "bitext-10434",
+        "bitext-10701",
+        "bitext-10708",
+        "bitext-10395",
+        "bitext-10292",
+        "bitext-10514",
+        "bitext-10892"
+      ],
+      "returned_ids": [
+        "bitext-24331",
+        "bitext-10163",
+        "bitext-10395"
+      ],
+      "first_relevant_rank": 2,
+      "query_ms": 286.32
+    },
+    {
+      "query_id": "bitext-query-10617",
+      "intent": "create_account",
+      "mode": "hybrid",
+      "relevant": [
+        "bitext-9990",
+        "bitext-10053",
+        "bitext-10163",
+        "bitext-10434",
+        "bitext-10701",
+        "bitext-10708",
+        "bitext-10395",
+        "bitext-10292",
+        "bitext-10514",
+        "bitext-10892"
+      ],
+      "returned_ids": [
+        "bitext-24331",
+        "bitext-10434",
+        "bitext-14289"
+      ],
+      "first_relevant_rank": 2,
+      "query_ms": 277.68
+    },
+    {
+      "query_id": "bitext-query-10537",
+      "intent": "create_account",
+      "mode": "keyword",
+      "relevant": [
+        "bitext-9990",
+        "bitext-10053",
+        "bitext-10163",
+        "bitext-10434",
+        "bitext-10701",
+        "bitext-10708",
+        "bitext-10395",
+        "bitext-10292",
+        "bitext-10514",
+        "bitext-10892"
+      ],
+      "returned_ids": [
+        "bitext-9990",
+        "bitext-10892",
+        "bitext-10434"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 267.92
+    },
+    {
+      "query_id": "bitext-query-10537",
+      "intent": "create_account",
+      "mode": "vector",
+      "relevant": [
+        "bitext-9990",
+        "bitext-10053",
+        "bitext-10163",
+        "bitext-10434",
+        "bitext-10701",
+        "bitext-10708",
+        "bitext-10395",
+        "bitext-10292",
+        "bitext-10514",
+        "bitext-10892"
+      ],
+      "returned_ids": [
+        "bitext-9990",
+        "bitext-10395",
+        "bitext-10708"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 275.68
+    },
+    {
+      "query_id": "bitext-query-10537",
+      "intent": "create_account",
+      "mode": "hybrid",
+      "relevant": [
+        "bitext-9990",
+        "bitext-10053",
+        "bitext-10163",
+        "bitext-10434",
+        "bitext-10701",
+        "bitext-10708",
+        "bitext-10395",
+        "bitext-10292",
+        "bitext-10514",
+        "bitext-10892"
+      ],
+      "returned_ids": [
+        "bitext-9990",
+        "bitext-10395",
+        "bitext-10892"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 269.32
+    },
+    {
+      "query_id": "bitext-query-10937",
+      "intent": "delete_account",
+      "mode": "keyword",
+      "relevant": [
+        "bitext-11041",
+        "bitext-11339",
+        "bitext-11491",
+        "bitext-11212",
+        "bitext-11079",
+        "bitext-11299",
+        "bitext-11001",
+        "bitext-11608",
+        "bitext-11309",
+        "bitext-11517"
+      ],
+      "returned_ids": [
+        "bitext-11608",
+        "bitext-11041",
+        "bitext-10514"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 276.14
+    },
+    {
+      "query_id": "bitext-query-10937",
+      "intent": "delete_account",
+      "mode": "vector",
+      "relevant": [
+        "bitext-11041",
+        "bitext-11339",
+        "bitext-11491",
+        "bitext-11212",
+        "bitext-11079",
+        "bitext-11299",
+        "bitext-11001",
+        "bitext-11608",
+        "bitext-11309",
+        "bitext-11517"
+      ],
+      "returned_ids": [
+        "bitext-11608",
+        "bitext-11041",
+        "bitext-11299"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 272.47
+    },
+    {
+      "query_id": "bitext-query-10937",
+      "intent": "delete_account",
+      "mode": "hybrid",
+      "relevant": [
+        "bitext-11041",
+        "bitext-11339",
+        "bitext-11491",
+        "bitext-11212",
+        "bitext-11079",
+        "bitext-11299",
+        "bitext-11001",
+        "bitext-11608",
+        "bitext-11309",
+        "bitext-11517"
+      ],
+      "returned_ids": [
+        "bitext-11608",
+        "bitext-11041",
+        "bitext-11299"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 269.76
+    },
+    {
+      "query_id": "bitext-query-11545",
+      "intent": "delete_account",
+      "mode": "keyword",
+      "relevant": [
+        "bitext-11041",
+        "bitext-11339",
+        "bitext-11491",
+        "bitext-11212",
+        "bitext-11079",
+        "bitext-11299",
+        "bitext-11001",
+        "bitext-11608",
+        "bitext-11309",
+        "bitext-11517"
+      ],
+      "returned_ids": [
+        "bitext-11339",
+        "bitext-1607",
+        "bitext-1387"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 266.04
+    },
+    {
+      "query_id": "bitext-query-11545",
+      "intent": "delete_account",
+      "mode": "vector",
+      "relevant": [
+        "bitext-11041",
+        "bitext-11339",
+        "bitext-11491",
+        "bitext-11212",
+        "bitext-11079",
+        "bitext-11299",
+        "bitext-11001",
+        "bitext-11608",
+        "bitext-11309",
+        "bitext-11517"
+      ],
+      "returned_ids": [
+        "bitext-11339",
+        "bitext-11491",
+        "bitext-11299"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 272.07
+    },
+    {
+      "query_id": "bitext-query-11545",
+      "intent": "delete_account",
+      "mode": "hybrid",
+      "relevant": [
+        "bitext-11041",
+        "bitext-11339",
+        "bitext-11491",
+        "bitext-11212",
+        "bitext-11079",
+        "bitext-11299",
+        "bitext-11001",
+        "bitext-11608",
+        "bitext-11309",
+        "bitext-11517"
+      ],
+      "returned_ids": [
+        "bitext-11339",
+        "bitext-11491",
+        "bitext-1607"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 275.74
+    },
+    {
+      "query_id": "bitext-query-11950",
+      "intent": "delivery_options",
+      "mode": "keyword",
+      "relevant": [
+        "bitext-12412",
+        "bitext-12197",
+        "bitext-12416",
+        "bitext-12072",
+        "bitext-12855",
+        "bitext-12105",
+        "bitext-12371",
+        "bitext-11909",
+        "bitext-12882",
+        "bitext-12217"
+      ],
+      "returned_ids": [
+        "bitext-12217",
+        "bitext-12416",
+        "bitext-11909"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 273.1
+    },
+    {
+      "query_id": "bitext-query-11950",
+      "intent": "delivery_options",
+      "mode": "vector",
+      "relevant": [
+        "bitext-12412",
+        "bitext-12197",
+        "bitext-12416",
+        "bitext-12072",
+        "bitext-12855",
+        "bitext-12105",
+        "bitext-12371",
+        "bitext-11909",
+        "bitext-12882",
+        "bitext-12217"
+      ],
+      "returned_ids": [
+        "bitext-12217",
+        "bitext-11909",
+        "bitext-12416"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 274.72
+    },
+    {
+      "query_id": "bitext-query-11950",
+      "intent": "delivery_options",
+      "mode": "hybrid",
+      "relevant": [
+        "bitext-12412",
+        "bitext-12197",
+        "bitext-12416",
+        "bitext-12072",
+        "bitext-12855",
+        "bitext-12105",
+        "bitext-12371",
+        "bitext-11909",
+        "bitext-12882",
+        "bitext-12217"
+      ],
+      "returned_ids": [
+        "bitext-12217",
+        "bitext-12416",
+        "bitext-11909"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 268.74
+    },
+    {
+      "query_id": "bitext-query-12210",
+      "intent": "delivery_options",
+      "mode": "keyword",
+      "relevant": [
+        "bitext-12412",
+        "bitext-12197",
+        "bitext-12416",
+        "bitext-12072",
+        "bitext-12855",
+        "bitext-12105",
+        "bitext-12371",
+        "bitext-11909",
+        "bitext-12882",
+        "bitext-12217"
+      ],
+      "returned_ids": [
+        "bitext-12105",
+        "bitext-12412",
+        "bitext-12855"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 277.47
+    },
+    {
+      "query_id": "bitext-query-12210",
+      "intent": "delivery_options",
+      "mode": "vector",
+      "relevant": [
+        "bitext-12412",
+        "bitext-12197",
+        "bitext-12416",
+        "bitext-12072",
+        "bitext-12855",
+        "bitext-12105",
+        "bitext-12371",
+        "bitext-11909",
+        "bitext-12882",
+        "bitext-12217"
+      ],
+      "returned_ids": [
+        "bitext-2443",
+        "bitext-12412",
+        "bitext-23330"
+      ],
+      "first_relevant_rank": 2,
+      "query_ms": 277.1
+    },
+    {
+      "query_id": "bitext-query-12210",
+      "intent": "delivery_options",
+      "mode": "hybrid",
+      "relevant": [
+        "bitext-12412",
+        "bitext-12197",
+        "bitext-12416",
+        "bitext-12072",
+        "bitext-12855",
+        "bitext-12105",
+        "bitext-12371",
+        "bitext-11909",
+        "bitext-12882",
+        "bitext-12217"
+      ],
+      "returned_ids": [
+        "bitext-12412",
+        "bitext-12105",
+        "bitext-2443"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 278.67
+    },
+    {
+      "query_id": "bitext-query-12927",
+      "intent": "delivery_period",
+      "mode": "keyword",
+      "relevant": [
+        "bitext-13787",
+        "bitext-13021",
+        "bitext-13077",
+        "bitext-13366",
+        "bitext-13725",
+        "bitext-13663",
+        "bitext-13766",
+        "bitext-13781",
+        "bitext-13125",
+        "bitext-13334"
+      ],
+      "returned_ids": [
+        "bitext-13077",
+        "bitext-19429",
+        "bitext-19676"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 276.18
+    },
+    {
+      "query_id": "bitext-query-12927",
+      "intent": "delivery_period",
+      "mode": "vector",
+      "relevant": [
+        "bitext-13787",
+        "bitext-13021",
+        "bitext-13077",
+        "bitext-13366",
+        "bitext-13725",
+        "bitext-13663",
+        "bitext-13766",
+        "bitext-13781",
+        "bitext-13125",
+        "bitext-13334"
+      ],
+      "returned_ids": [
+        "bitext-13077",
+        "bitext-13021",
+        "bitext-1136"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 274.3
+    },
+    {
+      "query_id": "bitext-query-12927",
+      "intent": "delivery_period",
+      "mode": "hybrid",
+      "relevant": [
+        "bitext-13787",
+        "bitext-13021",
+        "bitext-13077",
+        "bitext-13366",
+        "bitext-13725",
+        "bitext-13663",
+        "bitext-13766",
+        "bitext-13781",
+        "bitext-13125",
+        "bitext-13334"
+      ],
+      "returned_ids": [
+        "bitext-13077",
+        "bitext-13021",
+        "bitext-19429"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 268.77
+    },
+    {
+      "query_id": "bitext-query-13173",
+      "intent": "delivery_period",
+      "mode": "keyword",
+      "relevant": [
+        "bitext-13787",
+        "bitext-13021",
+        "bitext-13077",
+        "bitext-13366",
+        "bitext-13725",
+        "bitext-13663",
+        "bitext-13766",
+        "bitext-13781",
+        "bitext-13125",
+        "bitext-13334"
+      ],
+      "returned_ids": [
+        "bitext-13366",
+        "bitext-22058",
+        "bitext-22837"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 269.11
+    },
+    {
+      "query_id": "bitext-query-13173",
+      "intent": "delivery_period",
+      "mode": "vector",
+      "relevant": [
+        "bitext-13787",
+        "bitext-13021",
+        "bitext-13077",
+        "bitext-13366",
+        "bitext-13725",
+        "bitext-13663",
+        "bitext-13766",
+        "bitext-13781",
+        "bitext-13125",
+        "bitext-13334"
+      ],
+      "returned_ids": [
+        "bitext-25524",
+        "bitext-25685",
+        "bitext-25344"
+      ],
+      "first_relevant_rank": null,
+      "query_ms": 276.41
+    },
+    {
+      "query_id": "bitext-query-13173",
+      "intent": "delivery_period",
+      "mode": "hybrid",
+      "relevant": [
+        "bitext-13787",
+        "bitext-13021",
+        "bitext-13077",
+        "bitext-13366",
+        "bitext-13725",
+        "bitext-13663",
+        "bitext-13766",
+        "bitext-13781",
+        "bitext-13125",
+        "bitext-13334"
+      ],
+      "returned_ids": [
+        "bitext-25524",
+        "bitext-13366",
+        "bitext-25685"
+      ],
+      "first_relevant_rank": 2,
+      "query_ms": 289.3
+    },
+    {
+      "query_id": "bitext-query-14007",
+      "intent": "edit_account",
+      "mode": "keyword",
+      "relevant": [
+        "bitext-14289",
+        "bitext-14427",
+        "bitext-14594",
+        "bitext-14856",
+        "bitext-14244",
+        "bitext-14539",
+        "bitext-13952",
+        "bitext-14681",
+        "bitext-14092",
+        "bitext-14443"
+      ],
+      "returned_ids": [
+        "bitext-13952",
+        "bitext-14539",
+        "bitext-2443"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 274.81
+    },
+    {
+      "query_id": "bitext-query-14007",
+      "intent": "edit_account",
+      "mode": "vector",
+      "relevant": [
+        "bitext-14289",
+        "bitext-14427",
+        "bitext-14594",
+        "bitext-14856",
+        "bitext-14244",
+        "bitext-14539",
+        "bitext-13952",
+        "bitext-14681",
+        "bitext-14092",
+        "bitext-14443"
+      ],
+      "returned_ids": [
+        "bitext-13952",
+        "bitext-14594",
+        "bitext-14092"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 268.3
+    },
+    {
+      "query_id": "bitext-query-14007",
+      "intent": "edit_account",
+      "mode": "hybrid",
+      "relevant": [
+        "bitext-14289",
+        "bitext-14427",
+        "bitext-14594",
+        "bitext-14856",
+        "bitext-14244",
+        "bitext-14539",
+        "bitext-13952",
+        "bitext-14681",
+        "bitext-14092",
+        "bitext-14443"
+      ],
+      "returned_ids": [
+        "bitext-13952",
+        "bitext-14594",
+        "bitext-14539"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 276.71
+    },
+    {
+      "query_id": "bitext-query-14320",
+      "intent": "edit_account",
+      "mode": "keyword",
+      "relevant": [
+        "bitext-14289",
+        "bitext-14427",
+        "bitext-14594",
+        "bitext-14856",
+        "bitext-14244",
+        "bitext-14539",
+        "bitext-13952",
+        "bitext-14681",
+        "bitext-14092",
+        "bitext-14443"
+      ],
+      "returned_ids": [
+        "bitext-14856",
+        "bitext-14244",
+        "bitext-10292"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 267.68
+    },
+    {
+      "query_id": "bitext-query-14320",
+      "intent": "edit_account",
+      "mode": "vector",
+      "relevant": [
+        "bitext-14289",
+        "bitext-14427",
+        "bitext-14594",
+        "bitext-14856",
+        "bitext-14244",
+        "bitext-14539",
+        "bitext-13952",
+        "bitext-14681",
+        "bitext-14092",
+        "bitext-14443"
+      ],
+      "returned_ids": [
+        "bitext-14443",
+        "bitext-14856",
+        "bitext-14092"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 275.98
+    },
+    {
+      "query_id": "bitext-query-14320",
+      "intent": "edit_account",
+      "mode": "hybrid",
+      "relevant": [
+        "bitext-14289",
+        "bitext-14427",
+        "bitext-14594",
+        "bitext-14856",
+        "bitext-14244",
+        "bitext-14539",
+        "bitext-13952",
+        "bitext-14681",
+        "bitext-14092",
+        "bitext-14443"
+      ],
+      "returned_ids": [
+        "bitext-14856",
+        "bitext-14443",
+        "bitext-14244"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 276.04
+    },
+    {
+      "query_id": "bitext-query-15217",
+      "intent": "get_invoice",
+      "mode": "keyword",
+      "relevant": [
+        "bitext-15771",
+        "bitext-15662",
+        "bitext-14949",
+        "bitext-15260",
+        "bitext-15566",
+        "bitext-15130",
+        "bitext-15059",
+        "bitext-15297",
+        "bitext-15159",
+        "bitext-15214"
+      ],
+      "returned_ids": [
+        "bitext-15771",
+        "bitext-15662",
+        "bitext-15260"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 276.86
+    },
+    {
+      "query_id": "bitext-query-15217",
+      "intent": "get_invoice",
+      "mode": "vector",
+      "relevant": [
+        "bitext-15771",
+        "bitext-15662",
+        "bitext-14949",
+        "bitext-15260",
+        "bitext-15566",
+        "bitext-15130",
+        "bitext-15059",
+        "bitext-15297",
+        "bitext-15159",
+        "bitext-15214"
+      ],
+      "returned_ids": [
+        "bitext-15771",
+        "bitext-15662",
+        "bitext-15260"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 268.25
+    },
+    {
+      "query_id": "bitext-query-15217",
+      "intent": "get_invoice",
+      "mode": "hybrid",
+      "relevant": [
+        "bitext-15771",
+        "bitext-15662",
+        "bitext-14949",
+        "bitext-15260",
+        "bitext-15566",
+        "bitext-15130",
+        "bitext-15059",
+        "bitext-15297",
+        "bitext-15159",
+        "bitext-15214"
+      ],
+      "returned_ids": [
+        "bitext-15771",
+        "bitext-15662",
+        "bitext-15260"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 273.71
+    },
+    {
+      "query_id": "bitext-query-15315",
+      "intent": "get_invoice",
+      "mode": "keyword",
+      "relevant": [
+        "bitext-15771",
+        "bitext-15662",
+        "bitext-14949",
+        "bitext-15260",
+        "bitext-15566",
+        "bitext-15130",
+        "bitext-15059",
+        "bitext-15297",
+        "bitext-15159",
+        "bitext-15214"
+      ],
+      "returned_ids": [
+        "bitext-15771",
+        "bitext-15662",
+        "bitext-15214"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 275.04
+    },
+    {
+      "query_id": "bitext-query-15315",
+      "intent": "get_invoice",
+      "mode": "vector",
+      "relevant": [
+        "bitext-15771",
+        "bitext-15662",
+        "bitext-14949",
+        "bitext-15260",
+        "bitext-15566",
+        "bitext-15130",
+        "bitext-15059",
+        "bitext-15297",
+        "bitext-15159",
+        "bitext-15214"
+      ],
+      "returned_ids": [
+        "bitext-15771",
+        "bitext-15214",
+        "bitext-15566"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 277.3
+    },
+    {
+      "query_id": "bitext-query-15315",
+      "intent": "get_invoice",
+      "mode": "hybrid",
+      "relevant": [
+        "bitext-15771",
+        "bitext-15662",
+        "bitext-14949",
+        "bitext-15260",
+        "bitext-15566",
+        "bitext-15130",
+        "bitext-15059",
+        "bitext-15297",
+        "bitext-15159",
+        "bitext-15214"
+      ],
+      "returned_ids": [
+        "bitext-15771",
+        "bitext-15214",
+        "bitext-15662"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 268.34
+    },
+    {
+      "query_id": "bitext-query-16382",
+      "intent": "get_refund",
+      "mode": "keyword",
+      "relevant": [
+        "bitext-15900",
+        "bitext-16597",
+        "bitext-16178",
+        "bitext-16537",
+        "bitext-16508",
+        "bitext-16723",
+        "bitext-16561",
+        "bitext-16331",
+        "bitext-16454",
+        "bitext-16448"
+      ],
+      "returned_ids": [
+        "bitext-16178",
+        "bitext-26070",
+        "bitext-16454"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 270.39
+    },
+    {
+      "query_id": "bitext-query-16382",
+      "intent": "get_refund",
+      "mode": "vector",
+      "relevant": [
+        "bitext-15900",
+        "bitext-16597",
+        "bitext-16178",
+        "bitext-16537",
+        "bitext-16508",
+        "bitext-16723",
+        "bitext-16561",
+        "bitext-16331",
+        "bitext-16454",
+        "bitext-16448"
+      ],
+      "returned_ids": [
+        "bitext-16178",
+        "bitext-16454",
+        "bitext-16331"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 271.56
+    },
+    {
+      "query_id": "bitext-query-16382",
+      "intent": "get_refund",
+      "mode": "hybrid",
+      "relevant": [
+        "bitext-15900",
+        "bitext-16597",
+        "bitext-16178",
+        "bitext-16537",
+        "bitext-16508",
+        "bitext-16723",
+        "bitext-16561",
+        "bitext-16331",
+        "bitext-16454",
+        "bitext-16448"
+      ],
+      "returned_ids": [
+        "bitext-16178",
+        "bitext-16454",
+        "bitext-26070"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 277.17
+    },
+    {
+      "query_id": "bitext-query-16494",
+      "intent": "get_refund",
+      "mode": "keyword",
+      "relevant": [
+        "bitext-15900",
+        "bitext-16597",
+        "bitext-16178",
+        "bitext-16537",
+        "bitext-16508",
+        "bitext-16723",
+        "bitext-16561",
+        "bitext-16331",
+        "bitext-16454",
+        "bitext-16448"
+      ],
+      "returned_ids": [
+        "bitext-26070",
+        "bitext-16508",
+        "bitext-16178"
+      ],
+      "first_relevant_rank": 2,
+      "query_ms": 272.69
+    },
+    {
+      "query_id": "bitext-query-16494",
+      "intent": "get_refund",
+      "mode": "vector",
+      "relevant": [
+        "bitext-15900",
+        "bitext-16597",
+        "bitext-16178",
+        "bitext-16537",
+        "bitext-16508",
+        "bitext-16723",
+        "bitext-16561",
+        "bitext-16331",
+        "bitext-16454",
+        "bitext-16448"
+      ],
+      "returned_ids": [
+        "bitext-16508",
+        "bitext-26070",
+        "bitext-6891"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 277.05
+    },
+    {
+      "query_id": "bitext-query-16494",
+      "intent": "get_refund",
+      "mode": "hybrid",
+      "relevant": [
+        "bitext-15900",
+        "bitext-16597",
+        "bitext-16178",
+        "bitext-16537",
+        "bitext-16508",
+        "bitext-16723",
+        "bitext-16561",
+        "bitext-16331",
+        "bitext-16454",
+        "bitext-16448"
+      ],
+      "returned_ids": [
+        "bitext-26070",
+        "bitext-16508",
+        "bitext-16178"
+      ],
+      "first_relevant_rank": 2,
+      "query_ms": 272.21
+    },
+    {
+      "query_id": "bitext-query-16937",
+      "intent": "newsletter_subscription",
+      "mode": "keyword",
+      "relevant": [
+        "bitext-17417",
+        "bitext-17868",
+        "bitext-17387",
+        "bitext-16944",
+        "bitext-17847",
+        "bitext-17850",
+        "bitext-17532",
+        "bitext-17059",
+        "bitext-17006",
+        "bitext-17673"
+      ],
+      "returned_ids": [
+        "bitext-17417",
+        "bitext-17673",
+        "bitext-17868"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 273.24
+    },
+    {
+      "query_id": "bitext-query-16937",
+      "intent": "newsletter_subscription",
+      "mode": "vector",
+      "relevant": [
+        "bitext-17417",
+        "bitext-17868",
+        "bitext-17387",
+        "bitext-16944",
+        "bitext-17847",
+        "bitext-17850",
+        "bitext-17532",
+        "bitext-17059",
+        "bitext-17006",
+        "bitext-17673"
+      ],
+      "returned_ids": [
+        "bitext-17847",
+        "bitext-17006",
+        "bitext-17532"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 274.12
+    },
+    {
+      "query_id": "bitext-query-16937",
+      "intent": "newsletter_subscription",
+      "mode": "hybrid",
+      "relevant": [
+        "bitext-17417",
+        "bitext-17868",
+        "bitext-17387",
+        "bitext-16944",
+        "bitext-17847",
+        "bitext-17850",
+        "bitext-17532",
+        "bitext-17059",
+        "bitext-17006",
+        "bitext-17673"
+      ],
+      "returned_ids": [
+        "bitext-17847",
+        "bitext-17417",
+        "bitext-17673"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 272.91
+    },
+    {
+      "query_id": "bitext-query-16980",
+      "intent": "newsletter_subscription",
+      "mode": "keyword",
+      "relevant": [
+        "bitext-17417",
+        "bitext-17868",
+        "bitext-17387",
+        "bitext-16944",
+        "bitext-17847",
+        "bitext-17850",
+        "bitext-17532",
+        "bitext-17059",
+        "bitext-17006",
+        "bitext-17673"
+      ],
+      "returned_ids": [
+        "bitext-17417",
+        "bitext-17868",
+        "bitext-17006"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 274.03
+    },
+    {
+      "query_id": "bitext-query-16980",
+      "intent": "newsletter_subscription",
+      "mode": "vector",
+      "relevant": [
+        "bitext-17417",
+        "bitext-17868",
+        "bitext-17387",
+        "bitext-16944",
+        "bitext-17847",
+        "bitext-17850",
+        "bitext-17532",
+        "bitext-17059",
+        "bitext-17006",
+        "bitext-17673"
+      ],
+      "returned_ids": [
+        "bitext-17847",
+        "bitext-17006",
+        "bitext-17417"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 277.0
+    },
+    {
+      "query_id": "bitext-query-16980",
+      "intent": "newsletter_subscription",
+      "mode": "hybrid",
+      "relevant": [
+        "bitext-17417",
+        "bitext-17868",
+        "bitext-17387",
+        "bitext-16944",
+        "bitext-17847",
+        "bitext-17850",
+        "bitext-17532",
+        "bitext-17059",
+        "bitext-17006",
+        "bitext-17673"
+      ],
+      "returned_ids": [
+        "bitext-17417",
+        "bitext-17006",
+        "bitext-17847"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 267.65
+    },
+    {
+      "query_id": "bitext-query-18049",
+      "intent": "payment_issue",
+      "mode": "keyword",
+      "relevant": [
+        "bitext-18759",
+        "bitext-18367",
+        "bitext-17980",
+        "bitext-18284",
+        "bitext-18063",
+        "bitext-17979",
+        "bitext-18195",
+        "bitext-18782",
+        "bitext-18120",
+        "bitext-18701"
+      ],
+      "returned_ids": [
+        "bitext-18759",
+        "bitext-18701",
+        "bitext-18063"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 275.46
+    },
+    {
+      "query_id": "bitext-query-18049",
+      "intent": "payment_issue",
+      "mode": "vector",
+      "relevant": [
+        "bitext-18759",
+        "bitext-18367",
+        "bitext-17980",
+        "bitext-18284",
+        "bitext-18063",
+        "bitext-17979",
+        "bitext-18195",
+        "bitext-18782",
+        "bitext-18120",
+        "bitext-18701"
+      ],
+      "returned_ids": [
+        "bitext-18759",
+        "bitext-18701",
+        "bitext-18367"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 272.21
+    },
+    {
+      "query_id": "bitext-query-18049",
+      "intent": "payment_issue",
+      "mode": "hybrid",
+      "relevant": [
+        "bitext-18759",
+        "bitext-18367",
+        "bitext-17980",
+        "bitext-18284",
+        "bitext-18063",
+        "bitext-17979",
+        "bitext-18195",
+        "bitext-18782",
+        "bitext-18120",
+        "bitext-18701"
+      ],
+      "returned_ids": [
+        "bitext-18759",
+        "bitext-18701",
+        "bitext-18063"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 269.9
+    },
+    {
+      "query_id": "bitext-query-18111",
+      "intent": "payment_issue",
+      "mode": "keyword",
+      "relevant": [
+        "bitext-18759",
+        "bitext-18367",
+        "bitext-17980",
+        "bitext-18284",
+        "bitext-18063",
+        "bitext-17979",
+        "bitext-18195",
+        "bitext-18782",
+        "bitext-18120",
+        "bitext-18701"
+      ],
+      "returned_ids": [
+        "bitext-5289",
+        "bitext-5436",
+        "bitext-5573"
+      ],
+      "first_relevant_rank": null,
+      "query_ms": 276.55
+    },
+    {
+      "query_id": "bitext-query-18111",
+      "intent": "payment_issue",
+      "mode": "vector",
+      "relevant": [
+        "bitext-18759",
+        "bitext-18367",
+        "bitext-17980",
+        "bitext-18284",
+        "bitext-18063",
+        "bitext-17979",
+        "bitext-18195",
+        "bitext-18782",
+        "bitext-18120",
+        "bitext-18701"
+      ],
+      "returned_ids": [
+        "bitext-18759",
+        "bitext-18701",
+        "bitext-17980"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 276.03
+    },
+    {
+      "query_id": "bitext-query-18111",
+      "intent": "payment_issue",
+      "mode": "hybrid",
+      "relevant": [
+        "bitext-18759",
+        "bitext-18367",
+        "bitext-17980",
+        "bitext-18284",
+        "bitext-18063",
+        "bitext-17979",
+        "bitext-18195",
+        "bitext-18782",
+        "bitext-18120",
+        "bitext-18701"
+      ],
+      "returned_ids": [
+        "bitext-5289",
+        "bitext-18759",
+        "bitext-5436"
+      ],
+      "first_relevant_rank": 2,
+      "query_ms": 270.79
+    },
+    {
+      "query_id": "bitext-query-19128",
+      "intent": "place_order",
+      "mode": "keyword",
+      "relevant": [
+        "bitext-19855",
+        "bitext-19176",
+        "bitext-19862",
+        "bitext-19746",
+        "bitext-19676",
+        "bitext-18987",
+        "bitext-19345",
+        "bitext-19368",
+        "bitext-19429",
+        "bitext-19464"
+      ],
+      "returned_ids": [
+        "bitext-19368",
+        "bitext-6758",
+        "bitext-19464"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 272.9
+    },
+    {
+      "query_id": "bitext-query-19128",
+      "intent": "place_order",
+      "mode": "vector",
+      "relevant": [
+        "bitext-19855",
+        "bitext-19176",
+        "bitext-19862",
+        "bitext-19746",
+        "bitext-19676",
+        "bitext-18987",
+        "bitext-19345",
+        "bitext-19368",
+        "bitext-19429",
+        "bitext-19464"
+      ],
+      "returned_ids": [
+        "bitext-19368",
+        "bitext-15297",
+        "bitext-15900"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 268.75
+    },
+    {
+      "query_id": "bitext-query-19128",
+      "intent": "place_order",
+      "mode": "hybrid",
+      "relevant": [
+        "bitext-19855",
+        "bitext-19176",
+        "bitext-19862",
+        "bitext-19746",
+        "bitext-19676",
+        "bitext-18987",
+        "bitext-19345",
+        "bitext-19368",
+        "bitext-19429",
+        "bitext-19464"
+      ],
+      "returned_ids": [
+        "bitext-19368",
+        "bitext-15297",
+        "bitext-6758"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 272.58
+    },
+    {
+      "query_id": "bitext-query-19682",
+      "intent": "place_order",
+      "mode": "keyword",
+      "relevant": [
+        "bitext-19855",
+        "bitext-19176",
+        "bitext-19862",
+        "bitext-19746",
+        "bitext-19676",
+        "bitext-18987",
+        "bitext-19345",
+        "bitext-19368",
+        "bitext-19429",
+        "bitext-19464"
+      ],
+      "returned_ids": [
+        "bitext-1938",
+        "bitext-24082",
+        "bitext-26039"
+      ],
+      "first_relevant_rank": null,
+      "query_ms": 274.69
+    },
+    {
+      "query_id": "bitext-query-19682",
+      "intent": "place_order",
+      "mode": "vector",
+      "relevant": [
+        "bitext-19855",
+        "bitext-19176",
+        "bitext-19862",
+        "bitext-19746",
+        "bitext-19676",
+        "bitext-18987",
+        "bitext-19345",
+        "bitext-19368",
+        "bitext-19429",
+        "bitext-19464"
+      ],
+      "returned_ids": [
+        "bitext-19862",
+        "bitext-19855",
+        "bitext-16454"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 269.8
+    },
+    {
+      "query_id": "bitext-query-19682",
+      "intent": "place_order",
+      "mode": "hybrid",
+      "relevant": [
+        "bitext-19855",
+        "bitext-19176",
+        "bitext-19862",
+        "bitext-19746",
+        "bitext-19676",
+        "bitext-18987",
+        "bitext-19345",
+        "bitext-19368",
+        "bitext-19429",
+        "bitext-19464"
+      ],
+      "returned_ids": [
+        "bitext-1938",
+        "bitext-19862",
+        "bitext-24082"
+      ],
+      "first_relevant_rank": 2,
+      "query_ms": 271.03
+    },
+    {
+      "query_id": "bitext-query-19972",
+      "intent": "recover_password",
+      "mode": "keyword",
+      "relevant": [
+        "bitext-20022",
+        "bitext-19989",
+        "bitext-20699",
+        "bitext-20696",
+        "bitext-20733",
+        "bitext-19892",
+        "bitext-20727",
+        "bitext-20687",
+        "bitext-20360",
+        "bitext-20152"
+      ],
+      "returned_ids": [
+        "bitext-20696",
+        "bitext-19989",
+        "bitext-19892"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 272.29
+    },
+    {
+      "query_id": "bitext-query-19972",
+      "intent": "recover_password",
+      "mode": "vector",
+      "relevant": [
+        "bitext-20022",
+        "bitext-19989",
+        "bitext-20699",
+        "bitext-20696",
+        "bitext-20733",
+        "bitext-19892",
+        "bitext-20727",
+        "bitext-20687",
+        "bitext-20360",
+        "bitext-20152"
+      ],
+      "returned_ids": [
+        "bitext-19989",
+        "bitext-20696",
+        "bitext-19892"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 276.7
+    },
+    {
+      "query_id": "bitext-query-19972",
+      "intent": "recover_password",
+      "mode": "hybrid",
+      "relevant": [
+        "bitext-20022",
+        "bitext-19989",
+        "bitext-20699",
+        "bitext-20696",
+        "bitext-20733",
+        "bitext-19892",
+        "bitext-20727",
+        "bitext-20687",
+        "bitext-20360",
+        "bitext-20152"
+      ],
+      "returned_ids": [
+        "bitext-20696",
+        "bitext-19989",
+        "bitext-19892"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 276.62
+    },
+    {
+      "query_id": "bitext-query-20151",
+      "intent": "recover_password",
+      "mode": "keyword",
+      "relevant": [
+        "bitext-20022",
+        "bitext-19989",
+        "bitext-20699",
+        "bitext-20696",
+        "bitext-20733",
+        "bitext-19892",
+        "bitext-20727",
+        "bitext-20687",
+        "bitext-20360",
+        "bitext-20152"
+      ],
+      "returned_ids": [
+        "bitext-20360",
+        "bitext-15771",
+        "bitext-24082"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 271.62
+    },
+    {
+      "query_id": "bitext-query-20151",
+      "intent": "recover_password",
+      "mode": "vector",
+      "relevant": [
+        "bitext-20022",
+        "bitext-19989",
+        "bitext-20699",
+        "bitext-20696",
+        "bitext-20733",
+        "bitext-19892",
+        "bitext-20727",
+        "bitext-20687",
+        "bitext-20360",
+        "bitext-20152"
+      ],
+      "returned_ids": [
+        "bitext-19989",
+        "bitext-20733",
+        "bitext-20727"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 265.13
+    },
+    {
+      "query_id": "bitext-query-20151",
+      "intent": "recover_password",
+      "mode": "hybrid",
+      "relevant": [
+        "bitext-20022",
+        "bitext-19989",
+        "bitext-20699",
+        "bitext-20696",
+        "bitext-20733",
+        "bitext-19892",
+        "bitext-20727",
+        "bitext-20687",
+        "bitext-20360",
+        "bitext-20152"
+      ],
+      "returned_ids": [
+        "bitext-20360",
+        "bitext-19989",
+        "bitext-20733"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 282.28
+    },
+    {
+      "query_id": "bitext-query-21837",
+      "intent": "registration_problems",
+      "mode": "keyword",
+      "relevant": [
+        "bitext-21074",
+        "bitext-21464",
+        "bitext-21283",
+        "bitext-21564",
+        "bitext-21391",
+        "bitext-21112",
+        "bitext-21381",
+        "bitext-21512",
+        "bitext-21001",
+        "bitext-21393"
+      ],
+      "returned_ids": [
+        "bitext-21381",
+        "bitext-21074",
+        "bitext-18195"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 269.35
+    },
+    {
+      "query_id": "bitext-query-21837",
+      "intent": "registration_problems",
+      "mode": "vector",
+      "relevant": [
+        "bitext-21074",
+        "bitext-21464",
+        "bitext-21283",
+        "bitext-21564",
+        "bitext-21391",
+        "bitext-21112",
+        "bitext-21381",
+        "bitext-21512",
+        "bitext-21001",
+        "bitext-21393"
+      ],
+      "returned_ids": [
+        "bitext-21074",
+        "bitext-21381",
+        "bitext-21391"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 275.19
+    },
+    {
+      "query_id": "bitext-query-21837",
+      "intent": "registration_problems",
+      "mode": "hybrid",
+      "relevant": [
+        "bitext-21074",
+        "bitext-21464",
+        "bitext-21283",
+        "bitext-21564",
+        "bitext-21391",
+        "bitext-21112",
+        "bitext-21381",
+        "bitext-21512",
+        "bitext-21001",
+        "bitext-21393"
+      ],
+      "returned_ids": [
+        "bitext-21074",
+        "bitext-21381",
+        "bitext-21391"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 268.09
+    },
+    {
+      "query_id": "bitext-query-21863",
+      "intent": "registration_problems",
+      "mode": "keyword",
+      "relevant": [
+        "bitext-21074",
+        "bitext-21464",
+        "bitext-21283",
+        "bitext-21564",
+        "bitext-21391",
+        "bitext-21112",
+        "bitext-21381",
+        "bitext-21512",
+        "bitext-21001",
+        "bitext-21393"
+      ],
+      "returned_ids": [
+        "bitext-10163",
+        "bitext-6828",
+        "bitext-21512"
+      ],
+      "first_relevant_rank": 3,
+      "query_ms": 275.68
+    },
+    {
+      "query_id": "bitext-query-21863",
+      "intent": "registration_problems",
+      "mode": "vector",
+      "relevant": [
+        "bitext-21074",
+        "bitext-21464",
+        "bitext-21283",
+        "bitext-21564",
+        "bitext-21391",
+        "bitext-21112",
+        "bitext-21381",
+        "bitext-21512",
+        "bitext-21001",
+        "bitext-21393"
+      ],
+      "returned_ids": [
+        "bitext-21074",
+        "bitext-21512",
+        "bitext-21391"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 281.11
+    },
+    {
+      "query_id": "bitext-query-21863",
+      "intent": "registration_problems",
+      "mode": "hybrid",
+      "relevant": [
+        "bitext-21074",
+        "bitext-21464",
+        "bitext-21283",
+        "bitext-21564",
+        "bitext-21391",
+        "bitext-21112",
+        "bitext-21381",
+        "bitext-21512",
+        "bitext-21001",
+        "bitext-21393"
+      ],
+      "returned_ids": [
+        "bitext-21512",
+        "bitext-21074",
+        "bitext-10163"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 289.41
+    },
+    {
+      "query_id": "bitext-query-22263",
+      "intent": "review",
+      "mode": "keyword",
+      "relevant": [
+        "bitext-22218",
+        "bitext-22104",
+        "bitext-22093",
+        "bitext-21965",
+        "bitext-21947",
+        "bitext-22219",
+        "bitext-22837",
+        "bitext-22243",
+        "bitext-22722",
+        "bitext-22058"
+      ],
+      "returned_ids": [
+        "bitext-22058",
+        "bitext-16448",
+        "bitext-9990"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 272.12
+    },
+    {
+      "query_id": "bitext-query-22263",
+      "intent": "review",
+      "mode": "vector",
+      "relevant": [
+        "bitext-22218",
+        "bitext-22104",
+        "bitext-22093",
+        "bitext-21965",
+        "bitext-21947",
+        "bitext-22219",
+        "bitext-22837",
+        "bitext-22243",
+        "bitext-22722",
+        "bitext-22058"
+      ],
+      "returned_ids": [
+        "bitext-22058",
+        "bitext-22104",
+        "bitext-7582"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 270.75
+    },
+    {
+      "query_id": "bitext-query-22263",
+      "intent": "review",
+      "mode": "hybrid",
+      "relevant": [
+        "bitext-22218",
+        "bitext-22104",
+        "bitext-22093",
+        "bitext-21965",
+        "bitext-21947",
+        "bitext-22219",
+        "bitext-22837",
+        "bitext-22243",
+        "bitext-22722",
+        "bitext-22058"
+      ],
+      "returned_ids": [
+        "bitext-22058",
+        "bitext-16448",
+        "bitext-22104"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 293.52
+    },
+    {
+      "query_id": "bitext-query-22695",
+      "intent": "review",
+      "mode": "keyword",
+      "relevant": [
+        "bitext-22218",
+        "bitext-22104",
+        "bitext-22093",
+        "bitext-21965",
+        "bitext-21947",
+        "bitext-22219",
+        "bitext-22837",
+        "bitext-22243",
+        "bitext-22722",
+        "bitext-22058"
+      ],
+      "returned_ids": [
+        "bitext-22104",
+        "bitext-22093",
+        "bitext-22219"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 275.96
+    },
+    {
+      "query_id": "bitext-query-22695",
+      "intent": "review",
+      "mode": "vector",
+      "relevant": [
+        "bitext-22218",
+        "bitext-22104",
+        "bitext-22093",
+        "bitext-21965",
+        "bitext-21947",
+        "bitext-22219",
+        "bitext-22837",
+        "bitext-22243",
+        "bitext-22722",
+        "bitext-22058"
+      ],
+      "returned_ids": [
+        "bitext-22058",
+        "bitext-22219",
+        "bitext-22243"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 275.21
+    },
+    {
+      "query_id": "bitext-query-22695",
+      "intent": "review",
+      "mode": "hybrid",
+      "relevant": [
+        "bitext-22218",
+        "bitext-22104",
+        "bitext-22093",
+        "bitext-21965",
+        "bitext-21947",
+        "bitext-22219",
+        "bitext-22837",
+        "bitext-22243",
+        "bitext-22722",
+        "bitext-22058"
+      ],
+      "returned_ids": [
+        "bitext-22219",
+        "bitext-22104",
+        "bitext-22058"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 269.04
+    },
+    {
+      "query_id": "bitext-query-23005",
+      "intent": "set_up_shipping_address",
+      "mode": "keyword",
+      "relevant": [
+        "bitext-23201",
+        "bitext-23330",
+        "bitext-23156",
+        "bitext-23043",
+        "bitext-23457",
+        "bitext-23195",
+        "bitext-23864",
+        "bitext-22913",
+        "bitext-23489",
+        "bitext-23702"
+      ],
+      "returned_ids": [
+        "bitext-23457",
+        "bitext-12371",
+        "bitext-22913"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 276.81
+    },
+    {
+      "query_id": "bitext-query-23005",
+      "intent": "set_up_shipping_address",
+      "mode": "vector",
+      "relevant": [
+        "bitext-23201",
+        "bitext-23330",
+        "bitext-23156",
+        "bitext-23043",
+        "bitext-23457",
+        "bitext-23195",
+        "bitext-23864",
+        "bitext-22913",
+        "bitext-23489",
+        "bitext-23702"
+      ],
+      "returned_ids": [
+        "bitext-22913",
+        "bitext-2723",
+        "bitext-23864"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 288.72
+    },
+    {
+      "query_id": "bitext-query-23005",
+      "intent": "set_up_shipping_address",
+      "mode": "hybrid",
+      "relevant": [
+        "bitext-23201",
+        "bitext-23330",
+        "bitext-23156",
+        "bitext-23043",
+        "bitext-23457",
+        "bitext-23195",
+        "bitext-23864",
+        "bitext-22913",
+        "bitext-23489",
+        "bitext-23702"
+      ],
+      "returned_ids": [
+        "bitext-22913",
+        "bitext-23457",
+        "bitext-2723"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 273.71
+    },
+    {
+      "query_id": "bitext-query-23874",
+      "intent": "set_up_shipping_address",
+      "mode": "keyword",
+      "relevant": [
+        "bitext-23201",
+        "bitext-23330",
+        "bitext-23156",
+        "bitext-23043",
+        "bitext-23457",
+        "bitext-23195",
+        "bitext-23864",
+        "bitext-22913",
+        "bitext-23489",
+        "bitext-23702"
+      ],
+      "returned_ids": [
+        "bitext-23043",
+        "bitext-23489",
+        "bitext-23195"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 271.18
+    },
+    {
+      "query_id": "bitext-query-23874",
+      "intent": "set_up_shipping_address",
+      "mode": "vector",
+      "relevant": [
+        "bitext-23201",
+        "bitext-23330",
+        "bitext-23156",
+        "bitext-23043",
+        "bitext-23457",
+        "bitext-23195",
+        "bitext-23864",
+        "bitext-22913",
+        "bitext-23489",
+        "bitext-23702"
+      ],
+      "returned_ids": [
+        "bitext-23201",
+        "bitext-23489",
+        "bitext-23043"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 271.6
+    },
+    {
+      "query_id": "bitext-query-23874",
+      "intent": "set_up_shipping_address",
+      "mode": "hybrid",
+      "relevant": [
+        "bitext-23201",
+        "bitext-23330",
+        "bitext-23156",
+        "bitext-23043",
+        "bitext-23457",
+        "bitext-23195",
+        "bitext-23864",
+        "bitext-22913",
+        "bitext-23489",
+        "bitext-23702"
+      ],
+      "returned_ids": [
+        "bitext-23043",
+        "bitext-23489",
+        "bitext-23201"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 273.72
+    },
+    {
+      "query_id": "bitext-query-23960",
+      "intent": "switch_account",
+      "mode": "keyword",
+      "relevant": [
+        "bitext-24082",
+        "bitext-24723",
+        "bitext-24006",
+        "bitext-24654",
+        "bitext-24652",
+        "bitext-24810",
+        "bitext-24748",
+        "bitext-24331",
+        "bitext-24048",
+        "bitext-24850"
+      ],
+      "returned_ids": [
+        "bitext-13952",
+        "bitext-24810",
+        "bitext-12105"
+      ],
+      "first_relevant_rank": 2,
+      "query_ms": 269.4
+    },
+    {
+      "query_id": "bitext-query-23960",
+      "intent": "switch_account",
+      "mode": "vector",
+      "relevant": [
+        "bitext-24082",
+        "bitext-24723",
+        "bitext-24006",
+        "bitext-24654",
+        "bitext-24652",
+        "bitext-24810",
+        "bitext-24748",
+        "bitext-24331",
+        "bitext-24048",
+        "bitext-24850"
+      ],
+      "returned_ids": [
+        "bitext-13952",
+        "bitext-15566",
+        "bitext-4870"
+      ],
+      "first_relevant_rank": null,
+      "query_ms": 289.18
+    },
+    {
+      "query_id": "bitext-query-23960",
+      "intent": "switch_account",
+      "mode": "hybrid",
+      "relevant": [
+        "bitext-24082",
+        "bitext-24723",
+        "bitext-24006",
+        "bitext-24654",
+        "bitext-24652",
+        "bitext-24810",
+        "bitext-24748",
+        "bitext-24331",
+        "bitext-24048",
+        "bitext-24850"
+      ],
+      "returned_ids": [
+        "bitext-13952",
+        "bitext-24810",
+        "bitext-15566"
+      ],
+      "first_relevant_rank": 2,
+      "query_ms": 279.64
+    },
+    {
+      "query_id": "bitext-query-24295",
+      "intent": "switch_account",
+      "mode": "keyword",
+      "relevant": [
+        "bitext-24082",
+        "bitext-24723",
+        "bitext-24006",
+        "bitext-24654",
+        "bitext-24652",
+        "bitext-24810",
+        "bitext-24748",
+        "bitext-24331",
+        "bitext-24048",
+        "bitext-24850"
+      ],
+      "returned_ids": [
+        "bitext-24082",
+        "bitext-24006",
+        "bitext-24048"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 266.72
+    },
+    {
+      "query_id": "bitext-query-24295",
+      "intent": "switch_account",
+      "mode": "vector",
+      "relevant": [
+        "bitext-24082",
+        "bitext-24723",
+        "bitext-24006",
+        "bitext-24654",
+        "bitext-24652",
+        "bitext-24810",
+        "bitext-24748",
+        "bitext-24331",
+        "bitext-24048",
+        "bitext-24850"
+      ],
+      "returned_ids": [
+        "bitext-9990",
+        "bitext-24082",
+        "bitext-24048"
+      ],
+      "first_relevant_rank": 2,
+      "query_ms": 287.41
+    },
+    {
+      "query_id": "bitext-query-24295",
+      "intent": "switch_account",
+      "mode": "hybrid",
+      "relevant": [
+        "bitext-24082",
+        "bitext-24723",
+        "bitext-24006",
+        "bitext-24654",
+        "bitext-24652",
+        "bitext-24810",
+        "bitext-24748",
+        "bitext-24331",
+        "bitext-24048",
+        "bitext-24850"
+      ],
+      "returned_ids": [
+        "bitext-24082",
+        "bitext-24048",
+        "bitext-9990"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 270.28
+    },
+    {
+      "query_id": "bitext-query-25732",
+      "intent": "track_order",
+      "mode": "keyword",
+      "relevant": [
+        "bitext-25333",
+        "bitext-25510",
+        "bitext-25156",
+        "bitext-25685",
+        "bitext-25835",
+        "bitext-25524",
+        "bitext-24893",
+        "bitext-25344",
+        "bitext-25303",
+        "bitext-25125"
+      ],
+      "returned_ids": [
+        "bitext-25510",
+        "bitext-25125",
+        "bitext-25303"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 273.25
+    },
+    {
+      "query_id": "bitext-query-25732",
+      "intent": "track_order",
+      "mode": "vector",
+      "relevant": [
+        "bitext-25333",
+        "bitext-25510",
+        "bitext-25156",
+        "bitext-25685",
+        "bitext-25835",
+        "bitext-25524",
+        "bitext-24893",
+        "bitext-25344",
+        "bitext-25303",
+        "bitext-25125"
+      ],
+      "returned_ids": [
+        "bitext-25510",
+        "bitext-25125",
+        "bitext-24893"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 273.91
+    },
+    {
+      "query_id": "bitext-query-25732",
+      "intent": "track_order",
+      "mode": "hybrid",
+      "relevant": [
+        "bitext-25333",
+        "bitext-25510",
+        "bitext-25156",
+        "bitext-25685",
+        "bitext-25835",
+        "bitext-25524",
+        "bitext-24893",
+        "bitext-25344",
+        "bitext-25303",
+        "bitext-25125"
+      ],
+      "returned_ids": [
+        "bitext-25510",
+        "bitext-25125",
+        "bitext-25303"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 273.12
+    },
+    {
+      "query_id": "bitext-query-25202",
+      "intent": "track_order",
+      "mode": "keyword",
+      "relevant": [
+        "bitext-25333",
+        "bitext-25510",
+        "bitext-25156",
+        "bitext-25685",
+        "bitext-25835",
+        "bitext-25524",
+        "bitext-24893",
+        "bitext-25344",
+        "bitext-25303",
+        "bitext-25125"
+      ],
+      "returned_ids": [
+        "bitext-958",
+        "bitext-900",
+        "bitext-25125"
+      ],
+      "first_relevant_rank": 3,
+      "query_ms": 275.36
+    },
+    {
+      "query_id": "bitext-query-25202",
+      "intent": "track_order",
+      "mode": "vector",
+      "relevant": [
+        "bitext-25333",
+        "bitext-25510",
+        "bitext-25156",
+        "bitext-25685",
+        "bitext-25835",
+        "bitext-25524",
+        "bitext-24893",
+        "bitext-25344",
+        "bitext-25303",
+        "bitext-25125"
+      ],
+      "returned_ids": [
+        "bitext-25125",
+        "bitext-25156",
+        "bitext-25510"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 273.29
+    },
+    {
+      "query_id": "bitext-query-25202",
+      "intent": "track_order",
+      "mode": "hybrid",
+      "relevant": [
+        "bitext-25333",
+        "bitext-25510",
+        "bitext-25156",
+        "bitext-25685",
+        "bitext-25835",
+        "bitext-25524",
+        "bitext-24893",
+        "bitext-25344",
+        "bitext-25303",
+        "bitext-25125"
+      ],
+      "returned_ids": [
+        "bitext-25125",
+        "bitext-958",
+        "bitext-25156"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 274.61
+    },
+    {
+      "query_id": "bitext-query-25877",
+      "intent": "track_refund",
+      "mode": "keyword",
+      "relevant": [
+        "bitext-25998",
+        "bitext-26039",
+        "bitext-26711",
+        "bitext-26801",
+        "bitext-26514",
+        "bitext-26070",
+        "bitext-26541",
+        "bitext-26692",
+        "bitext-26800",
+        "bitext-26674"
+      ],
+      "returned_ids": [
+        "bitext-26800",
+        "bitext-26070",
+        "bitext-26692"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 275.68
+    },
+    {
+      "query_id": "bitext-query-25877",
+      "intent": "track_refund",
+      "mode": "vector",
+      "relevant": [
+        "bitext-25998",
+        "bitext-26039",
+        "bitext-26711",
+        "bitext-26801",
+        "bitext-26514",
+        "bitext-26070",
+        "bitext-26541",
+        "bitext-26692",
+        "bitext-26800",
+        "bitext-26674"
+      ],
+      "returned_ids": [
+        "bitext-26070",
+        "bitext-26692",
+        "bitext-26800"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 271.91
+    },
+    {
+      "query_id": "bitext-query-25877",
+      "intent": "track_refund",
+      "mode": "hybrid",
+      "relevant": [
+        "bitext-25998",
+        "bitext-26039",
+        "bitext-26711",
+        "bitext-26801",
+        "bitext-26514",
+        "bitext-26070",
+        "bitext-26541",
+        "bitext-26692",
+        "bitext-26800",
+        "bitext-26674"
+      ],
+      "returned_ids": [
+        "bitext-26070",
+        "bitext-26800",
+        "bitext-26692"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 268.36
+    },
+    {
+      "query_id": "bitext-query-26780",
+      "intent": "track_refund",
+      "mode": "keyword",
+      "relevant": [
+        "bitext-25998",
+        "bitext-26039",
+        "bitext-26711",
+        "bitext-26801",
+        "bitext-26514",
+        "bitext-26070",
+        "bitext-26541",
+        "bitext-26692",
+        "bitext-26800",
+        "bitext-26674"
+      ],
+      "returned_ids": [
+        "bitext-26070",
+        "bitext-26711",
+        "bitext-6874"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 273.94
+    },
+    {
+      "query_id": "bitext-query-26780",
+      "intent": "track_refund",
+      "mode": "vector",
+      "relevant": [
+        "bitext-25998",
+        "bitext-26039",
+        "bitext-26711",
+        "bitext-26801",
+        "bitext-26514",
+        "bitext-26070",
+        "bitext-26541",
+        "bitext-26692",
+        "bitext-26800",
+        "bitext-26674"
+      ],
+      "returned_ids": [
+        "bitext-26541",
+        "bitext-16508",
+        "bitext-26070"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 266.82
+    },
+    {
+      "query_id": "bitext-query-26780",
+      "intent": "track_refund",
+      "mode": "hybrid",
+      "relevant": [
+        "bitext-25998",
+        "bitext-26039",
+        "bitext-26711",
+        "bitext-26801",
+        "bitext-26514",
+        "bitext-26070",
+        "bitext-26541",
+        "bitext-26692",
+        "bitext-26800",
+        "bitext-26674"
+      ],
+      "returned_ids": [
+        "bitext-26070",
+        "bitext-26541",
+        "bitext-16508"
+      ],
+      "first_relevant_rank": 1,
+      "query_ms": 286.68
+    }
+  ]
+}

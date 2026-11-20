@@ -1,0 +1,1 @@
+AUTH483: Password reset links expire after thirty minutes. Request a new reset email if an old password recovery link no longer works.
