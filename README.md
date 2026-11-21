@@ -2,7 +2,7 @@
 
 Build an IAM-protected support search API using Amazon S3 Vectors, AWS Lambda, API Gateway, and a SageMaker Serverless Inference endpoint running `BAAI/bge-small-en-v1.5`. It compares keyword, vector, and native hybrid search and provides a separate exact-key lookup for a known document identifier. It returns matching documents, not generated answers.
 
-The article and written benchmark will be published separately. This repository contains the implementation, synthetic fixtures, tests, saved results, and an optional offline GUI replay.
+The article is maintained separately. This repository contains the [benchmark appendix](https://github.com/ayogun/ai-support-engine/blob/main/BENCHMARKS.md), implementation, synthetic fixtures, tests, saved results, and an optional offline GUI replay.
 
 **Verified November 18, 2026 in `us-west-2`:** the model endpoint returned valid document and query embeddings, all 16 synthetic documents were indexed through S3 and Lambda, and signed keyword, vector, hybrid, and exact-key checks passed. The [model check](results/2026-11-18-revision-model-check.json), [API checks](results/2026-11-18-revision-smoke.json), and [infrastructure record](results/2026-11-18-revision-infrastructure.json) contain the observations. The earlier [32-query evaluation](results/2026-11-18-synthetic.json) repeated the November 17 aggregate rankings. This is retrieval, not an answer-generating application.
 
